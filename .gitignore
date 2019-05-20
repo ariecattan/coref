@@ -102,3 +102,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+datasets/
+glove_ecb+/
+Papers/
+Reports/
+Topics/
+Wiki-Alon/
+.idea/
