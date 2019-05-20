@@ -1,0 +1,52 @@
+
+Statistics on the train set
+Docs: 60
+Sentences: 299
+Event mentions: 998
+Entity mentions: 1570
+Event mentions with more than one token: 64
+Entity mentions with more than one token: 1026
+Event chains: 876
+Event Singleton: 790
+Entity chains: 544
+Entity Singleton: 341
+--------------------------------------
+
+Statistics on the dev set
+Docs: 30
+Sentences: 148
+Event mentions: 583
+Entity mentions: 826
+Event mentions with more than one token: 24
+Entity mentions with more than one token: 471
+Event chains: 530
+Event Singleton: 498
+Entity chains: 197
+Entity Singleton: 114
+--------------------------------------
+
+Statistics on the test set
+Docs: 30
+Sentences: 150
+Event mentions: 526
+Entity mentions: 470
+Event mentions with more than one token: 25
+Entity mentions with more than one token: 315
+Event chains: 486
+Event Singleton: 462
+Entity chains: 158
+Entity Singleton: 94
+--------------------------------------
+
+Statistics on the all set
+Docs: 120
+Sentences: 597
+Event mentions: 2107
+Entity mentions: 2866
+Event mentions with more than one token: 113
+Entity mentions with more than one token: 1812
+Event chains: 1892
+Event Singleton: 1750
+Entity chains: 873
+Entity Singleton: 533
+--------------------------------------
