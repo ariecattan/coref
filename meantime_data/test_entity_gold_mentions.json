@@ -11,7 +11,7 @@
         "mention_type": "FIN",
         "right_sentence": "have their best week since November",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -31,7 +31,7 @@
         "mention_type": "FIN",
         "right_sentence": "best week since November",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             4
         ],
         "tokens_str": "their",
@@ -49,7 +49,7 @@
         "mention_type": "FIN",
         "right_sentence": "had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14
         ],
@@ -68,7 +68,7 @@
         "mention_type": "FIN",
         "right_sentence": "best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16
         ],
         "tokens_str": "its",
@@ -86,7 +86,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets have their best week since November",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -104,7 +104,7 @@
         "mention_type": "FIN",
         "right_sentence": "seeing their best weekly gain in nearly five months .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28,
             29,
             30,
@@ -126,7 +126,7 @@
         "mention_type": "FIN",
         "right_sentence": "best weekly gain in nearly five months .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             34
         ],
         "tokens_str": "their",
@@ -144,7 +144,7 @@
         "mention_type": "FIN",
         "right_sentence": "had a gain of around 10 percent .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45,
@@ -167,7 +167,7 @@
         "mention_type": "FIN",
         "right_sentence": "had a gain of around 10 percent .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             47,
             48
         ],
@@ -186,7 +186,7 @@
         "mention_type": "FIN",
         "right_sentence": "bouncing and alleviating fears about the economy .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             62,
             63
         ],
@@ -205,7 +205,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             69,
             70
         ],
@@ -224,7 +224,7 @@
         "mention_type": "FIN",
         "right_sentence": "( INDU ) finished on 7223.98 , an increase of 54 points from March 12 2009 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             72,
             73,
             74,
@@ -246,7 +246,7 @@
         "mention_type": "FIN",
         "right_sentence": ") finished on 7223.98 , an increase of 54 points from March 12 2009 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             78
         ],
         "tokens_str": "INDU",
@@ -264,7 +264,7 @@
         "mention_type": "FIN",
         "right_sentence": "'s indexes seeing their best weekly gain in nearly five months .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28,
             29,
             30
@@ -284,7 +284,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell 232.90 points to 6038.30 , and Japan 's Nikkei 225 fell 406.51 points to 16764.09 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             56,
             57,
             58,
@@ -306,7 +306,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s FTSE-100 index fell 232.90 points to 6038.30 , and Japan 's Nikkei 225 fell 406.51 points to 16764.09 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             57
         ],
         "tokens_str": "UK",
@@ -324,7 +324,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell 406.51 points to 16764.09 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             68,
             69,
             70,
@@ -335,7 +335,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__27_76437_Markets_dragged_down_by_credit_crisis.xml",
+        "coref_chain": "",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "The UK 's FTSE-100 index fell 232.90 points to 6038.30 , and Japan 's Nikkei 225 fell 406.51 points to 16764.09 .",
@@ -345,7 +345,7 @@
         "mention_type": "",
         "right_sentence": "'s Nikkei 225 fell 406.51 points to 16764.09 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             68
         ],
         "tokens_str": "Japan",
@@ -363,7 +363,7 @@
         "mention_type": "ORG",
         "right_sentence": "are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             78,
             79,
             80,
@@ -385,7 +385,7 @@
         "mention_type": "LOC",
         "right_sentence": "are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             81,
             82
         ],
@@ -404,7 +404,7 @@
         "mention_type": "FIN",
         "right_sentence": "dragged down by credit crisis",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Markets",
@@ -422,7 +422,7 @@
         "mention_type": "FIN",
         "right_sentence": "into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             85
         ],
         "tokens_str": "funds",
@@ -440,7 +440,7 @@
         "mention_type": "FIN",
         "right_sentence": "to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             87,
             88,
             89
@@ -460,7 +460,7 @@
         "mention_type": "ORG",
         "right_sentence": "banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             87
         ],
         "tokens_str": "their",
@@ -478,7 +478,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell today , in a mass sell-off stemming from the sub-prime mortgage crisis in the United States .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11,
             12
@@ -498,7 +498,7 @@
         "mention_type": "FIN",
         "right_sentence": ", fearing that many financial firms with subprime ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             92
         ],
         "tokens_str": "liquidity",
@@ -506,7 +506,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__40_76437_Markets_dragged_down_by_credit_crisis.xml",
+        "coref_chain": "",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -516,7 +516,7 @@
         "mention_type": "",
         "right_sentence": "will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             96,
             97,
             98,
@@ -539,7 +539,7 @@
         "mention_type": "FIN",
         "right_sentence": "ties will be insolvent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             100
         ],
         "tokens_str": "subprime",
@@ -557,7 +557,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             27,
             28,
             29
@@ -577,7 +577,7 @@
         "mention_type": "FIN",
         "right_sentence": "rebounded late in the day after falling more than 250 points , ending the day down about 31 points .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32,
             33,
@@ -599,7 +599,7 @@
         "mention_type": "FIN",
         "right_sentence": "crisis in the United States .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22,
             23,
             24
@@ -619,7 +619,7 @@
         "mention_type": "FIN",
         "right_sentence": ", other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             111,
             112,
             113
@@ -639,7 +639,7 @@
         "mention_type": "LOC",
         "right_sentence": "automobile manufacturer General Motors will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             32
         ],
         "tokens_str": "US",
@@ -657,7 +657,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped by 4.08 % , or 280.52 points , at the closing bell , reaching a level of 6595.32 , a new 12-year low .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             44,
             45,
             46,
@@ -679,7 +679,7 @@
         "mention_type": "FIN",
         "right_sentence": "reach 12-year lows",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -699,7 +699,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets reach 12-year lows",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -717,7 +717,7 @@
         "mention_type": "FIN",
         "right_sentence": "lost 54.15 points , or 4 % , to 1299.59 , while the Standard & Poor 's 500 plunged by 30.27 points , or 4.25 % , closing at 682.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             74,
             75,
             76
@@ -737,7 +737,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11,
             12
@@ -757,7 +757,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10
         ],
         "tokens_str": "US",
@@ -775,7 +775,7 @@
         "mention_type": "FIN",
         "right_sentence": ", other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             108,
             109,
             110,
@@ -798,7 +798,7 @@
         "mention_type": "FIN",
         "right_sentence": "plunged by 30.27 points , or 4.25 % , closing at 682.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             89,
             90,
             91,
@@ -821,7 +821,7 @@
         "mention_type": "FIN",
         "right_sentence": ", either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             117
         ],
         "tokens_str": "Wal-Mart",
@@ -839,7 +839,7 @@
         "mention_type": "FIN",
         "right_sentence": "and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             24,
             25,
             26
@@ -859,7 +859,7 @@
         "mention_type": "FIN",
         "right_sentence": "lost ground .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             127,
             128,
             129,
@@ -883,7 +883,7 @@
         "mention_type": "FIN",
         "right_sentence": "lost ground .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             130,
             131,
             132,
@@ -904,7 +904,7 @@
         "mention_type": "ORG",
         "right_sentence": "will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32,
             33,
@@ -927,7 +927,7 @@
         "mention_type": "ORG",
         "right_sentence": "will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             35,
             36
         ],
@@ -946,7 +946,7 @@
         "mention_type": "ORG",
         "right_sentence": "General Motors will be able to keep operating .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32,
             33,
@@ -967,7 +967,7 @@
         "mention_type": "ORG",
         "right_sentence": "infuse cash",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             3,
             4,
             5,
@@ -988,7 +988,7 @@
         "mention_type": "ORG",
         "right_sentence": "jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             70,
             71,
             72,
@@ -1009,7 +1009,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s central banks infuse cash",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             3
         ],
         "tokens_str": "world",
@@ -1027,7 +1027,7 @@
         "mention_type": "ORG",
         "right_sentence": "jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41,
             42,
@@ -1072,13 +1072,13 @@
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "entity",
         "full_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that",
         "m_id": "21",
         "mention_type": "ORG",
         "right_sentence": "would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             77
         ],
         "tokens_str": "they",
@@ -1096,7 +1096,7 @@
         "mention_type": "FIN",
         "right_sentence": "",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             8
         ],
         "tokens_str": "cash",
@@ -1114,7 +1114,7 @@
         "mention_type": "FIN",
         "right_sentence": "'' , will be used to help short-term funding of smaller loan groups .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             106,
             107
         ],
@@ -1133,7 +1133,7 @@
         "mention_type": "ORG",
         "right_sentence": "facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             88
         ],
         "tokens_str": "institutions",
@@ -1151,7 +1151,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             94,
             95,
             96
@@ -1171,7 +1171,7 @@
         "mention_type": "FIN",
         "right_sentence": "reacted favorably after several national banks announced a joint effort to pump more money into the markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14,
             15,
@@ -1193,7 +1193,7 @@
         "mention_type": "LOC",
         "right_sentence": "reacted favorably after several national banks announced a joint effort to pump more money into the markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16,
             17
         ],
@@ -1212,7 +1212,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             119,
             120
         ],
@@ -1231,7 +1231,7 @@
         "mention_type": "ORG",
         "right_sentence": "arranged to increase existing swap lines with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             127,
             128,
             129
@@ -1251,7 +1251,7 @@
         "mention_type": "ORG",
         "right_sentence": "announced a joint effort to pump more money into the markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             21,
             22,
             23
@@ -1261,7 +1261,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__48_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
+        "coref_chain": "",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "entity",
         "full_sentence": "Totaling US$ 180 billion , the Federal Reserve arranged to increase existing swap lines with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
@@ -1271,7 +1271,7 @@
         "mention_type": "",
         "right_sentence": "with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             133,
             134,
             135
@@ -1291,7 +1291,7 @@
         "mention_type": "ORG",
         "right_sentence": "from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             138,
             139,
             140
@@ -1311,7 +1311,7 @@
         "mention_type": "FIN",
         "right_sentence": "into the markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             30,
             31
         ],
@@ -1330,7 +1330,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             33,
             34
         ],
@@ -1349,7 +1349,7 @@
         "mention_type": "ORG",
         "right_sentence": "from US$ 12 billion to US$ 27 billion .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             152,
             153,
             154,
@@ -1370,7 +1370,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41,
             42,
@@ -1391,7 +1391,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             45,
             46,
             47,
@@ -1412,7 +1412,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55,
             56
@@ -1432,7 +1432,7 @@
         "mention_type": "ORG",
         "right_sentence": "( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51,
             52,
@@ -1453,7 +1453,7 @@
         "mention_type": "FIN",
         "right_sentence": "rally as world 's central banks infuse cash",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Markets",
@@ -1471,7 +1471,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             58,
             59,
             60,
@@ -1493,7 +1493,7 @@
         "mention_type": "ORG",
         "right_sentence": ", and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             64,
             65,
             66,
@@ -1514,7 +1514,7 @@
         "mention_type": "FIN",
         "right_sentence": "with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             134,
             135
         ],
@@ -1533,7 +1533,7 @@
         "mention_type": "LOC",
         "right_sentence": "Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             58,
             59,
             60
@@ -1553,7 +1553,7 @@
         "mention_type": "FIN",
         "right_sentence": ", was one of the few indexes to increase in value .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             57,
             58,
             59
@@ -1573,7 +1573,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             62,
             63,
             64,
@@ -1593,13 +1593,13 @@
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "entity",
         "full_sentence": "It went up by 0.16 % ( 16.03 points ) , but stayed below 5000 mark at 4605.22 .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "",
         "m_id": "23",
         "mention_type": "FIN",
         "right_sentence": "went up by 0.16 % ( 16.03 points ) , but stayed below 5000 mark at 4605.22 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             72
         ],
         "tokens_str": "It",
@@ -1617,7 +1617,7 @@
         "mention_type": "LOC",
         "right_sentence": "index , the FTSE 100 , was one of the few indexes to increase in value .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             54
         ],
         "tokens_str": "UK",
@@ -1635,7 +1635,7 @@
         "mention_type": "FIN",
         "right_sentence": "continue to fall",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -1655,7 +1655,7 @@
         "mention_type": "FIN",
         "right_sentence": "continued to fall dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11,
             12,
@@ -1677,7 +1677,7 @@
         "mention_type": "LOC",
         "right_sentence": "continued to fall dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14
         ],
@@ -1696,7 +1696,7 @@
         "mention_type": "FIN",
         "right_sentence": ", including the US Government 's $ 700 billion bail out of the financial sector .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             28,
             29,
             30
@@ -1716,7 +1716,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s $ 700 billion bail out of the financial sector .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             33,
             34,
             35
@@ -1736,7 +1736,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45
@@ -1756,7 +1756,7 @@
         "mention_type": "FIN",
         "right_sentence": ", was one of the few indexes to increase in value .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             52,
             53,
             54,
@@ -1781,7 +1781,7 @@
         "mention_type": "FIN",
         "right_sentence": ", the FTSE 100 , was one of the few indexes to increase in value .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             52,
             53,
             54,
@@ -1802,7 +1802,7 @@
         "mention_type": "PER",
         "right_sentence": "went on national television to appease the public .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55,
             56
@@ -1812,7 +1812,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__24_113267_Russian_markets_to_remain_closed_until_Friday.xml",
+        "coref_chain": "",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "President Dmitry Medvedev went on national television to appease the public .",
@@ -1822,7 +1822,7 @@
         "mention_type": "",
         "right_sentence": "Dmitry Medvedev went on national television to appease the public .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             54
         ],
         "tokens_str": "President",
@@ -1840,7 +1840,7 @@
         "mention_type": "PER",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             63,
             64
         ],
@@ -1859,7 +1859,7 @@
         "mention_type": "PER",
         "right_sentence": "than stability of our financial system under the current circumstances .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             74,
             75
         ],
@@ -1878,7 +1878,7 @@
         "mention_type": "FIN",
         "right_sentence": "under the current circumstances .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             79,
             80,
             81
@@ -1898,7 +1898,7 @@
         "mention_type": "LOC",
         "right_sentence": "has continued to hold all stock markets closed until Friday , including the MICEX and RTS exchanges .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             11,
             12,
             13
@@ -1918,7 +1918,7 @@
         "mention_type": "LOC",
         "right_sentence": "authorities than stability of our financial system under the current circumstances .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             74
         ],
         "tokens_str": "Russian",
@@ -1936,7 +1936,7 @@
         "mention_type": "LOC",
         "right_sentence": "financial system under the current circumstances .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             79
         ],
         "tokens_str": "our",
@@ -1954,7 +1954,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed until Friday , including the MICEX and RTS exchanges .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             18,
             19,
             20
@@ -1974,7 +1974,7 @@
         "mention_type": "PER",
         "right_sentence": "confidence .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             51
         ],
         "tokens_str": "consumer",
@@ -1982,7 +1982,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__68_113267_Russian_markets_to_remain_closed_until_Friday.xml",
+        "coref_chain": "",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "Russian markets to remain closed until Friday",
@@ -1992,7 +1992,7 @@
         "mention_type": "",
         "right_sentence": "to remain closed until Friday",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -2011,7 +2011,7 @@
         "mention_type": "LOC",
         "right_sentence": "markets to remain closed until Friday",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Russian",
@@ -2029,7 +2029,7 @@
         "mention_type": "ORG",
         "right_sentence": "and RTS exchanges .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             26,
             27
         ],
@@ -2048,7 +2048,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             29,
             30
         ],
@@ -2067,7 +2067,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             26,
             27,
             28,
@@ -2089,7 +2089,7 @@
         "mention_type": "LOC",
         "right_sentence": "worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             33
         ],
         "tokens_str": "its",
@@ -2107,7 +2107,7 @@
         "mention_type": "LOC",
         "right_sentence": "is fighting to stem off a crash and restore consumer confidence .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41
         ],
@@ -2120,13 +2120,13 @@
         "doc_id": "121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "event_entity": "entity",
         "full_sentence": "It had , at one point , set an intraday bear market low of 7,447.55 .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "",
         "m_id": "19",
         "mention_type": "FIN",
         "right_sentence": "had , at one point , set an intraday bear market low of 7,447.55 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             49
         ],
         "tokens_str": "It",
@@ -2144,7 +2144,7 @@
         "mention_type": "FIN",
         "right_sentence": "low of 7,447.55 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             59,
             60
         ],
@@ -2163,7 +2163,7 @@
         "mention_type": "FIN",
         "right_sentence": "since October 9 , 2002 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             71,
             72
         ],
@@ -2182,7 +2182,7 @@
         "mention_type": "FIN",
         "right_sentence": "has fallen almost fifteen percent since the start of this year .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             79,
             80
         ],
@@ -2201,7 +2201,7 @@
         "mention_type": "FIN",
         "right_sentence": "closes at lowest level in six years",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2,
@@ -2222,7 +2222,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed at its lowest level in over six years on Thursday , having lost 1.16 % , or 89.68 points , bringing it to a level of 7,465.95 .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -2244,7 +2244,7 @@
         "mention_type": "FIN",
         "right_sentence": "lowest level in over six years on Thursday , having lost 1.16 % , or 89.68 points , bringing it to a level of 7,465.95 .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22
         ],
         "tokens_str": "its",
@@ -2256,13 +2256,13 @@
         "doc_id": "121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "event_entity": "entity",
         "full_sentence": "The Dow Jones Industrial Average closed at its lowest level in over six years on Thursday , having lost 1.16 % , or 89.68 points , bringing it to a level of 7,465.95 .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "The Dow Jones Industrial Average closed at its lowest level in over six years on Thursday , having lost 1.16 % , or 89.68 points , bringing",
         "m_id": "17",
         "mention_type": "FIN",
         "right_sentence": "to a level of 7,465.95 .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             42
         ],
         "tokens_str": "it",
@@ -2280,7 +2280,7 @@
         "mention_type": "FIN",
         "right_sentence": "highest levels in over a year on Monday , following news of stronger commodity prices .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             23
         ],
         "tokens_str": "its",
@@ -2298,7 +2298,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             36,
             37,
             38
@@ -2318,7 +2318,7 @@
         "mention_type": "FIN",
         "right_sentence": "increased by 48.3 points , or 0.9 % to finish the day at a level of 5,210.17 , a figure not seen since last September .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41,
             42
@@ -2338,7 +2338,7 @@
         "mention_type": "FIN",
         "right_sentence": "reaches one-year high , other European markets rise",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -2358,7 +2358,7 @@
         "mention_type": "LOC",
         "right_sentence": "FTSE index reaches one-year high , other European markets rise",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "British",
@@ -2376,7 +2376,7 @@
         "mention_type": "PER",
         "right_sentence": "think that the FTSE index could continue to gain for the remainder of the week .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             88,
             89,
             90
@@ -2396,7 +2396,7 @@
         "mention_type": "FIN",
         "right_sentence": "rise",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             7,
             8,
             9
@@ -2416,7 +2416,7 @@
         "mention_type": "FIN",
         "right_sentence": "could continue to gain for the remainder of the week .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             94,
             95
         ],
@@ -2435,7 +2435,7 @@
         "mention_type": "LOC",
         "right_sentence": "markets rise",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             8
         ],
         "tokens_str": "European",
@@ -2453,7 +2453,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock index FTSE 100 closed at its highest levels in over a year on Monday , following news of stronger commodity prices .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16
         ],
         "tokens_str": "British",
@@ -2471,7 +2471,7 @@
         "mention_type": "ORG",
         "right_sentence": ", reaching a sixteen-month high after gaining 4.6 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             73,
             74,
             75,
@@ -2493,7 +2493,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed at its highest levels in over a year on Monday , following news of stronger commodity prices .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -2516,7 +2516,7 @@
         "mention_type": "LOC",
         "right_sentence": ", the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             44
         ],
         "tokens_str": "Wyoming",
@@ -2534,7 +2534,7 @@
         "mention_type": "PER",
         "right_sentence": "said that `` the prospects for a return to growth in the near term appear good . ''",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46,
             47,
             48
@@ -2548,13 +2548,13 @@
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "entity",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "",
         "m_id": "31",
         "mention_type": "PER",
         "right_sentence": "added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             67
         ],
         "tokens_str": "He",
@@ -2572,7 +2572,7 @@
         "mention_type": "FIN",
         "right_sentence": "rise on hopes of US economic recovery",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -2592,7 +2592,7 @@
         "mention_type": "LOC",
         "right_sentence": "economic recovery",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             7
         ],
         "tokens_str": "US",
@@ -2610,7 +2610,7 @@
         "mention_type": "FIN",
         "right_sentence": "gained 155.91 points , or 1.67 % , to end the day at 9505.96 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             96,
             97,
             98,
@@ -2632,7 +2632,7 @@
         "mention_type": "FIN",
         "right_sentence": "rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15,
             16
@@ -2652,7 +2652,7 @@
         "mention_type": "PER",
         "right_sentence": "said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22,
             23,
             24,
@@ -2674,7 +2674,7 @@
         "mention_type": "PER",
         "right_sentence": "Ben Bernanke said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22,
             23,
             24
@@ -2694,7 +2694,7 @@
         "mention_type": "PER",
         "right_sentence": "said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             25,
             26
         ],
@@ -2713,7 +2713,7 @@
         "mention_type": "LOC",
         "right_sentence": "bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22
         ],
         "tokens_str": "US",
@@ -2731,7 +2731,7 @@
         "mention_type": "FIN",
         "right_sentence": "was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             30,
             31
         ],
@@ -2750,7 +2750,7 @@
         "mention_type": "LOC",
         "right_sentence": "economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             30
         ],
         "tokens_str": "US",
@@ -2768,7 +2768,7 @@
         "mention_type": "ORG",
         "right_sentence": "chief Ben Bernanke said that the US economy was starting to recover from the recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22,
             23
         ],
@@ -2787,7 +2787,7 @@
         "mention_type": "ORG",
         "right_sentence": "-- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51
         ],
@@ -2806,7 +2806,7 @@
         "mention_type": "LOC",
         "right_sentence": "-- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             56,
             57,
             58,
@@ -2832,7 +2832,7 @@
         "mention_type": "FIN",
         "right_sentence": "following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14
         ],
         "tokens_str": "value",
@@ -2850,7 +2850,7 @@
         "mention_type": "LOC",
         "right_sentence": "use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             58
         ],
         "tokens_str": "which",
@@ -2868,7 +2868,7 @@
         "mention_type": "FIN",
         "right_sentence": "surge in value",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -2887,7 +2887,7 @@
         "mention_type": "FIN",
         "right_sentence": "as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             60,
             61
         ],
@@ -2906,7 +2906,7 @@
         "mention_type": "FIN",
         "right_sentence": "",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             4
         ],
         "tokens_str": "value",
@@ -2924,7 +2924,7 @@
         "mention_type": "ORG",
         "right_sentence": "and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             82,
             83
         ],
@@ -2943,7 +2943,7 @@
         "mention_type": "FIN",
         "right_sentence": "have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             9,
             10
         ],
@@ -2962,7 +2962,7 @@
         "mention_type": "ORG",
         "right_sentence": "meeting was the last of many which took place during the weekend .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             90,
             91
         ],
@@ -2981,7 +2981,7 @@
         "mention_type": "ORG",
         "right_sentence": "to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             18
         ],
         "tokens_str": "governments",
@@ -2999,7 +2999,7 @@
         "mention_type": "ORG",
         "right_sentence": "had met in Washington at the same time that the International Monetary Fund and the World Bank held their Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             105,
             106,
             107
@@ -3019,7 +3019,7 @@
         "mention_type": "LOC",
         "right_sentence": "at the same time that the International Monetary Fund and the World Bank held their Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             111
         ],
         "tokens_str": "Washington",
@@ -3037,7 +3037,7 @@
         "mention_type": "ORG",
         "right_sentence": "and the World Bank held their Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             117,
             118,
             119,
@@ -3058,7 +3058,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             37,
             38,
             39,
@@ -3080,7 +3080,7 @@
         "mention_type": "ORG",
         "right_sentence": "held their Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             122,
             123,
             124
@@ -3100,7 +3100,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41
         ],
@@ -3119,7 +3119,7 @@
         "mention_type": "ORG",
         "right_sentence": "held their Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             117,
             118,
             119,
@@ -3144,7 +3144,7 @@
         "mention_type": "ORG",
         "right_sentence": "Autumn meetings .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             126
         ],
         "tokens_str": "their",
@@ -3162,7 +3162,7 @@
         "mention_type": "LOC",
         "right_sentence": "-- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46,
             47,
             48,
@@ -3185,7 +3185,7 @@
         "mention_type": "FIN",
         "right_sentence": "to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             70,
             71
         ],
@@ -3204,7 +3204,7 @@
         "mention_type": "FIN",
         "right_sentence": ", '' said Uralsib analyst Chris Weafer commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             75,
             76
         ],
@@ -3223,7 +3223,7 @@
         "mention_type": "PER",
         "right_sentence": "commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             80,
             81,
             82,
@@ -3244,7 +3244,7 @@
         "mention_type": "PER",
         "right_sentence": "commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             82,
             83
         ],
@@ -3263,7 +3263,7 @@
         "mention_type": "ORG",
         "right_sentence": "analyst Chris Weafer commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             80
         ],
         "tokens_str": "Uralsib",
@@ -3281,7 +3281,7 @@
         "mention_type": "PER",
         "right_sentence": "Chris Weafer commenting on this decision .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             80,
             81
         ],
@@ -3294,13 +3294,13 @@
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "``",
         "m_id": "31",
         "mention_type": "ORG",
         "right_sentence": "were afraid of panic selling so they stopped the market . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             90
         ],
         "tokens_str": "They",
@@ -3318,7 +3318,7 @@
         "mention_type": "FIN",
         "right_sentence": "has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14,
             15,
@@ -3334,13 +3334,13 @@
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "`` They were afraid of panic selling so",
         "m_id": "35",
         "mention_type": "ORG",
         "right_sentence": "stopped the market . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             97
         ],
         "tokens_str": "they",
@@ -3358,7 +3358,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s major stock markets has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13
         ],
         "tokens_str": "Russia",
@@ -3376,7 +3376,7 @@
         "mention_type": "FIN",
         "right_sentence": ". ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             99,
             100
         ],
@@ -3395,7 +3395,7 @@
         "mention_type": "FIN",
         "right_sentence": "suspended amid market turmoil",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -3415,7 +3415,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets suspended amid market turmoil",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Russian",
@@ -3433,7 +3433,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             32,
             33,
             34,
@@ -3456,7 +3456,7 @@
         "mention_type": "FIN",
         "right_sentence": "turmoil",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             5
         ],
         "tokens_str": "market",
@@ -3474,7 +3474,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             36,
             37
         ],
@@ -3483,7 +3483,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__72_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
+        "coref_chain": "",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3493,7 +3493,7 @@
         "mention_type": "",
         "right_sentence": "'s Federal Service for the Financial Markets , which demanded the suspension .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             48,
             49,
             50
@@ -3503,7 +3503,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__16_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
+        "coref_chain": "",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3513,7 +3513,7 @@
         "mention_type": "",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             48,
             49,
             50,
@@ -3545,7 +3545,7 @@
         "mention_type": "ORG",
         "right_sentence": "demanded the suspension .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             59
         ],
         "tokens_str": "which",
@@ -3563,7 +3563,7 @@
         "mention_type": "ORG",
         "right_sentence": ", which demanded the suspension .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             48,
             49,
             50,
@@ -3590,7 +3590,7 @@
         "mention_type": "LOC",
         "right_sentence": "FTSE , however , gained 0.77 % , but after a large loss yesterday .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             114
         ],
         "tokens_str": "British",
@@ -3608,7 +3608,7 @@
         "mention_type": "FIN",
         "right_sentence": "continue to fall after earthquake",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -3627,7 +3627,7 @@
         "mention_type": "LOC",
         "right_sentence": "stocks continue to fall after earthquake",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Japanese",
@@ -3645,7 +3645,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             11,
             12,
             13,
@@ -3670,7 +3670,7 @@
         "mention_type": "LOC",
         "right_sentence": "a week ago .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             37,
             38
         ],
@@ -3689,7 +3689,7 @@
         "mention_type": "FIN",
         "right_sentence": "have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             50
         ],
         "tokens_str": "stocks",
@@ -3701,13 +3701,13 @@
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "entity",
         "full_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today ,",
         "m_id": "11",
         "mention_type": "FIN",
         "right_sentence": "were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             63
         ],
         "tokens_str": "they",
@@ -3725,7 +3725,7 @@
         "mention_type": "FIN",
         "right_sentence": "also reacted negatively to the cataclysm ; the Standard & Poor 's 500 index dropped 1.95 % while the Dow Jones Industrial Average lost 2.04 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             84,
             85
         ],
@@ -3744,7 +3744,7 @@
         "mention_type": "LOC",
         "right_sentence": "stocks also reacted negatively to the cataclysm ; the Standard & Poor 's 500 index dropped 1.95 % while the Dow Jones Industrial Average lost 2.04 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             84
         ],
         "tokens_str": "US",
@@ -3762,7 +3762,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped 1.95 % while the Dow Jones Industrial Average lost 2.04 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             93,
             94,
             95,
@@ -3786,7 +3786,7 @@
         "mention_type": "FIN",
         "right_sentence": "lost 2.04 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             104,
             105,
             106,
@@ -3808,7 +3808,7 @@
         "mention_type": "LOC",
         "right_sentence": "Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13
         ],
         "tokens_str": "Japanese",
@@ -3826,7 +3826,7 @@
         "mention_type": "FIN",
         "right_sentence": ", however , gained 0.77 % , but after a large loss yesterday .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             113,
             114,
             115
@@ -3846,7 +3846,7 @@
         "mention_type": "FIN",
         "right_sentence": "today suffered from large falls .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             52
         ],
         "tokens_str": "that",
@@ -3858,13 +3858,13 @@
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "entity",
         "full_sentence": "It fell by 5.00 % to slip below the four thousand mark , at 3,883.36 points .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "",
         "m_id": "25",
         "mention_type": "FIN",
         "right_sentence": "fell by 5.00 % to slip below the four thousand mark , at 3,883.36 points .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             59
         ],
         "tokens_str": "It",
@@ -3882,7 +3882,7 @@
         "mention_type": "PER",
         "right_sentence": "Gordon Brown .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             38,
             39
         ],
@@ -3901,7 +3901,7 @@
         "mention_type": "FIN",
         "right_sentence": "the indices that today suffered from large falls .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             49
         ],
         "tokens_str": "one",
@@ -3919,7 +3919,7 @@
         "mention_type": "FIN",
         "right_sentence": "plunge",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -3939,7 +3939,7 @@
         "mention_type": "FIN",
         "right_sentence": "have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             8,
             9,
             10,
@@ -3961,7 +3961,7 @@
         "mention_type": "PER",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41
         ],
@@ -3980,7 +3980,7 @@
         "mention_type": "LOC",
         "right_sentence": "have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             11,
             12
         ],
@@ -3999,7 +3999,7 @@
         "mention_type": "FIN",
         "right_sentence": "and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             25,
             26,
             27
@@ -4019,7 +4019,7 @@
         "mention_type": "PER",
         "right_sentence": ", including Prime Minister Gordon Brown .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             32,
             33,
             34,
@@ -4040,7 +4040,7 @@
         "mention_type": "LOC",
         "right_sentence": "politicians , including Prime Minister Gordon Brown .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             33,
             34
         ],
@@ -4059,7 +4059,7 @@
         "mention_type": "PER",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             38,
             39,
             40,
@@ -4080,7 +4080,7 @@
         "mention_type": "FIN",
         "right_sentence": "was one the indices that today suffered from large falls .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45,
@@ -4102,7 +4102,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51,
             52,
@@ -4127,7 +4127,7 @@
         "mention_type": "ORG",
         "right_sentence": ", which declared bankruptcy .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             55,
             56,
             57,
@@ -4148,7 +4148,7 @@
         "mention_type": "ORG",
         "right_sentence": ", which declared bankruptcy .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51,
             52,
@@ -4174,7 +4174,7 @@
         "mention_type": "ORG",
         "right_sentence": "declared bankruptcy .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             60
         ],
         "tokens_str": "which",
@@ -4192,7 +4192,7 @@
         "mention_type": "LOC",
         "right_sentence": "have fallen sharply with several seeing the biggest drop in their history .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11
         ],
@@ -4211,7 +4211,7 @@
         "mention_type": "LOC",
         "right_sentence": "also saw a collapse of a mid-size insurance company , Yamato Life Insurance Company , which declared bankruptcy .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             44
         ],
         "tokens_str": "Japan",
@@ -4229,7 +4229,7 @@
         "mention_type": "FIN",
         "right_sentence": "plunge",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -4238,7 +4238,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__49_114864_Global_markets_plunge.xml",
+        "coref_chain": "",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "entity",
         "full_sentence": "Asian markets saw the biggest sell-off .",
@@ -4248,7 +4248,7 @@
         "mention_type": "",
         "right_sentence": "markets saw the biggest sell-off .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             25
         ],
         "tokens_str": "Asian",
@@ -4266,7 +4266,7 @@
         "mention_type": "FIN",
         "right_sentence": "have fallen sharply with several seeing the biggest drop in their history .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             7,
             8,
             9,
@@ -4288,7 +4288,7 @@
         "mention_type": "FIN",
         "right_sentence": "seeing the biggest drop in their history .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16
         ],
         "tokens_str": "several",
@@ -4306,7 +4306,7 @@
         "mention_type": "FIN",
         "right_sentence": "history .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22
         ],
         "tokens_str": "their",
@@ -4324,7 +4324,7 @@
         "mention_type": "FIN",
         "right_sentence": "saw the biggest sell-off .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             25,
             26
         ],
@@ -4343,7 +4343,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped 9.62 % to reach a 20 year low .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             32,
             33
         ],
@@ -4362,7 +4362,7 @@
         "mention_type": "ORG",
         "right_sentence": ", Yamato Life Insurance Company , which declared bankruptcy .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51,
             52,
@@ -4383,7 +4383,7 @@
         "mention_type": "ORG",
         "right_sentence": "cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             62,
             63,
             64,
@@ -4404,7 +4404,7 @@
         "mention_type": "ORG",
         "right_sentence": "and a fall in retail sales released by several large corporations .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             75,
             76,
             77,
@@ -4426,7 +4426,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             88,
             89,
             90
@@ -4446,7 +4446,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             94,
             95,
             96
@@ -4466,7 +4466,7 @@
         "mention_type": "PER",
         "right_sentence": "claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             101
         ],
         "tokens_str": "people",
@@ -4484,7 +4484,7 @@
         "mention_type": "FIN",
         "right_sentence": ", fell 344.65 at the close of trading Thursday .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -4520,7 +4520,7 @@
         "mention_type": "FIN",
         "right_sentence": ", a stock market index used to gauge the performance of American stock exchanges , fell 344.65 at the close of trading Thursday .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -4542,7 +4542,7 @@
         "mention_type": "FIN",
         "right_sentence": ", fell 344.65 at the close of trading Thursday .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             21,
             22,
             23,
@@ -4572,7 +4572,7 @@
         "mention_type": "FIN",
         "right_sentence": ", fell 344.65 at the close of trading Thursday .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32,
             33
@@ -4592,7 +4592,7 @@
         "mention_type": "ORG",
         "right_sentence": "is near a five-year high .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             117,
             118,
             119,
@@ -4613,7 +4613,7 @@
         "mention_type": "FIN",
         "right_sentence": "falls 340 points amid unemployment and retail sales rates news",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Dow",
@@ -4631,7 +4631,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock exchanges , fell 344.65 at the close of trading Thursday .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             31
         ],
         "tokens_str": "American",
@@ -4649,7 +4649,7 @@
         "mention_type": "ORG",
         "right_sentence": "pointing to different causes .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55,
             56
@@ -4669,7 +4669,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44
         ],
@@ -4688,7 +4688,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell by 3.41 % , or 251.4 points , to end the day at 7,114.3 , its lowest level since October 1997 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46,
             47,
             48,
@@ -4710,7 +4710,7 @@
         "mention_type": "FIN",
         "right_sentence": "lowest level since October 1997 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             67
         ],
         "tokens_str": "its",
@@ -4728,7 +4728,7 @@
         "mention_type": "FIN",
         "right_sentence": "lost 26 points or 3.5 % to a level of 743.33 , its lowest level since April 1997 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             74,
             75,
             76,
@@ -4752,7 +4752,7 @@
         "mention_type": "FIN",
         "right_sentence": "fall to lowest levels since 1997",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -4772,7 +4772,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets fall to lowest levels since 1997",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -4790,7 +4790,7 @@
         "mention_type": "FIN",
         "right_sentence": "lowest level since April 1997 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             93
         ],
         "tokens_str": "its",
@@ -4808,7 +4808,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped by four percent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             100,
             101,
             102,
@@ -4832,7 +4832,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14,
             15,
@@ -4856,7 +4856,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16
         ],
@@ -4875,7 +4875,7 @@
         "mention_type": "FIN",
         "right_sentence": "lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             22
         ],
         "tokens_str": "their",
@@ -4893,7 +4893,7 @@
         "mention_type": "ORG",
         "right_sentence": "dropped by four percent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             105,
             106
         ],
@@ -4902,7 +4902,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__65_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
+        "coref_chain": "",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "entity",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -4912,7 +4912,7 @@
         "mention_type": "",
         "right_sentence": "confidence and worries that the government will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             34
         ],
         "tokens_str": "investor",
@@ -4930,7 +4930,7 @@
         "mention_type": "LOC",
         "right_sentence": "will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             39,
             40
         ],
@@ -4949,7 +4949,7 @@
         "mention_type": "FIN",
         "right_sentence": "indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -4960,7 +4960,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__90_116834_Japan_enters_recession.xml",
+        "coref_chain": "",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "entity",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -4970,7 +4970,7 @@
         "mention_type": "",
         "right_sentence": "financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             93,
             95
         ],
@@ -4989,7 +4989,7 @@
         "mention_type": "PER",
         "right_sentence": ", said `` The downtrend in the economy will continue for the time being as global growth slows down .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51,
             52,
@@ -5015,7 +5015,7 @@
         "mention_type": "PER",
         "right_sentence": ", the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             50,
             51
         ],
@@ -5034,7 +5034,7 @@
         "mention_type": "PER",
         "right_sentence": ", said `` The downtrend in the economy will continue for the time being as global growth slows down .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             53,
             54,
             55,
@@ -5057,7 +5057,7 @@
         "mention_type": "LOC",
         "right_sentence": "minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             54
         ],
         "tokens_str": "Japanese",
@@ -5075,7 +5075,7 @@
         "mention_type": "FIN",
         "right_sentence": "will continue for the time being as global growth slows down .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             65,
             66
         ],
@@ -5094,7 +5094,7 @@
         "mention_type": "LOC",
         "right_sentence": "enters recession",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Japan",
@@ -5106,13 +5106,13 @@
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "entity",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "",
         "m_id": "34",
         "mention_type": "PER",
         "right_sentence": "need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             79
         ],
         "tokens_str": "We",
@@ -5130,7 +5130,7 @@
         "mention_type": "LOC",
         "right_sentence": ", which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             7
         ],
         "tokens_str": "Japan",
@@ -5148,7 +5148,7 @@
         "mention_type": "LOC",
         "right_sentence": "accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             9
         ],
         "tokens_str": "which",
@@ -5166,7 +5166,7 @@
         "mention_type": "LOC",
         "right_sentence": "and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             93
         ],
         "tokens_str": "US",
@@ -5184,7 +5184,7 @@
         "mention_type": "LOC",
         "right_sentence": "financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             95
         ],
         "tokens_str": "European",
@@ -5202,7 +5202,7 @@
         "mention_type": "FIN",
         "right_sentence": "make big swings . ''",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             106,
             107,
             108,
@@ -5224,7 +5224,7 @@
         "mention_type": "FIN",
         "right_sentence": "contracted by 0.9 % between April and June and a further 0.1 % since September .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32,
             33
@@ -5244,7 +5244,7 @@
         "mention_type": "LOC",
         "right_sentence": "economy contracted by 0.9 % between April and June and a further 0.1 % since September .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             32
         ],
         "tokens_str": "Japanese",
@@ -5262,7 +5262,7 @@
         "mention_type": "LOC",
         "right_sentence": "output , has entered a recession after posting two consecutive quarters of negative growth .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15
         ],
         "tokens_str": "world",
@@ -5280,7 +5280,7 @@
         "mention_type": "FIN",
         "right_sentence": "by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             64
         ],
         "tokens_str": "value",
@@ -5298,7 +5298,7 @@
         "mention_type": "FIN",
         "right_sentence": "is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             69
         ],
         "tokens_str": "which",
@@ -5316,7 +5316,7 @@
         "mention_type": "FIN",
         "right_sentence": "was down 2.62 % at 16:08 UTC , a slight increase from earlier today .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             82,
             83,
             84
@@ -5336,7 +5336,7 @@
         "mention_type": "FIN",
         "right_sentence": ", particularly those in the United States , have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             9,
             10,
             11,
@@ -5358,7 +5358,7 @@
         "mention_type": "LOC",
         "right_sentence": "index , the FTSE 100 , dropped in value by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             55
         ],
         "tokens_str": "UK",
@@ -5376,7 +5376,7 @@
         "mention_type": "LOC",
         "right_sentence": ", particularly those in the United States , have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12,
             13
         ],
@@ -5385,7 +5385,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__4_113219_Stock_markets_worldwide_fall_dramatically.xml",
+        "coref_chain": "",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "entity",
         "full_sentence": "Stock markets around the world , particularly those in the United States , have fallen dramatically today .",
@@ -5395,7 +5395,7 @@
         "mention_type": "",
         "right_sentence": "in the United States , have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16
         ],
         "tokens_str": "those",
@@ -5413,7 +5413,7 @@
         "mention_type": "FIN",
         "right_sentence": "fall dramatically",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -5433,7 +5433,7 @@
         "mention_type": "LOC",
         "right_sentence": ", have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             18,
             19,
             20
@@ -5453,7 +5453,7 @@
         "mention_type": "FIN",
         "right_sentence": ", including the bailout of large insurance firm AIG by the US Federal Reserve .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             35,
             36,
             37
@@ -5473,7 +5473,7 @@
         "mention_type": "ORG",
         "right_sentence": "by the US Federal Reserve .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45,
@@ -5494,7 +5494,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             48,
             49,
             50,
@@ -5515,7 +5515,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dropped in value by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             53,
             54,
             55,
@@ -5540,7 +5540,7 @@
         "mention_type": "FIN",
         "right_sentence": ", the FTSE 100 , dropped in value by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             53,
             54,
             55,
@@ -5561,7 +5561,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dropped in value by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             58,
             59,
             60
@@ -5581,7 +5581,7 @@
         "mention_type": "FIN",
         "right_sentence": ", have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             16,
             17,
             18,
@@ -5603,7 +5603,7 @@
         "mention_type": "LOC",
         "right_sentence": "Federal Reserve .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             49
         ],
         "tokens_str": "US",
@@ -5615,13 +5615,13 @@
         "doc_id": "114904_Dow_Jones_recovers_hundreds_of_points,_before_losing_them_in_minutes.xml",
         "event_entity": "entity",
         "full_sentence": "Following going three down , it kept going up and down between slightly up and below zero .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "Following going three down ,",
         "m_id": "27",
         "mention_type": "FIN",
         "right_sentence": "kept going up and down between slightly up and below zero .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             76
         ],
         "tokens_str": "it",
@@ -5639,7 +5639,7 @@
         "mention_type": "FIN",
         "right_sentence": "has recovered by hundreds of points , with it climbing over 250 points again before dropping off to down 100 in just minutes .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             27,
             28,
             29,
@@ -5661,7 +5661,7 @@
         "mention_type": "FIN",
         "right_sentence": "went to sixty down , before recovering slightly to -36 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             92,
             93
         ],
@@ -5674,13 +5674,13 @@
         "doc_id": "114904_Dow_Jones_recovers_hundreds_of_points,_before_losing_them_in_minutes.xml",
         "event_entity": "entity",
         "full_sentence": "Following a large fall at the start of the day , the Dow Jones Industrial Average has recovered by hundreds of points , with it climbing over 250 points again before dropping off to down 100 in just minutes .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "Following a large fall at the start of the day , the Dow Jones Industrial Average has recovered by hundreds of points , with",
         "m_id": "6",
         "mention_type": "FIN",
         "right_sentence": "climbing over 250 points again before dropping off to down 100 in just minutes .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             40
         ],
         "tokens_str": "it",
@@ -5698,7 +5698,7 @@
         "mention_type": "FIN",
         "right_sentence": "recovers hundreds of points , before losing them in minutes",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -5711,13 +5711,13 @@
         "doc_id": "114904_Dow_Jones_recovers_hundreds_of_points,_before_losing_them_in_minutes.xml",
         "event_entity": "entity",
         "full_sentence": "After going to down 100 , it climbed to 12 up then three down .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "After going to down 100 ,",
         "m_id": "17",
         "mention_type": "FIN",
         "right_sentence": "climbed to 12 up then three down .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             62
         ],
         "tokens_str": "it",
@@ -5735,7 +5735,7 @@
         "mention_type": "FIN",
         "right_sentence": "nearly broke that record when the market closed at -366.94 points , down almost three percent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             72,
             73,
             74
@@ -5755,7 +5755,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed at -366.94 points , down almost three percent .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             80,
             81
         ],
@@ -5774,7 +5774,7 @@
         "mention_type": "PER",
         "right_sentence": "say history tends to repeat itself .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14
         ],
         "tokens_str": "Some",
@@ -5792,7 +5792,7 @@
         "mention_type": "FIN",
         "right_sentence": "tumble on ` Black Monday ' anniversary",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -5812,7 +5812,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets tumble on ` Black Monday ' anniversary",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -5830,7 +5830,7 @@
         "mention_type": "FIN",
         "right_sentence": "crashed , on what is known as ` Black Monday ' .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             34,
             35,
             36,
@@ -5855,7 +5855,7 @@
         "mention_type": "LOC",
         "right_sentence": "Dow Jones Industrial Average market crashed , on what is known as ` Black Monday ' .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             35,
             36
         ],
@@ -5874,7 +5874,7 @@
         "mention_type": "FIN",
         "right_sentence": "tumbling down 508 points , losing nearly 24 % .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             57,
             58
         ],
@@ -5893,7 +5893,7 @@
         "mention_type": "FIN",
         "right_sentence": "market crashed , on what is known as ` Black Monday ' .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             34,
             35,
             36,
@@ -5917,7 +5917,7 @@
         "mention_type": "ORG",
         "right_sentence": "on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             37,
             38,
             39,
@@ -5938,7 +5938,7 @@
         "mention_type": "FIN",
         "right_sentence": "shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             49,
             50,
             51
@@ -5958,7 +5958,7 @@
         "mention_type": "LOC",
         "right_sentence": "economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             50
         ],
         "tokens_str": "US",
@@ -5966,7 +5966,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__1_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
+        "coref_chain": "",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "entity",
         "full_sentence": "US stocks log gains for fourth week in a row",
@@ -5976,7 +5976,7 @@
         "mention_type": "",
         "right_sentence": "gains for fourth week in a row",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -5996,7 +5996,7 @@
         "mention_type": "LOC",
         "right_sentence": "stocks log gains for fourth week in a row",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -6014,7 +6014,7 @@
         "mention_type": "FIN",
         "right_sentence": "posted a modest gain of half a percent or 39 points , ending the day at 8,017 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             71,
             72,
             73,
@@ -6036,7 +6036,7 @@
         "mention_type": "FIN",
         "right_sentence": "posted gains on Friday , marking a four-week long positive streak .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15,
             16,
@@ -6057,7 +6057,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock indexes posted gains on Friday , marking a four-week long positive streak .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15
         ],
@@ -6076,7 +6076,7 @@
         "mention_type": "FIN",
         "right_sentence": "has not closed above 8,000 since February .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             94,
             95
         ],
@@ -6095,7 +6095,7 @@
         "mention_type": "FIN",
         "right_sentence": "log gains for fourth week in a row",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -6114,7 +6114,7 @@
         "mention_type": "FIN",
         "right_sentence": "indexes posted gains on Friday , marking a four-week long positive streak .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15,
             16
@@ -6134,7 +6134,7 @@
         "mention_type": "PER",
         "right_sentence": "mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             129,
             130
         ],
@@ -6153,7 +6153,7 @@
         "mention_type": "FIN",
         "right_sentence": ", causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             136,
             137,
             138,
@@ -6175,7 +6175,7 @@
         "mention_type": "FIN",
         "right_sentence": "had its worst fall since 1987 , a drop of 9 % or 998.50 points , before going back up a bit to close with a loss of 3.30 % or 347.80 points to a level of 10,520 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55
         ],
@@ -6194,7 +6194,7 @@
         "mention_type": "FIN",
         "right_sentence": "to go down enough to trigger orders to sell elsewhere in the market .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             143,
             144,
             145
@@ -6214,7 +6214,7 @@
         "mention_type": "FIN",
         "right_sentence": "worst fall since 1987 , a drop of 9 % or 998.50 points , before going back up a bit to close with a loss of 3.30 % or 347.80 points to a level of 10,520 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             57
         ],
         "tokens_str": "its",
@@ -6232,7 +6232,7 @@
         "mention_type": "LOC",
         "right_sentence": "stocks see 9 % drop before making recovery",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "US",
@@ -6250,7 +6250,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             157,
             158
         ],
@@ -6269,7 +6269,7 @@
         "mention_type": "FIN",
         "right_sentence": "see 9 % drop before making recovery",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -6288,7 +6288,7 @@
         "mention_type": "FIN",
         "right_sentence": "saw an unusually turbulent day yesterday , with the Dow Jones Industrial Average ( DJIA ) losing almost a thousand points in thirty minutes , although later recovered somewhat to end the day with a smaller loss .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13,
             14,
             15
@@ -6308,7 +6308,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets saw an unusually turbulent day yesterday , with the Dow Jones Industrial Average ( DJIA ) losing almost a thousand points in thirty minutes , although later recovered somewhat to end the day with a smaller loss .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             13
         ],
         "tokens_str": "US",
@@ -6326,7 +6326,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell 82.65 points or 3.44 % , and the Standard & Poor 's 500 index dropped 3.24 % or 37.75 points .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             95,
             96
         ],
@@ -6345,7 +6345,7 @@
         "mention_type": "FIN",
         "right_sentence": "( DJIA ) losing almost a thousand points in thirty minutes , although later recovered somewhat to end the day with a smaller loss .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             24,
             25,
             26,
@@ -6367,7 +6367,7 @@
         "mention_type": "FIN",
         "right_sentence": ") losing almost a thousand points in thirty minutes , although later recovered somewhat to end the day with a smaller loss .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             30
         ],
         "tokens_str": "DJIA",
@@ -6385,7 +6385,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped 3.24 % or 37.75 points .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             105,
             106,
             107,
@@ -6409,7 +6409,7 @@
         "mention_type": "ORG",
         "right_sentence": "but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             126,
             127
         ],
@@ -6428,7 +6428,7 @@
         "mention_type": "LOC",
         "right_sentence": "banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             126
         ],
         "tokens_str": "US",
@@ -6446,7 +6446,7 @@
         "mention_type": "ORG",
         "right_sentence": "could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             130,
             131,
             132,
@@ -6468,7 +6468,7 @@
         "mention_type": "LOC",
         "right_sentence": "could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             133,
             134
         ],
@@ -6487,7 +6487,7 @@
         "mention_type": "FIN",
         "right_sentence": "each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45,
@@ -6511,7 +6511,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock market indices each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46
         ],
         "tokens_str": "US",
@@ -6529,7 +6529,7 @@
         "mention_type": "FIN",
         "right_sentence": "lenders send jitters through global markets",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Sub-prime",
@@ -6547,7 +6547,7 @@
         "mention_type": "FIN",
         "right_sentence": "lenders in the United States are sending jitters through stock exchanges around the globe .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             26,
             27
         ],
@@ -6566,7 +6566,7 @@
         "mention_type": "FIN",
         "right_sentence": ", marking the second-biggest loss of 2007 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             57,
             58
         ],
@@ -6575,7 +6575,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__100_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
+        "coref_chain": "",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -6585,7 +6585,7 @@
         "mention_type": "",
         "right_sentence": "could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             126,
             127,
             128,
@@ -6611,7 +6611,7 @@
         "mention_type": "FIN",
         "right_sentence": ", Paris ' CAC 40 and Frankfurt 's DAX 30 indices each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             67,
             68,
             69,
@@ -6632,7 +6632,7 @@
         "mention_type": "FIN",
         "right_sentence": "highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             114
         ],
         "tokens_str": "their",
@@ -6650,7 +6650,7 @@
         "mention_type": "FIN",
         "right_sentence": "and Frankfurt 's DAX 30 indices each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             72,
             73,
             74,
@@ -6671,7 +6671,7 @@
         "mention_type": "FIN",
         "right_sentence": "each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             77,
             78,
             79,
@@ -6683,7 +6683,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__1_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
+        "coref_chain": "",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "Sub-prime lenders send jitters through global markets",
@@ -6693,7 +6693,7 @@
         "mention_type": "",
         "right_sentence": "send jitters through global markets",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -6712,7 +6712,7 @@
         "mention_type": "FIN",
         "right_sentence": "each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             67,
             68,
             69,
@@ -6744,7 +6744,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s FTSE 100 , Paris ' CAC 40 and Frankfurt 's DAX 30 indices each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             67
         ],
         "tokens_str": "London",
@@ -6762,7 +6762,7 @@
         "mention_type": "LOC",
         "right_sentence": "' CAC 40 and Frankfurt 's DAX 30 indices each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             72
         ],
         "tokens_str": "Paris",
@@ -6780,7 +6780,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s DAX 30 indices each closed down more than 1 percent .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             77
         ],
         "tokens_str": "Frankfurt",
@@ -6798,7 +6798,7 @@
         "mention_type": "FIN",
         "right_sentence": "",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             5,
             6
         ],
@@ -6817,7 +6817,7 @@
         "mention_type": "ORG",
         "right_sentence": "reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             91,
             92,
             93,
@@ -6838,7 +6838,7 @@
         "mention_type": "LOC",
         "right_sentence": "sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15
         ],
         "tokens_str": "China",
@@ -6856,7 +6856,7 @@
         "mention_type": "FIN",
         "right_sentence": "into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             17,
             18
         ],
@@ -6875,7 +6875,7 @@
         "mention_type": "FIN",
         "right_sentence": "and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             100
         ],
         "tokens_str": "mortgages",
@@ -6893,7 +6893,7 @@
         "mention_type": "PER",
         "right_sentence": "are sending jitters through stock exchanges around the globe .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             26,
             27,
             28,
@@ -6917,7 +6917,7 @@
         "mention_type": "LOC",
         "right_sentence": "are sending jitters through stock exchanges around the globe .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             30,
             31,
             32
@@ -6937,7 +6937,7 @@
         "mention_type": "LOC",
         "right_sentence": "homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             106
         ],
         "tokens_str": "US",
@@ -6955,7 +6955,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             37,
             38,
             39,
@@ -6977,7 +6977,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41
         ],
@@ -6996,7 +6996,7 @@
         "mention_type": "PER",
         "right_sentence": "are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             120
         ],
         "tokens_str": "investors",
@@ -7014,7 +7014,7 @@
         "mention_type": "FIN",
         "right_sentence": "indices each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46,
             47,
             48
@@ -7034,7 +7034,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             42,
             43,
             44
@@ -7054,7 +7054,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             135,
             136
         ],
@@ -7073,7 +7073,7 @@
         "mention_type": "PER",
         "right_sentence": "as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             59
         ],
         "tokens_str": "stockholders",
@@ -7091,7 +7091,7 @@
         "mention_type": "FIN",
         "right_sentence": "to the dollar .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             133
         ],
         "tokens_str": "yen",
@@ -7109,7 +7109,7 @@
         "mention_type": "LOC",
         "right_sentence": "resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             21
         ],
         "tokens_str": "Asia",
@@ -7127,7 +7127,7 @@
         "mention_type": "PER",
         "right_sentence": ", spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             64,
             65,
             66,
@@ -7151,7 +7151,7 @@
         "mention_type": "LOC",
         "right_sentence": "government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             43
         ],
         "tokens_str": "Japanese",
@@ -7169,7 +7169,7 @@
         "mention_type": "PER",
         "right_sentence": ", Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             64,
             65,
             66,
@@ -7190,7 +7190,7 @@
         "mention_type": "LOC",
         "right_sentence": "officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             74
         ],
         "tokens_str": "government",
@@ -7208,7 +7208,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             64
         ],
         "tokens_str": "Japan",
@@ -7226,7 +7226,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock markets slide ; Nikkei at lowest level since '82",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Asian",
@@ -7244,7 +7244,7 @@
         "mention_type": "PER",
         "right_sentence": "and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             74,
             75
         ],
@@ -7253,7 +7253,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__99_115711_Asian_stock_markets_slide.xml",
+        "coref_chain": "",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7263,7 +7263,7 @@
         "mention_type": "",
         "right_sentence": ", spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             69,
             70
         ],
@@ -7276,13 +7276,13 @@
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked",
         "m_id": "31",
         "mention_type": "PER",
         "right_sentence": "to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             78
         ],
         "tokens_str": "them",
@@ -7300,7 +7300,7 @@
         "mention_type": "FIN",
         "right_sentence": "slide ; Nikkei at lowest level since '82",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -7320,7 +7320,7 @@
         "mention_type": "FIN",
         "right_sentence": "at lowest level since '82",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             5
         ],
         "tokens_str": "Nikkei",
@@ -7338,7 +7338,7 @@
         "mention_type": "LOC",
         "right_sentence": "from more damaged inflicted by the worldwide recession .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             86
         ],
         "tokens_str": "Japan",
@@ -7356,7 +7356,7 @@
         "mention_type": "FIN",
         "right_sentence": "closed down 6.4 percent , or 486.18 points , to close at 7,162.90 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             100,
             101
         ],
@@ -7375,7 +7375,7 @@
         "mention_type": "FIN",
         "right_sentence": "resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             18,
             19,
             20,
@@ -7396,7 +7396,7 @@
         "mention_type": "FIN",
         "right_sentence": "downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             23
         ],
         "tokens_str": "their",
@@ -7414,7 +7414,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28,
             29,
             30,
@@ -7426,7 +7426,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__13_115711_Asian_stock_markets_slide.xml",
+        "coref_chain": "",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7436,7 +7436,7 @@
         "mention_type": "",
         "right_sentence": "'s Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28
         ],
         "tokens_str": "Japan",
@@ -7454,7 +7454,7 @@
         "mention_type": "FIN",
         "right_sentence": "rose against the yen after six straight days of losses , trading at 92.27 yen to the dollar .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             116,
             117,
             118
@@ -7474,7 +7474,7 @@
         "mention_type": "LOC",
         "right_sentence": "dollar rose against the yen after six straight days of losses , trading at 92.27 yen to the dollar .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             117
         ],
         "tokens_str": "U.S.",
@@ -7492,7 +7492,7 @@
         "mention_type": "FIN",
         "right_sentence": "after six straight days of losses , trading at 92.27 yen to the dollar .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             121,
             122
         ],
@@ -7511,7 +7511,7 @@
         "mention_type": "FIN",
         "right_sentence": "plummet amid global sell-off",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -7520,7 +7520,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__2_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
+        "coref_chain": "",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "entity",
         "full_sentence": "U.S. stocks plummet amid global sell-off",
@@ -7530,7 +7530,7 @@
         "mention_type": "",
         "right_sentence": "stocks plummet amid global sell-off",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "U.S.",
@@ -7548,7 +7548,7 @@
         "mention_type": "LOC",
         "right_sentence": "stock market index , the Dow Jones , plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12
         ],
         "tokens_str": "U.S.",
@@ -7566,7 +7566,7 @@
         "mention_type": "FIN",
         "right_sentence": ", plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11,
             12,
@@ -7593,7 +7593,7 @@
         "mention_type": "FIN",
         "right_sentence": ", the Dow Jones , plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             10,
             11,
             12,
@@ -7616,7 +7616,7 @@
         "mention_type": "FIN",
         "right_sentence": ", plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             17,
             18,
             19
@@ -7636,7 +7636,7 @@
         "mention_type": "FIN",
         "right_sentence": "following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             42,
             43
         ],
@@ -7655,7 +7655,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             59,
             60
         ],
@@ -7674,7 +7674,7 @@
         "mention_type": "LOC",
         "right_sentence": "markets .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             59
         ],
         "tokens_str": "Chinese",
@@ -7692,7 +7692,7 @@
         "mention_type": "FIN",
         "right_sentence": ", such as the Nasdaq and the S&P 500 , dipped by 96 points and 50 points , respectively .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             62,
             63,
             64
@@ -7712,7 +7712,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dipped by 96 points and 50 points , respectively .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             68,
             69,
             70,
@@ -7735,7 +7735,7 @@
         "mention_type": "FIN",
         "right_sentence": "and the S&P 500 , dipped by 96 points and 50 points , respectively .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             68,
             69
         ],
@@ -7754,7 +7754,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dipped by 96 points and 50 points , respectively .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             71,
             72,
             73
@@ -7774,7 +7774,7 @@
         "mention_type": "LOC",
         "right_sentence": "history .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             93
         ],
         "tokens_str": "U.S.",
@@ -7792,7 +7792,7 @@
         "mention_type": "FIN",
         "right_sentence": "index , the Dow Jones , plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12,
             13,
             14
@@ -7812,7 +7812,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell over 2,000 points in the past nine days to reach its lowest level since 2003 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             66,
             67
         ],
@@ -7831,7 +7831,7 @@
         "mention_type": "FIN",
         "right_sentence": "lowest level since 2003 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             79
         ],
         "tokens_str": "its",
@@ -7849,7 +7849,7 @@
         "mention_type": "LOC",
         "right_sentence": "fell dramatically this week on worries that recent government moves might not prevent a global recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             18,
             19
         ],
@@ -7868,7 +7868,7 @@
         "mention_type": "ORG",
         "right_sentence": "moves might not prevent a global recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28
         ],
         "tokens_str": "government",
@@ -7886,7 +7886,7 @@
         "mention_type": "FIN",
         "right_sentence": "was down more than 7 % .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             85,
             86,
             87
@@ -7906,7 +7906,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell dramatically this week on worries that recent government moves might not prevent a global recession .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16,
             17,
@@ -7928,7 +7928,7 @@
         "mention_type": "FIN",
         "right_sentence": "down across the world ; Dow Jones falls below 9,000",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0
         ],
         "tokens_str": "Markets",
@@ -7946,7 +7946,7 @@
         "mention_type": "LOC",
         "right_sentence": "; Dow Jones falls below 9,000",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             3,
             4
         ],
@@ -7965,7 +7965,7 @@
         "mention_type": "FIN",
         "right_sentence": "falls below 9,000",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             6,
             7
         ],
@@ -7984,7 +7984,7 @@
         "mention_type": "FIN",
         "right_sentence": "( DJIA ) , which fell 678 points or more than 7.3 % to below 9,000 , closing at 8,579.19 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             42,
             43,
             44
@@ -8004,7 +8004,7 @@
         "mention_type": "FIN",
         "right_sentence": ") , which fell 678 points or more than 7.3 % to below 9,000 , closing at 8,579.19 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46
         ],
         "tokens_str": "DJIA",
@@ -8022,7 +8022,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell 678 points or more than 7.3 % to below 9,000 , closing at 8,579.19 .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             49
         ],
         "tokens_str": "which",
@@ -8040,7 +8040,7 @@
         "mention_type": "FIN",
         "right_sentence": ", rose in value by 8.04 % , which is 392.50 points , to above the 5000 mark at 5272.50 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             63,
             64,
             65,
@@ -8065,7 +8065,7 @@
         "mention_type": "FIN",
         "right_sentence": ", rose in value by 8.04 % , which is 392.50 points , to above the 5000 mark at 5272.50 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             68,
             69,
             70
@@ -8085,7 +8085,7 @@
         "mention_type": "LOC",
         "right_sentence": "index , the FTSE 100 , rose in value by 8.04 % , which is 392.50 points , to above the 5000 mark at 5272.50 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             65
         ],
         "tokens_str": "UK",
@@ -8103,7 +8103,7 @@
         "mention_type": "FIN",
         "right_sentence": ", was up 3.10 % at 14:58 UTC , an increase of 330.89 .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             92,
             93,
             94
@@ -8123,7 +8123,7 @@
         "mention_type": "FIN",
         "right_sentence": ", particularly those in the United Kingdom , have increased dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12,
             13,
             14,
@@ -8145,7 +8145,7 @@
         "mention_type": "LOC",
         "right_sentence": "banks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             60
         ],
         "tokens_str": "US",
@@ -8163,7 +8163,7 @@
         "mention_type": "LOC",
         "right_sentence": ", particularly those in the United Kingdom , have increased dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             15,
             16
         ],
@@ -8182,7 +8182,7 @@
         "mention_type": "FIN",
         "right_sentence": ", the FTSE 100 , rose in value by 8.04 % , which is 392.50 points , to above the 5000 mark at 5272.50 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             63,
             64,
             65,
@@ -8203,7 +8203,7 @@
         "mention_type": "FIN",
         "right_sentence": ", have increased dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             19,
             20,
             21,
@@ -8225,7 +8225,7 @@
         "mention_type": "LOC",
         "right_sentence": ", have increased dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             21,
             22,
             23
@@ -8245,7 +8245,7 @@
         "mention_type": "FIN",
         "right_sentence": "surge due to US government plan",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -8264,7 +8264,7 @@
         "mention_type": "LOC",
         "right_sentence": "plan",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             5,
             6
         ],
@@ -8283,7 +8283,7 @@
         "mention_type": "FIN",
         "right_sentence": ", including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             38,
             39,
             40
@@ -8303,7 +8303,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s announcement that it would buy billions of dollars of bad loans from US banks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44,
             45,
@@ -8318,13 +8318,13 @@
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "entity",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that",
         "m_id": "15",
         "mention_type": "LOC",
         "right_sentence": "would buy billions of dollars of bad loans from US banks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             50
         ],
         "tokens_str": "it",
@@ -8342,7 +8342,7 @@
         "mention_type": "FIN",
         "right_sentence": "from US banks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             53,
             54,
             55,
@@ -8365,7 +8365,7 @@
         "mention_type": "ORG",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             60,
             61
         ],
@@ -8384,7 +8384,7 @@
         "mention_type": "FIN",
         "right_sentence": ", was down 3.76 % at 16:08 UTC , a slight increase from earlier today .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             80,
             81,
             82
@@ -8404,7 +8404,7 @@
         "mention_type": "LOC",
         "right_sentence": "have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             11,
             12
         ],
@@ -8423,7 +8423,7 @@
         "mention_type": "FIN",
         "right_sentence": "fall precipitously",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -8442,7 +8442,7 @@
         "mention_type": "FIN",
         "right_sentence": "have fallen dramatically today .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             8,
             9,
             10,
@@ -8464,7 +8464,7 @@
         "mention_type": "FIN",
         "right_sentence": ", including the US Government 's $ 700 billion bail out of the financial sector .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             25,
             26,
             27
@@ -8484,7 +8484,7 @@
         "mention_type": "LOC",
         "right_sentence": "'s $ 700 billion bail out of the financial sector .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             31,
             32
         ],
@@ -8503,7 +8503,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             40,
             41,
             42
@@ -8523,7 +8523,7 @@
         "mention_type": "FIN",
         "right_sentence": ", the FTSE 100 , dropped in value by 6.50 % ( 323.65 points ) to a point even further below the 5000 mark at 4656.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             49,
             50,
             51,
@@ -8544,7 +8544,7 @@
         "mention_type": "LOC",
         "right_sentence": "index , the FTSE 100 , dropped in value by 6.50 % ( 323.65 points ) to a point even further below the 5000 mark at 4656.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             51
         ],
         "tokens_str": "UK",
@@ -8562,7 +8562,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dropped in value by 6.50 % ( 323.65 points ) to a point even further below the 5000 mark at 4656.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55,
             56
@@ -8582,7 +8582,7 @@
         "mention_type": "FIN",
         "right_sentence": ", dropped in value by 6.50 % ( 323.65 points ) to a point even further below the 5000 mark at 4656.60 .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             49,
             50,
             51,
@@ -8607,7 +8607,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             77,
             78,
             79,
@@ -8635,7 +8635,7 @@
         "mention_type": "LOC",
         "right_sentence": ", China , Britain , France , Germany and Canada .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             77
         ],
         "tokens_str": "India",
@@ -8653,7 +8653,7 @@
         "mention_type": "LOC",
         "right_sentence": ", Britain , France , Germany and Canada .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             79
         ],
         "tokens_str": "China",
@@ -8671,7 +8671,7 @@
         "mention_type": "LOC",
         "right_sentence": ", France , Germany and Canada .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             81
         ],
         "tokens_str": "Britain",
@@ -8689,7 +8689,7 @@
         "mention_type": "LOC",
         "right_sentence": ", Germany and Canada .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             83
         ],
         "tokens_str": "France",
@@ -8707,7 +8707,7 @@
         "mention_type": "LOC",
         "right_sentence": "and Canada .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             85
         ],
         "tokens_str": "Germany",
@@ -8725,7 +8725,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             87
         ],
         "tokens_str": "Canada",
@@ -8743,7 +8743,7 @@
         "mention_type": "PER",
         "right_sentence": "blame recent losses on fears of a recession in the United States .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             98
         ],
         "tokens_str": "analysts",
@@ -8761,7 +8761,7 @@
         "mention_type": "FIN",
         "right_sentence": "dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12,
             13
         ],
@@ -8780,7 +8780,7 @@
         "mention_type": "LOC",
         "right_sentence": "and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             17
         ],
         "tokens_str": "Europe",
@@ -8798,7 +8798,7 @@
         "mention_type": "LOC",
         "right_sentence": "Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             19
         ],
         "tokens_str": "Asia",
@@ -8806,7 +8806,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__6_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
+        "coref_chain": "",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "entity",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -8816,7 +8816,7 @@
         "mention_type": "",
         "right_sentence": "Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             17,
             18,
             19
@@ -8836,7 +8836,7 @@
         "mention_type": "LOC",
         "right_sentence": ".",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             108,
             109,
             110
@@ -8856,7 +8856,7 @@
         "mention_type": "LOC",
         "right_sentence": "causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             28,
             29,
             30
@@ -8876,7 +8876,7 @@
         "mention_type": "FIN",
         "right_sentence": ", analysts blame recent losses on fears of a recession in the United States .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             95,
             96
         ],
@@ -8895,7 +8895,7 @@
         "mention_type": "FIN",
         "right_sentence": "prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             12
         ],
         "tokens_str": "Stock",
@@ -8913,7 +8913,7 @@
         "mention_type": "LOC",
         "right_sentence": ", the Hang Seng index fell 5.5 percent - its biggest fall since the September 11 , 2001 , terrorist attacks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             43,
             44
         ],
@@ -8932,7 +8932,7 @@
         "mention_type": "FIN",
         "right_sentence": "fell 5.5 percent - its biggest fall since the September 11 , 2001 , terrorist attacks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             46,
             47,
             48,
@@ -8953,7 +8953,7 @@
         "mention_type": "FIN",
         "right_sentence": "plunge on fears on US recession",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1
         ],
@@ -8972,7 +8972,7 @@
         "mention_type": "FIN",
         "right_sentence": "biggest fall since the September 11 , 2001 , terrorist attacks .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             54
         ],
         "tokens_str": "its",
@@ -8990,7 +8990,7 @@
         "mention_type": "LOC",
         "right_sentence": "recession",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             6
         ],
         "tokens_str": "US",
@@ -9008,7 +9008,7 @@
         "mention_type": "FIN",
         "right_sentence": ", worse than most economic analysts had forecast .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             65
         ],
         "tokens_str": "share",
@@ -9026,7 +9026,7 @@
         "mention_type": "PER",
         "right_sentence": "had forecast .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             69,
             70,
             71
@@ -9046,7 +9046,7 @@
         "mention_type": "ORG",
         "right_sentence": "had gained $ 704 million , or fifteen cents per share .",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             83,
             84,
             85
@@ -9066,7 +9066,7 @@
         "mention_type": "FIN",
         "right_sentence": ".",
         "sent_id": "4",
-        "tokens_number": [
+        "tokens_ids": [
             96
         ],
         "tokens_str": "share",
@@ -9084,7 +9084,7 @@
         "mention_type": "PER",
         "right_sentence": ", said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             98,
             99,
             100,
@@ -9098,7 +9098,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "Singleton__31_141483_Bank_of_America_reports_losses.xml",
+        "coref_chain": "",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "entity",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9108,7 +9108,7 @@
         "mention_type": "",
         "right_sentence": ", Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             98,
             99,
             100,
@@ -9129,7 +9129,7 @@
         "mention_type": "PER",
         "right_sentence": ", said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             103,
             104
         ],
@@ -9148,7 +9148,7 @@
         "mention_type": "ORG",
         "right_sentence": "reports losses of over US$ 2.2 billion",
         "sent_id": "0",
-        "tokens_number": [
+        "tokens_ids": [
             0,
             1,
             2
@@ -9168,7 +9168,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the second-largest bank in the United States , has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15,
             16,
@@ -9190,7 +9190,7 @@
         "mention_type": "ORG",
         "right_sentence": ", has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             20,
             21,
             22,
@@ -9214,7 +9214,7 @@
         "mention_type": "FIN",
         "right_sentence": "remain high , and that is our major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             114,
             115
         ],
@@ -9233,7 +9233,7 @@
         "mention_type": "ORG",
         "right_sentence": ", has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             14,
             15,
             16,
@@ -9263,7 +9263,7 @@
         "mention_type": "LOC",
         "right_sentence": ", has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             24,
             25,
             26
@@ -9277,13 +9277,13 @@
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "entity",
         "full_sentence": "The Bank of America Corporation , the second-largest bank in the United States , has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
-        "is_pronoun": true,
+        "is_pronoun": false,
         "left_sentence": "The Bank of America Corporation , the second-largest bank in the United States , has announced that",
         "m_id": "7",
         "mention_type": "ORG",
         "right_sentence": "lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             31
         ],
         "tokens_str": "it",
@@ -9301,7 +9301,7 @@
         "mention_type": "FIN",
         "right_sentence": "losses .",
         "sent_id": "2",
-        "tokens_number": [
+        "tokens_ids": [
             49
         ],
         "tokens_str": "loan",
@@ -9319,7 +9319,7 @@
         "mention_type": "ORG",
         "right_sentence": "'s CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             98,
             99
         ],
@@ -9338,7 +9338,7 @@
         "mention_type": "ORG",
         "right_sentence": ", the losses are equal to 26 cents per share , worse than most economic analysts had forecast .",
         "sent_id": "3",
-        "tokens_number": [
+        "tokens_ids": [
             54,
             55
         ],
@@ -9357,7 +9357,7 @@
         "mention_type": "ORG",
         "right_sentence": "major financial challenge going forward .",
         "sent_id": "5",
-        "tokens_number": [
+        "tokens_ids": [
             122
         ],
         "tokens_str": "our",

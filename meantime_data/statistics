@@ -6,10 +6,10 @@ Event mentions: 998
 Entity mentions: 1570
 Event mentions with more than one token: 64
 Entity mentions with more than one token: 1026
-Event chains: 876
-Event Singleton: 790
-Entity chains: 544
-Entity Singleton: 341
+Event chains: 352
+Event Singleton: 265
+Entity chains: 461
+Entity Singleton: 257
 --------------------------------------
 
 Statistics on the dev set
@@ -19,10 +19,10 @@ Event mentions: 583
 Entity mentions: 826
 Event mentions with more than one token: 24
 Entity mentions with more than one token: 471
-Event chains: 530
-Event Singleton: 498
-Entity chains: 197
-Entity Singleton: 114
+Event chains: 122
+Event Singleton: 89
+Entity chains: 179
+Entity Singleton: 95
 --------------------------------------
 
 Statistics on the test set
@@ -32,10 +32,10 @@ Event mentions: 526
 Entity mentions: 470
 Event mentions with more than one token: 25
 Entity mentions with more than one token: 315
-Event chains: 486
-Event Singleton: 462
-Entity chains: 158
-Entity Singleton: 94
+Event chains: 106
+Event Singleton: 81
+Entity chains: 140
+Entity Singleton: 75
 --------------------------------------
 
 Statistics on the all set
@@ -45,8 +45,8 @@ Event mentions: 2107
 Entity mentions: 2866
 Event mentions with more than one token: 113
 Entity mentions with more than one token: 1812
-Event chains: 1892
-Event Singleton: 1750
-Entity chains: 873
-Entity Singleton: 533
+Event chains: 578
+Event Singleton: 435
+Entity chains: 752
+Entity Singleton: 411
 --------------------------------------

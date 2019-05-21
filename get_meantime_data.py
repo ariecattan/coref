@@ -33,7 +33,7 @@ parser.add_argument('--data_path', type=str, default='datasets/meantime_newsread
 parser.add_argument('--output_dir', type=str, default='meantime_data',
                         help=' The directory of the output files')
 
-parser.add_argument('--with_pos', type=str2bool, default=True, help='Boolean value to include the pos tag of the mentions')
+parser.add_argument('--with_pos', type=str2bool, default=False, help='Boolean value to include the pos tag of the mentions')
 
 parser.add_argument('--entire_doc', type=str2bool, default=False, help='To load whole documents or only the first 5 sentences '
                                                                        'where the sentence num1 is not considered a sentence because it contains only the date of the article')
@@ -194,6 +194,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
     mentions_dic = {}
     relation_mention_dic = {}
 
+
     for mention in root.find('Markables'):
         if mention.tag == 'ENTITY_MENTION' or mention.tag == 'EVENT_MENTION':
             mention_type = 'event' if mention.tag == 'EVENT_MENTION' else 'entity'
@@ -250,6 +251,9 @@ def get_file_mention(root, file_name, sentences_text, topic):
                 'mention_type': mention.attrib.get('ent_type', '')
             }
 
+
+
+
     relation_source_target = {}
     relation_rid = {}
 
@@ -262,15 +266,20 @@ def get_file_mention(root, file_name, sentences_text, topic):
                     relation_source_target[mention.attrib['m_id']] = target_mention
 
 
+
     for mention, dic in mentions_dic.items():
         target = relation_source_target.get(mention, None)
         desc_cluster = ''
         type = ''
+
+
         if target is None or relation_mention_dic[target]['coref_chain'] == "":
-            id_cluster = 'Singleton_' + '_' + dic['m_id'] + '_' +  dic['doc_id']
+            #id_cluster = 'Singleton_' + dic['m_id'] + '_' +  dic['doc_id']
+            id_cluster = ""
         else:
             id_cluster = relation_mention_dic[target]['coref_chain']
 
+        if target is not None:
             desc_cluster = relation_mention_dic[target]['cluster_desc']
             type = relation_mention_dic[target]['mention_type']
 
@@ -284,6 +293,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
             event_mentions.append(mention_obj)
         else:
             entity_mentions.append(mention_obj)
+
 
     return event_mentions, entity_mentions
 
@@ -313,13 +323,13 @@ def get_statistics(data_events, data_entities, data_desc, stat_file):
     for mention_dic in data_events:
         docs.add(mention_dic["doc_id"])
         sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
-        if len(mention_dic['tokens_number']) > 1:
+        if len(mention_dic['tokens_ids']) > 1:
             event_mentions_with_multiple_tokens += 1
 
     for mention_dic in data_entities:
         docs.add(mention_dic["doc_id"])
         sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
-        if len(mention_dic['tokens_number']) > 1:
+        if len(mention_dic['tokens_ids']) > 1:
             entity_mentions_with_multiple_tokens += 1
 
 
