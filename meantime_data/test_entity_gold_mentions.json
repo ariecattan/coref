@@ -335,7 +335,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "The UK 's FTSE-100 index fell 232.90 points to 6038.30 , and Japan 's Nikkei 225 fell 406.51 points to 16764.09 .",
@@ -506,7 +506,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -1261,7 +1261,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_48_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "entity",
         "full_sentence": "Totaling US$ 180 billion , the Federal Reserve arranged to increase existing swap lines with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
@@ -1812,7 +1812,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "President Dmitry Medvedev went on national television to appease the public .",
@@ -1982,7 +1982,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_68_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "Russian markets to remain closed until Friday",
@@ -3483,7 +3483,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_72_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3503,7 +3503,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -4238,7 +4238,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_49_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "entity",
         "full_sentence": "Asian markets saw the biggest sell-off .",
@@ -4902,7 +4902,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_65_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "entity",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -4960,7 +4960,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_90_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "entity",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5385,7 +5385,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "entity",
         "full_sentence": "Stock markets around the world , particularly those in the United States , have fallen dramatically today .",
@@ -5966,7 +5966,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "entity",
         "full_sentence": "US stocks log gains for fourth week in a row",
@@ -6575,7 +6575,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_100_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -6683,7 +6683,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "Sub-prime lenders send jitters through global markets",
@@ -7253,7 +7253,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_99_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7426,7 +7426,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7520,7 +7520,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "entity",
         "full_sentence": "U.S. stocks plummet amid global sell-off",
@@ -8806,7 +8806,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "entity",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -9098,7 +9098,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "entity",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",

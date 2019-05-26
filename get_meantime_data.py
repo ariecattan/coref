@@ -274,8 +274,8 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
 
         if target is None or relation_mention_dic[target]['coref_chain'] == "":
-            #id_cluster = 'Singleton_' + dic['m_id'] + '_' +  dic['doc_id']
-            id_cluster = ""
+            id_cluster = 'Singleton_' + dic['m_id'] + '_' +  dic['doc_id']
+            #id_cluster = ""
         else:
             id_cluster = relation_mention_dic[target]['coref_chain']
 

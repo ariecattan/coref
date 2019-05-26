@@ -1,7 +1,7 @@
 [
     {
         "cluster_desc": "finish",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "Wall Street had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
@@ -19,7 +19,7 @@
     },
     {
         "cluster_desc": "rally",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "Wall Street had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
@@ -37,7 +37,7 @@
     },
     {
         "cluster_desc": "gain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "Wall Street had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
@@ -55,7 +55,7 @@
     },
     {
         "cluster_desc": "have - NYSE",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "The major indicators in the NYSE had a gain of around 10 percent .",
@@ -73,7 +73,7 @@
     },
     {
         "cluster_desc": "gain - NYSE",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "The major indicators in the NYSE had a gain of around 10 percent .",
@@ -91,7 +91,7 @@
     },
     {
         "cluster_desc": "gain - NYSE",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "This was mainly due to bank shares bouncing and alleviating fears about the economy .",
@@ -109,7 +109,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "This was mainly due to bank shares bouncing and alleviating fears about the economy .",
@@ -145,7 +145,7 @@
     },
     {
         "cluster_desc": "fears",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "This was mainly due to bank shares bouncing and alleviating fears about the economy .",
@@ -199,7 +199,7 @@
     },
     {
         "cluster_desc": "bounce",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "This was mainly due to bank shares bouncing and alleviating fears about the economy .",
@@ -217,7 +217,7 @@
     },
     {
         "cluster_desc": "have - wall street",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "Wall Street had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
@@ -235,7 +235,7 @@
     },
     {
         "cluster_desc": "alleviate",
-        "coref_chain": "",
+        "coref_chain": "Singleton_41_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "This was mainly due to bank shares bouncing and alleviating fears about the economy .",
@@ -253,7 +253,7 @@
     },
     {
         "cluster_desc": "see",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_122475_US_stock_markets_have_their_best_week_since_November.xml",
         "doc_id": "122475_US_stock_markets_have_their_best_week_since_November.xml",
         "event_entity": "event",
         "full_sentence": "Wall Street had its best finish since November 2008 after a four day rally with the stock market 's indexes seeing their best weekly gain in nearly five months .",
@@ -307,7 +307,7 @@
     },
     {
         "cluster_desc": "inject",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -344,7 +344,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Markets dragged down by credit crisis",
@@ -362,7 +362,7 @@
     },
     {
         "cluster_desc": "add",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -398,7 +398,7 @@
     },
     {
         "cluster_desc": "fear",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -416,7 +416,7 @@
     },
     {
         "cluster_desc": "sell-off",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Global stock markets fell today , in a mass sell-off stemming from the sub-prime mortgage crisis in the United States .",
@@ -434,7 +434,7 @@
     },
     {
         "cluster_desc": "stem",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Global stock markets fell today , in a mass sell-off stemming from the sub-prime mortgage crisis in the United States .",
@@ -452,7 +452,7 @@
     },
     {
         "cluster_desc": "insolvent",
-        "coref_chain": "",
+        "coref_chain": "Singleton_42_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -470,7 +470,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Global stock markets fell today , in a mass sell-off stemming from the sub-prime mortgage crisis in the United States .",
@@ -488,7 +488,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -506,7 +506,7 @@
     },
     {
         "cluster_desc": "tie",
-        "coref_chain": "",
+        "coref_chain": "Singleton_44_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "event",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -578,7 +578,7 @@
     },
     {
         "cluster_desc": "lost or remanied",
-        "coref_chain": "",
+        "coref_chain": "Singleton_82_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "Every stock in the Dow Jones , other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
@@ -597,7 +597,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -615,7 +615,7 @@
     },
     {
         "cluster_desc": "able",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -633,7 +633,7 @@
     },
     {
         "cluster_desc": "keep",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -651,7 +651,7 @@
     },
     {
         "cluster_desc": "operate",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -705,7 +705,7 @@
     },
     {
         "cluster_desc": "bell",
-        "coref_chain": "",
+        "coref_chain": "Singleton_35_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average dropped by 4.08 % , or 280.52 points , at the closing bell , reaching a level of 6595.32 , a new 12-year low .",
@@ -741,7 +741,7 @@
     },
     {
         "cluster_desc": "low",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets reach 12-year lows",
@@ -759,7 +759,7 @@
     },
     {
         "cluster_desc": "low",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average dropped by 4.08 % , or 280.52 points , at the closing bell , reaching a level of 6595.32 , a new 12-year low .",
@@ -849,7 +849,7 @@
     },
     {
         "cluster_desc": "lose ground",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "Every stock in the Dow Jones , other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
@@ -867,7 +867,7 @@
     },
     {
         "cluster_desc": "low",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -885,7 +885,7 @@
     },
     {
         "cluster_desc": "remain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_44_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "Every stock in the Dow Jones , other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
@@ -903,7 +903,7 @@
     },
     {
         "cluster_desc": "lost ground - S&amp;P",
-        "coref_chain": "",
+        "coref_chain": "Singleton_45_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "Every stock in the Dow Jones , other than Wal-Mart , either lost ground or remained even , and all stocks in the S&P 500 index lost ground .",
@@ -921,7 +921,7 @@
     },
     {
         "cluster_desc": "confidence",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -939,7 +939,7 @@
     },
     {
         "cluster_desc": "fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -957,7 +957,7 @@
     },
     {
         "cluster_desc": "worry",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_121978_US_stock_markets_reach_12-year_lows.xml",
         "doc_id": "121978_US_stock_markets_reach_12-year_lows.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets dropped to twelve-year lows on Thursday , amidst falling confidence in the financial sector and worries over whether the US automobile manufacturer General Motors will be able to keep operating .",
@@ -975,7 +975,7 @@
     },
     {
         "cluster_desc": "pump",
-        "coref_chain": "",
+        "coref_chain": "Singleton_86_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "Markets rally as world 's central banks infuse cash",
@@ -1011,7 +1011,7 @@
     },
     {
         "cluster_desc": "work",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
@@ -1029,7 +1029,7 @@
     },
     {
         "cluster_desc": "provide",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
@@ -1047,7 +1047,7 @@
     },
     {
         "cluster_desc": "arrangements",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
@@ -1065,7 +1065,7 @@
     },
     {
         "cluster_desc": "face",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "At 0800 UTC , the Bank of Canada , the Bank of England , the European Central Bank ( ECB ) , the United States Federal Reserve , the Bank of Japan , and the Swiss National Bank jointly announced that they would be working together to provide reciprocal credit arrangements to institutions facing a financial crush from the U.S. dollar .",
@@ -1101,7 +1101,7 @@
     },
     {
         "cluster_desc": "arrangements",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "The credit arrangements , also known as `` swap lines '' , will be used to help short-term funding of smaller loan groups .",
@@ -1119,7 +1119,7 @@
     },
     {
         "cluster_desc": "know",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "The credit arrangements , also known as `` swap lines '' , will be used to help short-term funding of smaller loan groups .",
@@ -1137,7 +1137,7 @@
     },
     {
         "cluster_desc": "use",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "The credit arrangements , also known as `` swap lines '' , will be used to help short-term funding of smaller loan groups .",
@@ -1155,7 +1155,7 @@
     },
     {
         "cluster_desc": "help",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "The credit arrangements , also known as `` swap lines '' , will be used to help short-term funding of smaller loan groups .",
@@ -1173,7 +1173,7 @@
     },
     {
         "cluster_desc": "funding",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "The credit arrangements , also known as `` swap lines '' , will be used to help short-term funding of smaller loan groups .",
@@ -1209,7 +1209,7 @@
     },
     {
         "cluster_desc": "react",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes around the globe reacted favorably after several national banks announced a joint effort to pump more money into the markets .",
@@ -1263,7 +1263,7 @@
     },
     {
         "cluster_desc": "increase",
-        "coref_chain": "",
+        "coref_chain": "Singleton_47_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "Totaling US$ 180 billion , the Federal Reserve arranged to increase existing swap lines with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
@@ -1281,7 +1281,7 @@
     },
     {
         "cluster_desc": "effort",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes around the globe reacted favorably after several national banks announced a joint effort to pump more money into the markets .",
@@ -1335,7 +1335,7 @@
     },
     {
         "cluster_desc": "be one of the few",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "As of 18:00 UTC , the primary UK index , the FTSE 100 , was one of the few indexes to increase in value .",
@@ -1353,7 +1353,7 @@
     },
     {
         "cluster_desc": "increase",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "As of 18:00 UTC , the primary UK index , the FTSE 100 , was one of the few indexes to increase in value .",
@@ -1408,7 +1408,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -1426,7 +1426,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_52_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets worldwide continue to fall",
@@ -1444,7 +1444,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets around the world continued to fall dramatically today .",
@@ -1516,7 +1516,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -1534,7 +1534,7 @@
     },
     {
         "cluster_desc": "event",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -1552,7 +1552,7 @@
     },
     {
         "cluster_desc": "bail out",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_114613_Stock_markets_worldwide_continue_to_fall.xml",
         "doc_id": "114613_Stock_markets_worldwide_continue_to_fall.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -1571,7 +1571,7 @@
     },
     {
         "cluster_desc": "stem",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1589,7 +1589,7 @@
     },
     {
         "cluster_desc": "crash",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1607,7 +1607,7 @@
     },
     {
         "cluster_desc": "restore",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1625,7 +1625,7 @@
     },
     {
         "cluster_desc": "confidence",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1643,7 +1643,7 @@
     },
     {
         "cluster_desc": "go",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "President Dmitry Medvedev went on national television to appease the public .",
@@ -1661,7 +1661,7 @@
     },
     {
         "cluster_desc": "appease",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "President Dmitry Medvedev went on national television to appease the public .",
@@ -1679,7 +1679,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "`` There is no more important task for Russian authorities than stability of our financial system under the current circumstances .",
@@ -1697,7 +1697,7 @@
     },
     {
         "cluster_desc": "task",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "`` There is no more important task for Russian authorities than stability of our financial system under the current circumstances .",
@@ -1715,7 +1715,7 @@
     },
     {
         "cluster_desc": "stability",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "`` There is no more important task for Russian authorities than stability of our financial system under the current circumstances .",
@@ -1733,7 +1733,7 @@
     },
     {
         "cluster_desc": "circumstance",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "`` There is no more important task for Russian authorities than stability of our financial system under the current circumstances .",
@@ -1751,7 +1751,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "The Russian government has continued to hold all stock markets closed until Friday , including the MICEX and RTS exchanges .",
@@ -1769,7 +1769,7 @@
     },
     {
         "cluster_desc": "hold",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "The Russian government has continued to hold all stock markets closed until Friday , including the MICEX and RTS exchanges .",
@@ -1787,7 +1787,7 @@
     },
     {
         "cluster_desc": "closed",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "The Russian government has continued to hold all stock markets closed until Friday , including the MICEX and RTS exchanges .",
@@ -1805,7 +1805,7 @@
     },
     {
         "cluster_desc": "stem and restore",
-        "coref_chain": "",
+        "coref_chain": "Singleton_67_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1824,7 +1824,7 @@
     },
     {
         "cluster_desc": "hold",
-        "coref_chain": "",
+        "coref_chain": "Singleton_70_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Russian markets to remain closed until Friday",
@@ -1842,7 +1842,7 @@
     },
     {
         "cluster_desc": "closed",
-        "coref_chain": "",
+        "coref_chain": "Singleton_71_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Russian markets to remain closed until Friday",
@@ -1860,7 +1860,7 @@
     },
     {
         "cluster_desc": "face",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1878,7 +1878,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1896,7 +1896,7 @@
     },
     {
         "cluster_desc": "fight",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "event",
         "full_sentence": "Facing its worst financial crisis since 1989 , the government is fighting to stem off a crash and restore consumer confidence .",
@@ -1914,7 +1914,7 @@
     },
     {
         "cluster_desc": "set",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "doc_id": "121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "event_entity": "event",
         "full_sentence": "It had , at one point , set an intraday bear market low of 7,447.55 .",
@@ -1950,7 +1950,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "doc_id": "121225_Dow_Jones_Industrial_Average_closes_at_lowest_level_in_six_years.xml",
         "event_entity": "event",
         "full_sentence": "It was the lowest ending for the index since October 9 , 2002 .",
@@ -2094,7 +2094,7 @@
     },
     {
         "cluster_desc": "gain - 4.6",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The best performer was the Old Mutual insurance company , reaching a sixteen-month high after gaining 4.6 % .",
@@ -2112,7 +2112,7 @@
     },
     {
         "cluster_desc": "high",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The best performer was the Old Mutual insurance company , reaching a sixteen-month high after gaining 4.6 % .",
@@ -2130,7 +2130,7 @@
     },
     {
         "cluster_desc": "think",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "Some economic analysts think that the FTSE index could continue to gain for the remainder of the week .",
@@ -2148,7 +2148,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "Some economic analysts think that the FTSE index could continue to gain for the remainder of the week .",
@@ -2166,7 +2166,7 @@
     },
     {
         "cluster_desc": "gain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "Some economic analysts think that the FTSE index could continue to gain for the remainder of the week .",
@@ -2202,7 +2202,7 @@
     },
     {
         "cluster_desc": "high",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "British FTSE index reaches one-year high , other European markets rise",
@@ -2220,7 +2220,7 @@
     },
     {
         "cluster_desc": "rise",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "British FTSE index reaches one-year high , other European markets rise",
@@ -2256,7 +2256,7 @@
     },
     {
         "cluster_desc": "news",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The British stock index FTSE 100 closed at its highest levels in over a year on Monday , following news of stronger commodity prices .",
@@ -2310,7 +2310,7 @@
     },
     {
         "cluster_desc": "see",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The share index increased by 48.3 points , or 0.9 % to finish the day at a level of 5,210.17 , a figure not seen since last September .",
@@ -2328,7 +2328,7 @@
     },
     {
         "cluster_desc": "performer",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The best performer was the Old Mutual insurance company , reaching a sixteen-month high after gaining 4.6 % .",
@@ -2346,7 +2346,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The best performer was the Old Mutual insurance company , reaching a sixteen-month high after gaining 4.6 % .",
@@ -2364,7 +2364,7 @@
     },
     {
         "cluster_desc": "reach",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "doc_id": "141225_British_FTSE_index_reaches_one-year_high,_other_European_markets_rise.xml",
         "event_entity": "event",
         "full_sentence": "The best performer was the Old Mutual insurance company , reaching a sixteen-month high after gaining 4.6 % .",
@@ -2382,7 +2382,7 @@
     },
     {
         "cluster_desc": "recovery",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes worldwide rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
@@ -2400,7 +2400,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes worldwide rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
@@ -2418,7 +2418,7 @@
     },
     {
         "cluster_desc": "address",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2436,7 +2436,7 @@
     },
     {
         "cluster_desc": "conference",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2454,7 +2454,7 @@
     },
     {
         "cluster_desc": "said - the prospects",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2472,7 +2472,7 @@
     },
     {
         "cluster_desc": "return",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2490,7 +2490,7 @@
     },
     {
         "cluster_desc": "growth",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2508,7 +2508,7 @@
     },
     {
         "cluster_desc": "appear",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2526,7 +2526,7 @@
     },
     {
         "cluster_desc": "good",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2544,7 +2544,7 @@
     },
     {
         "cluster_desc": "add",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
@@ -2562,7 +2562,7 @@
     },
     {
         "cluster_desc": "recovery",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
@@ -2580,7 +2580,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
@@ -2598,7 +2598,7 @@
     },
     {
         "cluster_desc": "rise",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets worldwide rise on hopes of US economic recovery",
@@ -2616,7 +2616,7 @@
     },
     {
         "cluster_desc": "slow",
-        "coref_chain": "",
+        "coref_chain": "Singleton_35_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
@@ -2634,7 +2634,7 @@
     },
     {
         "cluster_desc": "decline",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "He added , however , that `` the economic recovery is likely to be relatively slow at first , with unemployment declining only gradually from high levels . ''",
@@ -2652,7 +2652,7 @@
     },
     {
         "cluster_desc": "hope",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets worldwide rise on hopes of US economic recovery",
@@ -2670,7 +2670,7 @@
     },
     {
         "cluster_desc": "recovery",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets worldwide rise on hopes of US economic recovery",
@@ -2706,7 +2706,7 @@
     },
     {
         "cluster_desc": "rise",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes worldwide rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
@@ -2742,7 +2742,7 @@
     },
     {
         "cluster_desc": "prospects",
-        "coref_chain": "",
+        "coref_chain": "Singleton_62_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Addressing a conference in Wyoming , the bank chief said that `` the prospects for a return to growth in the near term appear good . ''",
@@ -2760,7 +2760,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes worldwide rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
@@ -2778,7 +2778,7 @@
     },
     {
         "cluster_desc": "start",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "doc_id": "131162_Stock_markets_worldwide_rise_on_hopes_of_US_economic_recovery.xml",
         "event_entity": "event",
         "full_sentence": "Stock indexes worldwide rose on Friday , after US bank chief Ben Bernanke said that the US economy was starting to recover from the recession .",
@@ -2796,7 +2796,7 @@
     },
     {
         "cluster_desc": "Monetary fund meeting",
-        "coref_chain": "",
+        "coref_chain": "Singleton_51_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The G7 nations had met in Washington at the same time that the International Monetary Fund and the World Bank held their Autumn meetings .",
@@ -2814,7 +2814,7 @@
     },
     {
         "cluster_desc": "support and guaranteeing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_78_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2833,7 +2833,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_92_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -2851,7 +2851,7 @@
     },
     {
         "cluster_desc": "use",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2887,7 +2887,7 @@
     },
     {
         "cluster_desc": "agree",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2905,7 +2905,7 @@
     },
     {
         "cluster_desc": "plan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2923,7 +2923,7 @@
     },
     {
         "cluster_desc": "face",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2941,7 +2941,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2959,7 +2959,7 @@
     },
     {
         "cluster_desc": "plan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2977,7 +2977,7 @@
     },
     {
         "cluster_desc": "consist",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -2995,7 +2995,7 @@
     },
     {
         "cluster_desc": "support",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -3013,7 +3013,7 @@
     },
     {
         "cluster_desc": "guarantee",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -3031,7 +3031,7 @@
     },
     {
         "cluster_desc": "loan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "On Sunday , the fifteen countries from the Eurogroup -- that is , those countries which use the euro as official currency -- had agreed on a joint plan to face the crisis , which would consist in supporting financial institutions and by guaranteeing interbank loans .",
@@ -3067,7 +3067,7 @@
     },
     {
         "cluster_desc": "meeting",
-        "coref_chain": "",
+        "coref_chain": "Singleton_35_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The Eurogroup meeting was the last of many which took place during the weekend .",
@@ -3085,7 +3085,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The Eurogroup meeting was the last of many which took place during the weekend .",
@@ -3103,7 +3103,7 @@
     },
     {
         "cluster_desc": "effort",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3121,7 +3121,7 @@
     },
     {
         "cluster_desc": "meeting",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The Eurogroup meeting was the last of many which took place during the weekend .",
@@ -3139,7 +3139,7 @@
     },
     {
         "cluster_desc": "take place",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The Eurogroup meeting was the last of many which took place during the weekend .",
@@ -3158,7 +3158,7 @@
     },
     {
         "cluster_desc": "ease",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3176,7 +3176,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3194,7 +3194,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3212,7 +3212,7 @@
     },
     {
         "cluster_desc": "effect",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3230,7 +3230,7 @@
     },
     {
         "cluster_desc": "meet",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The G7 nations had met in Washington at the same time that the International Monetary Fund and the World Bank held their Autumn meetings .",
@@ -3248,7 +3248,7 @@
     },
     {
         "cluster_desc": "cause",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3266,7 +3266,7 @@
     },
     {
         "cluster_desc": "decline",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "Markets worldwide have surged in value following efforts by governments to ease the effect of the ongoing financial crisis , which has recently caused a massive decline in the value of stock markets .",
@@ -3284,7 +3284,7 @@
     },
     {
         "cluster_desc": "hold",
-        "coref_chain": "",
+        "coref_chain": "Singleton_49_115064_Global_markets_surge_in_value.xml",
         "doc_id": "115064_Global_markets_surge_in_value.xml",
         "event_entity": "event",
         "full_sentence": "The G7 nations had met in Washington at the same time that the International Monetary Fund and the World Bank held their Autumn meetings .",
@@ -3302,7 +3302,7 @@
     },
     {
         "cluster_desc": "suspension",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3320,7 +3320,7 @@
     },
     {
         "cluster_desc": "take",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` It took too long for the money to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
@@ -3338,7 +3338,7 @@
     },
     {
         "cluster_desc": "get",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` It took too long for the money to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
@@ -3356,7 +3356,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` It took too long for the money to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
@@ -3374,7 +3374,7 @@
     },
     {
         "cluster_desc": "comment",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` It took too long for the money to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
@@ -3392,7 +3392,7 @@
     },
     {
         "cluster_desc": "decision",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` It took too long for the money to get into the system , '' said Uralsib analyst Chris Weafer commenting on this decision .",
@@ -3410,7 +3410,7 @@
     },
     {
         "cluster_desc": "afraid",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
@@ -3428,7 +3428,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
@@ -3446,7 +3446,7 @@
     },
     {
         "cluster_desc": "trading",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Trading on Russia 's major stock markets has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
@@ -3464,7 +3464,7 @@
     },
     {
         "cluster_desc": "selling",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
@@ -3482,7 +3482,7 @@
     },
     {
         "cluster_desc": "stop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "`` They were afraid of panic selling so they stopped the market . ''",
@@ -3500,7 +3500,7 @@
     },
     {
         "cluster_desc": "suspension",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Trading on Russia 's major stock markets has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
@@ -3518,7 +3518,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Trading on Russia 's major stock markets has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
@@ -3536,7 +3536,7 @@
     },
     {
         "cluster_desc": "suspension",
-        "coref_chain": "",
+        "coref_chain": "Singleton_69_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Russian stock markets suspended amid market turmoil",
@@ -3554,7 +3554,7 @@
     },
     {
         "cluster_desc": "turmoil",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Trading on Russia 's major stock markets has been suspended for a second consecutive day due to the ongoing turmoil in the financial markets around the world .",
@@ -3572,7 +3572,7 @@
     },
     {
         "cluster_desc": "turmoil",
-        "coref_chain": "",
+        "coref_chain": "Singleton_70_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "Russian stock markets suspended amid market turmoil",
@@ -3590,7 +3590,7 @@
     },
     {
         "cluster_desc": "suspension",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3608,7 +3608,7 @@
     },
     {
         "cluster_desc": "take place",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3627,7 +3627,7 @@
     },
     {
         "cluster_desc": "order",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3645,7 +3645,7 @@
     },
     {
         "cluster_desc": "demand",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "event",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -3663,7 +3663,7 @@
     },
     {
         "cluster_desc": "tsunami",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "The prominent Japanese Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
@@ -3681,7 +3681,7 @@
     },
     {
         "cluster_desc": "earthquake and tsunami",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "The prominent Japanese Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
@@ -3700,7 +3700,7 @@
     },
     {
         "cluster_desc": "hit",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "The prominent Japanese Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
@@ -3718,7 +3718,7 @@
     },
     {
         "cluster_desc": "be - down fourteen percent",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
@@ -3736,7 +3736,7 @@
     },
     {
         "cluster_desc": "be - down five percent",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
@@ -3754,7 +3754,7 @@
     },
     {
         "cluster_desc": "rebound",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
@@ -3772,7 +3772,7 @@
     },
     {
         "cluster_desc": "close",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "For the past five trading days , stocks have been down by a total of fourteen percent ; today , they were down as much as five percent , or 454 points , but rebounded to close at 8,962 points .",
@@ -3790,7 +3790,7 @@
     },
     {
         "cluster_desc": "react",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "US stocks also reacted negatively to the cataclysm ; the Standard & Poor 's 500 index dropped 1.95 % while the Dow Jones Industrial Average lost 2.04 % .",
@@ -3808,7 +3808,7 @@
     },
     {
         "cluster_desc": "earthquake and tsunami",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "US stocks also reacted negatively to the cataclysm ; the Standard & Poor 's 500 index dropped 1.95 % while the Dow Jones Industrial Average lost 2.04 % .",
@@ -3898,7 +3898,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "Japanese stocks continue to fall after earthquake",
@@ -3916,7 +3916,7 @@
     },
     {
         "cluster_desc": "fall - japanese stock",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "Japanese stocks continue to fall after earthquake",
@@ -3934,7 +3934,7 @@
     },
     {
         "cluster_desc": "earthquake",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "Japanese stocks continue to fall after earthquake",
@@ -3952,7 +3952,7 @@
     },
     {
         "cluster_desc": "turmoil",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "The prominent Japanese Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
@@ -3988,7 +3988,7 @@
     },
     {
         "cluster_desc": "earthquake",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "doc_id": "251007_Japanese_stocks_continue_to_fall_after_earthquake.xml",
         "event_entity": "event",
         "full_sentence": "The prominent Japanese Nikkei 225 stock market index fell another 1.4 % Thursday , over financial turmoil after the massive 9.0 magnitude earthquake and tsunami hit the country a week ago .",
@@ -4006,7 +4006,7 @@
     },
     {
         "cluster_desc": "suffer",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "The British FTSE 100 index was one the indices that today suffered from large falls .",
@@ -4024,7 +4024,7 @@
     },
     {
         "cluster_desc": "large falls",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "The British FTSE 100 index was one the indices that today suffered from large falls .",
@@ -4060,7 +4060,7 @@
     },
     {
         "cluster_desc": "slip",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "It fell by 5.00 % to slip below the four thousand mark , at 3,883.36 points .",
@@ -4096,7 +4096,7 @@
     },
     {
         "cluster_desc": "events and statements",
-        "coref_chain": "",
+        "coref_chain": "Singleton_50_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
@@ -4151,7 +4151,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
@@ -4169,7 +4169,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
@@ -4187,7 +4187,7 @@
     },
     {
         "cluster_desc": "event",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
@@ -4205,7 +4205,7 @@
     },
     {
         "cluster_desc": "statement",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world and related statements by several United Kingdom politicians , including Prime Minister Gordon Brown .",
@@ -4223,7 +4223,7 @@
     },
     {
         "cluster_desc": "be one",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_115587_Global_stock_markets_plunge.xml",
         "doc_id": "115587_Global_stock_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "The British FTSE 100 index was one the indices that today suffered from large falls .",
@@ -4241,7 +4241,7 @@
     },
     {
         "cluster_desc": "declare",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Japan also saw a collapse of a mid-size insurance company , Yamato Life Insurance Company , which declared bankruptcy .",
@@ -4259,7 +4259,7 @@
     },
     {
         "cluster_desc": "bankruptcy",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Japan also saw a collapse of a mid-size insurance company , Yamato Life Insurance Company , which declared bankruptcy .",
@@ -4277,7 +4277,7 @@
     },
     {
         "cluster_desc": "low",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "The Nikkei dropped 9.62 % to reach a 20 year low .",
@@ -4331,7 +4331,7 @@
     },
     {
         "cluster_desc": "see",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world have fallen sharply with several seeing the biggest drop in their history .",
@@ -4349,7 +4349,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world have fallen sharply with several seeing the biggest drop in their history .",
@@ -4367,7 +4367,7 @@
     },
     {
         "cluster_desc": "see sell-off",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Asian markets saw the biggest sell-off .",
@@ -4385,7 +4385,7 @@
     },
     {
         "cluster_desc": "sell-off",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Asian markets saw the biggest sell-off .",
@@ -4439,7 +4439,7 @@
     },
     {
         "cluster_desc": "see collapse",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Japan also saw a collapse of a mid-size insurance company , Yamato Life Insurance Company , which declared bankruptcy .",
@@ -4457,7 +4457,7 @@
     },
     {
         "cluster_desc": "collapse",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "event",
         "full_sentence": "Japan also saw a collapse of a mid-size insurance company , Yamato Life Insurance Company , which declared bankruptcy .",
@@ -4475,7 +4475,7 @@
     },
     {
         "cluster_desc": "be unknown",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The exact reason for the drop is unknown , with different news agencies pointing to different causes .",
@@ -4493,7 +4493,7 @@
     },
     {
         "cluster_desc": "unknown",
-        "coref_chain": "",
+        "coref_chain": "Singleton_29_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The exact reason for the drop is unknown , with different news agencies pointing to different causes .",
@@ -4511,7 +4511,7 @@
     },
     {
         "cluster_desc": "cite",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4529,7 +4529,7 @@
     },
     {
         "cluster_desc": "rise number",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4547,7 +4547,7 @@
     },
     {
         "cluster_desc": "release numbers",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4565,7 +4565,7 @@
     },
     {
         "cluster_desc": "fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4583,7 +4583,7 @@
     },
     {
         "cluster_desc": "release fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4601,7 +4601,7 @@
     },
     {
         "cluster_desc": "sale",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4619,7 +4619,7 @@
     },
     {
         "cluster_desc": "claim",
-        "coref_chain": "",
+        "coref_chain": "Singleton_42_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "According to the Associated Press , the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
@@ -4637,7 +4637,7 @@
     },
     {
         "cluster_desc": "benefit",
-        "coref_chain": "",
+        "coref_chain": "Singleton_44_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "According to the Associated Press , the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
@@ -4655,7 +4655,7 @@
     },
     {
         "cluster_desc": "rise benefit",
-        "coref_chain": "",
+        "coref_chain": "Singleton_45_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "According to the Associated Press , the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
@@ -4673,7 +4673,7 @@
     },
     {
         "cluster_desc": "use",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average , a stock market index used to gauge the performance of American stock exchanges , fell 344.65 at the close of trading Thursday .",
@@ -4709,7 +4709,7 @@
     },
     {
         "cluster_desc": "performance",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average , a stock market index used to gauge the performance of American stock exchanges , fell 344.65 at the close of trading Thursday .",
@@ -4745,7 +4745,7 @@
     },
     {
         "cluster_desc": "be high",
-        "coref_chain": "",
+        "coref_chain": "Singleton_51_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "According to the Associated Press , the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
@@ -4763,7 +4763,7 @@
     },
     {
         "cluster_desc": "reason",
-        "coref_chain": "",
+        "coref_chain": "Singleton_52_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The exact reason for the drop is unknown , with different news agencies pointing to different causes .",
@@ -4781,7 +4781,7 @@
     },
     {
         "cluster_desc": "trading",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average , a stock market index used to gauge the performance of American stock exchanges , fell 344.65 at the close of trading Thursday .",
@@ -4799,7 +4799,7 @@
     },
     {
         "cluster_desc": "high",
-        "coref_chain": "",
+        "coref_chain": "Singleton_53_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "According to the Associated Press , the number of people claiming weekly unemployment benefits rose 15,000 last week to 444,000 , which , according to The New York Times is near a five-year high .",
@@ -4817,7 +4817,7 @@
     },
     {
         "cluster_desc": "rise and fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_76_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The New York Times cites a rise in unemployment numbers released Thursday by the U.S. Department of Labor and a fall in retail sales released by several large corporations .",
@@ -4837,7 +4837,7 @@
     },
     {
         "cluster_desc": "close",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The Dow Jones Industrial Average , a stock market index used to gauge the performance of American stock exchanges , fell 344.65 at the close of trading Thursday .",
@@ -4891,7 +4891,7 @@
     },
     {
         "cluster_desc": "news",
-        "coref_chain": "",
+        "coref_chain": "Singleton_82_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "Dow falls 340 points amid unemployment and retail sales rates news",
@@ -4909,7 +4909,7 @@
     },
     {
         "cluster_desc": "point",
-        "coref_chain": "",
+        "coref_chain": "Singleton_26_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The exact reason for the drop is unknown , with different news agencies pointing to different causes .",
@@ -4927,7 +4927,7 @@
     },
     {
         "cluster_desc": "cause",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "doc_id": "112579_Dow_falls_340_points_amid_unemployment_and_retail_sales_rates_news.xml",
         "event_entity": "event",
         "full_sentence": "The exact reason for the drop is unknown , with different news agencies pointing to different causes .",
@@ -4945,7 +4945,7 @@
     },
     {
         "cluster_desc": "nationalize",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5035,7 +5035,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "The Russel 2000 Index of smaller companies dropped by four percent .",
@@ -5053,7 +5053,7 @@
     },
     {
         "cluster_desc": "close",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5071,7 +5071,7 @@
     },
     {
         "cluster_desc": "declining worries",
-        "coref_chain": "",
+        "coref_chain": "Singleton_64_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5090,7 +5090,7 @@
     },
     {
         "cluster_desc": "decline",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5108,7 +5108,7 @@
     },
     {
         "cluster_desc": "confidence",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5126,7 +5126,7 @@
     },
     {
         "cluster_desc": "worry",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "event",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -5144,7 +5144,7 @@
     },
     {
         "cluster_desc": "output",
-        "coref_chain": "",
+        "coref_chain": "Singleton_59_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5162,7 +5162,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Kaoru Yosano , the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
@@ -5180,7 +5180,7 @@
     },
     {
         "cluster_desc": "downtrend",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Kaoru Yosano , the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
@@ -5198,7 +5198,7 @@
     },
     {
         "cluster_desc": "continue",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Kaoru Yosano , the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
@@ -5216,7 +5216,7 @@
     },
     {
         "cluster_desc": "growth",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Kaoru Yosano , the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
@@ -5234,7 +5234,7 @@
     },
     {
         "cluster_desc": "slow",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Kaoru Yosano , the Japanese minister of fiscal policy , said `` The downtrend in the economy will continue for the time being as global growth slows down .",
@@ -5252,7 +5252,7 @@
     },
     {
         "cluster_desc": "enter",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan enters recession",
@@ -5270,7 +5270,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan enters recession",
@@ -5288,7 +5288,7 @@
     },
     {
         "cluster_desc": "need",
-        "coref_chain": "",
+        "coref_chain": "Singleton_35_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5306,7 +5306,7 @@
     },
     {
         "cluster_desc": "bear in mind",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5326,7 +5326,7 @@
     },
     {
         "cluster_desc": "condition",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5344,7 +5344,7 @@
     },
     {
         "cluster_desc": "worsen",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5362,7 +5362,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5380,7 +5380,7 @@
     },
     {
         "cluster_desc": "account for",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5399,7 +5399,7 @@
     },
     {
         "cluster_desc": "enter",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5417,7 +5417,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5435,7 +5435,7 @@
     },
     {
         "cluster_desc": "deepen",
-        "coref_chain": "",
+        "coref_chain": "Singleton_42_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5453,7 +5453,7 @@
     },
     {
         "cluster_desc": "worry",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5471,7 +5471,7 @@
     },
     {
         "cluster_desc": "post",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5489,7 +5489,7 @@
     },
     {
         "cluster_desc": "downtrend",
-        "coref_chain": "",
+        "coref_chain": "Singleton_44_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5507,7 +5507,7 @@
     },
     {
         "cluster_desc": "heighten",
-        "coref_chain": "",
+        "coref_chain": "Singleton_45_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5525,7 +5525,7 @@
     },
     {
         "cluster_desc": "growth",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "Japan , which accounts for 7 % of world output , has entered a recession after posting two consecutive quarters of negative growth .",
@@ -5543,7 +5543,7 @@
     },
     {
         "cluster_desc": "make",
-        "coref_chain": "",
+        "coref_chain": "Singleton_47_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5561,7 +5561,7 @@
     },
     {
         "cluster_desc": "swing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_48_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -5579,7 +5579,7 @@
     },
     {
         "cluster_desc": "contract",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "event",
         "full_sentence": "The Japanese economy contracted by 0.9 % between April and June and a further 0.1 % since September .",
@@ -5597,7 +5597,7 @@
     },
     {
         "cluster_desc": "be below",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "event",
         "full_sentence": "The primary UK index , the FTSE 100 , dropped in value by 2.36 % , which is 118.40 points , to below the 5000 mark at 4907.20 .",
@@ -5669,7 +5669,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_53_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the bailout of large insurance firm AIG by the US Federal Reserve .",
@@ -5723,7 +5723,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the bailout of large insurance firm AIG by the US Federal Reserve .",
@@ -5741,7 +5741,7 @@
     },
     {
         "cluster_desc": "event",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the bailout of large insurance firm AIG by the US Federal Reserve .",
@@ -5903,7 +5903,7 @@
     },
     {
         "cluster_desc": "keep",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_114904_Dow_Jones_recovers_hundreds_of_points,_before_losing_them_in_minutes.xml",
         "doc_id": "114904_Dow_Jones_recovers_hundreds_of_points,_before_losing_them_in_minutes.xml",
         "event_entity": "event",
         "full_sentence": "Following going three down , it kept going up and down between slightly up and below zero .",
@@ -6048,7 +6048,7 @@
     },
     {
         "cluster_desc": "lose",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "The crash sent the market tumbling down 508 points , losing nearly 24 % .",
@@ -6084,7 +6084,7 @@
     },
     {
         "cluster_desc": "know",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Today marked a day in history , when 20 years ago , the United States Dow Jones Industrial Average market crashed , on what is known as ` Black Monday ' .",
@@ -6103,7 +6103,7 @@
     },
     {
         "cluster_desc": "close",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "On Friday , the Dow Jones nearly broke that record when the market closed at -366.94 points , down almost three percent .",
@@ -6122,7 +6122,7 @@
     },
     {
         "cluster_desc": "record",
-        "coref_chain": "",
+        "coref_chain": "Singleton_42_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "On Friday , the Dow Jones nearly broke that record when the market closed at -366.94 points , down almost three percent .",
@@ -6140,7 +6140,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Some say history tends to repeat itself .",
@@ -6158,7 +6158,7 @@
     },
     {
         "cluster_desc": "tend",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Some say history tends to repeat itself .",
@@ -6194,7 +6194,7 @@
     },
     {
         "cluster_desc": "repeat",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Some say history tends to repeat itself .",
@@ -6212,7 +6212,7 @@
     },
     {
         "cluster_desc": "anniversary",
-        "coref_chain": "",
+        "coref_chain": "Singleton_54_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets tumble on ` Black Monday ' anniversary",
@@ -6230,7 +6230,7 @@
     },
     {
         "cluster_desc": "mark",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Today marked a day in history , when 20 years ago , the United States Dow Jones Industrial Average market crashed , on what is known as ` Black Monday ' .",
@@ -6248,7 +6248,7 @@
     },
     {
         "cluster_desc": "crash",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "Today marked a day in history , when 20 years ago , the United States Dow Jones Industrial Average market crashed , on what is known as ` Black Monday ' .",
@@ -6266,7 +6266,7 @@
     },
     {
         "cluster_desc": "crash",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "The crash sent the market tumbling down 508 points , losing nearly 24 % .",
@@ -6284,7 +6284,7 @@
     },
     {
         "cluster_desc": "send",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "The crash sent the market tumbling down 508 points , losing nearly 24 % .",
@@ -6302,7 +6302,7 @@
     },
     {
         "cluster_desc": "tumble",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_82738_US_stock_markets_tumble.xml",
         "doc_id": "82738_US_stock_markets_tumble.xml",
         "event_entity": "event",
         "full_sentence": "The crash sent the market tumbling down 508 points , losing nearly 24 % .",
@@ -6321,7 +6321,7 @@
     },
     {
         "cluster_desc": "release",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6339,7 +6339,7 @@
     },
     {
         "cluster_desc": "report",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6357,7 +6357,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6375,7 +6375,7 @@
     },
     {
         "cluster_desc": "shed",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6393,7 +6393,7 @@
     },
     {
         "cluster_desc": "reach",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6411,7 +6411,7 @@
     },
     {
         "cluster_desc": "gain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "US stocks log gains for fourth week in a row",
@@ -6483,7 +6483,7 @@
     },
     {
         "cluster_desc": "post",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "United States stock indexes posted gains on Friday , marking a four-week long positive streak .",
@@ -6501,7 +6501,7 @@
     },
     {
         "cluster_desc": "gain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "United States stock indexes posted gains on Friday , marking a four-week long positive streak .",
@@ -6519,7 +6519,7 @@
     },
     {
         "cluster_desc": "close",
-        "coref_chain": "",
+        "coref_chain": "Singleton_44_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "The index has not closed above 8,000 since February .",
@@ -6537,7 +6537,7 @@
     },
     {
         "cluster_desc": "mark",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "United States stock indexes posted gains on Friday , marking a four-week long positive streak .",
@@ -6555,7 +6555,7 @@
     },
     {
         "cluster_desc": "streak",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "United States stock indexes posted gains on Friday , marking a four-week long positive streak .",
@@ -6573,7 +6573,7 @@
     },
     {
         "cluster_desc": "gain",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6591,7 +6591,7 @@
     },
     {
         "cluster_desc": "come",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6609,7 +6609,7 @@
     },
     {
         "cluster_desc": "report",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "event",
         "full_sentence": "This comes despite a report released by the US Labor Department on the same day , which said that the US economy shed 663,000 jobs in March , with the unemployment rate reaching 8.5 % , the highest since 1983 .",
@@ -6627,7 +6627,7 @@
     },
     {
         "cluster_desc": "mistype",
-        "coref_chain": "",
+        "coref_chain": "Singleton_52_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6663,7 +6663,7 @@
     },
     {
         "cluster_desc": "order",
-        "coref_chain": "",
+        "coref_chain": "Singleton_53_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6699,7 +6699,7 @@
     },
     {
         "cluster_desc": "sell",
-        "coref_chain": "",
+        "coref_chain": "Singleton_54_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6735,7 +6735,7 @@
     },
     {
         "cluster_desc": "cause",
-        "coref_chain": "",
+        "coref_chain": "Singleton_56_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6753,7 +6753,7 @@
     },
     {
         "cluster_desc": "have - fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "The DJIA had its worst fall since 1987 , a drop of 9 % or 998.50 points , before going back up a bit to close with a loss of 3.30 % or 347.80 points to a level of 10,520 .",
@@ -6771,7 +6771,7 @@
     },
     {
         "cluster_desc": "go down",
-        "coref_chain": "",
+        "coref_chain": "Singleton_58_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6790,7 +6790,7 @@
     },
     {
         "cluster_desc": "trigger",
-        "coref_chain": "",
+        "coref_chain": "Singleton_59_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6826,7 +6826,7 @@
     },
     {
         "cluster_desc": "sell - elsewhere",
-        "coref_chain": "",
+        "coref_chain": "Singleton_60_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6844,7 +6844,7 @@
     },
     {
         "cluster_desc": "report",
-        "coref_chain": "",
+        "coref_chain": "Singleton_85_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -6880,7 +6880,7 @@
     },
     {
         "cluster_desc": "see - 9%",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "US stocks see 9 % drop before making recovery",
@@ -6898,7 +6898,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "US stocks see 9 % drop before making recovery",
@@ -6916,7 +6916,7 @@
     },
     {
         "cluster_desc": "make",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "US stocks see 9 % drop before making recovery",
@@ -6934,7 +6934,7 @@
     },
     {
         "cluster_desc": "recovery",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "US stocks see 9 % drop before making recovery",
@@ -7007,7 +7007,7 @@
     },
     {
         "cluster_desc": "see - turbulent day",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "US stock markets saw an unusually turbulent day yesterday , with the Dow Jones Industrial Average ( DJIA ) losing almost a thousand points in thirty minutes , although later recovered somewhat to end the day with a smaller loss .",
@@ -7079,7 +7079,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_48_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -7097,7 +7097,7 @@
     },
     {
         "cluster_desc": "happen",
-        "coref_chain": "",
+        "coref_chain": "Singleton_49_180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "doc_id": "180695_US_stocks_see_9%_drop_before_making_recovery.xml",
         "event_entity": "event",
         "full_sentence": "According to some reports , the quick loss happened because a trader mistyped an order to sell a large amount of stock , causing the stock price to go down enough to trigger orders to sell elsewhere in the market .",
@@ -7115,7 +7115,7 @@
     },
     {
         "cluster_desc": "jitters",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Just two weeks after China sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
@@ -7133,7 +7133,7 @@
     },
     {
         "cluster_desc": "fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "The three major US stock market indices each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
@@ -7151,7 +7151,7 @@
     },
     {
         "cluster_desc": "mark",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "The three major US stock market indices each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
@@ -7169,7 +7169,7 @@
     },
     {
         "cluster_desc": "loss",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "The three major US stock market indices each fell two percent from Monday 's closing price , marking the second-biggest loss of 2007 .",
@@ -7187,7 +7187,7 @@
     },
     {
         "cluster_desc": "exposure",
-        "coref_chain": "",
+        "coref_chain": "Singleton_55_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7205,7 +7205,7 @@
     },
     {
         "cluster_desc": "have",
-        "coref_chain": "",
+        "coref_chain": "Singleton_56_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7223,7 +7223,7 @@
     },
     {
         "cluster_desc": "payments and foreclosures",
-        "coref_chain": "",
+        "coref_chain": "Singleton_91_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7242,7 +7242,7 @@
     },
     {
         "cluster_desc": "send",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Sub-prime lenders send jitters through global markets",
@@ -7260,7 +7260,7 @@
     },
     {
         "cluster_desc": "jitters",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Sub-prime lenders send jitters through global markets",
@@ -7278,7 +7278,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "London 's FTSE 100 , Paris ' CAC 40 and Frankfurt 's DAX 30 indices each closed down more than 1 percent .",
@@ -7297,7 +7297,7 @@
     },
     {
         "cluster_desc": "report",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7315,7 +7315,7 @@
     },
     {
         "cluster_desc": "payment",
-        "coref_chain": "",
+        "coref_chain": "Singleton_41_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7333,7 +7333,7 @@
     },
     {
         "cluster_desc": "foreclosure",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7351,7 +7351,7 @@
     },
     {
         "cluster_desc": "rise",
-        "coref_chain": "",
+        "coref_chain": "Singleton_45_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7387,7 +7387,7 @@
     },
     {
         "cluster_desc": "tumble",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Just two weeks after China sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
@@ -7405,7 +7405,7 @@
     },
     {
         "cluster_desc": "grow",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Just two weeks after China sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
@@ -7423,7 +7423,7 @@
     },
     {
         "cluster_desc": "worry",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Just two weeks after China sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
@@ -7441,7 +7441,7 @@
     },
     {
         "cluster_desc": "concerned",
-        "coref_chain": "",
+        "coref_chain": "Singleton_50_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -7459,7 +7459,7 @@
     },
     {
         "cluster_desc": "send",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "event",
         "full_sentence": "Just two weeks after China sent global markets into a tumble , growing worries about sub-prime mortgage lenders in the United States are sending jitters through stock exchanges around the globe .",
@@ -7513,7 +7513,7 @@
     },
     {
         "cluster_desc": "measure",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7531,7 +7531,7 @@
     },
     {
         "cluster_desc": "trade",
-        "coref_chain": "",
+        "coref_chain": "Singleton_53_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "The U.S. dollar rose against the yen after six straight days of losses , trading at 92.27 yen to the dollar .",
@@ -7549,7 +7549,7 @@
     },
     {
         "cluster_desc": "crisis",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7567,7 +7567,7 @@
     },
     {
         "cluster_desc": "seen by stockholders",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7585,7 +7585,7 @@
     },
     {
         "cluster_desc": "sufficient",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7603,7 +7603,7 @@
     },
     {
         "cluster_desc": "speak",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7621,7 +7621,7 @@
     },
     {
         "cluster_desc": "spoke and asked",
-        "coref_chain": "",
+        "coref_chain": "Singleton_94_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7640,7 +7640,7 @@
     },
     {
         "cluster_desc": "ask",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7658,7 +7658,7 @@
     },
     {
         "cluster_desc": "make",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7676,7 +7676,7 @@
     },
     {
         "cluster_desc": "plan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7694,7 +7694,7 @@
     },
     {
         "cluster_desc": "slide",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Asian stock markets slide ; Nikkei at lowest level since '82",
@@ -7712,7 +7712,7 @@
     },
     {
         "cluster_desc": "save",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7730,7 +7730,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7748,7 +7748,7 @@
     },
     {
         "cluster_desc": "inflict",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7766,7 +7766,7 @@
     },
     {
         "cluster_desc": "damage",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -7784,7 +7784,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_41_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "For the day , the Nikkei closed down 6.4 percent , or 486.18 points , to close at 7,162.90 .",
@@ -7803,7 +7803,7 @@
     },
     {
         "cluster_desc": "resume",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7821,7 +7821,7 @@
     },
     {
         "cluster_desc": "slide",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7875,7 +7875,7 @@
     },
     {
         "cluster_desc": "see since october",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7911,7 +7911,7 @@
     },
     {
         "cluster_desc": "stop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "event",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -7965,7 +7965,7 @@
     },
     {
         "cluster_desc": "attack",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "event",
         "full_sentence": "The biggest U.S. stock market index , the Dow Jones , plunged by more than 416 points by the closing bell on Tuesday , the worst single-day decline since the re-opening of the markets following the September 11th terrorist attacks .",
@@ -8001,7 +8001,7 @@
     },
     {
         "cluster_desc": "sell-off",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "event",
         "full_sentence": "The slip followed a 9 % sell-off in Chinese markets .",
@@ -8055,7 +8055,7 @@
     },
     {
         "cluster_desc": "plummet",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "event",
         "full_sentence": "U.S. stocks plummet amid global sell-off",
@@ -8073,7 +8073,7 @@
     },
     {
         "cluster_desc": "be - decline",
-        "coref_chain": "",
+        "coref_chain": "Singleton_35_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "event",
         "full_sentence": "It was the 7th largest single-day decline is U.S. history .",
@@ -8091,7 +8091,7 @@
     },
     {
         "cluster_desc": "sell-off",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "event",
         "full_sentence": "U.S. stocks plummet amid global sell-off",
@@ -8253,7 +8253,7 @@
     },
     {
         "cluster_desc": "worry",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_114719_Markets_down_across_the_world.xml",
         "doc_id": "114719_Markets_down_across_the_world.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world fell dramatically this week on worries that recent government moves might not prevent a global recession .",
@@ -8289,7 +8289,7 @@
     },
     {
         "cluster_desc": "move",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_114719_Markets_down_across_the_world.xml",
         "doc_id": "114719_Markets_down_across_the_world.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world fell dramatically this week on worries that recent government moves might not prevent a global recession .",
@@ -8307,7 +8307,7 @@
     },
     {
         "cluster_desc": "prevent",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_114719_Markets_down_across_the_world.xml",
         "doc_id": "114719_Markets_down_across_the_world.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world fell dramatically this week on worries that recent government moves might not prevent a global recession .",
@@ -8325,7 +8325,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_114719_Markets_down_across_the_world.xml",
         "doc_id": "114719_Markets_down_across_the_world.xml",
         "event_entity": "event",
         "full_sentence": "Stock markets across the world fell dramatically this week on worries that recent government moves might not prevent a global recession .",
@@ -8361,7 +8361,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_114719_Markets_down_across_the_world.xml",
         "doc_id": "114719_Markets_down_across_the_world.xml",
         "event_entity": "event",
         "full_sentence": "The largest drop was with the Dow Jones ( DJIA ) , which fell 678 points or more than 7.3 % to below 9,000 , closing at 8,579.19 .",
@@ -8451,7 +8451,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_51_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "The primary UK index , the FTSE 100 , rose in value by 8.04 % , which is 392.50 points , to above the 5000 mark at 5272.50 .",
@@ -8469,7 +8469,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_54_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
@@ -8541,7 +8541,7 @@
     },
     {
         "cluster_desc": "plan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_60_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "Shares worldwide surge due to US government plan",
@@ -8559,7 +8559,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
@@ -8577,7 +8577,7 @@
     },
     {
         "cluster_desc": "event",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
@@ -8595,7 +8595,7 @@
     },
     {
         "cluster_desc": "announcement",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
@@ -8613,7 +8613,7 @@
     },
     {
         "cluster_desc": "buy",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "doc_id": "113330_Shares_worldwide_surge_due_to_US_government_plan.xml",
         "event_entity": "event",
         "full_sentence": "This is due to the ongoing events in the financial world , including the United States government 's announcement that it would buy billions of dollars of bad loans from US banks .",
@@ -8667,7 +8667,7 @@
     },
     {
         "cluster_desc": "follow",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_114565_Worldwide_markets_fall_precipitously.xml",
         "doc_id": "114565_Worldwide_markets_fall_precipitously.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -8685,7 +8685,7 @@
     },
     {
         "cluster_desc": "bail out",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_114565_Worldwide_markets_fall_precipitously.xml",
         "doc_id": "114565_Worldwide_markets_fall_precipitously.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -8758,7 +8758,7 @@
     },
     {
         "cluster_desc": "ongoing",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_114565_Worldwide_markets_fall_precipitously.xml",
         "doc_id": "114565_Worldwide_markets_fall_precipitously.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -8776,7 +8776,7 @@
     },
     {
         "cluster_desc": "event",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_114565_Worldwide_markets_fall_precipitously.xml",
         "doc_id": "114565_Worldwide_markets_fall_precipitously.xml",
         "event_entity": "event",
         "full_sentence": "This is following the ongoing events in the financial world , including the US Government 's $ 700 billion bail out of the financial sector .",
@@ -8812,7 +8812,7 @@
     },
     {
         "cluster_desc": "9/11 attack",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "In Hong Kong , the Hang Seng index fell 5.5 percent - its biggest fall since the September 11 , 2001 , terrorist attacks .",
@@ -8830,7 +8830,7 @@
     },
     {
         "cluster_desc": "loss",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Losses of between three and seven percent were recorded in India , China , Britain , France , Germany and Canada .",
@@ -8848,7 +8848,7 @@
     },
     {
         "cluster_desc": "record",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Losses of between three and seven percent were recorded in India , China , Britain , France , Germany and Canada .",
@@ -8866,7 +8866,7 @@
     },
     {
         "cluster_desc": "be",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -8884,7 +8884,7 @@
     },
     {
         "cluster_desc": "link",
-        "coref_chain": "",
+        "coref_chain": "Singleton_32_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -8902,7 +8902,7 @@
     },
     {
         "cluster_desc": "blame",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -8920,7 +8920,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -8938,7 +8938,7 @@
     },
     {
         "cluster_desc": "loss",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -8956,7 +8956,7 @@
     },
     {
         "cluster_desc": "fear recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -8974,7 +8974,7 @@
     },
     {
         "cluster_desc": "fear problems",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -8992,7 +8992,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -9010,7 +9010,7 @@
     },
     {
         "cluster_desc": "problem",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -9028,7 +9028,7 @@
     },
     {
         "cluster_desc": "cause",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -9046,7 +9046,7 @@
     },
     {
         "cluster_desc": "loss",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -9064,7 +9064,7 @@
     },
     {
         "cluster_desc": "factor",
-        "coref_chain": "",
+        "coref_chain": "Singleton_74_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "While there are many factors linking national economies , analysts blame recent losses on fears of a recession in the United States .",
@@ -9082,7 +9082,7 @@
     },
     {
         "cluster_desc": "fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "In Hong Kong , the Hang Seng index fell 5.5 percent - its biggest fall since the September 11 , 2001 , terrorist attacks .",
@@ -9100,7 +9100,7 @@
     },
     {
         "cluster_desc": "drop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_78_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "World stocks plunge on fears on US recession",
@@ -9118,7 +9118,7 @@
     },
     {
         "cluster_desc": "fear problems",
-        "coref_chain": "",
+        "coref_chain": "Singleton_79_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "World stocks plunge on fears on US recession",
@@ -9136,7 +9136,7 @@
     },
     {
         "cluster_desc": "recession",
-        "coref_chain": "",
+        "coref_chain": "Singleton_80_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "World stocks plunge on fears on US recession",
@@ -9154,7 +9154,7 @@
     },
     {
         "cluster_desc": "fall",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "event",
         "full_sentence": "In Hong Kong , the Hang Seng index fell 5.5 percent - its biggest fall since the September 11 , 2001 , terrorist attacks .",
@@ -9172,7 +9172,7 @@
     },
     {
         "cluster_desc": "forecast",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "According to the bank , the losses are equal to 26 cents per share , worse than most economic analysts had forecast .",
@@ -9208,7 +9208,7 @@
     },
     {
         "cluster_desc": "say",
-        "coref_chain": "",
+        "coref_chain": "Singleton_33_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9226,7 +9226,7 @@
     },
     {
         "cluster_desc": "statement",
-        "coref_chain": "",
+        "coref_chain": "Singleton_34_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9244,7 +9244,7 @@
     },
     {
         "cluster_desc": "high",
-        "coref_chain": "",
+        "coref_chain": "Singleton_36_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9262,7 +9262,7 @@
     },
     {
         "cluster_desc": "be - challenge",
-        "coref_chain": "",
+        "coref_chain": "Singleton_37_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9316,7 +9316,7 @@
     },
     {
         "cluster_desc": "going",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
@@ -9388,7 +9388,7 @@
     },
     {
         "cluster_desc": "increase",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The Bank of America Corporation , the second-largest bank in the United States , has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
@@ -9406,7 +9406,7 @@
     },
     {
         "cluster_desc": "loss",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "The Bank of America Corporation , the second-largest bank in the United States , has announced that it lost US$ 2.24 billion in the third quarter of this year , mainly due to increases in loan losses .",
@@ -9442,7 +9442,7 @@
     },
     {
         "cluster_desc": "be - equal",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "event",
         "full_sentence": "According to the bank , the losses are equal to 26 cents per share , worse than most economic analysts had forecast .",

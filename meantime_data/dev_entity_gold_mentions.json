@@ -2530,7 +2530,7 @@
     },
     {
         "cluster_desc": "Japan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_93_118147_US_automaker_bailout_deal_fails_to_pass_Senate.xml",
         "doc_id": "118147_US_automaker_bailout_deal_fails_to_pass_Senate.xml",
         "event_entity": "entity",
         "full_sentence": "The bill was rejected after bipartisan discussions on the bailout broke down when Republican Party leaders insisted that the United Auto Workers ( UAW ) union agree to increase wage cuts by next year in order to bring their pay into line with those of Japanese automobile companies in the United States .",
@@ -2881,7 +2881,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_79_118175_White_House_considering_auto_rescue_plan.xml",
         "doc_id": "118175_White_House_considering_auto_rescue_plan.xml",
         "event_entity": "entity",
         "full_sentence": "White House considering auto rescue plan",
@@ -3814,7 +3814,7 @@
     },
     {
         "cluster_desc": "Chrysler business",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_60658_DaimlerChrysler_plans_to_cut_13,000_jobs.xml",
         "doc_id": "60658_DaimlerChrysler_plans_to_cut_13,000_jobs.xml",
         "event_entity": "entity",
         "full_sentence": "It also plans to cut two Chrysler plants in an attempt to make Chrysler business profitable by 2008 .",
@@ -4741,7 +4741,7 @@
     },
     {
         "cluster_desc": "General Motors",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_1007169_Mary_Barra_appointed_as_General_Motors_chief.xml",
         "doc_id": "1007169_Mary_Barra_appointed_as_General_Motors_chief.xml",
         "event_entity": "entity",
         "full_sentence": "The United States 's largest car manufacturer General Motors today named Mary Barra as its new chief executive .",
@@ -5028,7 +5028,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -5125,7 +5125,7 @@
     },
     {
         "cluster_desc": "Lehman Brothers",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -5169,7 +5169,7 @@
     },
     {
         "cluster_desc": "Washington Mutual",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -5206,7 +5206,7 @@
     },
     {
         "cluster_desc": "WorldCom",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -6275,7 +6275,7 @@
     },
     {
         "cluster_desc": "automobile manufacturers",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_120554_GM,_Chrysler_offer_buyouts_and_early_retirement_to_workers.xml",
         "doc_id": "120554_GM,_Chrysler_offer_buyouts_and_early_retirement_to_workers.xml",
         "event_entity": "entity",
         "full_sentence": "The automobile manufacturers have been hard hit in the recent economic downturn and have been forced to seek federal aid from the U.S. government .",
@@ -7529,7 +7529,7 @@
     },
     {
         "cluster_desc": "world",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_47720_Ford_announces_deep_production_cuts_in_response_to_growing_losses.xml",
         "doc_id": "47720_Ford_announces_deep_production_cuts_in_response_to_growing_losses.xml",
         "event_entity": "entity",
         "full_sentence": "Ford is the world 's third-largest automaker and the U.S. 's second-largest .",
@@ -9542,7 +9542,7 @@
     },
     {
         "cluster_desc": "boxy cars",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_60086_Ford_Taurus_to_be_revived.xml",
         "doc_id": "60086_Ford_Taurus_to_be_revived.xml",
         "event_entity": "entity",
         "full_sentence": "The Ford Taurus was originally introduced in 1986 , and was a revolutionary car that rewrote the rules for creating a sedan , and pushed the other American automakers to follow suit , leading to a design revolution that completely rid Detroit of the `` boxy '' cars of the 70s and 80s .",
@@ -9951,7 +9951,7 @@
     },
     {
         "cluster_desc": "5 Saturn models + dealership network",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "doc_id": "127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "event_entity": "entity",
         "full_sentence": "The purchase includes rights to the Saturn brand , its five current models and its dealership network .",
@@ -10245,7 +10245,7 @@
     },
     {
         "cluster_desc": "Saturn unit",
-        "coref_chain": "",
+        "coref_chain": "Singleton_58_127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "doc_id": "127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "event_entity": "entity",
         "full_sentence": "Penske Auto selected to buy General Motors ' Saturn unit",
@@ -10689,7 +10689,7 @@
     },
     {
         "cluster_desc": "Jim Press",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_126311_U.S._automaker_Chrysler_wants_to_eliminate_789_dealerships.xml",
         "doc_id": "126311_U.S._automaker_Chrysler_wants_to_eliminate_789_dealerships.xml",
         "event_entity": "entity",
         "full_sentence": "`` This is a difficult day for us and not a day anybody can be prepared for , '' said Jim Press , the Vice Chairman of Chrysler .",
@@ -12136,7 +12136,7 @@
     },
     {
         "cluster_desc": "United States",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "doc_id": "126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "event_entity": "entity",
         "full_sentence": "The United States automobile manufacturing firm General Motors announced on Wednesday that most of its bondholders did not exchange GM 's US$ 27 billion debt for a ten percent share in the company 's stock .",
@@ -12496,7 +12496,7 @@
     },
     {
         "cluster_desc": "10% GM share",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "doc_id": "126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "event_entity": "entity",
         "full_sentence": "The United States automobile manufacturing firm General Motors announced on Wednesday that most of its bondholders did not exchange GM 's US$ 27 billion debt for a ten percent share in the company 's stock .",
@@ -15095,7 +15095,7 @@
     },
     {
         "cluster_desc": "share in Chrysler",
-        "coref_chain": "",
+        "coref_chain": "Singleton_105_264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "doc_id": "264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "event_entity": "entity",
         "full_sentence": "According to Fiat 's announcement , the company has told the US Treasury that it intends to use its option to buy the share in Chrysler held by the US government , a deal that will be finalized by June 10 .",
@@ -15143,7 +15143,7 @@
     },
     {
         "cluster_desc": "Italy",
-        "coref_chain": "",
+        "coref_chain": "Singleton_107_264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "doc_id": "264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "event_entity": "entity",
         "full_sentence": "Fiat announced on Friday that it intends to purchase the six percent of automaker Chrysler that the US government currently owns , which would give the Italian company a 52 percent majority stake in Chrysler .",
@@ -16379,7 +16379,7 @@
     },
     {
         "cluster_desc": "Ford's stock",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_160257_Ford_US_auto_sales_spike.xml",
         "doc_id": "160257_Ford_US_auto_sales_spike.xml",
         "event_entity": "entity",
         "full_sentence": "The increase was better than analysts had predicted , and Ford 's stock rose to a five-year high in morning trading , before declining later in the day .",

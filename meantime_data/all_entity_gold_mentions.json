@@ -16513,7 +16513,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_61389_Airbus_announces_job_cuts_of_10,000.xml",
         "doc_id": "61389_Airbus_announces_job_cuts_of_10,000.xml",
         "event_entity": "entity",
         "full_sentence": "Louis Gallois , the Airbus chief executive , said the company expects to cut approximately 4,300 jobs in France , 3,700 in Germany , 1,600 in UK and 400 in Spain .",
@@ -16531,7 +16531,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_61389_Airbus_announces_job_cuts_of_10,000.xml",
         "doc_id": "61389_Airbus_announces_job_cuts_of_10,000.xml",
         "event_entity": "entity",
         "full_sentence": "The news comes as its parent company , EADS starts a major restructuring programme because the company is not efficient enough .",
@@ -16549,7 +16549,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_61389_Airbus_announces_job_cuts_of_10,000.xml",
         "doc_id": "61389_Airbus_announces_job_cuts_of_10,000.xml",
         "event_entity": "entity",
         "full_sentence": "Louis Gallois , the Airbus chief executive , said the company expects to cut approximately 4,300 jobs in France , 3,700 in Germany , 1,600 in UK and 400 in Spain .",
@@ -16586,7 +16586,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_61389_Airbus_announces_job_cuts_of_10,000.xml",
         "doc_id": "61389_Airbus_announces_job_cuts_of_10,000.xml",
         "event_entity": "entity",
         "full_sentence": "Louis Gallois , the Airbus chief executive , said the company expects to cut approximately 4,300 jobs in France , 3,700 in Germany , 1,600 in UK and 400 in Spain .",
@@ -17820,7 +17820,7 @@
     },
     {
         "cluster_desc": "US",
-        "coref_chain": "",
+        "coref_chain": "Singleton_83_108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "doc_id": "108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "event_entity": "entity",
         "full_sentence": "Government Accountability Office requests rerun of US Air Force tanker bid",
@@ -17857,7 +17857,7 @@
     },
     {
         "cluster_desc": "US",
-        "coref_chain": "",
+        "coref_chain": "Singleton_85_108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "doc_id": "108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "event_entity": "entity",
         "full_sentence": "The Government Accountability Office on June 18 called for a re-run of the bidding for the U.S. Air Force $ 40 billion tanker contract , citing major flaws in the procurement process .",
@@ -18094,7 +18094,7 @@
     },
     {
         "cluster_desc": "Los Angeles",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "doc_id": "108294_Government_Accountability_Office_requests_rerun_of_US_Air_Force_tanker_bid.xml",
         "event_entity": "entity",
         "full_sentence": "When the Air Force selected Los Angeles based Northrop Grumman on February 29 to build the aircraft , Boeing challenged the award in a formal protest before the GAO , claiming the evaluation was skewed towards Northrop .",
@@ -18588,7 +18588,7 @@
     },
     {
         "cluster_desc": "livery",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_25501_Engine_troubles_delay_Airbus_superjumbo_tour.xml",
         "doc_id": "25501_Engine_troubles_delay_Airbus_superjumbo_tour.xml",
         "event_entity": "entity",
         "full_sentence": "It is expected that the Airbus 380 will wear the livery of Singapore Airlines when it arrives on November 11 , three days later than originally planned .",
@@ -18688,7 +18688,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_25501_Engine_troubles_delay_Airbus_superjumbo_tour.xml",
         "doc_id": "25501_Engine_troubles_delay_Airbus_superjumbo_tour.xml",
         "event_entity": "entity",
         "full_sentence": "The departure from France of the new Airbus A380 superjumbo airliner on a tour of Asia and Australia has been delayed , leading to a rearrangement of its public appearances .",
@@ -18813,7 +18813,7 @@
     },
     {
         "cluster_desc": "full passenger",
-        "coref_chain": "",
+        "coref_chain": "Singleton_83_4764_Boeing_unveils_long-range_777.xml",
         "doc_id": "4764_Boeing_unveils_long-range_777.xml",
         "event_entity": "entity",
         "full_sentence": "The aircraft can fly from New York to Singapore and from Los Angeles to Dubai with a full passenger and luggage load non-stop , and has been named the Worldliner by Boeing to mark the fact it can connect almost any two cities on Earth .",
@@ -18851,7 +18851,7 @@
     },
     {
         "cluster_desc": "luggage",
-        "coref_chain": "",
+        "coref_chain": "Singleton_85_4764_Boeing_unveils_long-range_777.xml",
         "doc_id": "4764_Boeing_unveils_long-range_777.xml",
         "event_entity": "entity",
         "full_sentence": "The aircraft can fly from New York to Singapore and from Los Angeles to Dubai with a full passenger and luggage load non-stop , and has been named the Worldliner by Boeing to mark the fact it can connect almost any two cities on Earth .",
@@ -18922,7 +18922,7 @@
     },
     {
         "cluster_desc": "777 airliner",
-        "coref_chain": "",
+        "coref_chain": "Singleton_25_4764_Boeing_unveils_long-range_777.xml",
         "doc_id": "4764_Boeing_unveils_long-range_777.xml",
         "event_entity": "entity",
         "full_sentence": "Boeing has unveiled a new ultra-long range version of its 777 airliner , capable of flying from London to Sydney non-stop .",
@@ -19274,7 +19274,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_11_4764_Boeing_unveils_long-range_777.xml",
         "doc_id": "4764_Boeing_unveils_long-range_777.xml",
         "event_entity": "entity",
         "full_sentence": "The 777-200LR can fly for 9,420 nautical miles ( 17,446 kilometers ) with 301 passengers onboard , giving it a range greater than any other airliner in the world .",
@@ -19316,7 +19316,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_4764_Boeing_unveils_long-range_777.xml",
         "doc_id": "4764_Boeing_unveils_long-range_777.xml",
         "event_entity": "entity",
         "full_sentence": "The 777-200LR can fly for 9,420 nautical miles ( 17,446 kilometers ) with 301 passengers onboard , giving it a range greater than any other airliner in the world .",
@@ -19462,7 +19462,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "An American Airlines 777 landing at Heathrow airport Boeing has secured two large orders for new aircraft .",
@@ -19654,7 +19654,7 @@
     },
     {
         "cluster_desc": "18 777s and 14 787s",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "The Air Canada deal includes firm orders for 18 777s and 14 of the new mid-size , long-range 787 Dreamliner .",
@@ -19683,7 +19683,7 @@
     },
     {
         "cluster_desc": "18 777s and 46 787s",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "Options are included for 18 more 777s and 46 more 787s .",
@@ -19707,7 +19707,7 @@
     },
     {
         "cluster_desc": "14 new 787 dreamliners",
-        "coref_chain": "",
+        "coref_chain": "Singleton_74_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "The Air Canada deal includes firm orders for 18 777s and 14 of the new mid-size , long-range 787 Dreamliner .",
@@ -19733,7 +19733,7 @@
     },
     {
         "cluster_desc": "18 more 777s",
-        "coref_chain": "",
+        "coref_chain": "Singleton_76_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "Options are included for 18 more 777s and 46 more 787s .",
@@ -19771,7 +19771,7 @@
     },
     {
         "cluster_desc": "46 more 787",
-        "coref_chain": "",
+        "coref_chain": "Singleton_77_8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "doc_id": "8983_Boeing_secures_11bn_of_aircraft_deals.xml",
         "event_entity": "entity",
         "full_sentence": "Options are included for 18 more 777s and 46 more 787s .",
@@ -19961,7 +19961,7 @@
     },
     {
         "cluster_desc": "the steering computer and backup system",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "doc_id": "149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "event_entity": "entity",
         "full_sentence": "The steering computer and backup system failed after thirty minutes .",
@@ -20066,7 +20066,7 @@
     },
     {
         "cluster_desc": "German",
-        "coref_chain": "",
+        "coref_chain": "Singleton_72_149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "doc_id": "149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "event_entity": "entity",
         "full_sentence": "The glitch was not reported when the plane made its maiden flight on 11 December -- four years behind schedule and $ 7.3 billion over budget , due to what the manufacturers call `` political interference '' -- and only became public attention this weekend , when German magazine Der Spiegel cited confidential documents from engine maker Europrop in a report .",
@@ -20103,7 +20103,7 @@
     },
     {
         "cluster_desc": "Europrop",
-        "coref_chain": "",
+        "coref_chain": "Singleton_74_149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "doc_id": "149731_Technical_problem_on_Airbus_A400M_maiden_flight.xml",
         "event_entity": "entity",
         "full_sentence": "The glitch was not reported when the plane made its maiden flight on 11 December -- four years behind schedule and $ 7.3 billion over budget , due to what the manufacturers call `` political interference '' -- and only became public attention this weekend , when German magazine Der Spiegel cited confidential documents from engine maker Europrop in a report .",
@@ -20180,7 +20180,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_1173_Internal_emails_expose_Boeing-Air_Force_contract_discussions.xml",
         "doc_id": "1173_Internal_emails_expose_Boeing-Air_Force_contract_discussions.xml",
         "event_entity": "entity",
         "full_sentence": "Internal emails expose Boeing-Air Force contract discussions",
@@ -20528,7 +20528,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_75_1173_Internal_emails_expose_Boeing-Air_Force_contract_discussions.xml",
         "doc_id": "1173_Internal_emails_expose_Boeing-Air_Force_contract_discussions.xml",
         "event_entity": "entity",
         "full_sentence": "Senator John McCain ( R-AZ ) entered them into the Congressional Record during a speech last week against the now-cancelled deal to lease 100 mid-air tanker aircraft from Boeing .",
@@ -20664,7 +20664,7 @@
     },
     {
         "cluster_desc": "designation number",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_73808_Boeing_unveils_new_787_Dreamliner.xml",
         "doc_id": "73808_Boeing_unveils_new_787_Dreamliner.xml",
         "event_entity": "entity",
         "full_sentence": "Sunday was chosen as its date matches the aircraft 's designation number when written in the American format , 7/8/07 .",
@@ -20706,7 +20706,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_22_73808_Boeing_unveils_new_787_Dreamliner.xml",
         "doc_id": "73808_Boeing_unveils_new_787_Dreamliner.xml",
         "event_entity": "entity",
         "full_sentence": "Aircraft manufacturer Boeing have unveiled their new 787 Dreamliner at their Everett Factory near Seattle , Washington , in the United States .",
@@ -21292,7 +21292,7 @@
     },
     {
         "cluster_desc": "terminal 3",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_82597_First_A380_enters_commercial_service.xml",
         "doc_id": "82597_First_A380_enters_commercial_service.xml",
         "event_entity": "entity",
         "full_sentence": "The aircraft was greeted by some 400 guests , including the Prime Minister of Singapore , Mr. Lee Hsien Loong , at the soon-to-open Terminal 3 of Changi International Airport .",
@@ -21656,7 +21656,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_69_82597_First_A380_enters_commercial_service.xml",
         "doc_id": "82597_First_A380_enters_commercial_service.xml",
         "event_entity": "entity",
         "full_sentence": "In his speech , the Prime Minister applauded Singapore Airlines ( SIA ) - the recipient carrier - and cited its success as a source of pride for all Singaporeans .",
@@ -21722,7 +21722,7 @@
     },
     {
         "cluster_desc": "Airbus' delivery center",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_82597_First_A380_enters_commercial_service.xml",
         "doc_id": "82597_First_A380_enters_commercial_service.xml",
         "event_entity": "entity",
         "full_sentence": "It was a milestone in aviation history : the first Airbus A380 landed at Singapore 's Changi International Airport at 6:40 p.m. ( GMT +8 ) after a 12-hour flight from Airbus ' Delivery Center .",
@@ -21743,7 +21743,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_71_82597_First_A380_enters_commercial_service.xml",
         "doc_id": "82597_First_A380_enters_commercial_service.xml",
         "event_entity": "entity",
         "full_sentence": "In his speech , the Prime Minister applauded Singapore Airlines ( SIA ) - the recipient carrier - and cited its success as a source of pride for all Singaporeans .",
@@ -22082,7 +22082,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_80_102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "doc_id": "102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "event_entity": "entity",
         "full_sentence": "European Aeronautic Defence & Space NV ( EADS ) , the parent company of European airframer Airbus , has won a # 13 billion contract to supply the United Kingdom 's Royal Air Force ( RAF ) with aerial refueling tankers to replace the nation 's current ageing fleet .",
@@ -22126,7 +22126,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_81_102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "doc_id": "102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "event_entity": "entity",
         "full_sentence": "European Aeronautic Defence & Space NV ( EADS ) , the parent company of European airframer Airbus , has won a # 13 billion contract to supply the United Kingdom 's Royal Air Force ( RAF ) with aerial refueling tankers to replace the nation 's current ageing fleet .",
@@ -22168,7 +22168,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_82_102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "doc_id": "102977_Airbus_parent_EADS_wins_13_billion_UK_RAF_airtanker_contract.xml",
         "event_entity": "entity",
         "full_sentence": "European Aeronautic Defence & Space NV ( EADS ) , the parent company of European airframer Airbus , has won a # 13 billion contract to supply the United Kingdom 's Royal Air Force ( RAF ) with aerial refueling tankers to replace the nation 's current ageing fleet .",
@@ -23025,7 +23025,7 @@
     },
     {
         "cluster_desc": "wiring",
-        "coref_chain": "",
+        "coref_chain": "Singleton_15_51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "doc_id": "51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "event_entity": "entity",
         "full_sentence": "The main fault has been found to be problems in the aircraft 's 500km of wiring .",
@@ -23048,7 +23048,7 @@
     },
     {
         "cluster_desc": "electrical harnesses",
-        "coref_chain": "",
+        "coref_chain": "Singleton_70_51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "doc_id": "51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "event_entity": "entity",
         "full_sentence": "In a statement on the Airbus website , the company said that `` the root cause of the problem is the fact that the 3D Digital mock-up , which facilitates the design of the electrical harnesses installation , was implemented late and that the people working on it were in their learning curve '' .",
@@ -23086,7 +23086,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_73_51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "doc_id": "51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "event_entity": "entity",
         "full_sentence": "In a statement on the Airbus website , the company said that `` the root cause of the problem is the fact that the 3D Digital mock-up , which facilitates the design of the electrical harnesses installation , was implemented late and that the people working on it were in their learning curve '' .",
@@ -23105,7 +23105,7 @@
     },
     {
         "cluster_desc": "Airbus website",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "doc_id": "51682_Singapore_Airlines_to_be_compensated_for_A380_delays.xml",
         "event_entity": "entity",
         "full_sentence": "In a statement on the Airbus website , the company said that `` the root cause of the problem is the fact that the 3D Digital mock-up , which facilitates the design of the electrical harnesses installation , was implemented late and that the people working on it were in their learning curve '' .",
@@ -23456,7 +23456,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_11714_Ryanair_exercises_options_on_five_Boeing_737s.xml",
         "doc_id": "11714_Ryanair_exercises_options_on_five_Boeing_737s.xml",
         "event_entity": "entity",
         "full_sentence": "Ryanair CEO , Michael O' Leary , justified his choice of Boeing by saying , `` The Boeing 737-800 has the best technical reliability and ensures that Ryanair is the number one on-time major airline in Europe '' ... `` In addition , it has the lowest unit operating cost .",
@@ -24262,7 +24262,7 @@
     },
     {
         "cluster_desc": "US",
-        "coref_chain": "",
+        "coref_chain": "Singleton_62_5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "doc_id": "5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "event_entity": "entity",
         "full_sentence": "Boeing allowed to bid for U.S. space launch contracts again",
@@ -24313,7 +24313,7 @@
     },
     {
         "cluster_desc": "all Boeing's units",
-        "coref_chain": "",
+        "coref_chain": "Singleton_64_5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "doc_id": "5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "event_entity": "entity",
         "full_sentence": "Boeing 's Launch Systems , Launch Services and Delta Program business units are to be allowed to bid once more for U.S. space launch contracts , the USAF has announced .",
@@ -24363,7 +24363,7 @@
     },
     {
         "cluster_desc": "US",
-        "coref_chain": "",
+        "coref_chain": "Singleton_66_5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "doc_id": "5403_Boeing_allowed_to_bid_for_U.S._space_launch_contracts_again.xml",
         "event_entity": "entity",
         "full_sentence": "Boeing 's Launch Systems , Launch Services and Delta Program business units are to be allowed to bid once more for U.S. space launch contracts , the USAF has announced .",
@@ -24555,7 +24555,7 @@
     },
     {
         "cluster_desc": "tug operator",
-        "coref_chain": "",
+        "coref_chain": "Singleton_20_78496_Airbus_A380_test_flight_delayed_after_accident.xml",
         "doc_id": "78496_Airbus_A380_test_flight_delayed_after_accident.xml",
         "event_entity": "entity",
         "full_sentence": "As the jet was being pushed back by a Thai Airways International tug operator , the left winglet struck the side of the hangar , and was crumpled against it .",
@@ -24870,7 +24870,7 @@
     },
     {
         "cluster_desc": "world",
-        "coref_chain": "",
+        "coref_chain": "Singleton_72_78496_Airbus_A380_test_flight_delayed_after_accident.xml",
         "doc_id": "78496_Airbus_A380_test_flight_delayed_after_accident.xml",
         "event_entity": "entity",
         "full_sentence": "A test flight of the new Airbus A380 superjumbo , the largest passenger jet in the world , was delayed today after a superficial accident at Suvarnabhumi Airport , which serves Bangkok , Thailand .",
@@ -25579,7 +25579,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_118_87805_Indonesia_transport_minister.xml",
         "doc_id": "87805_Indonesia_transport_minister.xml",
         "event_entity": "entity",
         "full_sentence": "Jusman Syafii Djamal , minister of transport for Indonesia , has recommended that local airlines should not purchase aircraft from European manufacturers , such as Airbus .",
@@ -25983,7 +25983,7 @@
     },
     {
         "cluster_desc": "six A330-300E aircrafts",
-        "coref_chain": "",
+        "coref_chain": "Singleton_30_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Under the agreement , Aer Lingus Group PLC said it will receive six new A330-300E aircraft from 2009 to 2011 , then between 2014 and 2016 it will take delivery of six new A350 XWB ( Extra Wide Body ) aircraft , a new design currently under development by Airbus .",
@@ -26004,7 +26004,7 @@
     },
     {
         "cluster_desc": "six A350 XWB aircrafts",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Under the agreement , Aer Lingus Group PLC said it will receive six new A330-300E aircraft from 2009 to 2011 , then between 2014 and 2016 it will take delivery of six new A350 XWB ( Extra Wide Body ) aircraft , a new design currently under development by Airbus .",
@@ -26255,7 +26255,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_108_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Aer Lingus already operates an all-Airbus fleet consisting of 30 short-haul aircraft ( 24 A320s and 6 A321s ) and eight long-haul A330s , and had made the purchase of new long-haul airliners a top priority since the formerly state-owned company was floated on British and Irish stock markets in September 2006 .",
@@ -26297,7 +26297,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_109_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Aer Lingus already operates an all-Airbus fleet consisting of 30 short-haul aircraft ( 24 A320s and 6 A321s ) and eight long-haul A330s , and had made the purchase of new long-haul airliners a top priority since the formerly state-owned company was floated on British and Irish stock markets in September 2006 .",
@@ -26334,7 +26334,7 @@
     },
     {
         "cluster_desc": "British",
-        "coref_chain": "",
+        "coref_chain": "Singleton_110_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Aer Lingus already operates an all-Airbus fleet consisting of 30 short-haul aircraft ( 24 A320s and 6 A321s ) and eight long-haul A330s , and had made the purchase of new long-haul airliners a top priority since the formerly state-owned company was floated on British and Irish stock markets in September 2006 .",
@@ -26374,7 +26374,7 @@
     },
     {
         "cluster_desc": "Irish",
-        "coref_chain": "",
+        "coref_chain": "Singleton_112_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Aer Lingus already operates an all-Airbus fleet consisting of 30 short-haul aircraft ( 24 A320s and 6 A321s ) and eight long-haul A330s , and had made the purchase of new long-haul airliners a top priority since the formerly state-owned company was floated on British and Irish stock markets in September 2006 .",
@@ -26430,7 +26430,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Under the agreement , Aer Lingus Group PLC said it will receive six new A330-300E aircraft from 2009 to 2011 , then between 2014 and 2016 it will take delivery of six new A350 XWB ( Extra Wide Body ) aircraft , a new design currently under development by Airbus .",
@@ -26488,7 +26488,7 @@
     },
     {
         "cluster_desc": "Irish",
-        "coref_chain": "",
+        "coref_chain": "Singleton_116_71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "doc_id": "71426_Aer_Lingus_buys_twelve_new_long-haul_Airbus_jets.xml",
         "event_entity": "entity",
         "full_sentence": "Irish national airline Aer Lingus have purchased 12 new long-haul Airbus aircraft as a means of modernising it 's long-haul fleet and improving it 's transatlantic network .",
@@ -26978,7 +26978,7 @@
     },
     {
         "cluster_desc": "20 Boeing 777 planes",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_11716_Airbus_wins_Qatar_Airways_order_worth_15bn.xml",
         "doc_id": "11716_Airbus_wins_Qatar_Airways_order_worth_15bn.xml",
         "event_entity": "entity",
         "full_sentence": "Qatar Airways , which choose the Airbus A350 over Boeing 's 787 , will also purchase 20 of Boeing 's larger 777 planes for $ 4.6 billion .",
@@ -27039,7 +27039,7 @@
     },
     {
         "cluster_desc": "Airbus A380's",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_11716_Airbus_wins_Qatar_Airways_order_worth_15bn.xml",
         "doc_id": "11716_Airbus_wins_Qatar_Airways_order_worth_15bn.xml",
         "event_entity": "entity",
         "full_sentence": "Qatar has a previous order for 2 of Airbus ' massive new A380 's which it will begin to fly in 2009 out of London Heathrow .",
@@ -27608,7 +27608,7 @@
     },
     {
         "cluster_desc": "plastic and carbon",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_276079_Boeing_rolls_out_first_787_Dreamliner_to_go_into_service.xml",
         "doc_id": "276079_Boeing_rolls_out_first_787_Dreamliner_to_go_into_service.xml",
         "event_entity": "entity",
         "full_sentence": "The plane promises increased fuel efficiency as it is the first model to be built out of plastic and carbon composites , more lightweight than conventional materials .",
@@ -27683,7 +27683,7 @@
     },
     {
         "cluster_desc": "Japan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_76_276079_Boeing_rolls_out_first_787_Dreamliner_to_go_into_service.xml",
         "doc_id": "276079_Boeing_rolls_out_first_787_Dreamliner_to_go_into_service.xml",
         "event_entity": "entity",
         "full_sentence": "Japan 's ( ANA ) were to take delivery in May 2008 , but will now receive the aircraft next month .",
@@ -27758,7 +27758,7 @@
     },
     {
         "cluster_desc": "carbon-fiber composites",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "doc_id": "71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "event_entity": "entity",
         "full_sentence": "The Dreamliner will be the first commercial jet to be manufactured mainly with carbon-fiber composites instead of the aluminium previously used .",
@@ -27777,7 +27777,7 @@
     },
     {
         "cluster_desc": "aluminium",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "doc_id": "71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "event_entity": "entity",
         "full_sentence": "The Dreamliner will be the first commercial jet to be manufactured mainly with carbon-fiber composites instead of the aluminium previously used .",
@@ -27981,7 +27981,7 @@
     },
     {
         "cluster_desc": "first jets",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "doc_id": "71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "event_entity": "entity",
         "full_sentence": "The first jets will be delivered in 2014 .",
@@ -28001,7 +28001,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_65_71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "doc_id": "71526_Aeroflot_negotiates_purchase_of_22_new_Boeing_787_Dreamliner_aircraft.xml",
         "event_entity": "entity",
         "full_sentence": "Russian flag carrier Aeroflot has negotiated the purchase of 22 new Boeing 787 Dreamliners , an aircraft Boeing currently has under development .",
@@ -28218,7 +28218,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "In China , airliners are selected and purchased by the government , which then distributes them to different airlines .",
@@ -28263,7 +28263,7 @@
     },
     {
         "cluster_desc": "People's Republic of China",
-        "coref_chain": "",
+        "coref_chain": "Singleton_21_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "In China , airliners are selected and purchased by the government , which then distributes them to different airlines .",
@@ -28300,7 +28300,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_23_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Chinese airlines agree purchase of Boeing 787 Dreamliners worth US$ 7.2 bn",
@@ -28556,7 +28556,7 @@
     },
     {
         "cluster_desc": "People's Republic of China",
-        "coref_chain": "",
+        "coref_chain": "Singleton_12_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Officials from the People 's Republic of China have agreed to purchase 60 Boeing 787 Dreamliner aircraft in a deal worth US$ 7.2 bn .",
@@ -28578,7 +28578,7 @@
     },
     {
         "cluster_desc": "60 Boeing 787 Dreamliner",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Officials from the People 's Republic of China have agreed to purchase 60 Boeing 787 Dreamliner aircraft in a deal worth US$ 7.2 bn .",
@@ -28600,7 +28600,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_14_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Officials from the People 's Republic of China have agreed to purchase 60 Boeing 787 Dreamliner aircraft in a deal worth US$ 7.2 bn .",
@@ -28618,7 +28618,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_74_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Chinese airlines agree purchase of Boeing 787 Dreamliners worth US$ 7.2 bn",
@@ -28656,7 +28656,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_75_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "The preliminary agreement will see Dreamliners delivered to six airlines - Air China , China Eastern Airlines , China Southern Airlines , Hainan Airlines , Shanghai Airlines and Xiamen Airlines .",
@@ -28712,7 +28712,7 @@
     },
     {
         "cluster_desc": "60 Boeing 787 Dreamliner",
-        "coref_chain": "",
+        "coref_chain": "Singleton_18_3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "doc_id": "3835_Chinese_airlines_agree_purchase_of_Boeing_787_Dreamliners.xml",
         "event_entity": "entity",
         "full_sentence": "Chinese airlines agree purchase of Boeing 787 Dreamliners worth US$ 7.2 bn",
@@ -28813,7 +28813,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_57_82548_First_Airbus_A380_delivered.xml",
         "doc_id": "82548_First_Airbus_A380_delivered.xml",
         "event_entity": "entity",
         "full_sentence": "The first A380 superjumbo , made by Airbus , was delivered today to Singapore Airlines ( SIA ) 18 months behind schedule .",
@@ -29208,7 +29208,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_81_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "Northrop Grumman and Airbus parent company European Aeronautic Defence and Space Company EADS N.V. ( EADS ) have unexpectedly defeated Boeing for a US$ 40 billion ( GB # 20.1 billion ) contract to supply the United States Air Force ( USAF ) with 179 new aerial refueling tankers at a rate of 15 a year .",
@@ -29505,7 +29505,7 @@
     },
     {
         "cluster_desc": "Boeing and Martin",
-        "coref_chain": "",
+        "coref_chain": "Singleton_67_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "That contract was fought for between Boeing and Lockheed Martin , Lockheed ultimately winning the contest .",
@@ -29569,7 +29569,7 @@
     },
     {
         "cluster_desc": "Northrop and EADS",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "Northrop Grumman and Airbus parent company European Aeronautic Defence and Space Company EADS N.V. ( EADS ) have unexpectedly defeated Boeing for a US$ 40 billion ( GB # 20.1 billion ) contract to supply the United States Air Force ( USAF ) with 179 new aerial refueling tankers at a rate of 15 a year .",
@@ -29642,7 +29642,7 @@
     },
     {
         "cluster_desc": "JSA Research",
-        "coref_chain": "",
+        "coref_chain": "Singleton_71_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "JSA Research defence analysist Paul Nesbit said that Maintenance , Repair and Overhaul ( MRO ) operations across the aircraft 's fifty-year service life could push the value of the contract as high as US$ 100 billion .",
@@ -29699,7 +29699,7 @@
     },
     {
         "cluster_desc": "Northrop and EADS",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "Northrop Grumman and Airbus parent EADS defeat Boeing for $ 40 billion US airtanker contract",
@@ -29758,7 +29758,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_76_100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "doc_id": "100911_Northrop_Grumman_and_Airbus_parent_EADS_defeat_Boeing.xml",
         "event_entity": "entity",
         "full_sentence": "Northrop Grumman and Airbus parent EADS defeat Boeing for $ 40 billion US airtanker contract",
@@ -29934,7 +29934,7 @@
     },
     {
         "cluster_desc": "second A380",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_62929_A380_makes_maiden_flight_to_US.xml",
         "doc_id": "62929_A380_makes_maiden_flight_to_US.xml",
         "event_entity": "entity",
         "full_sentence": "A second A380 is also travelling to the U.S. on Monday , but without passengers .",
@@ -30051,7 +30051,7 @@
     },
     {
         "cluster_desc": "the world",
-        "coref_chain": "",
+        "coref_chain": "Singleton_65_62929_A380_makes_maiden_flight_to_US.xml",
         "doc_id": "62929_A380_makes_maiden_flight_to_US.xml",
         "event_entity": "entity",
         "full_sentence": "The Airbus A380 , the world 's largest passenger plane , was set to land in the United States of America on Monday after a test flight .",
@@ -30097,7 +30097,7 @@
     },
     {
         "cluster_desc": "German",
-        "coref_chain": "",
+        "coref_chain": "Singleton_68_62929_A380_makes_maiden_flight_to_US.xml",
         "doc_id": "62929_A380_makes_maiden_flight_to_US.xml",
         "event_entity": "entity",
         "full_sentence": "It is being billed as the first time it has carried a near-normal number of passengers , though most will be staff of Airbus and German airline Lufthansa .",
@@ -30916,7 +30916,7 @@
     },
     {
         "cluster_desc": "political leaders and VIP guests",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_3307_Airbus_launches_world_largest_passenger_plane.xml",
         "doc_id": "3307_Airbus_launches_world_largest_passenger_plane.xml",
         "event_entity": "entity",
         "full_sentence": "In a ceremony attended by several European political leaders and 5,000 VIP guests , Airbus unveiled plans for the A380 , a twin-deck aircraft that can carry up to 840 people in all-economy class ( 550 for a Boeing 747 ) , or 555 people in typical three mixed classes layout .",
@@ -31019,7 +31019,7 @@
     },
     {
         "cluster_desc": "5000 vips",
-        "coref_chain": "",
+        "coref_chain": "Singleton_86_3307_Airbus_launches_world_largest_passenger_plane.xml",
         "doc_id": "3307_Airbus_launches_world_largest_passenger_plane.xml",
         "event_entity": "entity",
         "full_sentence": "In a ceremony attended by several European political leaders and 5,000 VIP guests , Airbus unveiled plans for the A380 , a twin-deck aircraft that can carry up to 840 people in all-economy class ( 550 for a Boeing 747 ) , or 555 people in typical three mixed classes layout .",
@@ -31143,7 +31143,7 @@
     },
     {
         "cluster_desc": "550",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_3307_Airbus_launches_world_largest_passenger_plane.xml",
         "doc_id": "3307_Airbus_launches_world_largest_passenger_plane.xml",
         "event_entity": "entity",
         "full_sentence": "In a ceremony attended by several European political leaders and 5,000 VIP guests , Airbus unveiled plans for the A380 , a twin-deck aircraft that can carry up to 840 people in all-economy class ( 550 for a Boeing 747 ) , or 555 people in typical three mixed classes layout .",
@@ -31795,7 +31795,7 @@
     },
     {
         "cluster_desc": "previous Boeing models",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_145930_Boeing_787_Dreamliner_makes_maiden_flight.xml",
         "doc_id": "145930_Boeing_787_Dreamliner_makes_maiden_flight.xml",
         "event_entity": "entity",
         "full_sentence": "Boeing claims that the new 290 + seat wide-body , twin engine jetliner is more fuel efficient than previous Boeing models .",
@@ -34364,7 +34364,7 @@
     },
     {
         "cluster_desc": "Japan",
-        "coref_chain": "",
+        "coref_chain": "Singleton_93_118147_US_automaker_bailout_deal_fails_to_pass_Senate.xml",
         "doc_id": "118147_US_automaker_bailout_deal_fails_to_pass_Senate.xml",
         "event_entity": "entity",
         "full_sentence": "The bill was rejected after bipartisan discussions on the bailout broke down when Republican Party leaders insisted that the United Auto Workers ( UAW ) union agree to increase wage cuts by next year in order to bring their pay into line with those of Japanese automobile companies in the United States .",
@@ -34715,7 +34715,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_79_118175_White_House_considering_auto_rescue_plan.xml",
         "doc_id": "118175_White_House_considering_auto_rescue_plan.xml",
         "event_entity": "entity",
         "full_sentence": "White House considering auto rescue plan",
@@ -35648,7 +35648,7 @@
     },
     {
         "cluster_desc": "Chrysler business",
-        "coref_chain": "",
+        "coref_chain": "Singleton_17_60658_DaimlerChrysler_plans_to_cut_13,000_jobs.xml",
         "doc_id": "60658_DaimlerChrysler_plans_to_cut_13,000_jobs.xml",
         "event_entity": "entity",
         "full_sentence": "It also plans to cut two Chrysler plants in an attempt to make Chrysler business profitable by 2008 .",
@@ -36575,7 +36575,7 @@
     },
     {
         "cluster_desc": "General Motors",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_1007169_Mary_Barra_appointed_as_General_Motors_chief.xml",
         "doc_id": "1007169_Mary_Barra_appointed_as_General_Motors_chief.xml",
         "event_entity": "entity",
         "full_sentence": "The United States 's largest car manufacturer General Motors today named Mary Barra as its new chief executive .",
@@ -36862,7 +36862,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_19_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -36959,7 +36959,7 @@
     },
     {
         "cluster_desc": "Lehman Brothers",
-        "coref_chain": "",
+        "coref_chain": "Singleton_3_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -37003,7 +37003,7 @@
     },
     {
         "cluster_desc": "Washington Mutual",
-        "coref_chain": "",
+        "coref_chain": "Singleton_5_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -37040,7 +37040,7 @@
     },
     {
         "cluster_desc": "WorldCom",
-        "coref_chain": "",
+        "coref_chain": "Singleton_7_127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "doc_id": "127226_U.S._manufacturer_General_Motors_seeks_bankruptcy_protection.xml",
         "event_entity": "entity",
         "full_sentence": "This was the largest bankruptcy filing for a U.S. manufacturing company , and with declared assets of $ 82.29 billion and a debt of $ 172.81 billion , and the fourth largest bankruptcy filing in recent U.S. history -- after the bankruptcies of Lehman Brothers ( $ 691.06 billion ) , Washington Mutual ( $ 327.91 billion ) , and WorldCom ( $ 103.91 billion ) .",
@@ -38109,7 +38109,7 @@
     },
     {
         "cluster_desc": "automobile manufacturers",
-        "coref_chain": "",
+        "coref_chain": "Singleton_10_120554_GM,_Chrysler_offer_buyouts_and_early_retirement_to_workers.xml",
         "doc_id": "120554_GM,_Chrysler_offer_buyouts_and_early_retirement_to_workers.xml",
         "event_entity": "entity",
         "full_sentence": "The automobile manufacturers have been hard hit in the recent economic downturn and have been forced to seek federal aid from the U.S. government .",
@@ -39363,7 +39363,7 @@
     },
     {
         "cluster_desc": "world",
-        "coref_chain": "",
+        "coref_chain": "Singleton_38_47720_Ford_announces_deep_production_cuts_in_response_to_growing_losses.xml",
         "doc_id": "47720_Ford_announces_deep_production_cuts_in_response_to_growing_losses.xml",
         "event_entity": "entity",
         "full_sentence": "Ford is the world 's third-largest automaker and the U.S. 's second-largest .",
@@ -41376,7 +41376,7 @@
     },
     {
         "cluster_desc": "boxy cars",
-        "coref_chain": "",
+        "coref_chain": "Singleton_9_60086_Ford_Taurus_to_be_revived.xml",
         "doc_id": "60086_Ford_Taurus_to_be_revived.xml",
         "event_entity": "entity",
         "full_sentence": "The Ford Taurus was originally introduced in 1986 , and was a revolutionary car that rewrote the rules for creating a sedan , and pushed the other American automakers to follow suit , leading to a design revolution that completely rid Detroit of the `` boxy '' cars of the 70s and 80s .",
@@ -41785,7 +41785,7 @@
     },
     {
         "cluster_desc": "5 Saturn models + dealership network",
-        "coref_chain": "",
+        "coref_chain": "Singleton_28_127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "doc_id": "127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "event_entity": "entity",
         "full_sentence": "The purchase includes rights to the Saturn brand , its five current models and its dealership network .",
@@ -42079,7 +42079,7 @@
     },
     {
         "cluster_desc": "Saturn unit",
-        "coref_chain": "",
+        "coref_chain": "Singleton_58_127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "doc_id": "127461_Penske_Auto_selected_to_buy_General_Motors.xml",
         "event_entity": "entity",
         "full_sentence": "Penske Auto selected to buy General Motors ' Saturn unit",
@@ -42523,7 +42523,7 @@
     },
     {
         "cluster_desc": "Jim Press",
-        "coref_chain": "",
+        "coref_chain": "Singleton_39_126311_U.S._automaker_Chrysler_wants_to_eliminate_789_dealerships.xml",
         "doc_id": "126311_U.S._automaker_Chrysler_wants_to_eliminate_789_dealerships.xml",
         "event_entity": "entity",
         "full_sentence": "`` This is a difficult day for us and not a day anybody can be prepared for , '' said Jim Press , the Vice Chairman of Chrysler .",
@@ -43970,7 +43970,7 @@
     },
     {
         "cluster_desc": "United States",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "doc_id": "126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "event_entity": "entity",
         "full_sentence": "The United States automobile manufacturing firm General Motors announced on Wednesday that most of its bondholders did not exchange GM 's US$ 27 billion debt for a ten percent share in the company 's stock .",
@@ -44330,7 +44330,7 @@
     },
     {
         "cluster_desc": "10% GM share",
-        "coref_chain": "",
+        "coref_chain": "Singleton_8_126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "doc_id": "126878_Bankruptcy_for_U.S._automaker_GM_becomes_almost_certain_after_bondholder_offers_fail.xml",
         "event_entity": "entity",
         "full_sentence": "The United States automobile manufacturing firm General Motors announced on Wednesday that most of its bondholders did not exchange GM 's US$ 27 billion debt for a ten percent share in the company 's stock .",
@@ -46929,7 +46929,7 @@
     },
     {
         "cluster_desc": "share in Chrysler",
-        "coref_chain": "",
+        "coref_chain": "Singleton_105_264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "doc_id": "264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "event_entity": "entity",
         "full_sentence": "According to Fiat 's announcement , the company has told the US Treasury that it intends to use its option to buy the share in Chrysler held by the US government , a deal that will be finalized by June 10 .",
@@ -46977,7 +46977,7 @@
     },
     {
         "cluster_desc": "Italy",
-        "coref_chain": "",
+        "coref_chain": "Singleton_107_264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "doc_id": "264435_Fiat_plans_to_buy_majority_stake_in_Chrysler.xml",
         "event_entity": "entity",
         "full_sentence": "Fiat announced on Friday that it intends to purchase the six percent of automaker Chrysler that the US government currently owns , which would give the Italian company a 52 percent majority stake in Chrysler .",
@@ -48213,7 +48213,7 @@
     },
     {
         "cluster_desc": "Ford's stock",
-        "coref_chain": "",
+        "coref_chain": "Singleton_43_160257_Ford_US_auto_sales_spike.xml",
         "doc_id": "160257_Ford_US_auto_sales_spike.xml",
         "event_entity": "entity",
         "full_sentence": "The increase was better than analysts had predicted , and Ford 's stock rose to a five-year high in morning trading , before declining later in the day .",
@@ -48585,7 +48585,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_27_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "The UK 's FTSE-100 index fell 232.90 points to 6038.30 , and Japan 's Nikkei 225 fell 406.51 points to 16764.09 .",
@@ -48756,7 +48756,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_40_76437_Markets_dragged_down_by_credit_crisis.xml",
         "doc_id": "76437_Markets_dragged_down_by_credit_crisis.xml",
         "event_entity": "entity",
         "full_sentence": "Central banks across the world are injecting funds into their banking systems to add liquidity , fearing that many financial firms with subprime ties will be insolvent .",
@@ -49511,7 +49511,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_48_113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "doc_id": "113278_Markets_rally_as_world_central_banks_infuse_cash.xml",
         "event_entity": "entity",
         "full_sentence": "Totaling US$ 180 billion , the Federal Reserve arranged to increase existing swap lines with the European Central Bank from US$ 55 billion to US$ 110 billion , and with the Swiss National Bank from US$ 12 billion to US$ 27 billion .",
@@ -50062,7 +50062,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_24_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "President Dmitry Medvedev went on national television to appease the public .",
@@ -50232,7 +50232,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_68_113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "doc_id": "113267_Russian_markets_to_remain_closed_until_Friday.xml",
         "event_entity": "entity",
         "full_sentence": "Russian markets to remain closed until Friday",
@@ -51733,7 +51733,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_72_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -51753,7 +51753,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_16_113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "doc_id": "113227_Russian_stock_markets_suspended_amid_market_turmoil.xml",
         "event_entity": "entity",
         "full_sentence": "The suspension took place due to an order of the Russian government 's Federal Service for the Financial Markets , which demanded the suspension .",
@@ -52488,7 +52488,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_49_114864_Global_markets_plunge.xml",
         "doc_id": "114864_Global_markets_plunge.xml",
         "event_entity": "entity",
         "full_sentence": "Asian markets saw the biggest sell-off .",
@@ -53152,7 +53152,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_65_121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "doc_id": "121416_US_stock_markets_fall_to_lowest_levels_since_1997.xml",
         "event_entity": "entity",
         "full_sentence": "Three major United States stock market indexes closed at their lowest levels in over a decade on Monday , amidst declining investor confidence and worries that the government will nationalize the banks .",
@@ -53210,7 +53210,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_90_116834_Japan_enters_recession.xml",
         "doc_id": "116834_Japan_enters_recession.xml",
         "event_entity": "entity",
         "full_sentence": "We need to bear in mind that economic conditions could worsen further as the US and European financial crisis deepens , worries of economic downturn heighten and stock and foreign exchange markets make big swings . ''",
@@ -53635,7 +53635,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_4_113219_Stock_markets_worldwide_fall_dramatically.xml",
         "doc_id": "113219_Stock_markets_worldwide_fall_dramatically.xml",
         "event_entity": "entity",
         "full_sentence": "Stock markets around the world , particularly those in the United States , have fallen dramatically today .",
@@ -54216,7 +54216,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "doc_id": "124259_US_stocks_log_gains_for_fourth_week_in_a_row.xml",
         "event_entity": "entity",
         "full_sentence": "US stocks log gains for fourth week in a row",
@@ -54825,7 +54825,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_100_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "As the Mortgage Bankers Association reported that late payments on mortgages and home foreclosures in the US homes rose in the fourth quarter to their highest level in years , investors are concerned that not only US banks but also multi-national banks around the globe could have exposure .",
@@ -54933,7 +54933,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_1_62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "doc_id": "62405_Sub-prime_lenders_send_jitters_through_global_markets.xml",
         "event_entity": "entity",
         "full_sentence": "Sub-prime lenders send jitters through global markets",
@@ -55503,7 +55503,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_99_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "Japan 's prime minister , Taro Aso , spoke to government officials and asked them to make new tentative plans to save Japan from more damaged inflicted by the worldwide recession .",
@@ -55676,7 +55676,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_13_115711_Asian_stock_markets_slide.xml",
         "doc_id": "115711_Asian_stock_markets_slide.xml",
         "event_entity": "entity",
         "full_sentence": "On Monday , stock markets across Asia resumed their downward slide , and Japan 's Nikkei stock index fell to lows not seen since October 1982 as the Japanese government 's former measures to stop the credit and stock crisis have been seen by stockholders as not sufficient .",
@@ -55770,7 +55770,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_2_61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "doc_id": "61327_U.S._stocks_plummet_amid_global_sell-off.xml",
         "event_entity": "entity",
         "full_sentence": "U.S. stocks plummet amid global sell-off",
@@ -57056,7 +57056,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_6_96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "doc_id": "96770_World_stocks_plunge_on_fears_on_US_recession.xml",
         "event_entity": "entity",
         "full_sentence": "Stock prices dropped sharply in Europe and Asia Monday , with fears of economic problems in the United States causing some of the biggest single-day losses in recent years .",
@@ -57348,7 +57348,7 @@
     },
     {
         "cluster_desc": "",
-        "coref_chain": "",
+        "coref_chain": "Singleton_31_141483_Bank_of_America_reports_losses.xml",
         "doc_id": "141483_Bank_of_America_reports_losses.xml",
         "event_entity": "entity",
         "full_sentence": "The bank 's CEO , Ken Lewis , said in a statement that '' ... ] credit costs remain high , and that is our major financial challenge going forward .",
