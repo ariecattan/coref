@@ -14,7 +14,7 @@ def read_file(doc):
     with open(doc, 'r') as f:
         for line in f:
             data = line.split('\t')
-            if len(data) == 4
+            if len(data) == 4:
                 doc_name, _, _, tok_text = data
                 docs[doc_name] = [] if doc_name not in docs else docs[doc_name]
                 docs[doc_name].append(tok_text)
