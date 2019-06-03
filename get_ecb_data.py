@@ -159,7 +159,7 @@ def get_topic_mention(topic_path, sentences_setup=None):
                 dic_sentences, voc = get_sentences_of_file(root)
                 events, entities = get_file_mention(root, file, dic_sentences)
 
-            files.extend(get_tokens_from_file(root, file, sentences_setup[file_for_csv]))
+            files.extend(get_tokens_from_file(root, file))
             event_mentions.extend(events)
             entity_mentions.extend(entities)
             vocab.update(voc)
@@ -168,7 +168,7 @@ def get_topic_mention(topic_path, sentences_setup=None):
 
 
 
-def get_tokens_from_file(root, file_name, sentence_setup):
+def get_tokens_from_file(root, file_name):
     tokens = []
 
     sentence = 0
@@ -177,7 +177,6 @@ def get_tokens_from_file(root, file_name, sentence_setup):
             if int(token.attrib['sentence']) > sentence:
                 tokens.append([])
                 sentence += 1
-
             tokens.append([file_name, token.attrib['sentence'], token.attrib['number'], token.text])
 
     tokens.append([])
