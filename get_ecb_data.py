@@ -99,6 +99,7 @@ def get_all_mention(corpus_path, output_dir, sentences_setup=None):
 
     all_events = train_events + dev_events + test_events
     all_entities = train_entities + dev_entities + test_entities
+    all_sentences = train_sentences + dev_sentences + test_sentences
 
     save_json(train_events, output_dir + '/train_event_gold_mentions.json')
     save_json(dev_events, output_dir + '/dev_event_gold_mentions.json')
@@ -112,7 +113,7 @@ def get_all_mention(corpus_path, output_dir, sentences_setup=None):
     save_txt(train_sentences, output_dir + '/train_text.txt')
     save_txt(dev_sentences, output_dir + '/dev_text.txt')
     save_txt(test_sentences, output_dir + '/test_text.txt')
-
+    save_txt(all_sentences, output_dir + '/all_text.txt')
 
     with open(output_dir + '/vocab', 'w') as f:
         for word in vocab:
@@ -158,7 +159,7 @@ def get_topic_mention(topic_path, sentences_setup=None):
                 dic_sentences, voc = get_sentences_of_file(root)
                 events, entities = get_file_mention(root, file, dic_sentences)
 
-            files.extend(get_tokens_from_file(root, file))
+            files.extend(get_tokens_from_file(root, file, sentences_setup[file_for_csv]))
             event_mentions.extend(events)
             entity_mentions.extend(entities)
             vocab.update(voc)
@@ -167,7 +168,7 @@ def get_topic_mention(topic_path, sentences_setup=None):
 
 
 
-def get_tokens_from_file(root, file_name):
+def get_tokens_from_file(root, file_name, sentence_setup):
     tokens = []
 
     sentence = 0
@@ -176,6 +177,7 @@ def get_tokens_from_file(root, file_name):
             if int(token.attrib['sentence']) > sentence:
                 tokens.append([])
                 sentence += 1
+
             tokens.append([file_name, token.attrib['sentence'], token.attrib['number'], token.text])
 
     tokens.append([])

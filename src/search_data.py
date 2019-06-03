@@ -45,8 +45,8 @@ def get_gold_within_doc(mentions):
         chain = mention['coref_chain']
         doc = mention['doc_id']
         id_within_doc = chain + '_' + doc
-        wd_cluster[chain] = [] if id_within_doc not in wd_cluster else wd_cluster[chain]
-        wd_cluster[chain].append(mention)
+        wd_cluster[id_within_doc] = [] if id_within_doc not in wd_cluster else wd_cluster[id_within_doc]
+        wd_cluster[id_within_doc].append(mention)
 
     return wd_cluster
 
