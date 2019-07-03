@@ -2,8 +2,11 @@
 
 ## Pre-processing 
 
-## Get Mentions and Coref chains
-``python ``
+### Get Mentions and Coref chains
+
+``python get_ecb_data.py ``
+
+``python get_meantime_data.py ``
 
 ### Prepare raw data files
 
