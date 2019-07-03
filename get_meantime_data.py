@@ -179,13 +179,50 @@ def get_tokens_from_file(root, file_name):
                 sentence += 1
             if sentence == 6:
                 break
-            tokens.append([file_name, token.attrib['sentence'], token.attrib['number'], token.text])
+
+            sentence_lst = get_list_of_sentences(root)[sentence]
+            token_id = get_token_id(sentence_lst, token.attrib['t_id'])
+            tokens.append([file_name.replace('.xml', ''), token.attrib['sentence'], str(token_id), token.text, 'aa'])
 
     tokens.append([])
     return tokens
 
 
+def get_index_of_word_in_sentence(word, sentence):
+    return sentence.index(word)
 
+
+def get_list_of_sentences(root):
+    sentences = []
+    sentence = []
+    sent_id = 0
+    for token in root:
+        if token.tag == 'token':
+            if int(token.attrib['sentence']) == sent_id:
+                sentence.append([token.attrib['t_id'], token.text])
+            elif int(token.attrib['sentence']) > sent_id:
+                sentences.append(sentence)
+                sent_id += 1
+                sentence = [[token.attrib['t_id'], token.text]]
+
+    sentences.append(sentence)
+
+    return sentences
+
+
+def get_token_id(sentence, t_id):
+    for id, token_str in sentence:
+        if t_id == id:
+            return sentence.index([id, token_str])
+    print('Error')
+    return None
+
+
+
+
+def get_tokens_ids(sentence, t_ids):
+    sent_t_ids = [x[0] for x in sentence]
+    return list(map(lambda x: sent_t_ids.index(x), t_ids))
 
 
 def get_file_mention(root, file_name, sentences_text, topic):
@@ -194,6 +231,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
     mentions_dic = {}
     relation_mention_dic = {}
 
+    sentences = get_list_of_sentences(root)
 
     for mention in root.find('Markables'):
         if mention.tag == 'ENTITY_MENTION' or mention.tag == 'EVENT_MENTION':
@@ -206,6 +244,9 @@ def get_file_mention(root, file_name, sentences_text, topic):
                 continue
             terms_ids = list(map(lambda x: int(x) - 1, t_ids))
             sentence = root[int(terms_ids[0])].attrib['sentence']
+
+
+            tokens_ids = get_tokens_ids(sentences[int(sentence)], t_ids)
 
 
             if not args.entire_doc and int(sentence) >= 6: #only the fist 5 sentences are considered
@@ -229,10 +270,11 @@ def get_file_mention(root, file_name, sentences_text, topic):
                     is_pronoun = True
 
 
-            mentions_dic[m_id] = {'doc_id': file_name,
-                     'sent_id':sentence,
+            mentions_dic[m_id] = {
+                    'doc_id': file_name.replace('.xml', ''),
+                     'sent_id': int(sentence),
                      'm_id': m_id,
-                     'tokens_ids': terms_ids,
+                     'tokens_number': tokens_ids, #terms_ids,
                      'event_entity': mention_type,
                      'tokens_str': term,
                      'topic': topic,
@@ -240,7 +282,12 @@ def get_file_mention(root, file_name, sentences_text, topic):
                      'full_sentence': sentence_desc,
                      'left_sentence': left,
                      'right_sentence': right,
-                     'is_pronoun': is_pronoun
+                     'is_pronoun': is_pronoun,
+
+
+                    'is_singleton': False,
+                    'is_continuous': True,
+                    'score': -1.0
                      }
 
         elif mention.tag  == 'ENTITY' or mention.tag == 'EVENT':
@@ -287,7 +334,20 @@ def get_file_mention(root, file_name, sentences_text, topic):
         mention_obj = dic.copy()
         mention_obj['coref_chain'] = id_cluster
         mention_obj['cluster_desc'] = desc_cluster
-        mention_obj['mention_type'] = type
+
+
+        #To adapt json format to Shany's system
+        if type in ['PER', 'ORG', 'MIX']:
+            mention_obj['mention_type'] = 'HUM'
+        elif type == 'LOC':
+            mention_obj['mention_type'] = 'LOC'
+        elif mention_obj['event_entity'] == 'event':
+            mention_obj['mention_type'] = 'ACT'
+        else:
+            mention_obj['mention_type'] = 'NON'
+
+        #mention_obj['mention_type'] = type
+
 
         if mention_obj['event_entity'] == 'event':
             event_mentions.append(mention_obj)
@@ -322,14 +382,14 @@ def get_statistics(data_events, data_entities, data_desc, stat_file):
 
     for mention_dic in data_events:
         docs.add(mention_dic["doc_id"])
-        sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
-        if len(mention_dic['tokens_ids']) > 1:
+        sentences.add(mention_dic["doc_id"] + '_' + str(mention_dic["sent_id"]))
+        if len(mention_dic['tokens_number']) > 1:
             event_mentions_with_multiple_tokens += 1
 
     for mention_dic in data_entities:
         docs.add(mention_dic["doc_id"])
-        sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
-        if len(mention_dic['tokens_ids']) > 1:
+        sentences.add(mention_dic["doc_id"] + '_' + str(mention_dic["sent_id"]))
+        if len(mention_dic['tokens_number']) > 1:
             entity_mentions_with_multiple_tokens += 1
 
 
