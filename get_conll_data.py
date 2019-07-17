@@ -4,7 +4,7 @@ import argparse
 import allennlp
 
 parser = argparse.ArgumentParser(description='Parse conll data')
-parser.add_argument('--path_to_conll', type=str, default='datasets/conll-2012/v4/data')
+parser.add_argument('--path_to_conll', type=str, default='data/datasets/conll-2012/v4/data')
 args = parser.parse_args()
 
 
@@ -178,3 +178,5 @@ if __name__ == '__main__':
 
     all_docs = train_docs + dev_docs + test_docs
     print('Average tokens in sentence: {}'.format(avg_words_in_sentence(all_docs)))
+
+

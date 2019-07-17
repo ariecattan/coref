@@ -27,10 +27,10 @@ parser = argparse.ArgumentParser(description='Parsing MEANTIME corpus')
 
 parser.add_argument('--download_data', type=int, default=0, help='To donwload the data and unzip')
 
-parser.add_argument('--data_path', type=str, default='datasets/meantime_newsreader_english_oct15/intra_cross-doc_annotation',
+parser.add_argument('--data_path', type=str, default='data/datasets/meantime_newsreader_english_oct15/intra_cross-doc_annotation',
                     help=' Path to the corpus')
 
-parser.add_argument('--output_dir', type=str, default='meantime_data',
+parser.add_argument('--output_dir', type=str, default='data/meantime/mentions',
                         help=' The directory of the output files')
 
 parser.add_argument('--with_pos', type=str2bool, default=False, help='Boolean value to include the pos tag of the mentions')
@@ -130,7 +130,7 @@ def get_topic_mention(topic_path):
     for file in os.listdir(topic_path):
         if fnmatch.fnmatch(file, pattern):
             file_path = topic_path + '/' + file
-            topic = topic_path.split('_')[-1]
+            topic = topic_path.split('/')[-1]
             tree = ET.parse(file_path)
             root = tree.getroot()
             dic_sentences, voc = get_sentences_of_file(root)
@@ -182,7 +182,7 @@ def get_tokens_from_file(root, file_name):
 
             sentence_lst = get_list_of_sentences(root)[sentence]
             token_id = get_token_id(sentence_lst, token.attrib['t_id'])
-            tokens.append([file_name.replace('.xml', ''), token.attrib['sentence'], str(token_id), token.text, 'aa'])
+            tokens.append([file_name, token.attrib['sentence'], str(token_id), token.text, 'aa'])
 
     tokens.append([])
     return tokens
@@ -240,12 +240,12 @@ def get_file_mention(root, file_name, sentences_text, topic):
             t_ids = []
             for term in mention:
                 t_ids.append(term.attrib['t_id'])
+
             if len(t_ids) == 0:
                 continue
+
             terms_ids = list(map(lambda x: int(x) - 1, t_ids))
             sentence = root[int(terms_ids[0])].attrib['sentence']
-
-
             tokens_ids = get_tokens_ids(sentences[int(sentence)], t_ids)
 
 
@@ -271,20 +271,21 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
 
             mentions_dic[m_id] = {
-                    'doc_id': file_name.replace('.xml', ''),
+                    'doc_id': file_name,
+                     'topic': topic,
+
                      'sent_id': int(sentence),
                      'm_id': m_id,
                      'tokens_number': tokens_ids, #terms_ids,
                      'event_entity': mention_type,
                      'tokens_str': term,
-                     'topic': topic,
-                     #'tag': tags,
+                     'tag': tags,
+
                      'full_sentence': sentence_desc,
                      'left_sentence': left,
                      'right_sentence': right,
+
                      'is_pronoun': is_pronoun,
-
-
                     'is_singleton': False,
                     'is_continuous': True,
                     'score': -1.0

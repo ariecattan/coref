@@ -28,13 +28,13 @@ parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
 
 parser.add_argument('--download_data', type=int, default=0, help='To donwload the data and unzip')
 
-parser.add_argument('--data_path', type=str, default='datasets/ECB+_LREC2014/ECB+',
+parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014/ECB+',
                     help=' Path to ECB+ corpus')
 
-parser.add_argument('--output_dir', type=str, default='ecb_data',
+parser.add_argument('--output_dir', type=str, default='data/ecb/mentions',
                         help=' The directory of the output files')
 
-parser.add_argument('--cybulska_setup', type=str, default='datasets/ECB+_LREC2014/ECBplus_coreference_sentences.csv',
+parser.add_argument('--cybulska_setup', type=str, default='data/datasets/ECB+_LREC2014/ECBplus_coreference_sentences.csv',
                     help='The path to a file contains selected sentences from the ECB+ corpus according to Cybulska')
 
 parser.add_argument('--use_setup', type=str2bool, default=True)
@@ -79,6 +79,7 @@ def get_all_mention(corpus_path, output_dir, sentences_setup=None):
     for folder in os.listdir(corpus_path):
         folder_path = corpus_path + '/' + folder
         if os.path.isdir(folder_path):
+            print('Processed topic: {}'.format(folder))
             if args.use_setup:
                 event_mentions, entity_mentions, files, voc = get_topic_mention(folder_path, sentences_setup[folder])
             else:
@@ -127,9 +128,9 @@ def get_all_mention(corpus_path, output_dir, sentences_setup=None):
 
 
 
-def save_json(dic, file_name):
+def save_json(data, file_name):
     with open(file_name, 'w') as f:
-        json.dump(dic, f, default=obj_dict, indent=4, sort_keys=True)
+        json.dump(data, f, default=obj_dict, indent=4, sort_keys=True)
 
 
 def save_txt(data, file_name):
@@ -148,21 +149,25 @@ def get_topic_mention(topic_path, sentences_setup=None):
     for file in os.listdir(topic_path):
         file_for_csv = file.split('_')[-1].split('.')[-2]
         if fnmatch.fnmatch(file, pattern) and (not args.use_setup or file_for_csv in sentences_setup):
+            print('Processed file: {}'.format(file))
             file_path = topic_path + '/' + file
+            topic = topic_path.split('/')[-1]
             tree = ET.parse(file_path)
             root = tree.getroot()
 
             if args.use_setup:
                 dic_sentences, voc = get_sentences_of_file(root, sentences_setup[file_for_csv])
-                events, entities = get_file_mention(root, file, dic_sentences, sentences_setup[file_for_csv])
+                events, entities = get_file_mention(root, file, dic_sentences, topic, sentences_setup[file_for_csv])
             else:
                 dic_sentences, voc = get_sentences_of_file(root)
-                events, entities = get_file_mention(root, file, dic_sentences)
+                events, entities = get_file_mention(root, file, dic_sentences, topic)
 
-            files.extend(get_tokens_from_file(root, file))
+
             event_mentions.extend(events)
             entity_mentions.extend(entities)
             vocab.update(voc)
+            files.extend(get_tokens_from_file(root, file))
+
 
     return event_mentions, entity_mentions, files, vocab
 
@@ -183,25 +188,60 @@ def get_tokens_from_file(root, file_name):
     return tokens
 
 
-def get_file_mention(root, file_name, sentences_text, sentences_setup=None):
+def get_sentences_of_file(root, sentences=None):
+    dict = {}
+    vocab = set()
+
+    sentence = []
+    i = 0
+    for child in root:
+        sentence_num = child.attrib.get('sentence')
+        if sentence_num == str(i):
+            sentence.append([child.attrib.get('t_id'), child.text])
+            vocab.add(child.text)
+        else:
+            if len(sentence) > 0 and (args.use_setup is False or str(i) in sentences):
+                dict[str(i)] = sentence
+            sentence = []
+            if child.attrib.get('t_id') is not None:
+                sentence.append([child.attrib.get('t_id'), child.text])
+                vocab.add(child.text)
+                i += 1
+
+    return dict, vocab
+
+
+
+def get_file_mention(root, file_name, sentences_text, topic, sentences_setup=None):
     event_mentions = []
     entity_mentions = []
+    mentions_dic = {}
+    relation_mention_dic = {}
 
-    topic, sub = file_name.split('_')[0], file_name[-3:]
+    sub = file_name[-3:]
     if sub == 'ecb':
         subtopic = topic + 'ecb'
     else:
         subtopic = topic + 'ecb+'
 
-    mentions_dic = {}
-    relation_mention_dic = {}
 
     for mention in root.find('Markables'):
         if mention.attrib.get('RELATED_TO', None) is None:
+            if mention.tag.startswith('ACT') or mention.tag.startswith('NEG'):
+                mention_type = 'event'
+            else:
+                mention_type = 'entity'
+
             m_id = mention.attrib['m_id']
             t_ids = []
             for term in mention:
                 t_ids.append(term.attrib['t_id'])
+
+            tokens_ids = [int(root[int(t_id) -1].attrib['number']) for t_id in t_ids]
+
+            if len(t_ids) == 0:
+                continue
+
             terms_ids = list(map(lambda x: int(x) - 1, t_ids))
             sentence = root[int(terms_ids[0])].attrib['sentence']
 
@@ -209,10 +249,6 @@ def get_file_mention(root, file_name, sentences_text, sentences_setup=None):
                 continue
 
             term = ' '.join(list(map(lambda x: root[x].text, terms_ids)))
-            if mention.tag.startswith('ACT') or mention.tag.startswith('NEG'):
-                mention_type = 'event'
-            else:
-                mention_type = 'entity'
 
             sentence_desc = ' '.join(x[1] for x in sentences_text[sentence])
             left = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) < int(t_ids[0]))
@@ -234,13 +270,15 @@ def get_file_mention(root, file_name, sentences_text, sentences_setup=None):
                     'doc_id': file_name,
                      'topic': topic,
                      'subtopic': subtopic,
-                     'sent_id':sentence,
+
+                     'sent_id': int(sentence),
                      'm_id': m_id,
-                     'tokens_ids': terms_ids,
+                     'tokens_number': tokens_ids,
+                     'event_entity': mention_type,
                      'mention_type': mention.tag[:3],
                      'tokens_str': term,
                      'tags': tags,
-                     'event_entity': mention_type,
+
                      'full_sentence': sentence_desc,
                      'left_sentence': left,
                      'right_sentence': right,
@@ -298,29 +336,6 @@ def get_file_mention(root, file_name, sentences_text, sentences_setup=None):
 
 
 
-def get_sentences_of_file(root, sentences=None):
-    dict = {}
-    vocab = set()
-
-    sentence = []
-    i = 0
-    for child in root:
-        sentence_num = child.attrib.get('sentence')
-        if sentence_num == str(i):
-            sentence.append([child.attrib.get('t_id'), child.text])
-            vocab.add(child.text)
-        else:
-            if len(sentence) > 0 and (args.use_setup is False or str(i) in sentences):
-                dict[str(i)] = sentence
-            sentence = []
-            if child.attrib.get('t_id') is not None:
-                sentence.append([child.attrib.get('t_id'), child.text])
-                vocab.add(child.text)
-                i += 1
-
-    return dict, vocab
-
-
 
 
 def get_all_chains(mentions):
@@ -353,9 +368,9 @@ def get_statistics(data_events, data_entities, data_desc, stat_file):
         topics.add(mention_dic["topic"])
         docs.add(mention_dic["doc_id"])
         subtopics.add(mention_dic["subtopic"])
-        sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
+        sentences.add(mention_dic["doc_id"] + '_' + str(mention_dic["sent_id"]))
         entities += 1
-        if len(mention_dic['tokens_ids']) > 1:
+        if len(mention_dic['tokens_number']) > 1:
             entity_mentions_with_multiple_tokens += 1
 
         tag = mention_dic['mention_type']
@@ -372,9 +387,9 @@ def get_statistics(data_events, data_entities, data_desc, stat_file):
         topics.add(mention_dic["topic"])
         docs.add(mention_dic["doc_id"])
         subtopics.add(mention_dic["subtopic"])
-        sentences.add(mention_dic["doc_id"] + '_' + mention_dic["sent_id"])
+        sentences.add(mention_dic["doc_id"] + '_' + str(mention_dic["sent_id"]))
         events += 1
-        if len(mention_dic['tokens_ids']) > 1:
+        if len(mention_dic['tokens_number']) > 1:
             event_mentions_with_multiple_tokens += 1
 
 

@@ -104,9 +104,14 @@ venv.bak/
 .mypy_cache/
 
 datasets/
+data/
 glove_ecb+/
 Papers/
 Reports/
 Topics/
 Wiki-Alon/
+CoreNLP/
+coval/
 .idea/
+explore_eer_data.ipynb
+explore_data.ipynb

@@ -58,7 +58,7 @@ if __name__ == '__main__':
         os.makedirs(args.output_path)
 
     logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
-                        filename=os.path.join(args.output_path, "allen_constituency_tree.txt"),
+                        filename=os.path.join(args.output_path, "log.txt"),
                         level=logging.DEBUG, filemode='w', datefmt='%Y-%m-%d %H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler())
     logger = logging.getLogger(__name__)
