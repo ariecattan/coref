@@ -25,7 +25,6 @@ TEST = ['corpus_stock']
 
 parser = argparse.ArgumentParser(description='Parsing MEANTIME corpus')
 
-parser.add_argument('--download_data', type=int, default=0, help='To donwload the data and unzip')
 
 parser.add_argument('--data_path', type=str, default='data/datasets/meantime_newsreader_english_oct15/intra_cross-doc_annotation',
                     help=' Path to the corpus')
@@ -415,6 +414,8 @@ def get_statistics(data_events, data_entities, data_desc, stat_file):
     stat_file.write('Entity chains: {}\n'.format(len(entity_chains)))
     stat_file.write('Entity Singleton: {}\n'.format(entity_singleton))
     stat_file.write('--------------------------------------\n')
+
+
 
 
 

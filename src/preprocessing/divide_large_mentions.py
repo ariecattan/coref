@@ -8,9 +8,9 @@ import jsonlines
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--mentions_path', type=str, default='data/ecb/mentions/all_entity_gold_mentions.json')
-parser.add_argument('--constitiency_tree_path', type=str, default='data/ecb/ecb_constituency_tree')
-parser.add_argument('--output_path', type=str, default='data/ecb/mentions')
+parser.add_argument('--mentions_path', type=str, default='data/meantime/mentions/all_entity_gold_mentions.json')
+parser.add_argument('--constitiency_tree_path', type=str, default='data/meantime/meantime_constituency_tree')
+parser.add_argument('--output_path', type=str, default='data/meantime/mentions')
 args = parser.parse_args()
 
 
@@ -24,14 +24,16 @@ def obj_dict(obj):
 
 
 class Mention:
-    def __init__(self, coref_chain, topic, doc_id, sent_id, tokens_number, tokens_str, parse_tree=None):
+    def __init__(self, coref_chain, topic, doc_id, sent_id, m_id, tokens_number, tokens_str, parse_tree=None):
         self.doc_id = doc_id
         self.sent_id = sent_id
+        self.m_id = m_id
         self.tokens_number = tokens_number
         self.tokens_str = tokens_str
         self.topic = topic
         self.coref_chain = coref_chain
         self.parse_tree = parse_tree
+        self.sentence_level_tree = False
         self.min_spans = []
         self.is_container_mention = False
 
@@ -44,6 +46,7 @@ class Mention:
         mention_tree = self.match_subtree(sentence_tree)
         if mention_tree is not None:
             self.parse_tree = mention_tree
+            self.sentence_level_tree = True
 
 
 
@@ -333,25 +336,37 @@ if __name__ == '__main__':
     for file in os.listdir(args.constitiency_tree_path):
         if not file.endswith('txt'):
             with open(os.path.join(args.constitiency_tree_path, file), 'rb') as f:
-                constituency_trees[file] = pickle.load(f)
+                data = pickle.load(f)
+                if file.startswith('mention'):
+                    mention_trees = data
+                else:
+                    constituency_trees[file] = data
 
     with open(args.mentions_path, 'r') as f:
         mentions_raw = json.load(f)
 
     mentions = []
     for m in mentions_raw:
-        mention = Mention(m['coref_chain'], m['topic'], m['doc_id'], m['sent_id'], m['tokens_number'], m['tokens_str'])
+        mention = Mention(m['coref_chain'], m['topic'], m['doc_id'], m['sent_id'], m['m_id'], m['tokens_number'], m['tokens_str'])
         mention.set_parse_tree(constituency_trees)
-        if mention.parse_tree:
-            mention.set_min_span()
+        if not mention.parse_tree:
+            tree = mention_trees[mention.doc_id][mention.m_id]
+            ids = list(range(len(tree['word'].split(' '))))
+            mention.parse_tree = TreeNode(tree['word'], ids, tree['nodeType'], tree.get('children', None))
+        mention.set_min_span()
         mentions.append(mention)
+
+    # Relevant if there is nested mentions
     nested_mentions = NestedMentions()
     nested_mentions.set_supplement_mentions(mentions)
+
     clean_mentions = [m for m in mentions if not m.is_container_mention]
     print('Container mentions to be deleted: {}/{} - {}'.format(len(mentions) - len(clean_mentions), len(mentions), (len(mentions) - len(clean_mentions)) / len(mentions)))
-    missing_subtrees = [m for m in clean_mentions if not m.parse_tree]
+
+    missing_subtrees = [m for m in clean_mentions if not m.min_spans]
     num_matched_subtrees = len(clean_mentions) - len(missing_subtrees)
     print('Number of matched mention subtrees: {}/{} - {}'.format(num_matched_subtrees, len(clean_mentions), num_matched_subtrees/ len(clean_mentions)))
+
     all_min_spans = [m for m in clean_mentions if m.min_spans]
     print('Number of mininum span: {}/{} - {}'.format(len(all_min_spans), num_matched_subtrees, len(all_min_spans)/ num_matched_subtrees))
 
@@ -362,6 +377,7 @@ if __name__ == '__main__':
     with open(os.path.join(args.output_path, 'clean_mentions.json'), 'w') as f:
         json.dump(clean_mentions, f, default=obj_dict, indent=4, sort_keys=True)
 
+    unchanged_mentions = 0
     with jsonlines.open(os.path.join(args.output_path, 'compare_min_to_original_span.jsonl'), 'w') as f:
         for mention in all_min_spans:
             origin = mention.tokens_str
@@ -372,7 +388,13 @@ if __name__ == '__main__':
                 #"doc_id": mention.doc_id,
                 #"sent_id": mention.sent_id
             }
-            if origin != mina:
+            if origin == mina:
+                unchanged_mentions += 1
+            if origin != mina and not mention.sentence_level_tree:
                 f.write(m)
 
 
+    print('{} mentions were not modified'.format(unchanged_mentions))
+
+    avg = sum(len(m.min_spans) if m.min_spans else len(m.tokens_number) for m in clean_mentions) / len(clean_mentions)
+    print('Average mention length: {}'.format(avg))
