@@ -293,7 +293,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
         elif mention.tag  == 'ENTITY' or mention.tag == 'EVENT':
             m_id = mention.attrib['m_id']
             relation_mention_dic[m_id] = {
-                'coref_chain': mention.attrib.get('instance_id', ''),
+                'cluster_id': mention.attrib.get('instance_id', ''),
                 'cluster_desc': mention.attrib.get('TAG_DESCRIPTOR', ''),
                 'mention_type': mention.attrib.get('ent_type', '')
             }
@@ -320,11 +320,11 @@ def get_file_mention(root, file_name, sentences_text, topic):
         type = ''
 
 
-        if target is None or relation_mention_dic[target]['coref_chain'] == "":
+        if target is None or relation_mention_dic[target]['cluster_id'] == "":
             id_cluster = 'Singleton_' + dic['m_id'] + '_' +  dic['doc_id']
             #id_cluster = ""
         else:
-            id_cluster = relation_mention_dic[target]['coref_chain']
+            id_cluster = relation_mention_dic[target]['cluster_id']
 
         if target is not None:
             desc_cluster = relation_mention_dic[target]['cluster_desc']
@@ -332,7 +332,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
 
         mention_obj = dic.copy()
-        mention_obj['coref_chain'] = id_cluster
+        mention_obj['cluster_id'] = id_cluster
         mention_obj['cluster_desc'] = desc_cluster
 
 
@@ -363,7 +363,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
 def get_all_chains(mentions):
     chains = {}
     for mention_dic in mentions:
-        chain_id = mention_dic['coref_chain']
+        chain_id = mention_dic['cluster_id']
         chains[chain_id] = [] if chain_id not in chains else chains[chain_id]
         chains[chain_id].append(mention_dic)
 

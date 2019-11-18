@@ -6,6 +6,7 @@ import argparse
 import time
 import json
 import spacy
+from transformers import BertTokenizer, DistilBertTokenizer
 
 
 def str2bool(v):
@@ -43,9 +44,8 @@ parser.add_argument('--with_pos', type=str2bool, default=False, help='Boolean va
 
 args = parser.parse_args()
 
-if args.with_pos:
-    print('Using spacy...')
-    nlp = spacy.load('en_core_web_sm')
+print('Using spacy...')
+nlp = spacy.load('en_core_web_sm')
 
 
 def get_list_annotated_sentences(annotated_sentences):
@@ -149,7 +149,6 @@ def get_topic_mention(topic_path, sentences_setup=None):
     for file in os.listdir(topic_path):
         file_for_csv = file.split('_')[-1].split('.')[-2]
         if fnmatch.fnmatch(file, pattern) and (not args.use_setup or file_for_csv in sentences_setup):
-            print('Processed file: {}'.format(file))
             file_path = topic_path + '/' + file
             topic = topic_path.split('/')[-1]
             tree = ET.parse(file_path)
@@ -254,17 +253,10 @@ def get_file_mention(root, file_name, sentences_text, topic, sentences_setup=Non
             left = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) < int(t_ids[0]))
             right = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) > int(t_ids[-1]))
 
-            is_pronoun = False
-            tags = []
-            if args.with_pos:
-                doc = nlp(term)
-
-                for token in doc:
-                    tags.append(token.tag_)
-
-                if len(tags) == 1 and (tags[0] == 'PRP' or tags[0] == 'PRPS'):
-                    is_pronoun = True
-
+            lemmas = []
+            doc = nlp(term)
+            for token in doc:
+                lemmas.append(token.lemma_)
 
             mentions_dic[m_id] = {
                     'doc_id': file_name,
@@ -277,18 +269,16 @@ def get_file_mention(root, file_name, sentences_text, topic, sentences_setup=Non
                      'event_entity': mention_type,
                      'mention_type': mention.tag[:3],
                      'tokens_str': term,
-                     'tags': tags,
-
+                     'lemmas': ' '.join(lemmas),
                      'full_sentence': sentence_desc,
                      'left_sentence': left,
-                     'right_sentence': right,
-                     'is_pronoun': is_pronoun
-                     }
+                     'right_sentence': right
+            }
 
         else:
             m_id = mention.attrib['m_id']
             relation_mention_dic[m_id] = {
-                'coref_chain': mention.attrib.get('instance_id', ''),
+                'cluster_id': mention.attrib.get('instance_id', ''),
                 'cluster_desc': mention.attrib['TAG_DESCRIPTOR']
             }
 
@@ -318,13 +308,13 @@ def get_file_mention(root, file_name, sentences_text, topic, sentences_setup=Non
             if tag.startswith('INTRA'):
                 id_cluster = 'INTRA_' + r_id + '_' + dic['doc_id']
             else:
-                id_cluster = relation_mention_dic[target]['coref_chain']
+                id_cluster = relation_mention_dic[target]['cluster_id']
 
             desc_cluster = relation_mention_dic[target]['cluster_desc']
 
 
         mention_obj = dic.copy()
-        mention_obj['coref_chain'] = id_cluster
+        mention_obj['cluster_id'] = id_cluster
         mention_obj['cluster_desc'] = desc_cluster
 
         if mention_obj['event_entity'] == 'event':
@@ -341,7 +331,7 @@ def get_file_mention(root, file_name, sentences_text, topic, sentences_setup=Non
 def get_all_chains(mentions):
     chains = {}
     for mention_dic in mentions:
-        chain_id = mention_dic['coref_chain']
+        chain_id = mention_dic['cluster_id']
         chains[chain_id] = [] if chain_id not in chains else chains[chain_id]
         chains[chain_id].append(mention_dic)
 

@@ -5,9 +5,8 @@ from allennlp.predictors.predictor import Predictor
 import logging
 import json
 from collections import defaultdict
-
-
-predictor = Predictor.from_path("https://s3-us-west-2.amazonaws.com/allennlp/models/elmo-constituency-parser-2018.03.14.tar.gz")
+import torch
+from tqdm import tqdm
 
 
 def get_root_of_mention(root, mention):
@@ -22,7 +21,7 @@ def get_root_of_mention(root, mention):
 
 
 
-def main(args):
+def main(args, predictor):
     if args.raw_data:
         logging.info('Sentence level constituency trees')
         num_sentences = 0
@@ -52,37 +51,58 @@ def main(args):
 
     if args.mention_path:
         logging.info('Mention level constituency trees')
-        trees = defaultdict(dict)
-        with open(os.path.join(args.mention_path, 'all_entity_gold_mentions.json'), 'r') as f:
+        with open(args.mention_path, 'r') as f:
             mentions = json.load(f)
 
-        for i, mention in enumerate(mentions):
-            logging.info('Processed mention num: {}'.format(i))
-            tree = predictor.predict_json({"sentence": mention['tokens_str']})
-            trees[mention['doc_id']][mention['m_id']] = tree['hierplane_tree']['root']
+        mention_str = [ {"sentence" :  mention['tokens_str']} for mention in mentions]
+        keys = [mention['mention_id'] for mention in mentions]
+        constituency_trees = []
+        for i in tqdm(range(0, len(mention_str), args.batch_size)):
+            constituency_trees.extend(predictor.predict_batch_json(mention_str[i:i+args.batch_size]))
+        trees = {key:tree['hierplane_tree']['root'] for key, tree in zip(keys, constituency_trees)}
+        logger.info('{} mentions were processed'.format(len(trees) + 1))
 
-        logger.info('{} mentions were processed'.format(i + 1))
-
-        with open(os.path.join(args.output_path, 'mention_constituency_trees'), 'wb') as f:
+        with open(os.path.join(args.output_path), 'wb') as f:
             pickle.dump(trees, f)
 
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--raw_data', type=str, default='')
-    parser.add_argument('--mention_path', type=str, default='data/ecb/mentions')
-    parser.add_argument('--output_path', type=str, default='data/ecb/ecb_constituency_tree')
+    #parser.add_argument('--raw_data', type=str, default='')
+    parser.add_argument('--mention_path', type=str, default='wiki_gold_mentions_json/new_files/WEC_Train_Event_gold_mentions.json')
+    parser.add_argument('--output_path', type=str, default='wiki_gold_mentions_json/constituency_tree/new_files/WEC_Train_constituency_trees')
+    parser.add_argument('--gpu', type=int, default=2)
+    parser.add_argument('--batch_size', type=int, default=1024)
     args = parser.parse_args()
 
-    if not os.path.exists(args.output_path):
-        os.makedirs(args.output_path)
 
     logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
-                        filename=os.path.join(args.output_path, "log.txt"),
+                        filename=os.path.join('wiki_gold_mentions_json', 'constituency_tree', "log.txt"),
                         level=logging.DEBUG, filemode='w', datefmt='%Y-%m-%d %H:%M:%S')
     logging.getLogger().addHandler(logging.StreamHandler())
     logger = logging.getLogger(__name__)
 
-    main(args)
+    cuda_device = args.gpu if torch.cuda.is_available() else -1
+    predictor = Predictor.from_path(
+        "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo-constituency-parser-2018.03.14.tar.gz",
+        cuda_device=cuda_device)
+    logger.info('Using GPU {}'.format(cuda_device))
 
+    main(args, predictor)
+
+
+
+    '''
+    python src/preprocessing/auto_mention_extraction.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Dev_Event_gold_mentions.json --output_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Dev_constituency_trees
+    python src/preprocessing/auto_mention_extraction.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Test_Event_gold_mentions.json --output_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Test_constituency_trees
+    python src/preprocessing/auto_mention_extraction.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Train_Event_gold_mentions.json --output_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Train_constituency_trees
+    
+    
+    python src/preprocessing/divide_large_mentions.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Dev_Event_gold_mentions.json --constitiency_tree_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Dev_constituency_trees --output_path wiki_gold_mentions_json/clean_WEC/Min_CleanWEC_Dev_Event_gold_mentions.json
+    python src/preprocessing/divide_large_mentions.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Test_Event_gold_mentions.json --constitiency_tree_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Test_constituency_trees --output_path wiki_gold_mentions_json/clean_WEC/Min_CleanWEC_Test_Event_gold_mentions.json
+    python src/preprocessing/divide_large_mentions.py --mention_path wiki_gold_mentions_json/clean_WEC/CleanWEC_Train_Event_gold_mentions.json --constitiency_tree_path wiki_gold_mentions_json/constituency_tree/clean_WEC/CleanWEC_Train_constituency_trees --output_path wiki_gold_mentions_json/clean_WEC/Min_CleanWEC_Train_Event_gold_mentions.json
+    
+    
+    
+    '''

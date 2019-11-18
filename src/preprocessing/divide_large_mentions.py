@@ -5,17 +5,9 @@ import json
 import operator
 import math
 import jsonlines
+import numpy as np
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--mentions_path', type=str, default='data/meantime/mentions/all_entity_gold_mentions.json')
-parser.add_argument('--constitiency_tree_path', type=str, default='data/meantime/meantime_constituency_tree')
-parser.add_argument('--output_path', type=str, default='data/meantime/mentions')
-args = parser.parse_args()
-
-
-NP_tags = ['NP', 'NML', 'QP', 'NX']
-VP_tags = NP_tags
 
 
 def obj_dict(obj):
@@ -175,7 +167,7 @@ class Mention:
         NP_tags = ['NP', 'NM', 'QP', 'NX']
         VP_tags = ['VP']
 
-        if root.nodeType[0:2] == 'VP':
+        if root.nodeType[0:2] in ['S', 'VP']:
             valid_tags = VP_tags
         elif root.nodeType[0:2] in ['NP', 'NM']:
             valid_tags = NP_tags
@@ -324,14 +316,75 @@ def get_mention(mentions, doc_id, sent_id, start_token_id, end_token_id):
     return None
 
 
-def main():
-    return NotImplemented
+def main(args):
+    print('Loading parse trees..')
+    with open(args.constitiency_tree_path, 'rb') as f:
+        constituency_trees = pickle.load(f)
+
+    with open(args.mention_path, 'r') as f:
+        mentions = json.load(f)
+
+    num_of_modified_mentions = 0
+    num_of_considered_mentions = 0
+    print('Average length of span: {}'.format(np.average([len(m['tokens_number']) for m in mentions])))
+    for m in mentions:
+        mention = Mention(m['coref_chain'], m['topic_id'], m['doc_id'], m['sent_id'], m['mention_id'], m['tokens_number'], m['tokens_str'])
+        if not mention.parse_tree:
+            tree = constituency_trees[mention.m_id]
+            ids = list(range(len(tree['word'].split(' '))))
+            mention.parse_tree = TreeNode(tree['word'], ids, tree['nodeType'], tree.get('children', None))
+            if mention.parse_tree.nodeType == 'NP' and len(ids) == len(mention.tokens_number):
+                mention.set_min_span()
+                num_of_considered_mentions += 1
+        m['node_type'] = mention.parse_tree.nodeType
+        if mention.min_spans:
+
+            list_of_allen_token_ids = []
+            for tok_id, _, _, _ in mention.min_spans:
+                list_of_allen_token_ids.extend(tok_id)
+
+            if max(list_of_allen_token_ids) > len(mention.tokens_number) - 1:
+                raise ValueError(mention.m_id)
+
+            m['min_span_ids'] = list(map(lambda x: mention.tokens_number[x], list_of_allen_token_ids))
+            m['min_span_str'] = ' '.join([token_str for _, token_str, _, _  in mention.min_spans])
+
+            if len(m['min_span_ids']) < len(mention.tokens_number):
+                num_of_modified_mentions += 1
+        else:
+            m['min_span_ids'] = ''
+            m['min_span_str'] = ''
+
+
+
+    print('Number modified mentions / number of NP mentions: {}/{}'.format(num_of_modified_mentions, num_of_considered_mentions))
+
+
+    with open(args.output_path, 'w') as f:
+        json.dump(mentions, f, default=obj_dict, indent=4, sort_keys=True, ensure_ascii=False)
+
+
 
 
 
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--mention_path', type=str,
+                        default='wiki_gold_mentions_json/new_files/WEC_Test_Event_gold_mentions.json')
+    parser.add_argument('--constitiency_tree_path', type=str,
+                        default='wiki_gold_mentions_json/constituency_tree/new_files/WEC_Test_constituency_trees')
+    parser.add_argument('--output_path', type=str,
+                        default='wiki_gold_mentions_json/new_files/Min_WEC_Test_Event_gold_mentions.json')
+    args = parser.parse_args()
+
+
+    main(args)
+
+    '''
+    
+
     constituency_trees = {}
     for file in os.listdir(args.constitiency_tree_path):
         if not file.endswith('txt'):
@@ -342,7 +395,7 @@ if __name__ == '__main__':
                 else:
                     constituency_trees[file] = data
 
-    with open(args.mentions_path, 'r') as f:
+    with open(args.mention_path, 'r') as f:
         mentions_raw = json.load(f)
 
     mentions = []
@@ -398,3 +451,5 @@ if __name__ == '__main__':
 
     avg = sum(len(m.min_spans) if m.min_spans else len(m.tokens_number) for m in clean_mentions) / len(clean_mentions)
     print('Average mention length: {}'.format(avg))
+    
+    '''
