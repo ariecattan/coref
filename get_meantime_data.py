@@ -280,16 +280,13 @@ def get_file_mention(root, file_name, sentences_text, topic):
             mentions_dic[m_id] = {
                     'doc_id': file_name,
                      'topic_id': coref_chain_id[topic],
-
                      'sent_id': int(sentence),
                      'm_id': file_name + '_' + m_id,
                      'tokens_number': tokens_ids, #terms_ids,
                      'event_entity': mention_type,
                      'tokens_str': term,
                      'tag': tags,
-
                      'mention_context': sentence_desc,
-
                     'lemmas' : lemmas,
                     'is_pronoun': is_pronoun,
                     'is_singleton': False,

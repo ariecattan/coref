@@ -3,31 +3,65 @@ import numpy as np
 import xml.etree.ElementTree as ET
 import os, fnmatch
 import argparse
+import time
 import json
 import spacy
 from utils import *
 
 
-VALIDATION = ['2', '5', '12', '18', '21', '23', '34', '35']
-TRAIN = [str(i) for i in range(1, 36) if str(i) not in VALIDATION]
-TEST = [str(i) for i in range(36, 46)]
+TRAIN = ['corpus_airbus', 'corpus_apple', 'corpus_gm', 'corpus_stock']
+VALIDATION = ['corpus_gm']
+TEST = ['corpus_stock']
+
+
 
 event_singleton_idx, entity_singleton_idx = int(1E8), int(2E8)
 
+def obj_dict(obj):
+    return obj.__dict__
 
-def get_mention_doc(root, doc_name, validated_sentences):
+
+def align_ecb_bert_tokens(ecb_tokens, bert_tokens):
+    bert_to_ecb_ids = []
+    relative_char_pointer = 0
+    ecb_token = None
+    ecb_token_id = None
+
+    for bert_token in bert_tokens:
+        if relative_char_pointer == 0:
+            ecb_token_id, ecb_token = ecb_tokens.pop(0)
+
+        bert_token = bert_token.replace("##", "")
+        if bert_token == ecb_token:
+            bert_to_ecb_ids.append(ecb_token_id)
+            relative_char_pointer = 0
+        elif ecb_token.find(bert_token) == 0:
+            bert_to_ecb_ids.append(ecb_token_id)
+            relative_char_pointer = len(bert_token)
+            ecb_token = ecb_token[relative_char_pointer:]
+        else:
+            print("When bert token is longer?")
+            raise ValueError((bert_token, ecb_token))
+
+    return bert_to_ecb_ids
+
+
+
+def get_mention_doc(root, doc_name):
     entity_mentions, event_mentions = [], []
     mentions_fields, mention_cluster_info = {}, {}
-    relation_source_target, relation_rid, relation_tag = {}, {}, {}
-    subtopic = '0' if 'plus' in doc_name else '1'
+    relation_source_target, relation_rid = {}, {}
+
     for mention in root.find('Markables'):
         m_id = mention.attrib['m_id']
 
-        if 'RELATED_TO' not in mention.attrib:
-            event = True if mention.tag.startswith('ACT') or mention.tag.startswith('NEG') else False
-            tokens_ids = [int(term.attrib['t_id']) for term in mention]
+        if mention.tag == 'ENTITY_MENTION' or mention.tag == 'EVENT_MENTION':
+            event = True if mention.tag == 'EVENT_MENTION' else False
+            tokens_ids = [int(term.attrib['t_id'])  for term in mention]
+            if not tokens_ids:
+                continue
             sentence = root[tokens_ids[0] - 1].attrib['sentence']
-            if len(tokens_ids) == 0 or sentence not in validated_sentences:
+            if int(sentence) >= 6:
                 continue
             tokens = ' '.join(list(map(lambda x: root[x-1].text, tokens_ids)))
             lemmas, tags = [], []
@@ -35,9 +69,9 @@ def get_mention_doc(root, doc_name, validated_sentences):
                 lemmas.append(tok.lemma_)
                 tags.append(tok.tag_)
 
+
             mentions_fields[m_id] = {
                 "doc_id": doc_name,
-                "subtopic": doc_name.split('_')[0] + '_' + subtopic,
                 "m_id": m_id,
                 "sentence_id" : sentence,
                 "tokens_ids": tokens_ids,
@@ -47,44 +81,36 @@ def get_mention_doc(root, doc_name, validated_sentences):
                 "event": event
             }
 
-        else:
+
+        elif mention.tag == 'ENTITY' or mention.tag == 'EVENT':
             mention_cluster_info[m_id] = {
                 "cluster_id": mention.attrib.get('instance_id', ''),
-                "cluster_desc": mention.attrib['TAG_DESCRIPTOR']
+                "cluster_desc": mention.attrib.get('TAG_DESCRIPTOR', '')
             }
 
     for relation in root.find('Relations'):
-        target_mention = relation[-1].attrib['m_id']
-        relation_tag[target_mention] = relation.tag
-        relation_rid[target_mention] = relation.attrib['r_id']
-        for mention in relation:
-            if mention.tag == 'source':
-                relation_source_target[mention.attrib['m_id']] = target_mention
-
+        if relation.tag == 'REFERS_TO':
+            target_mention = relation[-1].attrib['m_id']
+            relation_rid[target_mention] = relation.attrib['r_id']
+            for mention in relation:
+                if mention.tag == 'source':
+                    relation_source_target[mention.attrib['m_id']] = target_mention
 
     global event_singleton_idx, entity_singleton_idx
 
     for m_id, mention in mentions_fields.items():
         target = relation_source_target.get(m_id, None)
-        if target is None:
+        if target is None or mention_cluster_info[target]['cluster_id'] == '':
             if mention['event']:
                 cluster_id = event_singleton_idx
                 event_singleton_idx += 1
             else:
                 cluster_id = entity_singleton_idx
                 entity_singleton_idx += 1
-
-            # cluster_id =  'Singleton_' + file_name + '_' + m_id
-            cluster_desc = ''
         else:
-            r_id = relation_rid[target]
-            tag = relation_tag[target]
-            if tag.startswith('INTRA'): #only within doc link
-                cluster_id =  int(r_id)
-            else:
-                cluster_id = int(mention_cluster_info[target]['cluster_id'][3:])
+            cluster_id = int(mention_cluster_info[target]['cluster_id'][3:])
 
-            cluster_desc = mention_cluster_info[target]['cluster_desc']
+        cluster_desc = '' if target is None else mention_cluster_info[target]['cluster_desc']
 
 
         mention_info = mention.copy()
@@ -100,7 +126,6 @@ def get_mention_doc(root, doc_name, validated_sentences):
     return event_mentions, entity_mentions
 
 
-
 def get_clusters(mentions):
     clusters = {}
     for mention in mentions:
@@ -111,37 +136,32 @@ def get_clusters(mentions):
     return clusters
 
 
-
-
-def read_topic(topic_path, validated_sentences):
+def read_topic(topic_path):
     all_docs = {}
     pattern = '*xml'
     all_event_mentions, all_entity_mentions = [], []
     topic = topic_path.split('/')[-1]
 
     for doc in os.listdir(topic_path):
-        if fnmatch.fnmatch(doc, pattern) and doc in validated_sentences:
+        if fnmatch.fnmatch(doc, pattern):
             doc_path = os.path.join(topic_path, doc)
             tree = ET.parse(doc_path)
             root = tree.getroot()
-            selected_sentences = sorted(list(map(int, validated_sentences[doc])))
-            continuous_sentences = list(range(min(selected_sentences), max(selected_sentences)+1))
+            selected_sentences = list(range(6)) #only the fist 5 sentences are considered
 
             # Extract all the event and entity mentions
-            event_mentions, entity_mentions = get_mention_doc(root, doc, validated_sentences[doc])
+            event_mentions, entity_mentions = get_mention_doc(root, doc)
             all_event_mentions += event_mentions
             all_entity_mentions += entity_mentions
 
-            # Read the entire document
-            ecb_tokens = []
+            original_tokens = []
             for child in root:
-                if child.tag == 'token':
-                    flag_selected_sentence = int(child.attrib['sentence']) in selected_sentences
-                    flag_continuous_sentence = int(child.attrib['sentence']) in continuous_sentences
-                    ecb_tokens.append([int(child.attrib['sentence']), int(child.attrib['t_id']), child.text.replace('�', '').strip(),
-                                           flag_selected_sentence, flag_continuous_sentence])
+                if child.tag == 'token' and int(child.attrib['sentence']) in selected_sentences:
+                    original_tokens.append(
+                        [int(child.attrib['sentence']), int(child.attrib['t_id']), child.text.replace('�', '').strip()])
 
-            all_docs[doc] = ecb_tokens
+            all_docs[doc] = original_tokens
+
 
     event_clusters = get_clusters(all_event_mentions)
     entity_clusters = get_clusters(all_entity_mentions)
@@ -155,8 +175,7 @@ def read_topic(topic_path, validated_sentences):
     return all_docs, all_event_mentions, all_entity_mentions
 
 
-
-def get_all_docs(data_path, validated_sentences):
+def get_all_docs(data_path):
     train_docs, train_event_mentions, train_entity_mentions = {}, [], []
     dev_docs, dev_event_mentions, dev_entity_mentions = {}, [], []
     test_docs, test_event_mentions, test_entity_mentions = {}, [], []
@@ -164,7 +183,7 @@ def get_all_docs(data_path, validated_sentences):
         topic_path = os.path.join(data_path, topic)
         if os.path.isdir(topic_path):
             print('Processing topic {}'.format(topic))
-            topic_docs, event_mentions, entity_mentions = read_topic(topic_path , validated_sentences[topic])
+            topic_docs, event_mentions, entity_mentions = read_topic(topic_path)
 
             if topic in TRAIN:
                 train_docs.update(topic_docs)
@@ -188,50 +207,34 @@ def get_all_docs(data_path, validated_sentences):
 
 
 
-def get_stats(entity_mentions, event_mentions):
-    entity_clusters = get_clusters(entity_mentions)
-    event_clusters = get_clusters(event_mentions)
-    print('Event clusters: {}'.format(len(event_clusters)))
-    print('Event mentions: {}'.format(len(event_mentions)))
-    print('Event singletons mentions: {}'.format(
-        sum([1 for l in event_mentions if l['singleton']])))
-    print('Entity clusters: {}'.format(len(entity_clusters)))
-    print('Entity mentions: {}'.format(len(entity_mentions)))
-    print('Entity singletons mentions: {}'.format(
-        sum([1 for l in entity_mentions if l['singleton']])))
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
-    parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014/ECB+',
+    parser = argparse.ArgumentParser(description='Parsing MEANTIME corpus')
+    parser.add_argument('--data_path', type=str,
+                        default='data/datasets/meantime_newsreader_english_oct15/intra_cross-doc_annotation',
                         help=' Path to ECB+ corpus')
-    parser.add_argument('--output_dir', type=str, default='data/ecb/mentions',
+    parser.add_argument('--output_dir', type=str, default='data/meantime/mentions',
                         help=' The directory of the output files')
-    parser.add_argument('--cybulska_setup', type=str,
-                        default='data/datasets/ECB+_LREC2014/ECBplus_coreference_sentences.csv',
-                        help='The path to a file contains selected sentences from the ECB+ corpus according to Cybulska')
     args = parser.parse_args()
 
     nlp = spacy.load('en_core_web_sm', disable=['textcat'])
 
-    validated_sentences = np.genfromtxt(args.cybulska_setup, delimiter=',', dtype=np.str, skip_header=1)
-    validated_sentences = get_list_annotated_sentences(validated_sentences)
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
 
     print('Getting all mentions')
-    train, dev, test = get_all_docs(args.data_path, validated_sentences)
+    train, dev, test = get_all_docs(args.data_path)
     docs = train[0], dev[0], test[0]
     event_mentions = train[1], dev[1], test[1]
     entity_mentions = train[2], dev[2], test[2]
 
 
-
     for i, type in enumerate(['train', 'dev', 'test']):
-        print('Statistics on {}'.format(type))
-        get_stats(entity_mentions[i], event_mentions[i])
-
         with open(os.path.join(args.output_dir, type + '.json'), 'w') as f:
             json.dump(docs[i], f, indent=4)
         with open(os.path.join(args.output_dir, type + '_events.json'), 'w') as f:
             json.dump(event_mentions[i], f, default=obj_dict, indent=4, ensure_ascii=False)
         with open(os.path.join(args.output_dir, type + '_entities.json'), 'w') as f:
             json.dump(entity_mentions[i], f, default=obj_dict, indent=4, ensure_ascii=False)
+
