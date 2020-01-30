@@ -18,6 +18,13 @@ def str2bool(v):
 
 
 
+coref_chain_id = {
+    'corpus_airbus':0,
+    'corpus_apple': 1,
+    'corpus_gm': 2,
+    'corpus_stock': 3
+}
+
 TRAIN = ['corpus_airbus', 'corpus_apple']
 VALIDATION = ['corpus_gm']
 TEST = ['corpus_stock']
@@ -253,17 +260,18 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
             term = ' '.join(list(map(lambda x: root[x].text, terms_ids)))
 
-            sentence_desc = ' '.join(x[1] for x in sentences_text[sentence])
-            left = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) < int(t_ids[0]))
-            right = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) > int(t_ids[-1]))
+            sentence_desc = [x[1] for x in sentences_text[sentence]]
+            # left = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) < int(t_ids[0]))
+            # right = ' '.join(word for token_id, word in sentences_text[sentence] if int(token_id) > int(t_ids[-1]))
 
             is_pronoun = False
-            tags = []
+            tags, lemmas = [], []
             if args.with_pos:
                 doc = nlp(term)
 
                 for token in doc:
                     tags.append(token.tag_)
+                    lemmas.append(token.lemma_)
 
                 if len(tags) == 1 and (tags[0] == 'PRP' or tags[0] == 'PRPS'):
                     is_pronoun = True
@@ -271,20 +279,19 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
             mentions_dic[m_id] = {
                     'doc_id': file_name,
-                     'topic': topic,
+                     'topic_id': coref_chain_id[topic],
 
                      'sent_id': int(sentence),
-                     'm_id': m_id,
+                     'm_id': file_name + '_' + m_id,
                      'tokens_number': tokens_ids, #terms_ids,
                      'event_entity': mention_type,
                      'tokens_str': term,
                      'tag': tags,
 
-                     'full_sentence': sentence_desc,
-                     'left_sentence': left,
-                     'right_sentence': right,
+                     'mention_context': sentence_desc,
 
-                     'is_pronoun': is_pronoun,
+                    'lemmas' : lemmas,
+                    'is_pronoun': is_pronoun,
                     'is_singleton': False,
                     'is_continuous': True,
                     'score': -1.0
@@ -293,7 +300,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
         elif mention.tag  == 'ENTITY' or mention.tag == 'EVENT':
             m_id = mention.attrib['m_id']
             relation_mention_dic[m_id] = {
-                'cluster_id': mention.attrib.get('instance_id', ''),
+                'coref_chain': mention.attrib.get('instance_id', ''),
                 'cluster_desc': mention.attrib.get('TAG_DESCRIPTOR', ''),
                 'mention_type': mention.attrib.get('ent_type', '')
             }
@@ -320,11 +327,11 @@ def get_file_mention(root, file_name, sentences_text, topic):
         type = ''
 
 
-        if target is None or relation_mention_dic[target]['cluster_id'] == "":
+        if target is None or relation_mention_dic[target]['coref_chain'] == "":
             id_cluster = 'Singleton_' + dic['m_id'] + '_' +  dic['doc_id']
             #id_cluster = ""
         else:
-            id_cluster = relation_mention_dic[target]['cluster_id']
+            id_cluster = relation_mention_dic[target]['coref_chain']
 
         if target is not None:
             desc_cluster = relation_mention_dic[target]['cluster_desc']
@@ -332,7 +339,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
 
 
         mention_obj = dic.copy()
-        mention_obj['cluster_id'] = id_cluster
+        mention_obj['coref_chain'] = id_cluster
         mention_obj['cluster_desc'] = desc_cluster
 
 
@@ -363,7 +370,7 @@ def get_file_mention(root, file_name, sentences_text, topic):
 def get_all_chains(mentions):
     chains = {}
     for mention_dic in mentions:
-        chain_id = mention_dic['cluster_id']
+        chain_id = mention_dic['coref_chain']
         chains[chain_id] = [] if chain_id not in chains else chains[chain_id]
         chains[chain_id].append(mention_dic)
 

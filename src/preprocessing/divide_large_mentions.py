@@ -372,41 +372,44 @@ def main(args):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--mention_path', type=str,
-                        default='wiki_gold_mentions_json/new_files/WEC_Test_Event_gold_mentions.json')
+                        default='data/ecb/mentions/test_events.json')
     parser.add_argument('--constitiency_tree_path', type=str,
                         default='wiki_gold_mentions_json/constituency_tree/new_files/WEC_Test_constituency_trees')
     parser.add_argument('--output_path', type=str,
-                        default='wiki_gold_mentions_json/new_files/Min_WEC_Test_Event_gold_mentions.json')
+                        default='data/ecb/mentions')
     args = parser.parse_args()
 
 
-    main(args)
+
 
     '''
+    main(args)
     
+    '''
 
-    constituency_trees = {}
-    for file in os.listdir(args.constitiency_tree_path):
-        if not file.endswith('txt'):
-            with open(os.path.join(args.constitiency_tree_path, file), 'rb') as f:
-                data = pickle.load(f)
-                if file.startswith('mention'):
-                    mention_trees = data
-                else:
-                    constituency_trees[file] = data
+
+    # constituency_trees = {}
+    # for file in os.listdir(args.constitiency_tree_path):
+    #     if not file.endswith('txt'):
+    #         with open(os.path.join(args.constitiency_tree_path, file), 'rb') as f:
+    #             data = pickle.load(f)
+    #             if file.startswith('mention'):
+    #                 mention_trees = data
+    #             else:
+    #                 constituency_trees[file] = data
 
     with open(args.mention_path, 'r') as f:
         mentions_raw = json.load(f)
 
     mentions = []
     for m in mentions_raw:
-        mention = Mention(m['coref_chain'], m['topic'], m['doc_id'], m['sent_id'], m['m_id'], m['tokens_number'], m['tokens_str'])
-        mention.set_parse_tree(constituency_trees)
-        if not mention.parse_tree:
-            tree = mention_trees[mention.doc_id][mention.m_id]
-            ids = list(range(len(tree['word'].split(' '))))
-            mention.parse_tree = TreeNode(tree['word'], ids, tree['nodeType'], tree.get('children', None))
-        mention.set_min_span()
+        mention = Mention(m['cluster_id'], m['topic'], m['doc_id'], m['sentence_id'], m['m_id'], m['tokens_ids'], m['tokens'])
+        # mention.set_parse_tree(constituency_trees)
+        # if not mention.parse_tree:
+        #     tree = mention_trees[mention.doc_id][mention.m_id]
+        #     ids = list(range(len(tree['word'].split(' '))))
+        #     mention.parse_tree = TreeNode(tree['word'], ids, tree['nodeType'], tree.get('children', None))
+        # mention.set_min_span()
         mentions.append(mention)
 
     # Relevant if there is nested mentions
@@ -414,8 +417,14 @@ if __name__ == '__main__':
     nested_mentions.set_supplement_mentions(mentions)
 
     clean_mentions = [m for m in mentions if not m.is_container_mention]
+    container_mentions =  [m for m in mentions if m.is_container_mention]
     print('Container mentions to be deleted: {}/{} - {}'.format(len(mentions) - len(clean_mentions), len(mentions), (len(mentions) - len(clean_mentions)) / len(mentions)))
 
+    with open(os.path.join(args.output_path, 'test_container_event_mentions.json'), 'w') as f:
+        json.dump(container_mentions, f, default=obj_dict, indent=4)
+
+    '''
+    
     missing_subtrees = [m for m in clean_mentions if not m.min_spans]
     num_matched_subtrees = len(clean_mentions) - len(missing_subtrees)
     print('Number of matched mention subtrees: {}/{} - {}'.format(num_matched_subtrees, len(clean_mentions), num_matched_subtrees/ len(clean_mentions)))
