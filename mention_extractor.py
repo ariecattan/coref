@@ -2,6 +2,21 @@ import torch.nn as nn
 import torch
 import torch.nn.functional as F
 
+
+class SoftPairWiseClassifier(nn.Module):
+    def __init__(self, input_dim):
+        super(SoftPairWiseClassifier, self).__init__()
+        self.linear = nn.Sequential(
+            nn.Linear(input_dim, input_dim),
+            nn.Dropout
+        )
+
+
+    def forward(self, input):
+        return torch.mm(self.linear(input), input.T)
+
+
+
 class MentionExtractor(nn.Module):
     def __init__(self, config, bert_hidden_size, max_span_width, device):
         super(MentionExtractor, self).__init__()
@@ -9,6 +24,7 @@ class MentionExtractor(nn.Module):
         self.hidden_layer = config['hidden_layer']
         self.with_width_embedding = config['with_mention_width']
         self.device = device
+        self.padded_vector = torch.zeros(bert_hidden_size, device=device)
         self.self_attention_layer = nn.Linear(bert_hidden_size, 1)
         # nn.Sequential(
         #     nn.Linear(bert_hidden_size, self.hidden_layer),
@@ -50,10 +66,38 @@ class MentionExtractor(nn.Module):
 
         return self.mlp(vector)
 
-    def forward(self, start_end, width, padded_tokens_embeddings=None, masks=None):
+
+    def pad_continous_embeddings(self, continuous_embeddings):
+        max_length = max(len(v) for v in continuous_embeddings)
+        padded_tokens_embeddings = torch.stack(
+            [torch.cat((emb, self.padded_vector.repeat(max_length - len(emb), 1)))
+             for emb in continuous_embeddings]
+        )
+        masks = torch.stack(
+            [torch.cat(
+                (torch.ones(len(emb), device=self.device), torch.zeros(max_length - len(emb), device=self.device)))
+             for emb in continuous_embeddings]
+        )
+        return padded_tokens_embeddings, masks
+
+
+    def forward(self, start_end, continuous_embeddings, width):
         vector = start_end
 
         if self.use_head_attention:
+            padded_tokens_embeddings, masks = self.pad_continous_embeddings(continuous_embeddings)
+
+            # max_length = max(len(v) for v in continuous_embeddings)
+            # padded_tokens_embeddings = torch.stack(
+            #     [torch.cat((emb, self.padded_vector.repeat(max_length - len(emb), 1)))
+            #      for emb in continuous_embeddings]
+            # )
+            # masks = torch.stack(
+            #     [torch.cat(
+            #         (torch.ones(len(emb), device=self.device), torch.zeros(max_length - len(emb), device=self.device)))
+            #         for emb in continuous_embeddings]
+            # )
+
             attention_scores = self.self_attention_layer(padded_tokens_embeddings).squeeze(-1)
             attention_scores *= masks
             attention_scores = torch.where(attention_scores != 0, attention_scores, torch.tensor(-9e9, device=self.device))

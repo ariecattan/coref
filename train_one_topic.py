@@ -20,10 +20,9 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--mention_scorer', type=str, default='models/event_mention_scorer_with_attention')
 parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
 parser.add_argument('--config_model_file', type=str, default='config_mention_extractor.json')
-parser.add_argument('--train_event_mention_extractor', type=bool, default=True)
-parser.add_argument('--train_entity_mention_extractor', type=bool, default=True)
-parser.add_argument('--entity_mention_extractor_path', type=str, default='models/entity_mention_extractor')
-parser.add_argument('--event_mention_extractor_path', type=str, default='models/event_mention_extractor')
+parser.add_argument('--train_mention_extractor', type=bool, default=True)
+parser.add_argument('--entity_mention_extractor_path', type=str, default='models/entity_mention_extractor_5')
+parser.add_argument('--event_mention_extractor_path', type=str, default='models/event_mention_extractor_5')
 args = parser.parse_args()
 
 
@@ -110,27 +109,26 @@ def get_docs_candidate(original_tokens, bert_start_end, max_span_width):
 
 
 
-
-def train_topic_mention_extractor(model, start_end, padded_tokens_embeddings, masks,
-                                width, labels, batch_size, criterion, optimizer):
+def train_topic_mention_extractor(model, start_end, continuous_embeddings,
+                                width, labels, batch_size, criterion, optimizer, device):
     model.train()
     for i in range(0, len(width), batch_size):
         batch_start_end = start_end[i:i+batch_size]
         batch_width = width[i:i+batch_size]
-        batch_padded_tokens_embeddings = padded_tokens_embeddings[i:i+batch_size]
-        batch_masks = masks[i:i+batch_size]
+        batch_continuous_embeddings = continuous_embeddings[i:i+batch_size]
+
         batch_labels = labels[i:i+batch_size]
         optimizer.zero_grad()
-        _, preds = model(batch_start_end, batch_width, batch_padded_tokens_embeddings, batch_masks)
+        _, preds = model(batch_start_end, batch_continuous_embeddings, batch_width)
         loss = criterion(preds.squeeze(1), batch_labels)
         loss.backward()
         optimizer.step()
 
 
-def predict_mention_extractor(model, start_end, padded_tokens_embeddings, masks, width):
+def predict_mention_extractor(model, start_end, continuous_embeddings, width):
     model.eval()
     with torch.no_grad():
-        _, scores = model(start_end, width, padded_tokens_embeddings, masks)
+        _, scores = model(start_end, continuous_embeddings, width)
         scores = scores.squeeze(1)
     return scores
 
@@ -169,6 +167,7 @@ def tokenize_topic(topic, tokenizer):
         ids = [x[1] for x in ecb_tokens]
         segments = split_doc_into_segments(bert_token_ids, bert_sentence_ids)
 
+
         bert_segments, ecb_segments = [], []
         start_end_segment = []
         delta = 0
@@ -178,12 +177,15 @@ def tokenize_topic(topic, tokenizer):
             end_ecb = ids.index(alignment[end - 1])
             bert_start = np.array(start_bert_idx[start_ecb:end_ecb + 1]) - delta
             bert_end = np.array(end_bert_idx[start_ecb:end_ecb + 1]) - delta
+
+            if bert_start[0] < 0:
+                print('Negative value!!!')
             start_end = np.concatenate((np.expand_dims(bert_start, 1),
                                         np.expand_dims(bert_end, 1)), axis=1)
             start_end_segment.append(start_end)
 
             ecb_segments.append(ecb_tokens[start_ecb:end_ecb + 1])
-            delta += end
+            delta = end
 
 
         segment_doc = [doc] * (len(segments) - 1)
@@ -234,7 +236,7 @@ def get_all_candidate_from_topic(config, device, doc_names, docs_original_tokens
             continue
 
         num_tokens += len(original_tokens)
-        sentence_span, original_candidates, bert_candidates = get_docs_candidate(original_tokens, bert_start_end, config['max_span_width_entity'])
+        sentence_span, original_candidates, bert_candidates = get_docs_candidate(original_tokens, bert_start_end, config['max_mention_span'])
         original_candidate_starts, original_candidate_ends = original_candidates
         span_width = (original_candidate_ends.clone().detach() - original_candidate_starts.clone().detach()).to(device)
 
@@ -258,19 +260,19 @@ def get_all_candidate_from_topic(config, device, doc_names, docs_original_tokens
     topic_width = torch.stack(topic_width)
 
 
-    max_length = max(len(v) for v in topic_continuous_embeddings)
-    topic_padded_embeddings = torch.stack(
-        [torch.cat((emb, padded_vector.repeat(max_length - len(emb), 1)))
-         for emb in topic_continuous_embeddings]
-    )
-    topic_mask = torch.stack(
-        [torch.cat((torch.ones(len(emb), device=device), torch.zeros(max_length - len(emb), device=device)))
-         for emb in topic_continuous_embeddings]
-    )
+    # max_length = max(len(v) for v in topic_continuous_embeddings)
+    # topic_padded_embeddings = torch.stack(
+    #     [torch.cat((emb, padded_vector.repeat(max_length - len(emb), 1)))
+    #      for emb in topic_continuous_embeddings]
+    # )
+    # topic_mask = torch.stack(
+    #     [torch.cat((torch.ones(len(emb), device=device), torch.zeros(max_length - len(emb), device=device)))
+    #      for emb in topic_continuous_embeddings]
+    # )
 
 
-    return (span_doc, span_sentence, span_origin_start, span_origin_end), \
-           (topic_start_end_embeddings, topic_padded_embeddings, topic_mask, topic_width), \
+    return (np.asarray(span_doc), torch.tensor(span_sentence), torch.tensor(span_origin_start), torch.tensor(span_origin_end)), \
+           (topic_start_end_embeddings, topic_continuous_embeddings, topic_width), \
            num_tokens
 
 
@@ -284,8 +286,7 @@ def prepare_data(sp, bert_model, config):
     all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert = sp
 
     start_end_embeddings = []
-    padded_tokens_embeddings = []
-    masks = []
+    continuous_embeddings = []
     width = []
     num_tokens = 0
     meta_data_0, meta_data_1, meta_data_2, meta_data_3 = [], [], [], []
@@ -308,25 +309,24 @@ def prepare_data(sp, bert_model, config):
         meta_data_3.append(span_meta_data[3])
 
         num_tokens += num_of_tokens
-        topic_start_end_embeddings, topic_padded_embeddings, topic_mask, topic_width = span_embeddings
+        topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
 
         start_end_embeddings.append(topic_start_end_embeddings)
-        padded_tokens_embeddings.append(topic_padded_embeddings)
-        masks.append(topic_mask)
+        continuous_embeddings.append(topic_continuous_embeddings)
         width.append(topic_width)
 
 
     return [meta_data_0, meta_data_1, meta_data_2, meta_data_3], \
-           [start_end_embeddings, padded_tokens_embeddings, masks, width],\
+           [start_end_embeddings, continuous_embeddings, width],\
            num_tokens
 
 
 
 def evaluate_model(dev_span_embeddings, model):
     all_scores = []
-    start_end_embeddings, padded_tokens_embeddings, masks, width = dev_span_embeddings
+    start_end_embeddings, continuous_embeddings, width = dev_span_embeddings
     for i in range(len(start_end_embeddings)):
-        scores = predict_mention_extractor(model, start_end_embeddings[i], padded_tokens_embeddings[i], masks[i], width[i])
+        scores = predict_mention_extractor(model, start_end_embeddings[i], continuous_embeddings[i], width[i])
         all_scores.extend(scores)
 
     return torch.stack(all_scores)
@@ -337,7 +337,7 @@ def evaluate_model(dev_span_embeddings, model):
 def get_candidate_labels(doc_id, start, end, dict_labels1, dict_labels2=None):
     labels1, labels2 = torch.zeros(len(doc_id)), torch.zeros(len(doc_id))
     for i, doc in enumerate(doc_id):
-        if doc in dict_labels1:
+        if dict_labels1 and doc in dict_labels1:
             label = dict_labels1[doc].get((start[i].item(), end[i].item()), None)
             if label:
                 labels1[i] = label
@@ -360,7 +360,7 @@ if __name__ == '__main__':
     if not os.path.exists(config['save_path']):
         os.makedirs(config['save_path'])
 
-    logger = create_logger(config)
+    logger = create_logger(config, create_file=True)
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
 
     # read and tokenize data
@@ -394,14 +394,14 @@ if __name__ == '__main__':
     # Mention extractor configuration
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
     bert_model_hidden_size = 768 if 'base' in config['roberta_model'] else 1024
-    event_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_span_width_event'], config['gpu_num']).to(device)
-    event_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_span_width_event'],
+    event_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'], config['gpu_num']).to(device)
+    event_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'],
                                                config['dev_gpu_num']).to(config['dev_gpu_num'])
     event_optimizer = optim.Adam(event_mention_extractor.parameters(), lr=config['learning_rate'], weight_decay=config['weight_decay'])
 
 
-    entity_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_span_width_entity'], config['gpu_num']).to(device)
-    entity_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_span_width_entity'],
+    entity_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'], config['gpu_num']).to(device)
+    entity_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'],
                                                      config['dev_gpu_num']).to(config['dev_gpu_num'])
     entity_optimizer = optim.Adam(entity_mention_extractor.parameters(), lr=config['learning_rate'], weight_decay=config['weight_decay'])
     criterion = nn.BCEWithLogitsLoss()
@@ -410,9 +410,8 @@ if __name__ == '__main__':
 
 
 
-    if not args.train_event_mention_extractor:
+    if not args.train_mention_extractor:
         event_mention_extractor.load_state_dict(torch.load(args.event_mention_extractor_path))
-    if not args.train_entity_mention_extractor:
         entity_mention_extractor.load_state_dict(torch.load(args.entity_mention_extractor_path))
 
 
@@ -442,6 +441,7 @@ if __name__ == '__main__':
         optimizer = event_optimizer
         eval_range = [0.2, 0.25, 0.3]
         dev_labels = dev_event_mention_labels
+        mention_extractor_path = args.event_mention_extractor_path
         logger.info('Train event mention detection')
     else:
         mention_extractor = entity_mention_extractor
@@ -449,6 +449,7 @@ if __name__ == '__main__':
         optimizer = entity_optimizer
         eval_range = [0.2, 0.25, 0.3, 0.4]
         dev_labels = dev_entity_mention_labels
+        mention_extractor_path = args.entity_mention_extractor_path
         logger.info('Train entity mention detection')
 
 
@@ -474,22 +475,52 @@ if __name__ == '__main__':
             docs_embeddings, docs_length = pad_and_read_bert(bert_tokens, bert_model, device)
             span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
                 config, device, list_of_docs, docs_original_tokens, docs_bert_start_end, docs_embeddings, docs_length)
-            topic_start_end_embeddings, topic_padded_embeddings, topic_mask, topic_width = span_embeddings
+            topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
+            torch.cuda.empty_cache()
 
             doc_id, sentence_id, start, end = span_meta_data
             train_event_labels, train_entity_labels = get_candidate_labels(doc_id, start, end, event_labels,
                                                                            entity_labels)
-            train_labels = train_event_labels if config['is_event'] else train_entity_labels
+
+            if args.train_mention_extractor:
+                train_labels = train_event_labels if config['is_event'] else train_entity_labels
+                mention_labels = torch.zeros(train_labels.shape, device=device)
+                mention_labels[train_labels.nonzero().squeeze(1)] = 1
+
+                train_topic_mention_extractor(mention_extractor, topic_start_end_embeddings, topic_continuous_embeddings,
+                                              topic_width, mention_labels, config['batch_size'], criterion, optimizer, device)
+                torch.cuda.empty_cache()
 
 
-            mention_labels = torch.zeros(train_labels.shape, device=device)
-            mention_labels[train_labels.nonzero().squeeze(1)] = 1
-            train_topic_mention_extractor(mention_extractor, topic_start_end_embeddings, topic_padded_embeddings,
-                                          topic_mask, topic_width, mention_labels, config['batch_size'], criterion, optimizer)
-            torch.cuda.empty_cache()
+            else:
+                with torch.no_grad():
+                    event_span_embeddings, event_span_scores = event_mention_extractor(topic_start_end_embeddings,
+                                                                                       topic_continuous_embeddings,
+                                                                                       topic_width)
+                    entity_span_embeddings, entity_span_scores = entity_mention_extractor(topic_start_end_embeddings,
+                                                                                       topic_continuous_embeddings,
+                                                                                       topic_width)
+
+                del docs_embeddings, topic_start_end_embeddings, topic_continuous_embeddings, topic_width
+
+                event_span_scores, event_span_indices = torch.topk(event_span_scores.squeeze(1), int(0.3 * num_of_tokens), sorted=False)
+                entity_span_scores, entity_span_indices = torch.topk(entity_span_scores.squeeze(1), int(0.4 * num_of_tokens), sorted=False)
+
+                event_span_embeddings = event_span_embeddings[event_span_indices]
+                train_event_labels = train_event_labels[event_span_indices]
+                entity_span_embeddings = entity_span_embeddings[entity_span_indices]
+                train_entity_labels = train_entity_labels[entity_span_indices]
+
+                torch.cuda.empty_cache()
+                logger.info('Event mentions: {}'.format(event_span_scores.shape))
+                logger.info('Entity mentions: {}'.format(entity_span_scores.shape))
+                span_doc, span_sentence, span_origin_start, span_origin_end = span_meta_data
+                event_span_doc = span_doc[event_span_indices]
+                event_span_sentence = span_doc[event_span_indices]
 
 
-        if args.train_entity_mention_extractor:
+
+        if args.train_mention_extractor:
             logger.info('Evaluate on the dev set')
 
             mention_extractor_clone.load_state_dict(mention_extractor.state_dict())
@@ -507,7 +538,7 @@ if __name__ == '__main__':
                 recall = eval.get_recall()
                 if recall > max_dev[0]:
                     max_dev = (recall, epoch)
-                    # torch.save(mention_extractor.state_dict(), args.entity_mention_extractor_path + '_' + str(config['max_span_width_entity']))
+                    # torch.save(mention_extractor.state_dict(), mention_extractor_path + '_' + str(config['max_mention_span']))
 
                 logger.info('K = {}, Recall: {}, Precision: {}, F1: {}'.format(k, eval.get_recall(), eval.get_precision(),
                                                                          eval.get_f1()))

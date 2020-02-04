@@ -87,6 +87,7 @@ def get_mention_doc(root, doc_name, validated_sentences):
             cluster_desc = mention_cluster_info[target]['cluster_desc']
 
 
+
         mention_info = mention.copy()
         mention_info["cluster_id"] = cluster_id
         mention_info["cluster_desc"] = cluster_desc

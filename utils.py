@@ -60,7 +60,7 @@ def align_ecb_bert_tokens(ecb_tokens, bert_tokens):
 
 
 
-def create_logger(config):
+def create_logger(config, create_file=True):
     logging.basicConfig(datefmt='%Y-%m-%d %H:%M:%S', format='w')
     logger = logging.getLogger(__name__)
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
@@ -68,11 +68,13 @@ def create_logger(config):
     c_handler = logging.StreamHandler()
     c_handler.setLevel(logging.DEBUG)
     c_handler.setFormatter(formatter)
-    f_handler = logging.FileHandler(os.path.join(config['save_path'], 'log{}.txt'.format(config['exp_num'])), mode='w')
-    f_handler.setLevel(logging.INFO)
-    f_handler.setFormatter(formatter)
     logger.addHandler(c_handler)
-    logger.addHandler(f_handler)
+
+    if create_file:
+        f_handler = logging.FileHandler(os.path.join(config['save_path'], 'log{}.txt'.format(config['exp_num'])), mode='w')
+        f_handler.setLevel(logging.INFO)
+        f_handler.setFormatter(formatter)
+        logger.addHandler(f_handler)
     logger.propagate = False
 
     return logger

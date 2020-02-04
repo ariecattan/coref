@@ -1,9 +1,9 @@
 {
   "gpu_num" : 0,
   "dev_gpu_num": 1,
-  "dropout": 0.4,
-  "epochs": 10,
-  "batch_size": 32,
+  "dropout": 0.3,
+  "epochs": 20,
+  "batch_size": 64,
   "learning_rate": 1e-4,
   "with_mention_width": true,
   "with_head_attention": true,
@@ -11,11 +11,10 @@
   "roberta_model": "roberta-large",
   "mention_data_folder": "data/ecb/mention_extraction_data",
   "random_seed": 0,
-  "max_span_width_event": 5,
-  "max_span_width_entity": 5,
-  "hidden_layer": 1024,
+  "max_mention_span": 5,
+  "hidden_layer": 512,
   "weight_decay": 0,
-  "save_path": "mention_detection_experiments",
-  "exp_num": 110,
+  "save_path": "mention_detection_experiments/entity",
+  "exp_num": 100,
   "is_event": false
 }
