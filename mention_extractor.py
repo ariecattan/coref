@@ -3,6 +3,8 @@ import torch
 import torch.nn.functional as F
 
 
+
+
 class SoftPairWiseClassifier(nn.Module):
     def __init__(self, input_dim):
         super(SoftPairWiseClassifier, self).__init__()
@@ -14,6 +16,31 @@ class SoftPairWiseClassifier(nn.Module):
 
     def forward(self, input):
         return torch.mm(self.linear(input), input.T)
+
+
+
+class SimplePairWiseClassifier(nn.Module):
+    def __init__(self, config, bert_hidden_size):
+        super(SimplePairWiseClassifier, self).__init__()
+        self.input_layer = bert_hidden_size * 3
+        if config['with_mention_width']:
+            self.input_layer += config['embedding_dimension']
+        self.input_layer *= 3
+        self.pairwise_mlp = nn.Sequential(
+            # nn.Linear(self.input_layer, 4096),
+            # nn.Dropout(config['dropout']),
+            # nn.ReLU(),
+            # nn.Linear(4096, 2048),
+            # nn.Dropout(config['dropout']),
+            # nn.ReLU(),
+            nn.Linear(self.input_layer, config['hidden_layer']),
+            nn.Dropout(config['dropout']),
+            nn.ReLU(),
+            nn.Linear(config['hidden_layer'], 1)
+        )
+
+    def forward(self, first, second):
+        return self.pairwise_mlp(torch.cat((first, second, first * second), dim=1))
 
 
 

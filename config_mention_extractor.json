@@ -1,9 +1,9 @@
 {
-  "gpu_num" : 0,
-  "dev_gpu_num": 1,
-  "dropout": 0.3,
-  "epochs": 20,
-  "batch_size": 64,
+  "gpu_num" : 1,
+  "dev_gpu_num": 0,
+  "dropout": 0.4,
+  "epochs": 30,
+  "batch_size": 32,
   "learning_rate": 1e-4,
   "with_mention_width": true,
   "with_head_attention": true,
@@ -12,9 +12,12 @@
   "mention_data_folder": "data/ecb/mention_extraction_data",
   "random_seed": 0,
   "max_mention_span": 5,
-  "hidden_layer": 512,
+  "hidden_layer": 1024,
   "weight_decay": 0,
-  "save_path": "mention_detection_experiments/entity",
+  "save_path": "mention_detection_experiments",
   "exp_num": 100,
-  "is_event": false
+  "is_event": true,
+  "use_gold_mentions": false,
+  "e2e": false
 }
+

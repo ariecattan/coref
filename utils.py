@@ -123,9 +123,11 @@ def fix_seed(config):
         torch.cuda.manual_seed(config['random_seed'])
 
 
-def split_doc_into_segments(token_ids, sentence_ids, segment_length=512):
+def split_doc_into_segments(token_ids, sentence_ids, segment_length=512, with_special_tokens=False):
     segments = [0]
     current_token = 0
+    if with_special_tokens:
+        segment_length -= 2
     while current_token < len(token_ids):
         end_token = min(len(token_ids) - 1, current_token + segment_length - 1)
         sentence_end = sentence_ids[end_token]
