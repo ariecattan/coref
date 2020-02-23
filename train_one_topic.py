@@ -13,39 +13,17 @@ from copy import deepcopy
 from sklearn.cluster import *
 
 
-
-
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
 parser.add_argument('--config_model_file', type=str, default='config_mention_extractor.json')
 parser.add_argument('--train_mention_extractor', type=bool, default=False)
-parser.add_argument('--entity_mention_extractor_path', type=str, default='models/entity_mention_extractor_5')
-parser.add_argument('--event_mention_extractor_path', type=str, default='models/event_mention_extractor_5')
+parser.add_argument('--entity_mention_extractor_path', type=str, default='models/without_att/entity_mention_extractor_5')
+parser.add_argument('--event_mention_extractor_path', type=str, default='models/without_att/event_mention_extractor_5')
+parser.add_argument('--pairwise_path', type=str, default='models/without_att/pairwise_model_gold_mentions')
 args = parser.parse_args()
 
 
-
 is_training = True
-
-
-
-
-def pad_and_read_bert(bert_token_ids, bert_model, device):
-    length = np.array([len(d) for d in bert_token_ids])
-    max_length = max(length)
-
-    if max_length > 512:
-        raise ValueError('Error')
-
-    docs = torch.tensor([doc + [0] * (max_length - len(doc)) for doc in bert_token_ids], device=device)
-    attention_masks = torch.tensor([[1] * len(doc) + [0] * (max_length - len(doc)) for doc in bert_token_ids], device=device)
-    with torch.no_grad():
-        embeddings, _ = bert_model(docs, attention_masks)
-
-    return embeddings, length
-
-
-
 
 
 def get_candidate_mention_label(candidate_mentions, doc_gold_mentions):
@@ -58,53 +36,6 @@ def get_candidate_mention_label(candidate_mentions, doc_gold_mentions):
         labels.append(cluster_id)
 
     return torch.tensor(labels)
-
-
-
-
-
-
-def get_all_token_embedding(embedding, start, end):
-    span_embeddings, length = [], []
-    for s, e in zip(start, end):
-        indices = torch.tensor(range(s, e + 1))
-        span_embeddings.append(embedding[indices])
-        length.append(len(indices))
-    return span_embeddings, length
-
-
-
-
-def get_docs_candidate(original_tokens, bert_start_end, max_span_width):
-    num_tokens = len(original_tokens)
-    sentences = torch.tensor([x[0] for x in original_tokens])
-
-    # Find all possible spans up to max_span_width in the same sentence
-    candidate_starts = torch.tensor(range(num_tokens)).unsqueeze(1).repeat(1, max_span_width)
-    candidate_ends = candidate_starts + torch.tensor(range(max_span_width)).unsqueeze(0)
-    candidate_start_sentence_indices = sentences.unsqueeze(1).repeat(1, max_span_width)
-    padded_sentence_map = torch.cat((sentences, sentences[-1].repeat(max_span_width)))
-    candidate_end_sentence_indices = torch.stack(list(padded_sentence_map[i:i + max_span_width] for i in range(num_tokens)))
-    candidate_mask = (candidate_start_sentence_indices == candidate_end_sentence_indices) * (
-                candidate_ends < num_tokens)
-    flattened_candidate_mask = candidate_mask.view(-1)
-    candidate_starts = candidate_starts.view(-1)[flattened_candidate_mask]
-    candidate_ends = candidate_ends.view(-1)[flattened_candidate_mask]
-    sentence_span = candidate_start_sentence_indices.view(-1)[flattened_candidate_mask]
-
-    # Original tokens ids
-    original_token_ids = torch.tensor([x[1] for x in original_tokens])
-    original_candidate_starts = original_token_ids[candidate_starts]
-    original_candidate_ends = original_token_ids[candidate_ends]
-
-    # Convert to BERT ids
-    bert_candidate_starts = bert_start_end[candidate_starts, 0]
-    bert_candidate_ends = bert_start_end[candidate_ends, 1]
-
-    return sentence_span, (original_candidate_starts, original_candidate_ends), \
-           (bert_candidate_starts, bert_candidate_ends)
-
-
 
 
 def train_topic_mention_extractor(model, start_end, continuous_embeddings,
@@ -131,154 +62,6 @@ def predict_mention_extractor(model, start_end, continuous_embeddings, width):
     return scores
 
 
-
-
-def tokenize_topic(topic, tokenizer):
-    list_of_docs = []
-    docs_bert_tokens = []
-    docs_origin_tokens = []
-    docs_start_end_bert = []
-
-    for doc, tokens in topic.items():
-        bert_tokens, bert_token_ids = [], []
-        ecb_tokens = []
-        bert_sentence_ids = []
-        start_bert_idx, end_bert_idx = [], []
-        alignment = []
-        bert_cursor = -1
-        for i, token in enumerate(tokens):
-            sent_id, token_id, token_text, selected_sentence, continuous_sentence = token
-            bert_token = tokenizer.tokenize(token_text)
-            if bert_token:
-                bert_tokens.extend(bert_token)
-                bert_token_ids.extend(tokenizer.convert_tokens_to_ids(bert_token))
-                bert_start_index = bert_cursor + 1
-                start_bert_idx.append(bert_start_index)
-                bert_cursor += len(bert_token)
-                bert_end_index = bert_cursor
-                end_bert_idx.append(bert_end_index)
-                ecb_tokens.append([sent_id, token_id, token_text, selected_sentence])
-                bert_sentence_ids.extend([sent_id] * len(bert_token))
-                alignment.extend([token_id] * len(bert_token))
-
-
-        ids = [x[1] for x in ecb_tokens]
-        segments = split_doc_into_segments(bert_token_ids, bert_sentence_ids)
-
-
-        bert_segments, ecb_segments = [], []
-        start_end_segment = []
-        delta = 0
-        for start, end in zip(segments, segments[1:]):
-            bert_segments.append(bert_token_ids[start:end])
-            start_ecb = ids.index(alignment[start])
-            end_ecb = ids.index(alignment[end - 1])
-            bert_start = np.array(start_bert_idx[start_ecb:end_ecb + 1]) - delta
-            bert_end = np.array(end_bert_idx[start_ecb:end_ecb + 1]) - delta
-
-            if bert_start[0] < 0:
-                print('Negative value!!!')
-            start_end = np.concatenate((np.expand_dims(bert_start, 1),
-                                        np.expand_dims(bert_end, 1)), axis=1)
-            start_end_segment.append(start_end)
-
-            ecb_segments.append(ecb_tokens[start_ecb:end_ecb + 1])
-            delta = end
-
-
-        segment_doc = [doc] * (len(segments) - 1)
-
-        docs_start_end_bert.extend(start_end_segment)
-        list_of_docs.extend(segment_doc)
-        docs_bert_tokens.extend(bert_segments)
-        docs_origin_tokens.extend(ecb_segments)
-
-    return list_of_docs, docs_origin_tokens, docs_bert_tokens, docs_start_end_bert
-
-
-
-
-def tokenize_set(raw_text_by_topic, tokenizer):
-    all_topics = []
-    topic_list_of_docs = []
-    topic_origin_tokens, topic_bert_tokens, topic_bert_sentences, topic_start_end_bert = [], [], [], []
-    for topic, docs in raw_text_by_topic.items():
-        all_topics.append(topic)
-        list_of_docs, docs_origin_tokens, docs_bert_tokens, docs_start_end_bert = tokenize_topic(docs, tokenizer)
-        topic_list_of_docs.append(list_of_docs)
-        topic_origin_tokens.append(docs_origin_tokens)
-        topic_bert_tokens.append(docs_bert_tokens)
-        topic_start_end_bert.append(docs_start_end_bert)
-
-    return all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert
-
-
-
-def get_all_candidate_from_topic(config, device, doc_names, docs_original_tokens, docs_bert_start_end,
-                                 docs_embeddings, docs_length):
-    span_doc, span_sentence, span_origin_start, span_origin_end = [], [], [], []
-    topic_start_end_embeddings, topic_continuous_embeddings, topic_width = [], [], []
-    num_tokens = 0
-
-    for i in range(len(doc_names)):
-        doc_id = doc_names[i]
-        original_tokens = docs_original_tokens[i]
-        bert_start_end = docs_bert_start_end[i]
-        if is_training:  # Filter only the validated sentences according to Cybulska setup
-            filt = [x[-1] for x in original_tokens]
-            bert_start_end = bert_start_end[filt]
-            original_tokens = list(compress(original_tokens, filt))
-
-        if not original_tokens:
-            continue
-
-        num_tokens += len(original_tokens)
-        sentence_span, original_candidates, bert_candidates = get_docs_candidate(original_tokens, bert_start_end, config['max_mention_span'])
-        original_candidate_starts, original_candidate_ends = original_candidates
-        span_width = (original_candidate_ends.clone().detach() - original_candidate_starts.clone().detach()).to(device)
-
-        span_doc.extend([doc_id] * len(sentence_span))
-        span_sentence.extend(sentence_span)
-        span_origin_start.extend(original_candidate_starts)
-        span_origin_end.extend(original_candidate_ends)
-
-
-        bert_candidate_starts, bert_candidate_ends = bert_candidates
-        doc_embeddings = docs_embeddings[i][torch.tensor(range(docs_length[i]))]  # remove padding
-        continuous_tokens_embedding, lengths = get_all_token_embedding(doc_embeddings, bert_candidate_starts,
-                                                                       bert_candidate_ends)
-        topic_start_end_embeddings.extend(torch.cat((doc_embeddings[bert_candidate_starts],
-                                                     doc_embeddings[bert_candidate_ends]), dim=1))
-        topic_width.extend(span_width)
-        topic_continuous_embeddings.extend(continuous_tokens_embedding)
-
-
-    topic_start_end_embeddings = torch.stack(topic_start_end_embeddings)
-    topic_width = torch.stack(topic_width)
-
-
-    # max_length = max(len(v) for v in topic_continuous_embeddings)
-    # topic_padded_embeddings = torch.stack(
-    #     [torch.cat((emb, padded_vector.repeat(max_length - len(emb), 1)))
-    #      for emb in topic_continuous_embeddings]
-    # )
-    # topic_mask = torch.stack(
-    #     [torch.cat((torch.ones(len(emb), device=device), torch.zeros(max_length - len(emb), device=device)))
-    #      for emb in topic_continuous_embeddings]
-    # )
-
-
-    return (np.asarray(span_doc), torch.tensor(span_sentence), torch.tensor(span_origin_start), torch.tensor(span_origin_end)), \
-           (topic_start_end_embeddings, topic_continuous_embeddings, topic_width), \
-           num_tokens
-
-
-
-
-
-
-
-
 def prepare_data(sp, bert_model, config, device):
     all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert = sp
 
@@ -297,7 +80,7 @@ def prepare_data(sp, bert_model, config, device):
         docs_embeddings, docs_length = pad_and_read_bert(bert_tokens, bert_model, device)
         span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
             config, device, list_of_docs, docs_original_tokens, docs_bert_start_end,
-            docs_embeddings, docs_length)
+            docs_embeddings, docs_length, is_training=is_training)
 
         meta_data_0.append(span_meta_data[0])
         meta_data_1.append(span_meta_data[1])
@@ -328,25 +111,6 @@ def evaluate_model(dev_span_embeddings, model):
     return torch.stack(all_scores)
 
 
-
-
-def get_candidate_labels(device, doc_id, start, end, dict_labels1, dict_labels2=None):
-    labels1, labels2 = torch.zeros(len(doc_id), device=device), torch.zeros(len(doc_id), device=device)
-    for i, doc in enumerate(doc_id):
-        if dict_labels1 and doc in dict_labels1:
-            label = dict_labels1[doc].get((start[i].item(), end[i].item()), None)
-            if label:
-                labels1[i] = label
-        if dict_labels2 and doc in dict_labels2:
-            label = dict_labels2[doc].get((start[i].item(), end[i].item()), None)
-            if label:
-                labels2[i] = label
-
-    return labels1, labels2
-
-
-
-
 def batch_train_pairwise_classifier(model, first, second, labels, batch_size, criterion, optimizer):
     model.train()
     accumulate_loss = 0
@@ -358,7 +122,7 @@ def batch_train_pairwise_classifier(model, first, second, labels, batch_size, cr
         scores = model(batch_first, batch_second)
         loss = criterion(scores.squeeze(1), batch_labels)
         accumulate_loss += loss.item()
-        loss.backward(retain_graph=False)
+        loss.backward(retain_graph=True)
         optimizer.step()
 
     return accumulate_loss
@@ -429,14 +193,14 @@ if __name__ == '__main__':
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
     dev_bert_model = deepcopy(bert_model).to(dev_device)
     bert_model_hidden_size = 768 if 'base' in config['roberta_model'] else 1024
-    event_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'], device).to(device)
-    event_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'],
+    event_mention_extractor = MentionExtractor(config, bert_model_hidden_size, device).to(device)
+    event_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size,
                                                dev_device).to(dev_device)
     event_optimizer = optim.Adam(event_mention_extractor.parameters(), lr=config['learning_rate'], weight_decay=config['weight_decay'])
 
 
-    entity_mention_extractor = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'], device).to(device)
-    entity_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size, config['max_mention_span'],
+    entity_mention_extractor = MentionExtractor(config, bert_model_hidden_size, device).to(device)
+    entity_mention_extractor_clone = MentionExtractor(config, bert_model_hidden_size,
                                                      dev_device).to(dev_device)
     entity_optimizer = optim.Adam(entity_mention_extractor.parameters(), lr=config['learning_rate'], weight_decay=config['weight_decay'])
 
@@ -502,6 +266,8 @@ if __name__ == '__main__':
     logger.info('Number of topics: {}'.format(len(all_topics)))
     max_dev = (0, None)
 
+    event_mention_extractor.eval()
+
     for epoch in range(config['epochs']):
         logger.info('Epoch: {}'.format(epoch))
         accumulate_loss = 0
@@ -517,7 +283,7 @@ if __name__ == '__main__':
 
             docs_embeddings, docs_length = pad_and_read_bert(bert_tokens, bert_model, device)
             span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
-                config, device, list_of_docs, docs_original_tokens, docs_bert_start_end, docs_embeddings, docs_length)
+                config, device, list_of_docs, docs_original_tokens, docs_bert_start_end, docs_embeddings, docs_length, is_training)
             topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
             torch.cuda.empty_cache()
 
@@ -538,20 +304,13 @@ if __name__ == '__main__':
 
 
             else:
-                # with torch.no_grad():
-                if e2e:
-                    event_span_embeddings, event_span_scores = event_mention_extractor(topic_start_end_embeddings, topic_continuous_embeddings,
-                                                                                   topic_width)
-                else:
-                    with torch.no_grad():
-                        event_span_embeddings, event_span_scores = event_mention_extractor(topic_start_end_embeddings,
+                with torch.no_grad():
+                    event_span_embeddings, event_span_scores = event_mention_extractor(topic_start_end_embeddings,
                                                                                            topic_continuous_embeddings,
                                                                                            topic_width)
 
-                # entity_span_embeddings, entity_span_scores = entity_mention_extractor(topic_start_end_embeddings, topic_continuous_embeddings,
-                #                                                                    topic_width)
 
-                del docs_embeddings, topic_start_end_embeddings, topic_continuous_embeddings, topic_width
+                # del docs_embeddings, topic_start_end_embeddings, topic_continuous_embeddings, topic_width
 
                 if use_gold_mentions:
                     event_span_indices = train_event_labels.nonzero().squeeze(1)
@@ -569,7 +328,7 @@ if __name__ == '__main__':
                 # train_entity_labels = train_entity_labels[entity_span_indices]
 
 
-
+                torch.cuda.empty_cache()
                 first, second = zip(*list(combinations(range(len(event_span_indices)), 2)))
                 first = torch.tensor(first)
                 second = torch.tensor(second)
@@ -594,8 +353,10 @@ if __name__ == '__main__':
                 # span_doc, span_sentence, span_origin_start, span_origin_end = span_meta_data
                 # event_span_doc = span_doc[event_span_indices]
                 # event_span_sentence = span_doc[event_span_indices]
-        logger.info('Number of positive pairs: {}'.format(positive_pairs))
-        logger.info('Accumulate loss: {}'.format(accumulate_loss))
+
+        if not args.train_mention_extractor:
+            logger.info('Number of positive pairs: {}'.format(positive_pairs))
+            logger.info('Accumulate loss: {}'.format(accumulate_loss))
 
         logger.info('Evaluate on the dev set')
         if args.train_mention_extractor:
@@ -614,7 +375,7 @@ if __name__ == '__main__':
                 recall = eval.get_recall()
                 if recall > max_dev[0]:
                     max_dev = (recall, epoch)
-                    # torch.save(mention_extractor.state_dict(), mention_extractor_path)
+                    torch.save(mention_extractor.state_dict(), mention_extractor_path)
 
                 logger.info('K = {}, Recall: {}, Precision: {}, F1: {}'.format(k, eval.get_recall(), eval.get_precision(),
                                                                          eval.get_f1()))
@@ -626,6 +387,9 @@ if __name__ == '__main__':
             event_mention_extractor_clone.load_state_dict(event_mention_extractor.state_dict())
             pairwise_classifier_clone.load_state_dict(pairwise_classifier.state_dict())
 
+            event_mention_extractor_clone.eval()
+            pairwise_classifier_clone.eval()
+
             for t, topic in enumerate(dev_all_topics):
                 list_of_docs = dev_topic_list_of_docs[t]
                 docs_original_tokens = dev_topic_origin_tokens[t]
@@ -635,7 +399,7 @@ if __name__ == '__main__':
                 docs_embeddings, docs_length = pad_and_read_bert(bert_tokens, dev_bert_model, dev_device)
                 span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
                     config, dev_device, list_of_docs, docs_original_tokens, docs_bert_start_end, docs_embeddings,
-                    docs_length)
+                    docs_length, is_training)
                 topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
                 torch.cuda.empty_cache()
 
@@ -654,6 +418,7 @@ if __name__ == '__main__':
                 else:
                     event_span_scores, event_span_indices = torch.topk(event_span_scores.squeeze(1),
                                                                    int(0.3 * num_of_tokens), sorted=False)
+
                 event_span_indices, _ = torch.sort(event_span_indices)
                 event_span_embeddings = event_span_embeddings[event_span_indices]
                 dev_event_labels = dev_event_labels[event_span_indices]
@@ -662,6 +427,9 @@ if __name__ == '__main__':
                 first, second = zip(*list(combinations(range(len(event_span_indices)), 2)))
                 first = torch.tensor(first)
                 second = torch.tensor(second)
+
+
+
 
                 pairwise_labels = (dev_event_labels[first] != 0) & (
                             dev_event_labels[first] == dev_event_labels[second])
@@ -680,9 +448,20 @@ if __name__ == '__main__':
             eval = Evaluation(strict_preds, all_labels)
             logger.info('Number of positive pairs: {}/{}'.format(len(all_labels.nonzero()), len(all_labels)))
             logger.info('Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(), eval.get_precision(), eval.get_f1()))
+
+            if eval.get_f1() > max_dev[0]:
+                max_dev = (eval.get_f1(), epoch)
+                torch.save(pairwise_classifier.state_dict(), args.pairwise_path)
+
+            # s, i = torch.topk(all_scores, int(0.02 * len(all_scores)), sorted=False)
+            # rank_preds = torch.zeros(len(all_scores), device=dev_device)
+            # rank_preds[i.squeeze(1)] = 1
+            # eval = Evaluation(rank_preds, all_labels)
+            # logger.info(
+            #     'Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(), eval.get_precision(), eval.get_f1()))
             # clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', distance_threshold=0)
 
 
 
 
-    # logger.info('Best recall: {}'.format(max_dev[0]))
+    logger.info('Best Performance: {}'.format(max_dev))

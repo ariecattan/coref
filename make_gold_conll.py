@@ -64,7 +64,7 @@ def get_conll_gold_file(ecb_tokens, map_token_cluster_id, with_singleton):
             if cluster_id == '':
                 cluster_id = '-'
 
-        ecb_tokens_with_conll.append([doc_id, sentence_id, token_id, token_text, flag_sentence, flag_continuous, singleton_flag, cluster_id])
+        ecb_tokens_with_conll.append([doc_id, sentence_id, token_id, token_text, cluster_id])
 
     return ecb_tokens_with_conll
 

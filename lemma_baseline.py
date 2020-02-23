@@ -9,7 +9,7 @@ import random
 
 nlp = spacy.load('en_core_web_sm', disable=['parser', 'ner'])
 parser = argparse.ArgumentParser()
-parser.add_argument('--input_file', type=str, default='data/ecb/mentions/train_events.json')
+parser.add_argument('--input_file', type=str, default='data/ecb/mentions/dev_events.json')
 args = parser.parse_args()
 
 
@@ -24,7 +24,6 @@ def get_positive_negative(mentions):
         for cluster, grouped_mentions_by_cluster in grouped_by_cluster:
             positive_pairs.extend(list(combinations(grouped_mentions_by_cluster['index'].to_numpy(), 2)))
         negative_pairs = set(index_pair) - set(positive_pairs)
-
         print('Topic: {} - Positive: {}'.format(topic, len(positive_pairs)))
         negatives.extend(list(negative_pairs))
         positives.extend(positive_pairs)

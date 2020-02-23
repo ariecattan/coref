@@ -45,7 +45,7 @@ class SimplePairWiseClassifier(nn.Module):
 
 
 class MentionExtractor(nn.Module):
-    def __init__(self, config, bert_hidden_size, max_span_width, device):
+    def __init__(self, config, bert_hidden_size, device):
         super(MentionExtractor, self).__init__()
         self.bert_hidden_size = bert_hidden_size
         self.hidden_layer = config['hidden_layer']
@@ -60,7 +60,7 @@ class MentionExtractor(nn.Module):
         #     nn.Linear(self.hidden_layer, 1)
         # ) #nn.Linear(bert_hidden_size, 1)
 
-        self.width_feature = nn.Embedding(max_span_width, config['embedding_dimension'])
+        self.width_feature = nn.Embedding(config['max_mention_span'], config['embedding_dimension'])
         self.use_head_attention = config['with_head_attention']
         self.input_layer = 3 * bert_hidden_size if self.use_head_attention else 2 * bert_hidden_size
         if self.with_width_embedding:
