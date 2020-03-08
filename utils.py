@@ -259,6 +259,8 @@ def pad_and_read_bert(bert_token_ids, bert_model, device):
     if max_length > 512:
         raise ValueError('Error')
 
+    bert_model.eval()
+
     docs = torch.tensor([doc + [0] * (max_length - len(doc)) for doc in bert_token_ids], device=device)
     attention_masks = torch.tensor([[1] * len(doc) + [0] * (max_length - len(doc)) for doc in bert_token_ids], device=device)
     with torch.no_grad():
@@ -331,7 +333,7 @@ def get_all_candidate_from_topic(config, device, doc_names, docs_original_tokens
         num_tokens += len(original_tokens)
         sentence_span, original_candidates, bert_candidates = get_docs_candidate(original_tokens, bert_start_end, config['max_mention_span'])
         original_candidate_starts, original_candidate_ends = original_candidates
-        span_width = (original_candidate_ends.clone().detach() - original_candidate_starts.clone().detach()).to(device)
+        span_width = (original_candidate_ends - original_candidate_starts).to(device)
 
         span_doc.extend([doc_id] * len(sentence_span))
         span_sentence.extend(sentence_span)

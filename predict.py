@@ -16,30 +16,29 @@ parser.add_argument('--entity_mention_extractor_path', type=str, default='models
 parser.add_argument('--event_mention_extractor_path', type=str, default='models/without_att/event_mention_extractor_5')
 parser.add_argument('--pairwise_path', type=str, default='models/without_att/pairwise_model_gold_mentions')
 parser.add_argument('--use_gold_mentions', type=bool, default=True)
-parser.add_argument('--split', type=str, default='dev')
+parser.add_argument('--split', type=str, default='test')
 args = parser.parse_args()
 
-
-
+use_gold_label = False
 
 
 def get_conll_predictions(data, doc_ids, starts, ends, cluster_dic):
-    dic = {doc_id:{} for doc_id in doc_ids}
-
+    dic = {doc_id:{} for doc_id in set(doc_ids)}
     for i, (cluster_id, mentions) in enumerate(cluster_dic.items()):
-        # if len(mentions) == 0:
+        # if len(mentions) == 1:
         #     continue
+
         for m in mentions:
             doc_id = doc_ids[m]
             start = starts[m]
             end = ends[m]
 
-            single_token = start.item() == end.item()
+            single_token = start == end
 
             if single_token:
-                dic[doc_id][start.item()] = '(' + str(cluster_id) + ')'
+                dic[doc_id][start] = '(' + str(cluster_id) + ')'
             else:
-                for i, token_id in enumerate(range(start.item(), end.item() + 1)):
+                for i, token_id in enumerate(range(start, end + 1)):
                     if i == 0:
                         dic[doc_id][token_id] = '(' + str(cluster_id)
                     elif i == len(list(range(start, end + 1))) - 1:
@@ -56,7 +55,6 @@ def get_conll_predictions(data, doc_ids, starts, ends, cluster_dic):
 
 
     return predicted_conll
-
 
 
 
@@ -92,11 +90,10 @@ if __name__ == '__main__':
     with open(os.path.join(args.data_folder, '{}.json'.format(args.split)), 'r') as f:
         ecb_texts = json.load(f)
 
-    ecb_texts_by_topic = separate_docs_into_topics(ecb_texts, subtopic=True)
+    ecb_texts_by_topic = separate_docs_into_topics(ecb_texts, subtopic=False)
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'], add_special_tokens=True)
     tokens = tokenize_set(ecb_texts_by_topic, roberta_tokenizer)
     all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert = tokens
-
 
 
 
@@ -138,28 +135,40 @@ if __name__ == '__main__':
         event_labels = event_labels[event_span_indices]
         torch.cuda.empty_cache()
 
-        first, second = zip(*list(product(range(len(event_span_indices)), repeat=2)))
-        first = torch.tensor(first)
-        second = torch.tensor(second)
 
-        number_of_mentions = len(event_span_indices)
+        if use_gold_label:
+            predicted_clusters = event_labels
 
+        else:
+            first, second = zip(*list(product(range(len(event_span_indices)), repeat=2)))
+            first = torch.tensor(first)
+            second = torch.tensor(second)
 
-        with torch.no_grad():
-            pairwise_scores = pairwise_scorer(event_span_embeddings[first], event_span_embeddings[second])
-            pairwise_scores = torch.sigmoid(pairwise_scores)
-        pairwise_distances = 1-pairwise_scores.view(number_of_mentions, number_of_mentions).detach().cpu().numpy()
-
+            number_of_mentions = len(event_span_indices)
 
 
-        predicted = clustering.fit(pairwise_distances)
-        predicted_clusters = predicted.labels_ + max_cluster_id
-        max_cluster_id = max(predicted_clusters)
+            with torch.no_grad():
+                pairwise_scores = pairwise_scorer(event_span_embeddings[first], event_span_embeddings[second])
+                pairwise_scores = torch.sigmoid(pairwise_scores)
+
+
+
+
+            # Affinity score to distance score
+            identity_matrix = (~torch.eye(number_of_mentions).to(torch.bool)).to(torch.int)
+            pairwise_distances = 1 - pairwise_scores.view(number_of_mentions, number_of_mentions).detach().cpu().numpy()
+            # pairwise_distances *= identity_matrix.numpy()
+
+
+            predicted = clustering.fit(pairwise_distances)
+            predicted_clusters = predicted.labels_ + max_cluster_id
+            max_cluster_id = max(predicted_clusters)
+
 
         doc_ids.extend(doc_id[event_span_indices.cpu()])
-        sentence_ids.extend(sentence_id[event_span_indices])
-        starts.extend(start[event_span_indices])
-        ends.extend(end[event_span_indices])
+        sentence_ids.extend(sentence_id[event_span_indices].tolist())
+        starts.extend(start[event_span_indices].tolist())
+        ends.extend(end[event_span_indices].tolist())
         all_topic_predicted_clusters.extend(predicted_clusters)
 
 
@@ -171,6 +180,7 @@ if __name__ == '__main__':
             all_clusters[cluster_id] = []
         all_clusters[cluster_id].append(i)
 
+    print('Saving conll file...')
     conll = get_conll_predictions(ecb_texts, doc_ids, starts, ends, all_clusters)
 
     doc_path = os.path.join(config['save_path'], '{}_events_{}_{}.predicted_conll'.format(

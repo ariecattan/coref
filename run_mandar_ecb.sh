@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 DIRECTORY=~/coref/data/ecb/docs/*.xml
 
 

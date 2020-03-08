@@ -129,20 +129,6 @@ def batch_train_pairwise_classifier(model, first, second, labels, batch_size, cr
 
 
 
-
-def train_pairwise_classifier(model, first, second, labels, batch_size, criterion, optimizer):
-    model.train()
-    optimizer.zero_grad()
-    scores = model(first, second)
-    loss = criterion(scores.squeeze(1), labels.to(torch.float))
-    loss.backward()
-    optimizer.step()
-    torch.cuda.empty_cache()
-
-    return loss.item()
-
-
-
 if __name__ == '__main__':
     config = pyhocon.ConfigFactory.parse_file(args.config_model_file)
     fix_seed(config)
@@ -207,7 +193,8 @@ if __name__ == '__main__':
 
     pairwise_classifier = SimplePairWiseClassifier(config, bert_model_hidden_size).to(device)
     pairwise_classifier_clone = SimplePairWiseClassifier(config, bert_model_hidden_size).to(dev_device)
-    pairwise_optimizer = optim.Adam(pairwise_classifier.parameters(), lr=config['learning_rate'], weight_decay=config['weight_decay'])
+    pairwise_optimizer = optim.Adam(pairwise_classifier.parameters(), lr=config['learning_rate'])
+
 
     criterion = nn.BCEWithLogitsLoss()
 
@@ -217,10 +204,9 @@ if __name__ == '__main__':
 
 
     if not args.train_mention_extractor and not e2e:
+        logger.info('Loading trained models..')
         event_mention_extractor.load_state_dict(torch.load(args.event_mention_extractor_path))
         entity_mention_extractor.load_state_dict(torch.load(args.entity_mention_extractor_path))
-
-
 
 
     # Prepare dev data and labels
@@ -291,6 +277,7 @@ if __name__ == '__main__':
             train_event_labels, train_entity_labels = get_candidate_labels(device, doc_id, start, end, event_labels,
                                                                            entity_labels)
 
+
             if args.train_mention_extractor:
                 train_labels = train_event_labels if config['is_event'] else train_entity_labels
                 mention_labels = torch.zeros(train_labels.shape, device=device)
@@ -308,8 +295,6 @@ if __name__ == '__main__':
                     event_span_embeddings, event_span_scores = event_mention_extractor(topic_start_end_embeddings,
                                                                                            topic_continuous_embeddings,
                                                                                            topic_width)
-
-
                 # del docs_embeddings, topic_start_end_embeddings, topic_continuous_embeddings, topic_width
 
                 if use_gold_mentions:
@@ -321,18 +306,15 @@ if __name__ == '__main__':
                     event_span_indices, _ = torch.sort(event_span_indices)
                     # entity_span_indices, _ = torch.sort(entity_span_indices)
 
-
                 event_span_embeddings = event_span_embeddings[event_span_indices]
                 train_event_labels = train_event_labels[event_span_indices]
                 # entity_span_embeddings = entity_span_embeddings[entity_span_indices]
                 # train_entity_labels = train_entity_labels[entity_span_indices]
 
-
                 torch.cuda.empty_cache()
                 first, second = zip(*list(combinations(range(len(event_span_indices)), 2)))
                 first = torch.tensor(first)
                 second = torch.tensor(second)
-
 
                 pairwise_labels = (train_event_labels[first] != 0) & (train_event_labels[second] != 0) &\
                                   (train_event_labels[first] == train_event_labels[second])
@@ -341,8 +323,6 @@ if __name__ == '__main__':
                 first_embeddings = event_span_embeddings[first]
                 second_embeddings = event_span_embeddings[second]
                 torch.cuda.empty_cache()
-
-
 
                 loss = batch_train_pairwise_classifier(pairwise_classifier, first_embeddings, second_embeddings, pairwise_labels,
                                           config['batch_size'], criterion, pairwise_optimizer)
@@ -375,7 +355,7 @@ if __name__ == '__main__':
                 recall = eval.get_recall()
                 if recall > max_dev[0]:
                     max_dev = (recall, epoch)
-                    torch.save(mention_extractor.state_dict(), mention_extractor_path)
+                    # torch.save(mention_extractor.state_dict(), mention_extractor_path)
 
                 logger.info('K = {}, Recall: {}, Precision: {}, F1: {}'.format(k, eval.get_recall(), eval.get_precision(),
                                                                          eval.get_f1()))
@@ -391,6 +371,7 @@ if __name__ == '__main__':
             pairwise_classifier_clone.eval()
 
             for t, topic in enumerate(dev_all_topics):
+                logger.debug('Topic {}'.format(topic))
                 list_of_docs = dev_topic_list_of_docs[t]
                 docs_original_tokens = dev_topic_origin_tokens[t]
                 bert_tokens = dev_topic_bert_tokens[t]
@@ -429,8 +410,6 @@ if __name__ == '__main__':
                 second = torch.tensor(second)
 
 
-
-
                 pairwise_labels = (dev_event_labels[first] != 0) & (
                             dev_event_labels[first] == dev_event_labels[second])
                 first_embeddings = event_span_embeddings[first]
@@ -442,6 +421,7 @@ if __name__ == '__main__':
                 all_scores.extend(pairwise_scores.squeeze(1))
                 all_labels.extend(pairwise_labels.to(torch.int))
 
+
             all_labels = torch.stack(all_labels)
             all_scores = torch.stack(all_scores)
             strict_preds = (all_scores > 0).to(torch.int)
@@ -451,17 +431,6 @@ if __name__ == '__main__':
 
             if eval.get_f1() > max_dev[0]:
                 max_dev = (eval.get_f1(), epoch)
-                torch.save(pairwise_classifier.state_dict(), args.pairwise_path)
-
-            # s, i = torch.topk(all_scores, int(0.02 * len(all_scores)), sorted=False)
-            # rank_preds = torch.zeros(len(all_scores), device=dev_device)
-            # rank_preds[i.squeeze(1)] = 1
-            # eval = Evaluation(rank_preds, all_labels)
-            # logger.info(
-            #     'Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(), eval.get_precision(), eval.get_f1()))
-            # clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', distance_threshold=0)
-
-
-
+                # torch.save(pairwise_classifier.state_dict(), args.pairwise_path)
 
     logger.info('Best Performance: {}'.format(max_dev))

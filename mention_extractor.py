@@ -5,6 +5,9 @@ import torch.nn.functional as F
 
 
 
+
+
+
 class SoftPairWiseClassifier(nn.Module):
     def __init__(self, input_dim):
         super(SoftPairWiseClassifier, self).__init__()
@@ -27,12 +30,6 @@ class SimplePairWiseClassifier(nn.Module):
             self.input_layer += config['embedding_dimension']
         self.input_layer *= 3
         self.pairwise_mlp = nn.Sequential(
-            # nn.Linear(self.input_layer, 4096),
-            # nn.Dropout(config['dropout']),
-            # nn.ReLU(),
-            # nn.Linear(4096, 2048),
-            # nn.Dropout(config['dropout']),
-            # nn.ReLU(),
             nn.Linear(self.input_layer, config['hidden_layer']),
             nn.Dropout(config['dropout']),
             nn.ReLU(),
@@ -60,7 +57,7 @@ class MentionExtractor(nn.Module):
         #     nn.Linear(self.hidden_layer, 1)
         # ) #nn.Linear(bert_hidden_size, 1)
 
-        self.width_feature = nn.Embedding(config['max_mention_span'], config['embedding_dimension'])
+        self.width_feature = nn.Embedding(5, config['embedding_dimension'])
         self.use_head_attention = config['with_head_attention']
         self.input_layer = 3 * bert_hidden_size if self.use_head_attention else 2 * bert_hidden_size
         if self.with_width_embedding:
@@ -73,6 +70,8 @@ class MentionExtractor(nn.Module):
             nn.ReLU(),
             nn.Linear(self.hidden_layer, 1)
         )
+
+
 
 
     def forward_doc(self, doc_embedding, start, end, width, padded_tokens_embeddings=None, masks=None):
@@ -92,6 +91,7 @@ class MentionExtractor(nn.Module):
         vector = torch.cat((vector, width_embedding), dim=1)
 
         return self.mlp(vector)
+
 
 
     def pad_continous_embeddings(self, continuous_embeddings):
@@ -134,6 +134,7 @@ class MentionExtractor(nn.Module):
             vector = torch.cat((vector, weighted_sum), dim=1)
 
         if self.with_width_embedding:
+            width = torch.clamp(width, max=4)
             width_embedding = self.width_feature(width)
             vector = torch.cat((vector, width_embedding), dim=1)
 

@@ -1,9 +1,9 @@
 {
-  "gpu_num" : 1,
-  "dev_gpu_num": 0,
-  "dropout": 0.4,
-  "epochs": 30,
-  "batch_size": 32,
+  "gpu_num" : 2,
+  "dev_gpu_num": 2,
+  "dropout": 0.3,
+  "epochs": 10,
+  "batch_size": 64,
   "learning_rate": 1e-4,
   "with_mention_width": true,
   "with_head_attention": true,
@@ -15,9 +15,13 @@
   "hidden_layer": 1024,
   "weight_decay": 0,
   "save_path": "mention_detection_experiments",
-  "exp_num": 100,
+  "exp_num": 0,
   "is_event": true,
-  "use_gold_mentions": false,
-  "e2e": false
+  "use_gold_mentions": true,
+  "e2e": false,
+
+
+  "threshold": 0.75,
+  "linkage_type": "average"
 }
 
