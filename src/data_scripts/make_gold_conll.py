@@ -73,7 +73,7 @@ def get_conll_gold_file(ecb_tokens, map_token_cluster_id, with_singleton):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--with_singleton', type=str2bool, default=True)
+    parser.add_argument('--with_singleton', type=str2bool, default=False)
     parser.add_argument('--data_dir', type=str, default='data/ecb/mentions')
     parser.add_argument('--output_dir', type=str, default='data/ecb/gold')
     args = parser.parse_args()

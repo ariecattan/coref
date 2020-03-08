@@ -8,8 +8,7 @@
 
 ``python src/data_scripts/get_meantime_data.py ``
 
-
-
+``python src/data_scripts/make_gold_conll.py``
 
 
 ### Prepare raw data files
