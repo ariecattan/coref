@@ -9,22 +9,6 @@ from itertools import compress, combinations
 import smtplib
 
 
-def flatten(d, parent_key='', sep=''):
-    items = []
-    for k, v in d.items():
-        new_key = k
-        if isinstance(v, collections.MutableMapping):
-            items.extend(flatten(v, new_key, sep=sep).items())
-        else:
-            items.append((new_key, v))
-    return dict(items)
-
-
-
-def obj_dict(obj):
-    return obj.__dict__
-
-
 
 def get_candidate_labels(device, doc_id, start, end, dict_labels1, dict_labels2=None):
     labels1, labels2 = [0] * len(doc_id), [0] * len(doc_id)
