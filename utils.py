@@ -355,6 +355,27 @@ def get_all_candidate_from_topic(config, device, doc_names, docs_original_tokens
            num_tokens
 
 
+
+def predict_mention_extractor(model, start_end, continuous_embeddings, width):
+    model.eval()
+    with torch.no_grad():
+        _, scores = model(start_end, continuous_embeddings, width)
+        scores = scores.squeeze(1)
+    return scores
+
+
+
+def evaluate_model(dev_span_embeddings, model):
+    all_scores = []
+    start_end_embeddings, continuous_embeddings, width = dev_span_embeddings
+    for i in range(len(start_end_embeddings)):
+        scores = predict_mention_extractor(model, start_end_embeddings[i], continuous_embeddings[i], width[i])
+        all_scores.extend(scores)
+
+    return torch.stack(all_scores)
+
+
+
 def send_email(user, pwd, recipient, subject, body):
 
     FROM = user

@@ -6,22 +6,6 @@ import torch.nn.functional as F
 
 
 
-
-
-class SoftPairWiseClassifier(nn.Module):
-    def __init__(self, input_dim):
-        super(SoftPairWiseClassifier, self).__init__()
-        self.linear = nn.Sequential(
-            nn.Linear(input_dim, input_dim),
-            nn.Dropout
-        )
-
-
-    def forward(self, input):
-        return torch.mm(self.linear(input), input.T)
-
-
-
 class SimplePairWiseClassifier(nn.Module):
     def __init__(self, config, bert_hidden_size):
         super(SimplePairWiseClassifier, self).__init__()
@@ -49,13 +33,12 @@ class MentionExtractor(nn.Module):
         self.with_width_embedding = config['with_mention_width']
         self.device = device
         self.padded_vector = torch.zeros(bert_hidden_size, device=device)
-        self.self_attention_layer = nn.Linear(bert_hidden_size, 1)
-        # nn.Sequential(
-        #     nn.Linear(bert_hidden_size, self.hidden_layer),
-        #     nn.Dropout(config['dropout']),
-        #     nn.ReLU(),
-        #     nn.Linear(self.hidden_layer, 1)
-        # ) #nn.Linear(bert_hidden_size, 1)
+        self.self_attention_layer = nn.Sequential(
+            nn.Linear(bert_hidden_size, self.hidden_layer),
+            nn.Dropout(config['dropout']),
+            nn.ReLU(),
+            nn.Linear(self.hidden_layer, 1)
+        ) #nn.Linear(bert_hidden_size, 1)
 
         self.width_feature = nn.Embedding(5, config['embedding_dimension'])
         self.use_head_attention = config['with_head_attention']

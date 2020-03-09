@@ -15,6 +15,13 @@ TEST = [str(i) for i in range(36, 46)]
 event_singleton_idx, entity_singleton_idx = int(1E8), int(2E8)
 
 
+
+
+def obj_dict(obj):
+    return obj.__dict__
+
+
+
 def get_mention_doc(root, doc_name, validated_sentences):
     entity_mentions, event_mentions = [], []
     mentions_fields, mention_cluster_info = {}, {}
@@ -200,6 +207,8 @@ def get_stats(entity_mentions, event_mentions):
     print('Entity mentions: {}'.format(len(entity_mentions)))
     print('Entity singletons mentions: {}'.format(
         sum([1 for l in entity_mentions if l['singleton']])))
+
+
 
 
 
