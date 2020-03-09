@@ -21,7 +21,7 @@
   "e2e": false,
 
 
-  "threshold": 0.75,
+  "threshold": 0.7,
   "linkage_type": "average"
 }
 
