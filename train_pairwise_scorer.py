@@ -96,6 +96,9 @@ def create_adj_matrix(span_meta_data, event_span_indices, entity_span_indices, d
     return event_adj.to(device), entity_adj.to(device)
 
 
+
+
+
 if __name__ == '__main__':
     config = pyhocon.ConfigFactory.parse_file(args.config_model_file)
     fix_seed(config)
@@ -165,9 +168,9 @@ if __name__ == '__main__':
                                     weight_decay=config['weight_decay'])
 
 
-    # graph_pairwise = GraphPairwiseClassifier(config, bert_model_hidden_size).to(device)
-    # graph_optimizer = optim.Adam(graph_pairwise.parameters(), lr=config['learning_rate'])
-
+    graph_pairwise = GraphPairwiseClassifier(config, bert_model_hidden_size).to(device)
+    graph_optimizer = optim.Adam(graph_pairwise.parameters(), lr=config['learning_rate'],
+                                 weight_decay=config['weight_decay'])
 
     criterion = nn.BCEWithLogitsLoss()
 
@@ -248,7 +251,7 @@ if __name__ == '__main__':
 
 
 
-            # event_adj, entit_adj = create_adj_matrix(span_meta_data, event_span_indices, entity_span_indices, device)
+            event_adj, entit_adj = create_adj_matrix(span_meta_data, event_span_indices, entity_span_indices, device)
 
 
 

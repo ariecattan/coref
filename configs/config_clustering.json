@@ -1,0 +1,22 @@
+{
+  "gpu_num" : 1,
+  "dropout": 0.4,
+  "batch_size": 16,
+  "with_mention_width": true,
+  "with_head_attention": true,
+  "embedding_dimension": 20,
+  "max_mention_span": 10,
+  "hidden_layer": 1024,
+
+  "roberta_model": "roberta-large",
+  "split": "test",
+
+  "save_path": "clustering_experiments/2020",
+  "use_gold_mentions": true,
+
+  "event_mention_scorer": "models/without_att/event_mention_extractor_5",
+  "pairwise_scorer": "models/pairwise_gold_mentions",
+
+  "threshold": 0.75,
+  "linkage_type": "average"
+}
