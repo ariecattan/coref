@@ -1,5 +1,5 @@
 import argparse
-from mention_extractor import MentionExtractor, SimplePairWiseClassifier
+from models import MentionExtractor, SimplePairWiseClassifier, SimpleMentionExtractor
 from utils import *
 import pyhocon
 import json
@@ -11,12 +11,7 @@ import math
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
-parser.add_argument('--config_model_file', type=str, default='config_mention_extractor.json')
-parser.add_argument('--entity_mention_extractor_path', type=str, default='models/without_att/entity_mention_extractor_5')
-parser.add_argument('--event_mention_extractor_path', type=str, default='models/without_att/event_mention_extractor_5')
-parser.add_argument('--pairwise_path', type=str, default='models/without_att/pairwise_model_gold_mentions')
-parser.add_argument('--use_gold_mentions', type=bool, default=True)
-parser.add_argument('--split', type=str, default='test')
+parser.add_argument('--config_model_file', type=str, default='configs/config_clustering.json')
 args = parser.parse_args()
 
 use_gold_label = False
@@ -25,8 +20,8 @@ use_gold_label = False
 def get_conll_predictions(data, doc_ids, starts, ends, cluster_dic):
     dic = {doc_id:{} for doc_id in set(doc_ids)}
     for i, (cluster_id, mentions) in enumerate(cluster_dic.items()):
-        # if len(mentions) == 1:
-        #     continue
+        if len(mentions) == 1:
+            continue
 
         for m in mentions:
             doc_id = doc_ids[m]
@@ -61,17 +56,18 @@ def get_conll_predictions(data, doc_ids, starts, ends, cluster_dic):
 
 if __name__ == '__main__':
     config = pyhocon.ConfigFactory.parse_file(args.config_model_file)
+    print(pyhocon.HOCONConverter.convert(config, "hocon"))
     device = 'cuda:{}'.format(config['gpu_num']) if torch.cuda.is_available() else 'cpu'
 
     # Load models
     bert_model_hidden_size = 768 if 'base' in config['roberta_model'] else 1024
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
     bert_model.eval()
-    event_scorer = MentionExtractor(config, bert_model_hidden_size, device).to(device)
-    event_scorer.load_state_dict(torch.load(args.event_mention_extractor_path, map_location=device))
+    event_scorer = SimpleMentionExtractor(config, bert_model_hidden_size, device).to(device)
+    event_scorer.load_state_dict(torch.load(config['event_mention_scorer'], map_location=device))
     event_scorer.eval()
     pairwise_scorer = SimplePairWiseClassifier(config, bert_model_hidden_size).to(device)
-    pairwise_scorer.load_state_dict(torch.load(args.pairwise_path, map_location=device))
+    pairwise_scorer.load_state_dict(torch.load(config['pairwise_scorer'], map_location=device))
     pairwise_scorer.eval()
 
 
@@ -79,15 +75,15 @@ if __name__ == '__main__':
                                          distance_threshold=config['threshold'])
 
     # Load data
-    with open(os.path.join(args.data_folder, '{}_entities.json'.format(args.split)), 'r') as f:
+    with open(os.path.join(args.data_folder, '{}_entities.json'.format(config['split'])), 'r') as f:
         entity_mentions = json.load(f)
     entity_labels_dict = get_dict_labels(entity_mentions)
 
-    with open(os.path.join(args.data_folder, '{}_events.json'.format(args.split)), 'r') as f:
+    with open(os.path.join(args.data_folder, '{}_events.json'.format(config['split'])), 'r') as f:
         event_mentions = json.load(f)
     event_labels_dict = get_dict_labels(event_mentions)
 
-    with open(os.path.join(args.data_folder, '{}.json'.format(args.split)), 'r') as f:
+    with open(os.path.join(args.data_folder, '{}.json'.format(config['split'])), 'r') as f:
         ecb_texts = json.load(f)
 
     ecb_texts_by_topic = separate_docs_into_topics(ecb_texts, subtopic=False)
@@ -125,7 +121,7 @@ if __name__ == '__main__':
                                                                     topic_continuous_embeddings,
                                                                     topic_width)
 
-        if args.use_gold_mentions:
+        if config['use_gold_mentions']:
             event_span_indices = event_labels.nonzero().squeeze(1)
         else:
             event_span_scores, event_span_indices = torch.topk(event_span_scores, int(0.3 * num_of_tokens), sorted=False)
@@ -184,10 +180,10 @@ if __name__ == '__main__':
     conll = get_conll_predictions(ecb_texts, doc_ids, starts, ends, all_clusters)
 
     doc_path = os.path.join(config['save_path'], '{}_events_{}_{}.predicted_conll'.format(
-            args.split, config['linkage_type'], config['threshold']))
+            config['split'], config['linkage_type'], config['threshold']))
 
     with open(doc_path, 'w') as f:
-        f.write('#begin document {}_events'.format(args.split) + '\n')
+        f.write('#begin document {}_events'.format(config['split']) + '\n')
         for token in conll:
             f.write('\t'.join([str(x) for x in token]) + '\n')
         f.write('#end document')

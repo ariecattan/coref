@@ -2,7 +2,7 @@ import argparse
 import json
 import pyhocon
 from sklearn.utils import shuffle
-from mention_extractor import MentionExtractor, SimplePairWiseClassifier
+from models import MentionExtractor, SimplePairWiseClassifier
 from transformers import RobertaTokenizer, RobertaModel
 import torch.nn as nn
 import torch.optim as optim
