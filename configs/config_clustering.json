@@ -1,22 +1,25 @@
 {
-  "gpu_num" : 1,
-  "dropout": 0.4,
-  "batch_size": 16,
+  "gpu_num" : 3,
+
+  "roberta_model": "roberta-large",
+  "hidden_layer": 1024,
+  "dropout": 0.2,
   "with_mention_width": true,
   "with_head_attention": true,
   "embedding_dimension": 20,
-  "max_mention_span": 10,
-  "hidden_layer": 1024,
 
-  "roberta_model": "roberta-large",
+  "max_mention_span": 10,
+  "use_gold_mentions": false,
+  "is_event": true,
+  "top_k": 0.25,
   "split": "test",
 
-  "save_path": "clustering_experiments/2020",
-  "use_gold_mentions": true,
+  "save_path": "clustering_experiments/full_subtopic",
+  "span_repr_path": "models/span_scorer/event_span_repr_0",
+  "span_scorer_path": "models/span_scorer/event_span_scorer_0",
+  "pairwise_scorer": "models/full_subtopic/pairwise_model_1",
 
-  "event_mention_scorer": "models/without_att/event_mention_extractor_5",
-  "pairwise_scorer": "models/pairwise_gold_mentions",
 
-  "threshold": 0.75,
+  "threshold": 0.5,
   "linkage_type": "average"
 }

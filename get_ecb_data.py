@@ -5,7 +5,7 @@ import os, fnmatch
 import argparse
 import json
 import spacy
-from utils import *
+
 
 
 VALIDATION = ['2', '5', '12', '18', '21', '23', '34', '35']
@@ -127,6 +127,10 @@ def read_topic(topic_path, validated_sentences):
     all_event_mentions, all_entity_mentions = [], []
     topic = topic_path.split('/')[-1]
 
+    exceptions = [('31_10ecbplus.xml', 979),
+                  ('9_3ecbplus.xml', 30),
+                  ('9_4ecbplus.xml', 32)]
+
     for doc in os.listdir(topic_path):
         if fnmatch.fnmatch(doc, pattern) and doc in validated_sentences:
             doc_path = os.path.join(topic_path, doc)
@@ -140,10 +144,13 @@ def read_topic(topic_path, validated_sentences):
             all_event_mentions += event_mentions
             all_entity_mentions += entity_mentions
 
+            if doc == '9_3ecbplus.xml':
+                print('BUG')
+
             # Read the entire document
             ecb_tokens = []
             for child in root:
-                if child.tag == 'token':
+                if child.tag == 'token' and (doc, int(child.attrib['t_id'])) not in exceptions:
                     flag_selected_sentence = int(child.attrib['sentence']) in selected_sentences
                     flag_continuous_sentence = int(child.attrib['sentence']) in continuous_sentences
                     ecb_tokens.append([int(child.attrib['sentence']), int(child.attrib['t_id']), child.text.replace('�', '').strip(),
@@ -209,7 +216,16 @@ def get_stats(entity_mentions, event_mentions):
         sum([1 for l in entity_mentions if l['singleton']])))
 
 
-
+def get_list_annotated_sentences(annotated_sentences):
+    sentences = {}
+    for topic, doc, sentence in annotated_sentences:
+        if topic not in sentences:
+            sentences[topic] = {}
+        doc_name = topic + '_' + doc + '.xml'
+        if doc_name not in sentences[topic]:
+            sentences[topic][doc_name] = []
+        sentences[topic][doc_name].append(sentence)
+    return sentences
 
 
 if __name__ == '__main__':

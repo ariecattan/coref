@@ -6,14 +6,17 @@ class Evaluation:
         self.predictions = predictions
         self.labels = labels
         self.tp = (predictions == 1) * (labels == 1)
+
         self.tp_num = self.tp.nonzero().squeeze().shape[0]
-        self.tn = (predictions == 0) * (labels == 0)
+        self.tn = (predictions != 1) * (labels != 1)
         self.tn_num = self.tn.nonzero().squeeze().shape[0]
-        self.fp = (predictions == 1) * (labels == 0)
+        self.fp = (predictions == 1) * (labels != 1)
         self.fp_num = self.fp.nonzero().squeeze().shape[0]
-        self.fn = (predictions == 0) * (labels == 1)
+        self.fn = (predictions != 1) * (labels == 1)
         self.fn_num = self.fn.nonzero().squeeze().shape[0]
         self.total = len(labels)
+
+
 
         self.precision = self.tp_num / (self.tp_num + self.fp_num) if self.tp_num + self.fp_num != 0 else 0
         self.recall = self.tp_num / (self.tp_num + self.fn_num) if self.tp_num + self.fn_num != 0 else 0

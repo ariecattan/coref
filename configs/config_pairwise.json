@@ -1,27 +1,30 @@
 {
-  "gpu_num" : 2,
-  "dev_gpu_num": 2,
-  "dropout": 0.4,
-  "epochs": 4,
-  "batch_size": 32,
-  "learning_rate": 1e-5,
+  "gpu_num" : 1,
+
+  "roberta_model": "roberta-large",
+  "hidden_layer": 1024,
+  "dropout": 0.3,
   "with_mention_width": true,
   "with_head_attention": true,
   "embedding_dimension": 20,
-  "roberta_model": "roberta-large",
-  "mention_data_folder": "data/ecb/mention_extraction_data",
+
   "random_seed": 0,
-  "max_mention_span": 10,
-  "hidden_layer": 1024,
+  "max_mention_span": 8,
+  "use_gold_mentions": false,
+  "is_event": true,
+  "top_k": 0.25,
+
+  "epochs": 10,
+  "batch_size": 16,
+  "learning_rate": 1e-4,
   "weight_decay": 0,
-  "save_path": "pairwise_experiments",
-  "exp_num": 557,
-  "use_gold_mentions": true,
-  "e2e": false,
+  "loss": "bce",
+  "optimizer": "adam",
 
-  "use_simple_mention_scorer": true,
-  "update_mention_scorer": false,
+  "span_repr_path": "models/event_span_repr_0",
+  "span_scorer_path": "models/event_span_scorer_0",
 
-  "head_number": 3,
-  "alpha": 0.2
+  "save_path": "pairwise_experiments/full_subtopic",
+  "model_path": "models/full_subtopic",
+  "exp_num": 2
 }
