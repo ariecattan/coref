@@ -250,9 +250,9 @@ if __name__ == '__main__':
 
         if eval.get_f1() > max_dev[0]:
             max_dev = (eval.get_f1(), epoch)
-            # torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
-            # torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
-            # torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_model_{}'.format(config['exp_num'])))
+            torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
+            torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
+            torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_model_{}'.format(config['exp_num'])))
 
 
     logger.info('Best Performance: {}'.format(max_dev))
