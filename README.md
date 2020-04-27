@@ -6,7 +6,7 @@ Our model is the current state-of-the-art on ECB+ on gold mentions
 and the first model which can work also without gold mentions.
 
 
-## Setup
+## Getting started
 
 * python 3.7.3
 * pytorch 1.3.0
@@ -18,9 +18,9 @@ and the first model which can work also without gold mentions.
 Run the two following scripts in order to extract the data from ECB+ dataset and build the gold conll file. 
 The ECB+ corpus can be downloaded [here](http://www.newsreader-project.eu/results/data/the-ecb-corpus/).
 
-``python get_ecb_data.py --data_path path_to_data``
+* ``python get_ecb_data.py --data_path path_to_data``
 
-``python make_gold_conll.py``
+* ``python make_gold_conll.py``
 
 ## Training Instructions
 
@@ -52,7 +52,7 @@ For the pairwise scorer, set the method in the config file as below and run the 
 ### 1. Pipeline 
 
 In the ``configs/config_pairwise_scorer.json``, set the field
-``training_method: "pipeline"`.
+``training_method: "pipeline"``.
 
 
 ### 2. Fine-tuning
