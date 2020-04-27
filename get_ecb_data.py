@@ -228,24 +228,23 @@ def get_list_annotated_sentences(annotated_sentences):
     return sentences
 
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
-    parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014/ECB+',
+    parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014',
                         help=' Path to ECB+ corpus')
     parser.add_argument('--output_dir', type=str, default='data/ecb/mentions',
                         help=' The directory of the output files')
-    parser.add_argument('--cybulska_setup', type=str,
-                        default='data/datasets/ECB+_LREC2014/ECBplus_coreference_sentences.csv',
-                        help='The path to a file contains selected sentences from the ECB+ corpus according to Cybulska')
     args = parser.parse_args()
 
     nlp = spacy.load('en_core_web_sm', disable=['textcat'])
 
-    validated_sentences = np.genfromtxt(args.cybulska_setup, delimiter=',', dtype=np.str, skip_header=1)
+    validated_sentences = np.genfromtxt(os.path.join(args.data_path, 'ECBplus_coreference_sentences.csv'),
+                                        delimiter=',', dtype=np.str, skip_header=1)
     validated_sentences = get_list_annotated_sentences(validated_sentences)
 
     print('Getting all mentions')
-    train, dev, test = get_all_docs(args.data_path, validated_sentences)
+    train, dev, test = get_all_docs(os.path.join(args.data_path, 'ECB+'), validated_sentences)
     docs = train[0], dev[0], test[0]
     event_mentions = train[1], dev[1], test[1]
     entity_mentions = train[2], dev[2], test[2]

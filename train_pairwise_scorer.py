@@ -20,20 +20,6 @@ args = parser.parse_args()
 
 
 
-#
-# def get_candidate_mention_label(candidate_mentions, doc_gold_mentions):
-#     gold_mention_spans = {(min(m['tokens_ids']), max(m['tokens_ids'])): m['cluster_id']
-#                           for m in doc_gold_mentions}
-#     labels = []
-#     candidate_starts, candidate_ends = candidate_mentions
-#     for i, (s, e) in enumerate(zip(candidate_starts.tolist(), candidate_ends.tolist())):
-#         cluster_id = gold_mention_spans.get((s, e), 0)
-#         labels.append(cluster_id)
-#
-#     return torch.tensor(labels)
-
-
-
 
 def batch_train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings,
                                     first, second, labels, batch_size, criterion, optimizer):
