@@ -51,9 +51,6 @@ For the pairwise scorer, set the method in the config file as below and run the 
 
 
 
-Notice that if you use this model with gold mentions, the span scorer
-is not relevant, you should use the `e2e` method
-
 ## Prediction
 
 ``python predict.py``
