@@ -23,14 +23,6 @@ The ECB+ corpus can be downloaded [here](http://www.newsreader-project.eu/result
 
 * ``python get_ecb_data.py --data_path path_to_data``
 
-    
-    ├── data                    
-    │   ├── mentions          
-    │   ├── gold_conll         
-    │   
-    └── ...
-
-
 
 
 ## Training Instructions
