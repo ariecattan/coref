@@ -3,7 +3,7 @@ from models import SpanScorer, SimplePairWiseClassifier, SpanEmbedder
 import pyhocon
 import json
 from transformers import RobertaTokenizer, RobertaModel
-from sklearn.cluster import AgglomerativeClustering
+from sklearn.cluster import AgglomerativeClustering, DBSCAN
 from itertools import product
 
 from utils import *
@@ -18,41 +18,6 @@ parser.add_argument('--config_model_file', type=str, default='configs/config_clu
 args = parser.parse_args()
 
 use_gold_label = False
-
-
-def get_conll_predictions(data, doc_ids, starts, ends, cluster_dic):
-    dic = {doc_id:{} for doc_id in set(doc_ids)}
-    for i, (cluster_id, mentions) in enumerate(cluster_dic.items()):
-        if len(mentions) == 1:
-            continue
-        for m in mentions:
-            doc_id = doc_ids[m]
-            start = starts[m]
-            end = ends[m]
-
-            single_token = start == end
-
-            if single_token:
-                dic[doc_id][start] = '(' + str(cluster_id) + ')'
-            else:
-                for i, token_id in enumerate(range(start, end + 1)):
-                    if i == 0:
-                        dic[doc_id][token_id] = '(' + str(cluster_id)
-                    elif i == len(list(range(start, end + 1))) - 1:
-                        dic[doc_id][token_id] = str(cluster_id) + ')'
-
-
-    predicted_conll = []
-    for doc_id, tokens in data.items():
-        for sentence_id, token_id, token_text, flag, _ in tokens:
-            if flag:
-                dic_doc = dic[doc_id]
-                cluster = dic_doc.get(token_id, '-')
-                predicted_conll.append([doc_id, sentence_id, token_id, token_text, cluster])
-
-
-    return predicted_conll
-
 
 
 def separate_doc_into_predicted_subtopics(ecb_texts, predicted_subtopics):
@@ -85,31 +50,48 @@ if __name__ == '__main__':
     bert_model_hidden_size = bert_model.config.hidden_size
 
     span_repr = SpanEmbedder(config, bert_model_hidden_size, device).to(device)
-    span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
+    span_repr.load_state_dict(torch.load(os.path.join(config['model_path'],
+                                                      "span_repr_{}".format(config['model_num'])),
+                                         map_location=device))
     span_repr.eval()
     span_scorer = SpanScorer(config, bert_model_hidden_size).to(device)
-    span_scorer.load_state_dict(torch.load(config['span_scorer_path'], map_location=device))
+    span_scorer.load_state_dict(torch.load(os.path.join(config['model_path'],
+                                                        "span_scorer_{}".format(config['model_num'])),
+                                           map_location=device))
     span_scorer.eval()
     pairwise_model = SimplePairWiseClassifier(config, bert_model_hidden_size).to(device)
-    pairwise_model.load_state_dict(torch.load(config['pairwise_scorer'], map_location=device))
+    pairwise_model.load_state_dict(torch.load(os.path.join(config['model_path'],
+                                                           "pairwise_scorer_{}".format(config['model_num'])),
+                                              map_location=device))
     pairwise_model.eval()
 
-    clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
-                                         distance_threshold=config['threshold'])
 
-    # Load data
+    if config['use_agglo']:
+        clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
+                                             distance_threshold=config['threshold'])
+    else:
+        clustering = DBSCAN(eps=config['eps'], min_samples=config['min_samples'], metric='precomputed', n_jobs=-1)
+
+
+
+
     with open(os.path.join(args.data_folder, '{}.json'.format(config['split'])), 'r') as f:
         ecb_texts = json.load(f)
 
 
-    # relevant if using gold mentions
-    with open(os.path.join(args.data_folder, '{}_entities.json'.format(config['split'])), 'r') as f:
-        entity_mentions = json.load(f)
-    entity_labels_dict = get_dict_labels(entity_mentions)
 
-    with open(os.path.join(args.data_folder, '{}_events.json'.format(config['split'])), 'r') as f:
-        event_mentions = json.load(f)
-    event_labels_dict = get_dict_labels(event_mentions)
+    # relevant if using gold mentions
+    entity_labels_dict, event_labels_dict = None, None
+    if config['use_gold_mentions']:
+        with open(os.path.join(args.data_folder, '{}_entities.json'.format(config['split'])), 'r') as f:
+            entity_mentions = json.load(f)
+        entity_labels_dict = get_dict_labels(entity_mentions)
+
+        with open(os.path.join(args.data_folder, '{}_events.json'.format(config['split'])), 'r') as f:
+            event_mentions = json.load(f)
+        event_labels_dict = get_dict_labels(event_mentions)
+
+
 
     '''
     Predicted subtopics from Shany
@@ -139,15 +121,19 @@ if __name__ == '__main__':
         docs_embeddings, docs_length = pad_and_read_bert(topic_bert_tokens[t], bert_model)
         span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
             config, topic_list_of_docs[t], topic_origin_tokens[t], topic_start_end_bert[t],
-            docs_embeddings, docs_length)
+            docs_embeddings, docs_length, is_training=True)
 
         doc_id, sentence_id, start, end = span_meta_data
         start_end_embeddings, continuous_embeddings, width = span_embeddings
+        width = width.to(device)
 
         if config['use_gold_mentions']:
             event_labels, entity_labels = get_candidate_labels(doc_id, start, end, event_labels_dict,
                                                                        entity_labels_dict)
-            span_indices = event_labels.nonzero().squeeze(1)
+            if config['is_event']:
+                span_indices = event_labels.nonzero().squeeze(1)
+            else:
+                span_indices = entity_labels.nonzero().squeeze(1)
             # event_labels = event_labels[event_span_indices]
 
         else:
@@ -169,21 +155,35 @@ if __name__ == '__main__':
         first = torch.tensor(first)
         second = torch.tensor(second)
 
-
+        torch.cuda.empty_cache()
+        all_scores = []
         with torch.no_grad():
-            g1 = span_repr(start_end_embeddings[first],
-                           [continuous_embeddings[i] for i in first],
-                           width[first])
-            g2 = span_repr(start_end_embeddings[second],
-                           [continuous_embeddings[i] for i in second],
-                           width[second])
-            pairwise_scores = torch.sigmoid(pairwise_model (g1, g2))
+            for i in range(0, len(first), 10000):
+                # end_max = min(i+100000, len(first))
+                end_max = i+10000
+                first_idx, second_idx = first[i:end_max], second[i:end_max]
+                g1 = span_repr(start_end_embeddings[first_idx],
+                               [continuous_embeddings[k] for k in first_idx],
+                               width[first_idx])
+                g2 = span_repr(start_end_embeddings[second_idx],
+                               [continuous_embeddings[k] for k in second_idx],
+                               width[second_idx])
+                scores = pairwise_model(g1, g2)
 
+                torch.cuda.empty_cache()
+                if config['training_method'] in ('fine_tune', 'e2e'):
+                    g1_score = span_scorer(g1)
+                    g2_score = span_scorer(g2)
+                    scores += g1_score + g2_score
+
+                scores = torch.sigmoid(scores)
+                all_scores.extend(scores.detach().squeeze(1))
+                torch.cuda.empty_cache()
+
+        all_scores = torch.stack(all_scores)
 
         # Affinity score to distance score
-        pairwise_distances = 1 - pairwise_scores.view(number_of_mentions, number_of_mentions).detach().cpu().numpy()
-        # identity_matrix = (~torch.eye(number_of_mentions).to(torch.bool)).to(torch.int)
-        # pairwise_distances *= identity_matrix.numpy()
+        pairwise_distances = 1 - all_scores.view(number_of_mentions, number_of_mentions).cpu().numpy()
 
         predicted = clustering.fit(pairwise_distances)
         predicted_clusters = predicted.labels_ + max_cluster_id
@@ -202,7 +202,10 @@ if __name__ == '__main__':
             all_clusters[cluster_id] = []
         all_clusters[cluster_id].append(i)
 
+    all_clusters = {cluster_id:mentions for cluster_id, mentions in all_clusters.items() if len(mentions) > 1}
+
     print('Saving conll file...')
-    doc_path = os.path.join(config['save_path'], '{}_events_{}_{}.predicted_conll'.format(
-        config['split'], config['linkage_type'], config['threshold']))
+    doc_path = os.path.join(config['save_path'], '{}_{}_{}_{}_model_{}.predicted_conll'.format(
+        config['split'], 'events' if config['is_event'] else 'entites',
+        config['linkage_type'], config['threshold'], config['model_num']))
     write_output_file(ecb_texts, all_clusters, doc_ids, starts, ends, doc_path)

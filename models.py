@@ -74,6 +74,7 @@ class SpanScorer(nn.Module):
         self.mlp = nn.Sequential(
             nn.Dropout(config['dropout']),
             nn.Linear(self.input_layer, config['hidden_layer']),
+            # nn.Dropout(config['dropout']),
             nn.ReLU(),
             nn.Linear(config['hidden_layer'], 1)
         )

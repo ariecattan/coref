@@ -5,8 +5,8 @@ import os, fnmatch
 import argparse
 import json
 import spacy
-
-
+import collections
+from conll import write_output_file
 
 VALIDATION = ['2', '5', '12', '18', '21', '23', '34', '35']
 TRAIN = [str(i) for i in range(1, 36) if str(i) not in VALIDATION]
@@ -87,7 +87,8 @@ def get_mention_doc(root, doc_name, validated_sentences):
             r_id = relation_rid[target]
             tag = relation_tag[target]
             if tag.startswith('INTRA'): #only within doc link
-                cluster_id =  int(r_id)
+                suffix = '1' if mention['event'] else '0' #entity and event mentions may have the same intra cluster id
+                cluster_id =  int(r_id + suffix)
             else:
                 cluster_id = int(mention_cluster_info[target]['cluster_id'][3:])
 
@@ -110,11 +111,11 @@ def get_mention_doc(root, doc_name, validated_sentences):
 
 
 def get_clusters(mentions):
-    clusters = {}
-    for mention in mentions:
+    clusters = collections.defaultdict(list)
+    for i, mention in enumerate(mentions):
         cluster_id = mention['cluster_id']
-        clusters[cluster_id] = [] if cluster_id not in clusters else clusters[cluster_id]
-        clusters[cluster_id].append(mention)
+        # clusters[cluster_id] = [] if cluster_id not in clusters else clusters[cluster_id]
+        clusters[cluster_id].append(i)
 
     return clusters
 
@@ -127,6 +128,7 @@ def read_topic(topic_path, validated_sentences):
     all_event_mentions, all_entity_mentions = [], []
     topic = topic_path.split('/')[-1]
 
+    # problematic tokens in the dataset
     exceptions = [('31_10ecbplus.xml', 979),
                   ('9_3ecbplus.xml', 30),
                   ('9_4ecbplus.xml', 32)]
@@ -144,8 +146,6 @@ def read_topic(topic_path, validated_sentences):
             all_event_mentions += event_mentions
             all_entity_mentions += entity_mentions
 
-            if doc == '9_3ecbplus.xml':
-                print('BUG')
 
             # Read the entire document
             ecb_tokens = []
@@ -203,9 +203,7 @@ def get_all_docs(data_path, validated_sentences):
 
 
 
-def get_stats(entity_mentions, event_mentions):
-    entity_clusters = get_clusters(entity_mentions)
-    event_clusters = get_clusters(event_mentions)
+def print_stats(entity_mentions, event_mentions, entity_clusters, event_clusters):
     print('Event clusters: {}'.format(len(event_clusters)))
     print('Event mentions: {}'.format(len(event_mentions)))
     print('Event singletons mentions: {}'.format(
@@ -229,13 +227,31 @@ def get_list_annotated_sentences(annotated_sentences):
 
 
 
+def save_gold_conll_files(documents, mentions, clusters, path):
+    non_singletons = {cluster: ms for cluster, ms in clusters.items() if len(ms) > 1}
+    doc_ids = [m['doc_id'] for m in mentions]
+    starts = [min(m['tokens_ids']) for m in mentions]
+    ends = [max(m['tokens_ids']) for m in mentions]
+
+    write_output_file(documents, non_singletons, doc_ids, starts, ends, path)
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
     parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014',
                         help=' Path to ECB+ corpus')
-    parser.add_argument('--output_dir', type=str, default='data/ecb/mentions',
+    parser.add_argument('--output_dir', type=str, default='data/ecb',
                         help=' The directory of the output files')
     args = parser.parse_args()
+
+    mentions_path = os.path.join(args.output_dir, 'mentions')
+    gold_conll_path = os.path.join(args.output_dir, 'gold_conll')
+
+    if not os.path.exists(mentions_path):
+        os.makedirs(mentions_path)
+
+    if not os.path.exists(args.output_dir):
+        os.makedirs(gold_conll_path)
 
     nlp = spacy.load('en_core_web_sm', disable=['textcat'])
 
@@ -253,11 +269,33 @@ if __name__ == '__main__':
 
     for i, type in enumerate(['train', 'dev', 'test']):
         print('Statistics on {}'.format(type))
-        get_stats(entity_mentions[i], event_mentions[i])
 
-        with open(os.path.join(args.output_dir, type + '.json'), 'w') as f:
+        events, entities = event_mentions[i], entity_mentions[i]
+        mixed = events + entities
+
+
+        # Save docs and mentions files
+        with open(os.path.join(mentions_path, '{}.json'.format(type)), 'w') as f:
             json.dump(docs[i], f, indent=4)
-        with open(os.path.join(args.output_dir, type + '_events.json'), 'w') as f:
-            json.dump(event_mentions[i], f, default=obj_dict, indent=4, ensure_ascii=False)
-        with open(os.path.join(args.output_dir, type + '_entities.json'), 'w') as f:
-            json.dump(entity_mentions[i], f, default=obj_dict, indent=4, ensure_ascii=False)
+        with open(os.path.join(mentions_path, '{}_events.json'.format(type)), 'w') as f:
+            json.dump(events, f, default=obj_dict, indent=4, ensure_ascii=False)
+        with open(os.path.join(mentions_path, '{}_entities.json'.format(type)), 'w') as f:
+            json.dump(entities, f, default=obj_dict, indent=4, ensure_ascii=False)
+        with open(os.path.join(mentions_path, '{}_mixed.json'.format(type)), 'w') as f:
+            json.dump(mixed, f, default=obj_dict, indent=4, ensure_ascii=False)
+
+
+        event_clusters, entity_clusters = get_clusters(events), get_clusters(entities)
+        mixed_clusters = get_clusters(mixed)
+
+        print_stats(entity_mentions[i], event_mentions[i], entity_clusters, event_clusters)
+
+        event_path = os.path.join(gold_conll_path, '{}_events_gold.conll'.format(type))
+        entity_path = os.path.join(gold_conll_path, '{}_entities_gold.conll'.format(type))
+        mixed_path = os.path.join(gold_conll_path, '{}_mixed_gold.conll'.format(type))
+
+        save_gold_conll_files(docs[i], events, event_clusters, event_path)
+        save_gold_conll_files(docs[i], entities, entity_clusters, entity_path)
+        save_gold_conll_files(docs[i], mixed, mixed_clusters, mixed_path)
+
+

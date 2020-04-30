@@ -21,7 +21,7 @@ args = parser.parse_args()
 
 
 
-def batch_train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings,
+def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings,
                                     first, second, labels, batch_size, criterion, optimizer):
     accumulate_loss = 0
     start_end_embeddings, continuous_embeddings, width = span_embeddings
@@ -41,10 +41,10 @@ def batch_train_pairwise_classifier(config, pairwise_model, span_repr, span_scor
                                 [continuous_embeddings[k] for k in batch_second], width[batch_second])
         scores = pairwise_model(g1, g2)
 
-        # if not config['use_gold_mentions']:
-        #     g1_score = span_scorer(g1)
-        #     g2_score = span_scorer(g2)
-        #     scores += g1_score + g2_score
+        if config['training_method'] in ('fine_tune', 'e2e'):
+            g1_score = span_scorer(g1)
+            g2_score = span_scorer(g2)
+            scores += g1_score + g2_score
 
         loss = criterion(scores.squeeze(1), batch_labels)
         accumulate_loss += loss.item()
@@ -79,7 +79,7 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
             span_emb = span_repr(topic_start_end_embeddings, topic_continuous_embeddings, topic_width)
             span_scores = span_scorer(span_emb)
         _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
-        # span_indices, _ = torch.sort(span_indices)
+
 
     torch.cuda.empty_cache()
     labels = labels[span_indices]
@@ -158,16 +158,22 @@ if __name__ == '__main__':
     logger.info('Init models')
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
     bert_model_hidden_size = bert_model.config.hidden_size
+
     span_repr = SpanEmbedder(config, bert_model_hidden_size, device).to(device)
     span_scorer = SpanScorer(config, bert_model_hidden_size).to(device)
 
-    span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
-    span_scorer.load_state_dict(torch.load(config['span_scorer_path'], map_location=device))
+    if config['training_method'] in ('pipeline', 'fine_tune'):
+        span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
+        span_scorer.load_state_dict(torch.load(config['span_scorer_path'], map_location=device))
+
     span_repr.eval()
     span_scorer.eval()
-
     pairwise_model = SimplePairWiseClassifier(config, bert_model_hidden_size).to(device)
+
     models = [pairwise_model]
+    if config['training_method'] in ('fine_tune', 'e2e'):
+        models.append(span_repr)
+        models.append(span_scorer)
     optimizer = get_optimizer(config, models)
     criterion = get_loss_function(config)
 
@@ -185,20 +191,21 @@ if __name__ == '__main__':
 
     for epoch in range(config['epochs']):
         logger.info('Epoch: {}'.format(epoch))
-        # span_repr.train()
-        # span_scorer.train()
         pairwise_model.train()
+        if config['training_method'] in ('fine_tune', 'e2e'):
+            span_repr.train()
+            span_scorer.train()
+
 
         accumulate_loss = 0
         list_of_topics = shuffle(list(range(len(all_topics))))
         for t in tqdm(list_of_topics):
             topic = all_topics[t]
-            # logger.info('Training on topic {}'.format(topic))
             span_embeddings, first, second, pairwise_labels = \
                 get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
                                          topic_list_of_docs[t], topic_origin_tokens[t], topic_bert_tokens[t],
                                          topic_start_end_bert[t], event_labels, entity_labels)
-            loss = batch_train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
+            loss = train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
                                                    second, pairwise_labels, config['batch_size'], criterion, optimizer)
             torch.cuda.empty_cache()
             accumulate_loss += loss
@@ -215,7 +222,6 @@ if __name__ == '__main__':
         pairwise_model.eval()
 
         for t, topic in enumerate(tqdm(dev_all_topics)):
-            # logger.info('Topic {}'.format(topic))
             span_embeddings, first, second, pairwise_labels = \
                 get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
                                          dev_topic_list_of_docs[t], dev_topic_origin_tokens[t], dev_topic_bert_tokens[t],
@@ -230,14 +236,18 @@ if __name__ == '__main__':
                 g2 = span_repr(start_end_embeddings[second],
                                           [continuous_embeddings[i] for i in second],
                                           width[second])
-                pairwise_scores = pairwise_model(g1, g2)
 
-            all_scores.extend(pairwise_scores.squeeze(1))
+                scores = pairwise_model(g1, g2)
+                if config['training_method'] in ('fine_tune', 'e2e'):
+                    g1_score = span_scorer(g1)
+                    g2_score = span_scorer(g2)
+                    scores += g1_score + g2_score
+
+            all_scores.extend(scores.squeeze(1))
             all_labels.extend(pairwise_labels.to(torch.int))
 
         all_labels = torch.stack(all_labels)
         all_scores = torch.stack(all_scores)
-
 
 
         strict_preds = (all_scores > 0).to(torch.int)
@@ -250,17 +260,18 @@ if __name__ == '__main__':
 
         if eval.get_f1() > max_dev[0]:
             max_dev = (eval.get_f1(), epoch)
-            torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
-            torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'mention_extractor_{}'.format(config['exp_num'])))
-            torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_model_{}'.format(config['exp_num'])))
+
+        torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'span_repr_{}'.format(epoch)))
+        torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'span_scorer_{}'.format(epoch)))
+        torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_scorer_{}'.format(epoch)))
 
 
     logger.info('Best Performance: {}'.format(max_dev))
 
     user = 'gpus.experiment@gmail.com'
-    pwd = 'Bension24'
+    pwd = 'Gpusexperiments'
     recipient = 'arie.cattan@gmail.com'
     subject = 'GPUs experiments are done'
-    message = 'Best Dev F1: {}'.format(max_dev) + '\n' + str(pyhocon.HOCONConverter.convert(config, "hocon"))
+    message = 'Best Dev F1: {}'.format(max_dev) + '\n\n' + str(pyhocon.HOCONConverter.convert(config, "hocon"))
 
     send_email(user, pwd, recipient, subject, message)

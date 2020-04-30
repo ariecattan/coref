@@ -64,10 +64,8 @@ def count_parameters(model):
 
 
 def get_mentions_by_doc(mentions):
-    mentions_by_doc = {}
+    mentions_by_doc = collections.defaultdict(list)
     for m in list(chain.from_iterable(mentions)):
-        if m['doc_id'] not in mentions_by_doc:
-            mentions_by_doc[m['doc_id']] = []
         mentions_by_doc[m['doc_id']].append(m)
 
     return mentions_by_doc
@@ -172,3 +170,6 @@ def align_ecb_bert_tokens(ecb_tokens, bert_tokens):
             raise ValueError((bert_token, ecb_token))
 
     return bert_to_ecb_ids
+
+
+
