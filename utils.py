@@ -45,7 +45,7 @@ def create_logger(config, create_file=True):
             os.makedirs(config['log_path'])
 
         f_handler = logging.FileHandler(
-            os.path.join(config['log_path'],'{}.txt'.format(datetime.now())), mode='w')
+            os.path.join(config['log_path'],'{}.txt'.format(datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))), mode='w')
         f_handler.setLevel(logging.INFO)
         f_handler.setFormatter(formatter)
         logger.addHandler(f_handler)

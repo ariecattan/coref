@@ -114,7 +114,7 @@ if __name__ == '__main__':
                 scores = pairwise_scorer(g1, g2)
 
                 torch.cuda.empty_cache()
-                if config['training_method'] in ('fine_tune', 'e2e'):
+                if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
                     g1_score = span_scorer(g1)
                     g2_score = span_scorer(g2)
                     scores += g1_score + g2_score
