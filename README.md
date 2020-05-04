@@ -82,7 +82,7 @@ clustering in order to cluster the candidate spans into coreference clusters.
 
 ## Evaluation
 
-The output of the `predict.py` script is a file with conll format. 
+The output of the `predict.py` script is a file in the standard conll format. 
 Then, it's straightforward to evaluate it with its corresponding 
 gold conll file (created in the first step), 
 using the official conll coreference scorer
