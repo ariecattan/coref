@@ -1,13 +1,12 @@
 import argparse
-import json
 import pyhocon
 from sklearn.utils import shuffle
 from transformers import RobertaTokenizer, RobertaModel
 from tqdm import tqdm
+from itertools import combinations
 
 from models import SimplePairWiseClassifier, SpanEmbedder, SpanScorer
 from evaluator import Evaluation
-from corpus import Corpus
 from model_utils import *
 from utils import *
 
@@ -99,16 +98,12 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, t
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
     parser.add_argument('--config', type=str, default='configs/config_pairwise.json')
     args = parser.parse_args()
 
+
     config = pyhocon.ConfigFactory.parse_file(args.config)
     fix_seed(config)
-
-    if not os.path.exists(config['save_path']):
-        os.makedirs(config['save_path'])
-
     logger = create_logger(config, create_file=True)
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
 
@@ -120,24 +115,13 @@ if __name__ == '__main__':
         device = 'cpu'
 
 
-    # read and tokenize data
+    # init train and dev set
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
-    dataset = []
-    for sp in ['train', 'dev']:
-        logger.info('Processing {} set'.format(sp))
-        texts_file = os.path.join(args.data_folder, sp + '.json')
-        mentions_file = os.path.join(args.data_folder, sp + '_{}.json'.format(config['mention_type']))
-        logger.info('Mentions - {}'.format(mentions_file))
-        with open(texts_file, 'r') as f:
-            documents = json.load(f)
-        with open(mentions_file, 'r') as f:
-            mentions = json.load(f)
-
-        corpus = Corpus(documents, roberta_tokenizer, mentions)
-        dataset.append(corpus)
+    training_set = create_corpus(config, roberta_tokenizer, 'train')
+    dev_set = create_corpus(config, roberta_tokenizer, 'dev')
 
 
-    # Model initiation
+    ## Model initiation
     logger.info('Init models')
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
     config['bert_hidden_size'] = bert_model.config.hidden_size
@@ -168,9 +152,6 @@ if __name__ == '__main__':
     logger.info('Number of parameters of the pairwise classifier: {}'.format(
         count_parameters(pairwise_model)))
 
-    training_set = dataset[0]
-    dev_set = dataset[1]
-
     logger.info('Number of topics: {}'.format(len(training_set.topic_list)))
     f1 = []
     for epoch in range(config['epochs']):
@@ -193,7 +174,7 @@ if __name__ == '__main__':
             torch.cuda.empty_cache()
             accumulate_loss += loss
             total_number_of_pairs += len(first)
-            # logger.info('Number of positive pairs: {}/{}'.format(len(pairwise_labels.nonzero()), len(pairwise_labels)))
+
         logger.info('Number of training pairs: {}'.format(total_number_of_pairs))
         logger.info('Accumulate loss: {}'.format(accumulate_loss))
 
@@ -225,7 +206,6 @@ if __name__ == '__main__':
                                    width[second_idx])
                     scores = pairwise_model(g1, g2)
 
-
                     if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
                         g1_score = span_scorer(g1)
                         g2_score = span_scorer(g2)
@@ -252,10 +232,3 @@ if __name__ == '__main__':
         torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_scorer_{}'.format(epoch)))
 
 
-    user = 'gpus.experiment@gmail.com'
-    pwd = 'Gpusexperiments'
-    recipient = 'arie.cattan@gmail.com'
-    subject = 'Hp tuning for clustering with model {} is done'.format(args.experiment)
-    message = 'List of F1 scores: {}'.format(f1)
-
-    send_email(user, pwd, recipient, subject, message)

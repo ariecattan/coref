@@ -8,18 +8,20 @@
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "random_seed": 0,
-  "max_mention_span": 8,
+  "max_mention_span": 10,
+  "mention_type": "mixed",
 
-  "epochs": 10,
+  "random_seed": 0,
+  "epochs": 20,
   "batch_size": 16,
   "learning_rate": 1e-4,
   "weight_decay": 0,
-  "optimizer": "adam",
   "loss": "bce",
+  "optimizer": "adam",
 
-  "save_path": "mention_detection_experiments",
+
+  "log_path": "logs/span_scorer",
+  "data_folder": "data/ecb/mentions",
   "model_path": "models",
-  "exp_num": 0,
-  "mention_type": "events"
+  "exp_num": 0
 }

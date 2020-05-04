@@ -1,15 +1,33 @@
 import collections
 import logging
 import os
-from itertools import chain
 import torch
 import random
 import numpy as np
-from itertools import compress, combinations
 import smtplib
 import torch.optim as optim
+import json
+from datetime import datetime
+
+from corpus import Corpus
 
 
+
+def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
+    docs_path = os.path.join(config['data_folder'], split_name + '.json')
+    mentions_path = os.path.join(config['data_folder'],
+                                 split_name + '_{}.json'.format(config['mention_type']))
+    with open(docs_path, 'r') as f:
+        documents = json.load(f)
+
+    mentions = []
+    if use_gold_mentions:
+        with open(mentions_path, 'r') as f:
+            mentions = json.load(f)
+
+    corpus = Corpus(documents, tokenizer, mentions)
+
+    return corpus
 
 
 def create_logger(config, create_file=True):
@@ -23,7 +41,11 @@ def create_logger(config, create_file=True):
     logger.addHandler(c_handler)
 
     if create_file:
-        f_handler = logging.FileHandler(os.path.join(config['save_path'], 'log{}.txt'.format(config['exp_num'])), mode='w')
+        if not os.path.exists(config['log_path']):
+            os.makedirs(config['log_path'])
+
+        f_handler = logging.FileHandler(
+            os.path.join(config['log_path'],'{}.txt'.format(datetime.now())), mode='w')
         f_handler.setLevel(logging.INFO)
         f_handler.setFormatter(formatter)
         logger.addHandler(f_handler)
@@ -64,38 +86,6 @@ def count_parameters(model):
 
 
 
-def get_mentions_by_doc(mentions):
-    mentions_by_doc = collections.defaultdict(list)
-    for m in list(chain.from_iterable(mentions)):
-        mentions_by_doc[m['doc_id']].append(m)
-
-    return mentions_by_doc
-
-
-def get_dict_labels(mentions):
-    if len(mentions) in  (2, 3):
-        mentions = list(chain.from_iterable(mentions))
-    label_dict = {}
-    for m in mentions:
-        if m['doc_id'] not in label_dict:
-            label_dict[m['doc_id']] = {}
-        label_dict[m['doc_id']][(min(m['tokens_ids']), max(m['tokens_ids']))] = m['cluster_id']
-
-    return label_dict
-
-
-def separate_docs_into_topics(texts, subtopic=True):
-    text_by_topics = {}
-    for k, v in texts.items():
-        topic_key = k.split('_')[0]
-        if subtopic:
-            topic_key += '_{}'.format(1 if 'plus' in k else 0)
-        if topic_key not in text_by_topics:
-            text_by_topics[topic_key] = {}
-        text_by_topics[topic_key][k] = v
-
-    return text_by_topics
-
 
 
 
@@ -130,24 +120,6 @@ def send_email(user, pwd, recipient, subject, body):
 
 
 
-
-def pad_tokens_for_attention(continuous_embeddings):
-    device = continuous_embeddings[0].device
-    zero_vec = torch.zeros(1024, device=device)
-    lengths = [len(x) for x in continuous_embeddings]
-    max_length = max(lengths)
-
-    padded_tokens_embeddings = []
-    masks = torch.zeros((len(continuous_embeddings), max_length), device=device)
-    for i, mention in enumerate(continuous_embeddings):
-        length = lengths[i]
-        padded_tokens_embeddings.append(
-            torch.cat((mention, zero_vec.repeat(max_length - length, 1))))
-        masks[i][list(range(length))] = 1
-
-    return torch.stack(padded_tokens_embeddings), masks
-
-
 def align_ecb_bert_tokens(ecb_tokens, bert_tokens):
     bert_to_ecb_ids = []
     relative_char_pointer = 0
@@ -171,6 +143,3 @@ def align_ecb_bert_tokens(ecb_tokens, bert_tokens):
             raise ValueError((bert_token, ecb_token))
 
     return bert_to_ecb_ids
-
-
-

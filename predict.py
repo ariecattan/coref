@@ -1,12 +1,11 @@
 import argparse
 import pyhocon
-import json
 from transformers import RobertaTokenizer, RobertaModel
-from sklearn.cluster import AgglomerativeClustering, DBSCAN
+from sklearn.cluster import AgglomerativeClustering
 from itertools import product
 import pickle
 
-from corpus import Corpus
+
 from conll import write_output_file
 from models import SpanScorer, SimplePairWiseClassifier, SpanEmbedder
 from utils import *
@@ -39,7 +38,6 @@ def init_models(config, device):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
     parser.add_argument('--config', type=str, default='configs/config_clustering.json')
     args = parser.parse_args()
 
@@ -58,19 +56,7 @@ if __name__ == '__main__':
 
     # Load data
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
-
-    texts_file = os.path.join(args.data_folder, '{}.json'.format(config['split']))
-    with open(texts_file, 'r') as f:
-        documents = json.load(f)
-
-    mentions = []
-    if config['use_gold_mentions']:
-        mentions_file = os.path.join(args.data_folder, '{}_{}.json'.format(config['split'], config['mention_type']))
-        with open(mentions_file, 'r') as f:
-            mentions = json.load(f)
-
-    data = Corpus(documents, roberta_tokenizer, mentions)
-
+    data = create_corpus(config, roberta_tokenizer, config['split'], config['use_gold_mentions'])
 
 
     doc_ids, sentence_ids, starts, ends = [], [], [], []
@@ -163,6 +149,5 @@ if __name__ == '__main__':
 
     print('Saving conll file...')
     doc_path = os.path.join(config['save_path'], '{}_{}_{}_{}_model_{}.predicted_conll'.format(
-        config['split'], 'events' if config['is_event'] else 'entites',
-        config['linkage_type'], config['threshold'], config['model_num']))
+        config['split'], config['mention_type'], config['linkage_type'], config['threshold'], config['model_num']))
     write_output_file(data.documents, all_clusters, doc_ids, starts, ends, doc_path)

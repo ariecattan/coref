@@ -1,5 +1,4 @@
 import argparse
-import json
 import pyhocon
 from sklearn.utils import shuffle
 from transformers import RobertaTokenizer, RobertaModel
@@ -7,13 +6,11 @@ from tqdm import tqdm
 
 from evaluator import Evaluation
 from models import SpanEmbedder, SpanScorer
-from corpus import Corpus
 from model_utils import *
 from utils import *
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
 parser.add_argument('--config', type=str, default='configs/config_span_scorer.json')
 args = parser.parse_args()
 
@@ -62,9 +59,6 @@ if __name__ == '__main__':
     config = pyhocon.ConfigFactory.parse_file(args.config)
     fix_seed(config)
 
-    if not os.path.exists(config['save_path']):
-        os.makedirs(config['save_path'])
-
     logger = create_logger(config, create_file=True)
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
 
@@ -78,19 +72,8 @@ if __name__ == '__main__':
 
     # read and tokenize data
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'], add_special_tokens=True)
-    dataset = []
-    for sp in ['train', 'dev']:
-        logger.info('Processing {} set'.format(sp))
-        texts_file = os.path.join(args.data_folder, sp + '.json')
-        mentions_file = os.path.join(args.data_folder, sp + '_{}.json'.format(config['mention_type']))
-
-        with open(texts_file, 'r') as f:
-            documents = json.load(f)
-        with open(mentions_file, 'r') as f:
-            mentions = json.load(f)
-
-        corpus = Corpus(documents, roberta_tokenizer, mentions)
-        dataset.append(corpus)
+    training_set = create_corpus(config, roberta_tokenizer, 'train')
+    dev_set = create_corpus(config, roberta_tokenizer, 'dev')
 
 
 
@@ -112,9 +95,6 @@ if __name__ == '__main__':
     span_scorer_path = os.path.join(config['model_path'],
                                     '{}_span_scorer_{}'.format(config['mention_type'], config['exp_num']))
 
-
-    training_set = dataset[0]
-    dev_set = dataset[1]
 
     logger.info('Number of topics: {}'.format(len(training_set.topic_list)))
     max_dev = (0, None)
@@ -173,7 +153,7 @@ if __name__ == '__main__':
         logger.info(
             'Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(),
                                                        eval.get_precision(), eval.get_f1()))
-        eval_range = [0.2, 0.25, 0.3] if config['mention_type'] == 'events' else [0.2, 0.25, 0.3, 0.4]
+        eval_range = [0.2, 0.25, 0.3] if config['mention_type'] == 'events' else [0.2, 0.25, 0.3, 0.4, 0.45]
         for k in eval_range:
             s, i = torch.topk(all_scores, int(k * dev_num_of_tokens), sorted=False)
             rank_preds = torch.zeros(len(all_scores), device=device)

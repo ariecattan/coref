@@ -2,6 +2,7 @@ import numpy as np
 import collections
 import torch
 
+
 class Corpus:
     def __init__(self, documents, tokenizer, mentions, predicted_topics=None):
         self.documents = documents

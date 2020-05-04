@@ -44,7 +44,9 @@ while continue training the span scorer.
 
 In order to choose the training method, you need to set the value of the `training_method` in 
 the `config_pairwise.json` to `pipeline`, `fine_tune` or `e2e`
- 
+
+In our experiments, we found the `e2e` method to perform the best for event coreference.
+
  
 #### What are the labels ?
 
@@ -52,8 +54,7 @@ In ECB+, the entity and event coreference clusters are annotated separately,
 making it possible to train a model only on event or entity coreference. 
 Therefore, our model also allows to be trained on events, entity, or both.
 You need to set the value of the `mention_type` in 
-the ``config_pairwise.json`` (and `config_span_scorer.json` if you don't train
-with ``e2e`` method) 
+the ``config_pairwise.json`` (and `config_span_scorer.json`) 
 to `events`, `entities` or `mixed`.
 
 

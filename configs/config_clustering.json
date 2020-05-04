@@ -12,14 +12,14 @@
   "use_gold_mentions": true,
   "mention_type": "events",
   "top_k": 0.3,
-  "split": "test",
+  "split": "dev",
+  "training_method": "e2e",
 
-  "training_method": "pipeline",
+  "data_folder": "data/ecb/mentions",
+  "save_path": "clustering_experiments",
+  "model_path" : "models/",
+  "model_num": 9,
 
-  "save_path": "clustering_experiments/pipeline",
-  "model_path" : "models/pipeline",
-  "model_num": 7,
-
-  "threshold": 0.8,
+  "threshold": 0.7,
   "linkage_type": "average"
 }
