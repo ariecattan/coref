@@ -1,5 +1,5 @@
 {
-  "gpu_num" : 1,
+  "gpu_num" : 2,
 
   "roberta_model": "roberta-large",
   "hidden_layer": 1024,
@@ -8,23 +8,25 @@
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "random_seed": 0,
+
   "max_mention_span": 8,
   "use_gold_mentions": false,
-  "is_event": true,
-  "top_k": 0.25,
+  "mention_type": "mixed",
+  "top_k": 0.45,
+  "training_method": "e2e",
 
+  "random_seed": 0,
   "epochs": 10,
-  "batch_size": 16,
+  "batch_size": 32,
   "learning_rate": 1e-4,
   "weight_decay": 0,
   "loss": "bce",
   "optimizer": "adam",
 
+
   "span_repr_path": "models/event_span_repr_0",
   "span_scorer_path": "models/event_span_scorer_0",
-
   "save_path": "pairwise_experiments/full_subtopic",
-  "model_path": "models/full_subtopic",
-  "exp_num": 2
+  "model_path": "models/e2e_mixed",
+  "exp_num": 13
 }

@@ -2,21 +2,14 @@ import argparse
 import json
 import pyhocon
 from sklearn.utils import shuffle
-from models import SimplePairWiseClassifier, SpanEmbedder, SpanScorer
 from transformers import RobertaTokenizer, RobertaModel
-from evaluator import Evaluation
 from tqdm import tqdm
 
+from models import SimplePairWiseClassifier, SpanEmbedder, SpanScorer
+from evaluator import Evaluation
+from corpus import Corpus
 from model_utils import *
 from utils import *
-
-
-
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
-parser.add_argument('--config_model_file', type=str, default='configs/config_pairwise.json')
-args = parser.parse_args()
 
 
 
@@ -41,7 +34,7 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
                                 [continuous_embeddings[k] for k in batch_second], width[batch_second])
         scores = pairwise_model(g1, g2)
 
-        if config['training_method'] in ('fine_tune', 'e2e'):
+        if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
             g1_score = span_scorer(g1)
             g2_score = span_scorer(g2)
             scores += g1_score + g2_score
@@ -55,24 +48,22 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
 
 
 
+def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, topic_num):
+    docs_embeddings, docs_length = pad_and_read_bert(data.topics_bert_tokens[topic_num], bert_model)
 
-def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
-                             list_of_docs, docs_original_tokens, bert_tokens, docs_bert_start_end,
-                             event_labels, entity_labels):
-    docs_embeddings, docs_length = pad_and_read_bert(bert_tokens, bert_model)
     span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
-        config, list_of_docs, docs_original_tokens, docs_bert_start_end, docs_embeddings, docs_length)
+        config, data, topic_num, docs_embeddings, docs_length)
+
     doc_id, sentence_id, start, end = span_meta_data
     topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
     device = topic_start_end_embeddings.device
     topic_width = topic_width.to(device)
-    pairwise_event_labels, pairwise_entity_labels = get_candidate_labels(doc_id, start, end, event_labels,
-                                                                   entity_labels)
-    labels = pairwise_event_labels if config['is_event'] else pairwise_entity_labels
 
+    labels = data.get_candidate_labels(doc_id, start, end)
+
+    ## Pruning the spans according to gold mentions or spans with highiest scores
     if config['use_gold_mentions']:
-        span_indices = labels.nonzero().squeeze()
-
+        span_indices = labels.nonzero().squeeze(1)
     else:
         k = int(config['top_k'] * num_of_tokens)
         with torch.no_grad():
@@ -106,9 +97,13 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
 
 
 
-
 if __name__ == '__main__':
-    config = pyhocon.ConfigFactory.parse_file(args.config_model_file)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_folder', type=str, default='data/ecb/mentions')
+    parser.add_argument('--config', type=str, default='configs/config_pairwise.json')
+    args = parser.parse_args()
+
+    config = pyhocon.ConfigFactory.parse_file(args.config)
     fix_seed(config)
 
     if not os.path.exists(config['save_path']):
@@ -127,40 +122,28 @@ if __name__ == '__main__':
 
     # read and tokenize data
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
-    sp_raw_text, sp_event_mentions, sp_entity_mentions, sp_tokens = [], [], [], []
+    dataset = []
     for sp in ['train', 'dev']:
         logger.info('Processing {} set'.format(sp))
-        with open(os.path.join(args.data_folder, sp + '_entities.json'), 'r') as f:
-            sp_entity_mentions.append(json.load(f))
+        texts_file = os.path.join(args.data_folder, sp + '.json')
+        mentions_file = os.path.join(args.data_folder, sp + '_{}.json'.format(config['mention_type']))
+        logger.info('Mentions - {}'.format(mentions_file))
+        with open(texts_file, 'r') as f:
+            documents = json.load(f)
+        with open(mentions_file, 'r') as f:
+            mentions = json.load(f)
 
-        with open(os.path.join(args.data_folder, sp + '_events.json'), 'r') as f:
-            sp_event_mentions.append(json.load(f))
-
-        with open(os.path.join(args.data_folder, sp + '.json'), 'r') as f:
-            ecb_texts = json.load(f)
-
-        if sp == 'train':
-            ecb_texts_by_topic = separate_docs_into_topics(ecb_texts, subtopic=True)
-        else:
-            ecb_texts_by_topic = separate_docs_into_topics(ecb_texts, subtopic=True)
-        sp_raw_text.append(ecb_texts_by_topic)
-        tokens = tokenize_set(ecb_texts_by_topic, roberta_tokenizer)
-        sp_tokens.append(tokens)
-
-
-    # labels
-    logger.info('Get labels')
-    event_labels = get_dict_labels(sp_event_mentions)
-    entity_labels = get_dict_labels(sp_entity_mentions)
+        corpus = Corpus(documents, roberta_tokenizer, mentions)
+        dataset.append(corpus)
 
 
     # Model initiation
     logger.info('Init models')
     bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
-    bert_model_hidden_size = bert_model.config.hidden_size
+    config['bert_hidden_size'] = bert_model.config.hidden_size
 
-    span_repr = SpanEmbedder(config, bert_model_hidden_size, device).to(device)
-    span_scorer = SpanScorer(config, bert_model_hidden_size).to(device)
+    span_repr = SpanEmbedder(config, device).to(device)
+    span_scorer = SpanScorer(config).to(device)
 
     if config['training_method'] in ('pipeline', 'fine_tune'):
         span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
@@ -168,10 +151,12 @@ if __name__ == '__main__':
 
     span_repr.eval()
     span_scorer.eval()
-    pairwise_model = SimplePairWiseClassifier(config, bert_model_hidden_size).to(device)
+    pairwise_model = SimplePairWiseClassifier(config).to(device)
 
+
+    ## Optimizer and loss function
     models = [pairwise_model]
-    if config['training_method'] in ('fine_tune', 'e2e'):
+    if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
         models.append(span_repr)
         models.append(span_scorer)
     optimizer = get_optimizer(config, models)
@@ -183,68 +168,71 @@ if __name__ == '__main__':
     logger.info('Number of parameters of the pairwise classifier: {}'.format(
         count_parameters(pairwise_model)))
 
+    training_set = dataset[0]
+    dev_set = dataset[1]
 
-    training_set = sp_tokens[0]
-    all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert = training_set
-    logger.info('Number of topics: {}'.format(len(all_topics)))
-    max_dev = (0, None)
-
+    logger.info('Number of topics: {}'.format(len(training_set.topic_list)))
+    f1 = []
     for epoch in range(config['epochs']):
         logger.info('Epoch: {}'.format(epoch))
+
         pairwise_model.train()
-        if config['training_method'] in ('fine_tune', 'e2e'):
+        if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
             span_repr.train()
             span_scorer.train()
 
-
         accumulate_loss = 0
-        list_of_topics = shuffle(list(range(len(all_topics))))
-        for t in tqdm(list_of_topics):
-            topic = all_topics[t]
+        list_of_topics = shuffle(list(range(len(training_set.topic_list))))
+        total_number_of_pairs = 0
+        for topic_num in tqdm(list_of_topics):
+            topic = training_set.topic_list[topic_num]
             span_embeddings, first, second, pairwise_labels = \
-                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
-                                         topic_list_of_docs[t], topic_origin_tokens[t], topic_bert_tokens[t],
-                                         topic_start_end_bert[t], event_labels, entity_labels)
+                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, training_set, topic_num)
             loss = train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
                                                    second, pairwise_labels, config['batch_size'], criterion, optimizer)
             torch.cuda.empty_cache()
             accumulate_loss += loss
+            total_number_of_pairs += len(first)
             # logger.info('Number of positive pairs: {}/{}'.format(len(pairwise_labels.nonzero()), len(pairwise_labels)))
+        logger.info('Number of training pairs: {}'.format(total_number_of_pairs))
         logger.info('Accumulate loss: {}'.format(accumulate_loss))
 
 
-
         logger.info('Evaluate on the dev set')
-        dev_all_topics, dev_topic_list_of_docs, dev_topic_origin_tokens, dev_topic_bert_tokens, dev_topic_start_end_bert = sp_tokens[1]
-        all_scores, all_labels = [], []
+
         span_repr.eval()
         span_scorer.eval()
         pairwise_model.eval()
 
-        for t, topic in enumerate(tqdm(dev_all_topics)):
-            span_embeddings, first, second, pairwise_labels = \
-                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer,
-                                         dev_topic_list_of_docs[t], dev_topic_origin_tokens[t], dev_topic_bert_tokens[t],
-                                         dev_topic_start_end_bert[t], event_labels, entity_labels)
+        all_scores, all_labels = [], []
 
+        for topic_num, topic in enumerate(tqdm(dev_set.topic_list)):
+            span_embeddings, first, second, pairwise_labels = \
+                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, dev_set, topic_num)
             start_end_embeddings, continuous_embeddings, width = span_embeddings
             width = width.to(device)
+
             with torch.no_grad():
-                g1 = span_repr(start_end_embeddings[first],
-                                          [continuous_embeddings[i] for i in first],
-                                          width[first])
-                g2 = span_repr(start_end_embeddings[second],
-                                          [continuous_embeddings[i] for i in second],
-                                          width[second])
+                for i in range(0, len(first), 10000):
+                    end_max = i + 10000
+                    first_idx, second_idx = first[i:end_max], second[i:end_max]
+                    batch_labels = pairwise_labels[i:end_max]
+                    g1 = span_repr(start_end_embeddings[first_idx],
+                                   [continuous_embeddings[k] for k in first_idx],
+                                   width[first_idx])
+                    g2 = span_repr(start_end_embeddings[second_idx],
+                                   [continuous_embeddings[k] for k in second_idx],
+                                   width[second_idx])
+                    scores = pairwise_model(g1, g2)
 
-                scores = pairwise_model(g1, g2)
-                if config['training_method'] in ('fine_tune', 'e2e'):
-                    g1_score = span_scorer(g1)
-                    g2_score = span_scorer(g2)
-                    scores += g1_score + g2_score
 
-            all_scores.extend(scores.squeeze(1))
-            all_labels.extend(pairwise_labels.to(torch.int))
+                    if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
+                        g1_score = span_scorer(g1)
+                        g2_score = span_scorer(g2)
+                        scores += g1_score + g2_score
+
+                    all_scores.extend(scores.squeeze(1))
+                    all_labels.extend(batch_labels.to(torch.int))
 
         all_labels = torch.stack(all_labels)
         all_scores = torch.stack(all_scores)
@@ -257,21 +245,17 @@ if __name__ == '__main__':
                                                              len(all_labels)))
         logger.info('Strict - Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(),
                                                                         eval.get_precision(), eval.get_f1()))
-
-        if eval.get_f1() > max_dev[0]:
-            max_dev = (eval.get_f1(), epoch)
+        f1.append(eval.get_f1())
 
         torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'span_repr_{}'.format(epoch)))
         torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'span_scorer_{}'.format(epoch)))
         torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_scorer_{}'.format(epoch)))
 
 
-    logger.info('Best Performance: {}'.format(max_dev))
-
     user = 'gpus.experiment@gmail.com'
     pwd = 'Gpusexperiments'
     recipient = 'arie.cattan@gmail.com'
-    subject = 'GPUs experiments are done'
-    message = 'Best Dev F1: {}'.format(max_dev) + '\n\n' + str(pyhocon.HOCONConverter.convert(config, "hocon"))
+    subject = 'Hp tuning for clustering with model {} is done'.format(args.experiment)
+    message = 'List of F1 scores: {}'.format(f1)
 
     send_email(user, pwd, recipient, subject, message)

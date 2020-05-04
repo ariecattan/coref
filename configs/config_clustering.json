@@ -1,25 +1,25 @@
 {
-  "gpu_num" : 3,
+  "gpu_num" : 1,
 
   "roberta_model": "roberta-large",
   "hidden_layer": 1024,
-  "dropout": 0.2,
+  "dropout": 0.3,
   "with_mention_width": true,
   "with_head_attention": true,
   "embedding_dimension": 20,
 
   "max_mention_span": 10,
-  "use_gold_mentions": false,
-  "is_event": true,
-  "top_k": 0.25,
+  "use_gold_mentions": true,
+  "mention_type": "events",
+  "top_k": 0.3,
   "split": "test",
 
-  "save_path": "clustering_experiments/full_subtopic",
-  "span_repr_path": "models/span_scorer/event_span_repr_0",
-  "span_scorer_path": "models/span_scorer/event_span_scorer_0",
-  "pairwise_scorer": "models/full_subtopic/pairwise_model_1",
+  "training_method": "pipeline",
 
+  "save_path": "clustering_experiments/pipeline",
+  "model_path" : "models/pipeline",
+  "model_num": 7,
 
-  "threshold": 0.5,
+  "threshold": 0.8,
   "linkage_type": "average"
 }

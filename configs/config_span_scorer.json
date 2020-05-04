@@ -1,5 +1,5 @@
 {
-  "gpu_num" : 2,
+  "gpu_num" : 3,
 
   "roberta_model": "roberta-large",
   "hidden_layer": 1024,
@@ -12,7 +12,7 @@
   "max_mention_span": 8,
 
   "epochs": 10,
-  "batch_size": 32,
+  "batch_size": 16,
   "learning_rate": 1e-4,
   "weight_decay": 0,
   "optimizer": "adam",
@@ -21,5 +21,5 @@
   "save_path": "mention_detection_experiments",
   "model_path": "models",
   "exp_num": 0,
-  "is_event": true
+  "mention_type": "events"
 }

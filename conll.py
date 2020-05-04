@@ -32,7 +32,7 @@ def get_dict_map(predictions, doc_ids, starts, ends):
 def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
     predicted_conll = []
     for doc_id, tokens in data.items():
-        for sentence_id, token_id, token_text, flag, _ in tokens:
+        for sentence_id, token_id, token_text, flag in tokens:
             clusters = '-'
             coref_list = list()
             if flag:
@@ -50,7 +50,7 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
             if len(coref_list) > 0:
                 clusters = '|'.join(coref_list)
 
-            predicted_conll.append([doc_id, sentence_id, token_id, token_text, clusters])
+            predicted_conll.append([doc_id, sentence_id, token_id, token_text, flag, clusters])
 
 
     return predicted_conll

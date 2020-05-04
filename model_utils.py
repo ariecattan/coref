@@ -3,101 +3,6 @@ import torch
 from itertools import compress
 
 
-def split_doc_into_segments(bert_tokens, sentence_ids, segment_length=512, with_special_tokens=True):
-    segments = [0]
-    current_token = 0
-    if with_special_tokens:
-        segment_length -= 2
-    while current_token < len(bert_tokens):
-        end_token = min(len(bert_tokens) - 1, current_token + segment_length - 1)
-        sentence_end = sentence_ids[end_token]
-        if end_token != len(bert_tokens) - 1 and sentence_ids[end_token + 1] == sentence_end:
-            while end_token >= current_token and sentence_ids[end_token] == sentence_end:
-                end_token -= 1
-
-            if end_token < current_token:
-                raise ValueError(bert_tokens)
-
-        current_token = end_token + 1
-        segments.append(current_token)
-
-    return segments
-
-def tokenize_topic(topic, tokenizer):
-    list_of_docs = []
-    docs_bert_tokens = []
-    docs_origin_tokens = []
-    docs_start_end_bert = []
-
-
-    for doc, tokens in topic.items():
-        bert_tokens_ids, bert_sentence_ids = [], []
-        ecb_tokens = []
-        start_bert_idx, end_bert_idx = [], []
-        alignment = []
-        bert_cursor = -1
-        for i, token in enumerate(tokens):
-            sent_id, token_id, token_text, selected_sentence, continuous_sentence = token
-            bert_token = tokenizer.encode(token_text)[1:-1]
-
-            if bert_token:
-                bert_tokens_ids.extend(bert_token)
-                bert_start_index = bert_cursor + 1
-                start_bert_idx.append(bert_start_index)
-                bert_cursor += len(bert_token)
-                bert_end_index = bert_cursor
-                end_bert_idx.append(bert_end_index)
-                ecb_tokens.append([sent_id, token_id, token_text, selected_sentence])
-                bert_sentence_ids.extend([sent_id] * len(bert_token))
-                alignment.extend([token_id] * len(bert_token))
-
-
-        segments = split_doc_into_segments(bert_tokens_ids, bert_sentence_ids)
-        ids = [x[1] for x in ecb_tokens]
-        bert_segments, ecb_segments, start_end_segment = [], [], []
-        delta = 0
-        for start, end in zip(segments, segments[1:]):
-            start_ecb = ids.index(alignment[start])
-            end_ecb = ids.index(alignment[end - 1])
-            ecb_segments.append(ecb_tokens[start_ecb:end_ecb + 1])
-            bert_ids = tokenizer.encode(' '.join([x[2] for x in ecb_tokens[start_ecb:end_ecb+1]]))[1:-1]
-            bert_segments.append(bert_ids)
-
-            bert_start = np.array(start_bert_idx[start_ecb:end_ecb + 1]) - delta
-            bert_end = np.array(end_bert_idx[start_ecb:end_ecb + 1]) - delta
-            if bert_start[0] < 0:
-                print('Negative value!!!')
-            start_end = np.concatenate((np.expand_dims(bert_start, 1),
-                                        np.expand_dims(bert_end, 1)), axis=1)
-            start_end_segment.append(start_end)
-            delta = end
-
-
-        segment_doc = [doc] * (len(segments) - 1)
-        docs_start_end_bert.extend(start_end_segment)
-        list_of_docs.extend(segment_doc)
-        docs_bert_tokens.extend(bert_segments)
-        docs_origin_tokens.extend(ecb_segments)
-
-    return list_of_docs, docs_origin_tokens, docs_bert_tokens, docs_start_end_bert
-
-
-def tokenize_set(raw_text_by_topic, tokenizer):
-    all_topics = []
-    topic_list_of_docs = []
-    topic_origin_tokens, topic_bert_tokens, topic_bert_sentences, topic_start_end_bert = [], [], [], []
-    for topic, docs in raw_text_by_topic.items():
-        all_topics.append(topic)
-        list_of_docs, docs_origin_tokens, docs_bert_tokens, docs_start_end_bert = tokenize_topic(docs, tokenizer)
-        topic_list_of_docs.append(list_of_docs)
-        topic_origin_tokens.append(docs_origin_tokens)
-        topic_bert_tokens.append(docs_bert_tokens)
-        topic_start_end_bert.append(docs_start_end_bert)
-
-    return all_topics, topic_list_of_docs, topic_origin_tokens, topic_bert_tokens, topic_start_end_bert
-
-
-
 
 def pad_and_read_bert(bert_token_ids, bert_model):
     length = np.array([len(d) for d in bert_token_ids])
@@ -158,16 +63,16 @@ def get_all_token_embedding(embedding, start, end):
 
 
 
-def get_all_candidate_from_topic(config, doc_names, docs_original_tokens, docs_bert_start_end,
-                                 docs_embeddings, docs_length, is_training=True):
+def get_all_candidate_from_topic(config, data, topic_num, docs_embeddings, docs_length, is_training=True):
     span_doc, span_sentence, span_origin_start, span_origin_end = [], [], [], []
     topic_start_end_embeddings, topic_continuous_embeddings, topic_width = [], [], []
     num_tokens = 0
 
+    doc_names = data.topics_list_of_docs[topic_num]
     for i in range(len(doc_names)):
         doc_id = doc_names[i]
-        original_tokens = docs_original_tokens[i]
-        bert_start_end = docs_bert_start_end[i]
+        original_tokens = data.topics_origin_tokens[topic_num][i]
+        bert_start_end = data.topics_start_end_bert[topic_num][i]
         if is_training:  # Filter only the validated sentences according to Cybulska setup
             filt = [x[-1] for x in original_tokens]
             bert_start_end = bert_start_end[filt]
@@ -175,7 +80,6 @@ def get_all_candidate_from_topic(config, doc_names, docs_original_tokens, docs_b
 
         if not original_tokens:
             continue
-
 
         num_tokens += len(original_tokens)
         sentence_span, original_candidates, bert_candidates = get_docs_candidate(original_tokens, bert_start_end,
@@ -202,24 +106,7 @@ def get_all_candidate_from_topic(config, doc_names, docs_original_tokens, docs_b
     topic_start_end_embeddings = torch.stack(topic_start_end_embeddings)
     topic_width = torch.stack(topic_width)
 
-    return (np.asarray(span_doc), torch.tensor(span_sentence), torch.tensor(span_origin_start), torch.tensor(span_origin_end)), \
+    return (np.asarray(span_doc), torch.tensor(span_sentence), torch.tensor(span_origin_start),
+            torch.tensor(span_origin_end)), \
            (topic_start_end_embeddings, topic_continuous_embeddings, topic_width), \
            num_tokens
-
-
-
-def get_candidate_labels(doc_id, start, end, dict_labels1, dict_labels2=None):
-    labels1, labels2 = [0] * len(doc_id), [0] * len(doc_id)
-    start = start.tolist()
-    end = end.tolist()
-    for i, (doc, s, e) in enumerate(zip(doc_id, start, end)):
-        if dict_labels1 and doc in dict_labels1:
-            label = dict_labels1[doc].get((s, e), None)
-            if label:
-                labels1[i] = label
-        if dict_labels2 and doc in dict_labels2:
-            label = dict_labels2[doc].get((s, e), None)
-            if label:
-                labels2[i] = label
-
-    return torch.tensor(labels1), torch.tensor(labels2)

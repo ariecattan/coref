@@ -139,7 +139,6 @@ def read_topic(topic_path, validated_sentences):
             tree = ET.parse(doc_path)
             root = tree.getroot()
             selected_sentences = sorted(list(map(int, validated_sentences[doc])))
-            continuous_sentences = list(range(min(selected_sentences), max(selected_sentences)+1))
 
             # Extract all the event and entity mentions
             event_mentions, entity_mentions = get_mention_doc(root, doc, validated_sentences[doc])
@@ -152,9 +151,9 @@ def read_topic(topic_path, validated_sentences):
             for child in root:
                 if child.tag == 'token' and (doc, int(child.attrib['t_id'])) not in exceptions:
                     flag_selected_sentence = int(child.attrib['sentence']) in selected_sentences
-                    flag_continuous_sentence = int(child.attrib['sentence']) in continuous_sentences
-                    ecb_tokens.append([int(child.attrib['sentence']), int(child.attrib['t_id']), child.text.replace('�', '').strip(),
-                                           flag_selected_sentence, flag_continuous_sentence])
+                    ecb_tokens.append([int(child.attrib['sentence']), int(child.attrib['t_id']),
+                                       child.text.replace('�', '').strip(),
+                                           flag_selected_sentence])
 
             all_docs[doc] = ecb_tokens
 
