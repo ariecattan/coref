@@ -9,11 +9,8 @@ and the first model which can work on raw texts as well.
 
 ## Getting started
 
-* python 3.7.3
-* pytorch 1.3.0
-* transformers 2.8.0
-* spacy 2.1.4
-* tqdm
+* Install python3 requirements `pip install -r requirements.txt` 
+
 
 ### Extract mentions and raw text from ECB+ 
 
