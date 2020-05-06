@@ -58,6 +58,7 @@ the ``config_pairwise.json`` (and `config_span_scorer.json`)
 to `events`, `entities` or `mixed`.
 
 
+
 #### Running the model
  
 In both pipeline and fine-tuning methods, you need to first run 

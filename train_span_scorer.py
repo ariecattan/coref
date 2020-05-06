@@ -61,7 +61,7 @@ if __name__ == '__main__':
 
     logger = create_logger(config, create_file=True)
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
-
+    create_folder(config['model_path'])
 
     if torch.cuda.is_available():
         device = 'cuda:{}'.format(config['gpu_num'])

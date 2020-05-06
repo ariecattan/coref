@@ -8,6 +8,7 @@ import smtplib
 import torch.optim as optim
 import json
 from datetime import datetime
+import pickle
 
 from corpus import Corpus
 
@@ -25,7 +26,13 @@ def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
         with open(mentions_path, 'r') as f:
             mentions = json.load(f)
 
-    corpus = Corpus(documents, tokenizer, mentions)
+    predicted_topics = None
+    if config['use_predicted_subtopics']:
+        predicted_topics_path = '/home/nlp/ariecattan/event_entity_coref_ecb_plus/data/external/document_clustering/predicted_topics'
+        with open(predicted_topics_path, 'rb') as f:
+            predicted_topics = pickle.load(f)
+
+    corpus = Corpus(documents, tokenizer, mentions, predicted_topics)
 
     return corpus
 
@@ -52,6 +59,11 @@ def create_logger(config, create_file=True):
     logger.propagate = False
 
     return logger
+
+
+def create_folder(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
 
 
 def fix_seed(config):

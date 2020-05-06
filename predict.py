@@ -43,6 +43,7 @@ if __name__ == '__main__':
 
     config = pyhocon.ConfigFactory.parse_file(args.config)
     print(pyhocon.HOCONConverter.convert(config, "hocon"))
+    create_folder(config['save_path'])
     device = 'cuda:{}'.format(config['gpu_num']) if torch.cuda.is_available() else 'cpu'
 
 
@@ -57,6 +58,7 @@ if __name__ == '__main__':
     # Load data
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
     data = create_corpus(config, roberta_tokenizer, config['split'], config['use_gold_mentions'])
+
 
 
     doc_ids, sentence_ids, starts, ends = [], [], [], []
