@@ -1,5 +1,5 @@
 {
-  "gpu_num" : 1,
+  "gpu_num" : 3,
 
   "roberta_model": "roberta-large",
   "hidden_layer": 1024,
@@ -8,17 +8,19 @@
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "max_mention_span": 10,
+  "max_mention_span": 20,
   "use_gold_mentions": true,
-  "mention_type": "events",
+  "mention_type": "mixed",
   "top_k": 0.3,
-  "split": "dev",
+  "split": "train",
   "training_method": "e2e",
+  "subtopic": false,
+  "use_predicted_subtopics": false,
 
   "data_folder": "data/ecb/mentions",
-  "save_path": "clustering_experiments",
-  "model_path" : "models/",
-  "model_num": 9,
+  "save_path": "clustering_experiments/gold_mentions",
+  "model_path" : "models/gold_mentions/mixed",
+  "model_num": 6,
 
   "threshold": 0.7,
   "linkage_type": "average"

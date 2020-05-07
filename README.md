@@ -35,12 +35,12 @@ We present 3 ways to train this pairwise scorer:
 
 1. Pipeline: first train a span scorer, then train the pairwise scorer. 
 Unlike Ontonotes, ECB+ does include singleton annotation, so it's possible to train separately the span scorer model.
-2.  Fine-tune: first train the span scorer, then train the pairwise scorer
+2.  Continue: first train the span scorer, then train the pairwise scorer
 while continue training the span scorer.
 3. End-to-end: train together the both models.
 
 In order to choose the training method, you need to set the value of the `training_method` in 
-the `config_pairwise.json` to `pipeline`, `fine_tune` or `e2e`
+the `config_pairwise.json` to `pipeline`, `continue` or `e2e`
 
 In our experiments, we found the `e2e` method to perform the best for event coreference.
 

@@ -33,7 +33,7 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
                                 [continuous_embeddings[k] for k in batch_second], width[batch_second])
         scores = pairwise_model(g1, g2)
 
-        if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
+        if config['training_method'] in ('continue', 'e2e') and not config['use_gold_mentions']:
             g1_score = span_scorer(g1)
             g2_score = span_scorer(g2)
             scores += g1_score + g2_score
@@ -129,7 +129,7 @@ if __name__ == '__main__':
     span_repr = SpanEmbedder(config, device).to(device)
     span_scorer = SpanScorer(config).to(device)
 
-    if config['training_method'] in ('pipeline', 'fine_tune') and not config['use_gold_mentions']:
+    if config['training_method'] in ('pipeline', 'continue') and not config['use_gold_mentions']:
         span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
         span_scorer.load_state_dict(torch.load(config['span_scorer_path'], map_location=device))
 
@@ -140,7 +140,7 @@ if __name__ == '__main__':
 
     ## Optimizer and loss function
     models = [pairwise_model]
-    if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
+    if config['training_method'] in ('continue', 'e2e') and not config['use_gold_mentions']:
         models.append(span_repr)
         models.append(span_scorer)
     optimizer = get_optimizer(config, models)
@@ -158,7 +158,7 @@ if __name__ == '__main__':
         logger.info('Epoch: {}'.format(epoch))
 
         pairwise_model.train()
-        if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
+        if config['training_method'] in ('continue', 'e2e') and not config['use_gold_mentions']:
             span_repr.train()
             span_scorer.train()
 
@@ -206,7 +206,7 @@ if __name__ == '__main__':
                                    width[second_idx])
                     scores = pairwise_model(g1, g2)
 
-                    if config['training_method'] in ('fine_tune', 'e2e') and not config['use_gold_mentions']:
+                    if config['training_method'] in ('continue', 'e2e') and not config['use_gold_mentions']:
                         g1_score = span_scorer(g1)
                         g2_score = span_scorer(g2)
                         scores += g1_score + g2_score
@@ -232,3 +232,10 @@ if __name__ == '__main__':
         torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_scorer_{}'.format(epoch)))
 
 
+    user = 'gpus.experiment@gmail.com'
+    pwd = 'Gpusexperiments'
+    recipient = 'arie.cattan@gmail.com'
+    subject = 'Training is done ({} - {})'.format(config['mention_type'], config['training method'])
+    message = 'F1: {} \n\n'.format(f1) + pyhocon.HOCONConverter.convert(config, "hocon")
+
+    send_email(user, pwd, recipient, subject, message)
