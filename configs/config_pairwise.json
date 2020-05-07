@@ -8,11 +8,13 @@
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "max_mention_span": 8,
+  "max_mention_span": 20,
   "use_gold_mentions": true,
-  "mention_type": "events",
-  "top_k": 0.4,
+  "mention_type": "mixed",
+  "top_k": 0.3,
   "training_method": "e2e",
+  "subtopic": false,
+  "use_predicted_subtopics": false,
 
   "random_seed": 0,
   "epochs": 10,
@@ -26,5 +28,6 @@
   "data_folder": "data/ecb/mentions",
   "span_repr_path": "models/event_span_repr_0",
   "span_scorer_path": "models/event_span_scorer_0",
-  "model_path": "models/gold_mentions/event"
+  "model_path": "models/gold_mentions_topic/mixed"
+
 }

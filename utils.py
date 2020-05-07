@@ -32,7 +32,7 @@ def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
         with open(predicted_topics_path, 'rb') as f:
             predicted_topics = pickle.load(f)
 
-    corpus = Corpus(documents, tokenizer, mentions, predicted_topics)
+    corpus = Corpus(documents, tokenizer, mentions, config['subtopic'], predicted_topics)
 
     return corpus
 

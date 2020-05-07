@@ -129,7 +129,7 @@ if __name__ == '__main__':
     span_repr = SpanEmbedder(config, device).to(device)
     span_scorer = SpanScorer(config).to(device)
 
-    if config['training_method'] in ('pipeline', 'fine_tune'):
+    if config['training_method'] in ('pipeline', 'fine_tune') and not config['use_gold_mentions']:
         span_repr.load_state_dict(torch.load(config['span_repr_path'], map_location=device))
         span_scorer.load_state_dict(torch.load(config['span_scorer_path'], map_location=device))
 

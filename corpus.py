@@ -4,7 +4,7 @@ import torch
 
 
 class Corpus:
-    def __init__(self, documents, tokenizer, mentions, predicted_topics=None):
+    def __init__(self, documents, tokenizer, mentions, subtopic=True, predicted_topics=None):
         self.documents = documents
         self.mentions = mentions
 
@@ -19,7 +19,7 @@ class Corpus:
         if predicted_topics:
             self.docs_by_topic = self.separate_doc_into_predicted_subtopics(predicted_topics)
         else:
-            self.docs_by_topic = self.separate_docs_into_topics()
+            self.docs_by_topic = self.separate_docs_into_topics(subtopic)
 
         self.tokenize(tokenizer)
 
@@ -64,7 +64,7 @@ class Corpus:
 
 
 
-    def separate_docs_into_topics(self, subtopic=True):
+    def separate_docs_into_topics(self, subtopic):
         docs_by_topics = collections.defaultdict(list)
         for doc_id, tokens in self.documents.items():
             topic_key = doc_id.split('_')[0]
