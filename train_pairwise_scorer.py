@@ -47,7 +47,8 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
 
 
 
-def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, topic_num):
+
+def get_all_candidate_spans(config, bert_model, span_repr, span_scorer, data, topic_num):
     docs_embeddings, docs_length = pad_and_read_bert(data.topics_bert_tokens[topic_num], bert_model)
 
     span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
@@ -70,6 +71,7 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, t
             span_scores = span_scorer(span_emb)
         _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
 
+    span_indices = span_indices.cpu()
 
     torch.cuda.empty_cache()
     labels = labels[span_indices]
@@ -78,7 +80,21 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, t
     topic_width = topic_width[span_indices]
     span_embeddings = topic_start_end_embeddings, topic_continuous_embeddings, topic_width
 
-    first, second = zip(*list(combinations(range(len(span_indices)), 2)))
+
+    doc_id = doc_id[span_indices]
+    sentence_id = sentence_id[span_indices]
+    start = start[span_indices]
+    end = end[span_indices]
+    span_meta_data = doc_id, sentence_id, start, end
+
+
+    return span_meta_data, span_embeddings, labels
+
+
+
+
+def get_all_pairs_labels(labels):
+    first, second = zip(*list(combinations(range(len(labels)), 2)))
     first = torch.tensor(first)
     second = torch.tensor(second)
     pairwise_labels = (labels[first] != 0) & (labels[second] != 0) & \
@@ -91,8 +107,8 @@ def get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, data, t
         pairwise_labels = torch.where(pairwise_labels == 1, pairwise_labels, torch.tensor(0, device=device))
     torch.cuda.empty_cache()
 
-    return span_embeddings, first, second, pairwise_labels
 
+    return first, second, pairwise_labels
 
 
 
@@ -167,8 +183,12 @@ if __name__ == '__main__':
         total_number_of_pairs = 0
         for topic_num in tqdm(list_of_topics):
             topic = training_set.topic_list[topic_num]
-            span_embeddings, first, second, pairwise_labels = \
-                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, training_set, topic_num)
+
+            span_meta_data, span_embeddings, labels = \
+                get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
+
+            first, second, pairwise_labels = get_all_pairs_labels(labels)
+
             loss = train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
                                                    second, pairwise_labels, config['batch_size'], criterion, optimizer)
             torch.cuda.empty_cache()
@@ -188,8 +208,10 @@ if __name__ == '__main__':
         all_scores, all_labels = [], []
 
         for topic_num, topic in enumerate(tqdm(dev_set.topic_list)):
-            span_embeddings, first, second, pairwise_labels = \
-                get_all_pairs_from_topic(config, bert_model, span_repr, span_scorer, dev_set, topic_num)
+            span_meta_data, span_embeddings, labels = \
+                get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
+
+            first, second, pairwise_labels = get_all_pairs_labels(labels)
             start_end_embeddings, continuous_embeddings, width = span_embeddings
             width = width.to(device)
 
@@ -235,7 +257,7 @@ if __name__ == '__main__':
     user = 'gpus.experiment@gmail.com'
     pwd = 'Gpusexperiments'
     recipient = 'arie.cattan@gmail.com'
-    subject = 'Training is done ({} - {})'.format(config['mention_type'], config['training method'])
+    subject = 'Training is done ({} - {})'.format(config['mention_type'], config['training_method'])
     message = 'F1: {} \n\n'.format(f1) + pyhocon.HOCONConverter.convert(config, "hocon")
 
     send_email(user, pwd, recipient, subject, message)
