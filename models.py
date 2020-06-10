@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
-
+from transformers import *
 
 
 def init_weights(m):
@@ -13,21 +13,21 @@ def init_weights(m):
 class SpanEmbedder(nn.Module):
     def __init__(self, config, device):
         super(SpanEmbedder, self).__init__()
-        self.bert_hidden_size = config['bert_hidden_size']
-        self.with_width_embedding = config['with_mention_width']
-        self.use_head_attention = config['with_head_attention']
+        self.bert_hidden_size = config.bert_hidden_size
+        self.with_width_embedding = config.with_mention_width
+        self.use_head_attention = config.with_head_attention
         self.device = device
-        self.dropout = config['dropout']
+        self.dropout = config.dropout
         self.padded_vector = torch.zeros(self.bert_hidden_size, device=device)
         self.self_attention_layer = nn.Sequential(
-            nn.Dropout(config['dropout']),
-            nn.Linear(self.bert_hidden_size, config['hidden_layer']),
+            nn.Dropout(config.dropout),
+            nn.Linear(self.bert_hidden_size, config.hidden_layer),
             # nn.Dropout(config['dropout']),
             nn.ReLU(),
-            nn.Linear(config['hidden_layer'], 1)
+            nn.Linear(config.hidden_layer, 1)
         )
         self.self_attention_layer.apply(init_weights)
-        self.width_feature = nn.Embedding(5, config['embedding_dimension'])
+        self.width_feature = nn.Embedding(5, config.embedding_dimension)
 
 
     def pad_continous_embeddings(self, continuous_embeddings):
@@ -38,7 +38,8 @@ class SpanEmbedder(nn.Module):
         )
         masks = torch.stack(
             [torch.cat(
-                (torch.ones(len(emb), device=self.device), torch.zeros(max_length - len(emb), device=self.device)))
+                (torch.ones(len(emb), device=self.device),
+                 torch.zeros(max_length - len(emb), device=self.device)))
              for emb in continuous_embeddings]
         )
         return padded_tokens_embeddings, masks
@@ -68,15 +69,15 @@ class SpanEmbedder(nn.Module):
 class SpanScorer(nn.Module):
     def __init__(self, config):
         super(SpanScorer, self).__init__()
-        self.input_layer = config['bert_hidden_size'] * 3
-        if config['with_mention_width']:
-            self.input_layer += config['embedding_dimension']
+        self.input_layer = config.bert_hidden_size * 3
+        if config.with_mention_width:
+            self.input_layer += config.embedding_dimension
         self.mlp = nn.Sequential(
-            nn.Dropout(config['dropout']),
-            nn.Linear(self.input_layer, config['hidden_layer']),
+            nn.Dropout(config.dropout),
+            nn.Linear(self.input_layer, config.hidden_layer),
             # nn.Dropout(config['dropout']),
             nn.ReLU(),
-            nn.Linear(config['hidden_layer'], 1)
+            nn.Linear(config.hidden_layer, 1)
         )
         self.mlp.apply(init_weights)
 
@@ -90,18 +91,17 @@ class SpanScorer(nn.Module):
 class SimplePairWiseClassifier(nn.Module):
     def __init__(self, config):
         super(SimplePairWiseClassifier, self).__init__()
-        self.input_layer = config['bert_hidden_size'] * 3 if config['with_head_attention'] else bert_hidden_size * 2
-        if config['with_mention_width']:
-            self.input_layer += config['embedding_dimension']
+        self.input_layer = config.bert_hidden_size * 3 if config.with_head_attention else config.bert_hidden_size * 2
+        if config.with_mention_width:
+            self.input_layer += config.embedding_dimension
         self.input_layer *= 3
-        self.hidden_layer = config['hidden_layer']
-        # self.within_doc = nn.Embedding(2, config['embedding_dimension'])
+        self.hidden_layer = config.hidden_layer
         self.pairwise_mlp = nn.Sequential(
-            nn.Dropout(config['dropout']),
+            nn.Dropout(config.dropout),
             nn.Linear(self.input_layer, self.hidden_layer),
             nn.ReLU(),
             nn.Linear(self.hidden_layer, self.hidden_layer),
-            nn.Dropout(config['dropout']),
+            nn.Dropout(config.dropout),
             nn.ReLU(),
             nn.Linear(self.hidden_layer, 1),
         )
@@ -111,3 +111,26 @@ class SimplePairWiseClassifier(nn.Module):
         return self.pairwise_mlp(torch.cat((first, second, first * second), dim=1))
 
 
+
+
+
+class FullCrossEncoder(nn.Module):
+    def __init__(self, config):
+        super(FullCrossEncoder, self).__init__()
+        self.segment_size = config.segment_window * 2
+
+        self.tokenizer = RobertaTokenizer.from_pretrained(config.roberta_model)
+        self.tokenizer.add_tokens(['[START]', '[END]'])
+
+        self.model = RobertaModel.from_pretrained(config.roberta_model)
+        self.model.resize_token_embeddings(len(self.tokenizer))
+        self.hidden_size = self.model.config.hidden_size
+        self.linear = nn.Linear(self.hidden_size, 1)
+
+
+    def forward(self, input_ids, attention_mask):
+        output, _ = self.model(input_ids, attention_mask)
+        cls_vector = output[:, 0, :]
+        scores = self.linear(cls_vector)
+
+        return scores

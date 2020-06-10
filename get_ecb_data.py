@@ -150,6 +150,8 @@ def read_topic(topic_path, validated_sentences):
             ecb_tokens = []
             for child in root:
                 if child.tag == 'token' and (doc, int(child.attrib['t_id'])) not in exceptions:
+                    # if child.attrib['sentence'] == '0' and 'plus' in doc:
+                    #     continue
                     flag_selected_sentence = int(child.attrib['sentence']) in selected_sentences
                     ecb_tokens.append([int(child.attrib['sentence']), int(child.attrib['t_id']),
                                        child.text.replace('�', '').strip(),
@@ -226,13 +228,13 @@ def get_list_annotated_sentences(annotated_sentences):
 
 
 
-def save_gold_conll_files(documents, mentions, clusters, path):
+def save_gold_conll_files(documents, mentions, clusters, dir_path, doc_name):
     non_singletons = {cluster: ms for cluster, ms in clusters.items() if len(ms) > 1}
     doc_ids = [m['doc_id'] for m in mentions]
     starts = [min(m['tokens_ids']) for m in mentions]
     ends = [max(m['tokens_ids']) for m in mentions]
 
-    write_output_file(documents, non_singletons, doc_ids, starts, ends, path)
+    write_output_file(documents, non_singletons, doc_ids, starts, ends, dir_path, doc_name)
 
 
 if __name__ == '__main__':
@@ -244,12 +246,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     mentions_path = os.path.join(args.output_dir, 'mentions')
-    gold_conll_path = os.path.join(args.output_dir, 'gold_conll')
+    gold_conll_path = os.path.join(args.output_dir, 'gold')
 
     if not os.path.exists(mentions_path):
         os.makedirs(mentions_path)
 
-    if not os.path.exists(args.output_dir):
+    if not os.path.exists(gold_conll_path):
         os.makedirs(gold_conll_path)
 
     nlp = spacy.load('en_core_web_sm', disable=['textcat'])
@@ -293,8 +295,8 @@ if __name__ == '__main__':
         entity_path = os.path.join(gold_conll_path, '{}_entities_gold.conll'.format(type))
         mixed_path = os.path.join(gold_conll_path, '{}_mixed_gold.conll'.format(type))
 
-        save_gold_conll_files(docs[i], events, event_clusters, event_path)
-        save_gold_conll_files(docs[i], entities, entity_clusters, entity_path)
-        save_gold_conll_files(docs[i], mixed, mixed_clusters, mixed_path)
+        save_gold_conll_files(docs[i], events, event_clusters, gold_conll_path, '{}_events'.format(type))
+        save_gold_conll_files(docs[i], entities, entity_clusters, gold_conll_path, '{}_entities'.format(type))
+        save_gold_conll_files(docs[i], mixed, mixed_clusters, gold_conll_path, '{}_mixed'.format(type))
 
 

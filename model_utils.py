@@ -69,6 +69,7 @@ def get_all_candidate_from_topic(config, data, topic_num, docs_embeddings, docs_
     num_tokens = 0
 
     doc_names = data.topics_list_of_docs[topic_num]
+
     for i in range(len(doc_names)):
         doc_id = doc_names[i]
         original_tokens = data.topics_origin_tokens[topic_num][i]
@@ -106,7 +107,30 @@ def get_all_candidate_from_topic(config, data, topic_num, docs_embeddings, docs_
     topic_start_end_embeddings = torch.stack(topic_start_end_embeddings)
     topic_width = torch.stack(topic_width)
 
+
+
     return (np.asarray(span_doc), torch.tensor(span_sentence), torch.tensor(span_origin_start),
             torch.tensor(span_origin_end)), \
            (topic_start_end_embeddings, topic_continuous_embeddings, topic_width), \
            num_tokens
+
+
+
+def create_span_segment(topic_spans, topic_num, idx):
+    segment_id = topic_spans.segment_ids[idx]
+    start = topic_spans.origin_start[idx]
+    end = topic_spans.origin_end[idx]
+
+    origin_tokens = [(token[1], token[2]) for token in
+                     topic_spans.data.topics_origin_tokens[topic_num][segment_id]]
+    ids, tokens = zip(*origin_tokens)
+    ids, tokens = list(ids), list(tokens)
+    start_idx = ids.index(start)
+    end_idx = ids.index(end)
+
+    left_context = tokens[:start_idx]
+    span_text = tokens[start_idx:end_idx + 1]
+    right_context = tokens[end_idx+1:]
+    mention_segment = left_context + ["[START]"] + span_text + ["[END]"]  + right_context
+
+    return ' '.join(mention_segment)

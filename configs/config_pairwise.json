@@ -1,33 +1,34 @@
 {
-  "gpu_num" : 1,
-
+  "gpu_num" : [3],
   "roberta_model": "roberta-large",
+  "bert_hidden_size": 1024,
   "hidden_layer": 1024,
   "dropout": 0.3,
   "with_mention_width": true,
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "max_mention_span": 20,
-  "use_gold_mentions": true,
+  "max_mention_span": 10,
+  "use_gold_mentions": false,
   "mention_type": "mixed",
-  "top_k": 0.3,
-  "training_method": "e2e",
+  "top_k": 0.45,
+  "training_method": "continue",
   "subtopic": false,
   "use_predicted_subtopics": false,
 
   "random_seed": 0,
   "epochs": 10,
-  "batch_size": 16,
+  "batch_size": 32,
   "learning_rate": 1e-4,
   "weight_decay": 0,
   "loss": "bce",
   "optimizer": "adam",
+  "adam_epsilon": 1e-8,
+  "segment_window": 512,
 
   "log_path": "logs/pairwise_scorer",
   "data_folder": "data/ecb/mentions",
-  "span_repr_path": "models/event_span_repr_0",
-  "span_scorer_path": "models/event_span_scorer_0",
-  "model_path": "models/gold_mentions_topic/mixed"
-
+  "span_repr_path": "models/mixed_span_repr_0",
+  "span_scorer_path": "models/mixed_span_scorer_0",
+  "model_path": "models/deadline/predicted/predicted_mentions_mixed_continue_0.45"
 }

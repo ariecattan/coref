@@ -1,7 +1,7 @@
 import collections
 import operator
 import os
-
+import pandas as pd
 
 
 def get_dict_map(predictions, doc_ids, starts, ends):
@@ -35,6 +35,8 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
         topic = doc_id.split('_')[0]
         subtopic = topic + '_{}'.format(1 if 'plus' in doc_id else 0)
         for sentence_id, token_id, token_text, flag in tokens:
+            if not flag:
+                continue
             clusters = '-'
             coref_list = list()
             if flag:
@@ -59,13 +61,36 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
 
 
 
-def write_output_file(data, predictions, doc_ids, starts, ends, path):
-    doc_start_map, doc_end_map, doc_word_map = get_dict_map(predictions, doc_ids, starts, ends)
-    conll = output_conll(data, doc_word_map, doc_start_map, doc_end_map)
 
-    doc_name = '_'.join(os.path.basename(path).split('_')[:2])
-    with open(path, 'w') as f:
-        f.write('#begin document {}\n'.format(doc_name))
-        for token in conll:
-            f.write('\t'.join([str(x) for x in token]) + '\n')
-        f.write('#end document')
+def write_output_file(data, predictions, doc_ids, starts, ends, dir_path, doc_name, topic_level=True, corpus_level=True):
+    doc_start_map, doc_end_map, doc_word_map = get_dict_map(predictions, doc_ids, starts, ends)
+    corpus_level = output_conll(data, doc_word_map, doc_start_map, doc_end_map)
+
+    # doc_name = '_'.join(os.path.basename(path).split('_')[:2])
+
+    corpus_level_path = os.path.join(dir_path, '{}_corpus_level.conll'.format(doc_name))
+    topic_level_path = os.path.join(dir_path, '{}_topic_level.conll'.format(doc_name))
+
+
+    if corpus_level:
+        doc_name = '_'.join(doc_name.split('_')[:2])
+        with open(corpus_level_path, 'w') as f:
+            f.write('#begin document {}\n'.format(doc_name))
+            for token in corpus_level:
+                f.write('\t'.join([str(x) for x in token]) + '\n')
+            f.write('#end document')
+
+
+    if topic_level:
+        topic_level = collections.defaultdict(list)
+        for token in corpus_level:
+            topic = token[0]
+            topic_level[topic].append(token)
+
+        with open(topic_level_path, 'w') as f:
+            for topic, tokens in topic_level.items():
+                f.write('#begin document {}\n'.format(topic))
+                for token in tokens:
+                    f.write('\t'.join([str(x) for x in token]) + '\n')
+                f.write('#end document\n')
+

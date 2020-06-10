@@ -5,11 +5,11 @@ from transformers import RobertaTokenizer, RobertaModel
 from tqdm import tqdm
 from itertools import combinations
 
-from models import SimplePairWiseClassifier, SpanEmbedder, SpanScorer
+from models import SpanEmbedder, SpanScorer, SimplePairWiseClassifier
 from evaluator import Evaluation
+from spans import TopicSpans
 from model_utils import *
 from utils import *
-
 
 
 
@@ -19,7 +19,7 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
     start_end_embeddings, continuous_embeddings, width = span_embeddings
     device = start_end_embeddings.device
     labels = labels.to(device)
-    width = width.to(device)
+    # width = width.to(device)
 
     idx = shuffle(list(range(len(first))))
     for i in range(0, len(first), batch_size):
@@ -43,62 +43,56 @@ def train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, sp
         loss.backward()
         optimizer.step()
 
+        torch.cuda.empty_cache()
+
     return accumulate_loss
-
-
 
 
 def get_all_candidate_spans(config, bert_model, span_repr, span_scorer, data, topic_num):
     docs_embeddings, docs_length = pad_and_read_bert(data.topics_bert_tokens[topic_num], bert_model)
+    topic_spans = TopicSpans(config, data, topic_num, docs_embeddings, docs_length, is_training=True)
 
-    span_meta_data, span_embeddings, num_of_tokens = get_all_candidate_from_topic(
-        config, data, topic_num, docs_embeddings, docs_length)
-
-    doc_id, sentence_id, start, end = span_meta_data
-    topic_start_end_embeddings, topic_continuous_embeddings, topic_width = span_embeddings
-    device = topic_start_end_embeddings.device
-    topic_width = topic_width.to(device)
-
-    labels = data.get_candidate_labels(doc_id, start, end)
+    topic_spans.set_span_labels()
 
     ## Pruning the spans according to gold mentions or spans with highiest scores
     if config['use_gold_mentions']:
-        span_indices = labels.nonzero().squeeze(1)
+        span_indices = topic_spans.labels.nonzero().squeeze(1)
     else:
-        k = int(config['top_k'] * num_of_tokens)
+        k = int(config['top_k'] * topic_spans.num_tokens)
         with torch.no_grad():
-            span_emb = span_repr(topic_start_end_embeddings, topic_continuous_embeddings, topic_width)
+            span_emb = span_repr(topic_spans.start_end_embeddings,
+                                 topic_spans.continuous_embeddings,
+                                 topic_spans.width)
             span_scores = span_scorer(span_emb)
         _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
 
     span_indices = span_indices.cpu()
-
+    topic_spans.prune_spans(span_indices)
     torch.cuda.empty_cache()
-    labels = labels[span_indices]
-    topic_start_end_embeddings = topic_start_end_embeddings[span_indices]
-    topic_continuous_embeddings = [topic_continuous_embeddings[i] for i in span_indices]
-    topic_width = topic_width[span_indices]
-    span_embeddings = topic_start_end_embeddings, topic_continuous_embeddings, topic_width
+
+    return topic_spans
 
 
-    doc_id = doc_id[span_indices]
-    sentence_id = sentence_id[span_indices]
-    start = start[span_indices]
-    end = end[span_indices]
-    span_meta_data = doc_id, sentence_id, start, end
-
-
-    return span_meta_data, span_embeddings, labels
-
-
-
-
-def get_all_pairs_labels(labels):
+def get_pairwise_labels(labels, is_training):
     first, second = zip(*list(combinations(range(len(labels)), 2)))
     first = torch.tensor(first)
     second = torch.tensor(second)
     pairwise_labels = (labels[first] != 0) & (labels[second] != 0) & \
                       (labels[first] == labels[second])
+
+    if is_training:
+        positives = (pairwise_labels == 1).nonzero().squeeze()
+        positive_ratio = len(positives) / len(first)
+        negatives = (pairwise_labels != 1).nonzero().squeeze()
+        rands = torch.rand(len(negatives))
+        rands = (rands < positive_ratio * 20).to(torch.long)
+        sampled_negatives = negatives[rands.nonzero().squeeze()]
+        new_first = torch.cat((first[positives], first[sampled_negatives]))
+        new_second = torch.cat((second[positives], second[sampled_negatives]))
+        new_labels = torch.cat((pairwise_labels[positives], pairwise_labels[sampled_negatives]))
+        first, second, pairwise_labels = new_first, new_second, new_labels
+
+
     pairwise_labels = pairwise_labels.to(torch.long).to(device)
 
     if config['loss'] == 'hinge':
@@ -124,12 +118,7 @@ if __name__ == '__main__':
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
     create_folder(config['model_path'])
 
-    if torch.cuda.is_available():
-        device = 'cuda:{}'.format(config['gpu_num'])
-        torch.cuda.set_device(config['gpu_num'])
-    else:
-        device = 'cpu'
-
+    device = torch.device('cuda:{}'.format(config.gpu_num[0]))
 
     # init train and dev set
     roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
@@ -151,6 +140,7 @@ if __name__ == '__main__':
 
     span_repr.eval()
     span_scorer.eval()
+
     pairwise_model = SimplePairWiseClassifier(config).to(device)
 
 
@@ -183,12 +173,9 @@ if __name__ == '__main__':
         total_number_of_pairs = 0
         for topic_num in tqdm(list_of_topics):
             topic = training_set.topic_list[topic_num]
-
-            span_meta_data, span_embeddings, labels = \
-                get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
-
-            first, second, pairwise_labels = get_all_pairs_labels(labels)
-
+            topic_spans = get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
+            first, second, pairwise_labels = get_pairwise_labels(topic_spans.labels, is_training=True)
+            span_embeddings = topic_spans.start_end_embeddings, topic_spans.continuous_embeddings, topic_spans.width
             loss = train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
                                                    second, pairwise_labels, config['batch_size'], criterion, optimizer)
             torch.cuda.empty_cache()
@@ -208,24 +195,23 @@ if __name__ == '__main__':
         all_scores, all_labels = [], []
 
         for topic_num, topic in enumerate(tqdm(dev_set.topic_list)):
-            span_meta_data, span_embeddings, labels = \
-                get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
+            topic_spans = get_all_candidate_spans(config, bert_model, span_repr, span_scorer, dev_set, topic_num)
+            first, second, pairwise_labels = get_pairwise_labels(topic_spans.labels, is_training=False)
 
-            first, second, pairwise_labels = get_all_pairs_labels(labels)
-            start_end_embeddings, continuous_embeddings, width = span_embeddings
-            width = width.to(device)
-
+            span_embeddings = topic_spans.start_end_embeddings, topic_spans.continuous_embeddings, \
+                              topic_spans.width
+            topic_spans.width = topic_spans.width.to(device)
             with torch.no_grad():
                 for i in range(0, len(first), 10000):
                     end_max = i + 10000
                     first_idx, second_idx = first[i:end_max], second[i:end_max]
                     batch_labels = pairwise_labels[i:end_max]
-                    g1 = span_repr(start_end_embeddings[first_idx],
-                                   [continuous_embeddings[k] for k in first_idx],
-                                   width[first_idx])
-                    g2 = span_repr(start_end_embeddings[second_idx],
-                                   [continuous_embeddings[k] for k in second_idx],
-                                   width[second_idx])
+                    g1 = span_repr(topic_spans.start_end_embeddings[first_idx],
+                                   [topic_spans.continuous_embeddings[k] for k in first_idx],
+                                   topic_spans.width[first_idx])
+                    g2 = span_repr(topic_spans.start_end_embeddings[second_idx],
+                                   [topic_spans.continuous_embeddings[k] for k in second_idx],
+                                   topic_spans.width[second_idx])
                     scores = pairwise_model(g1, g2)
 
                     if config['training_method'] in ('continue', 'e2e') and not config['use_gold_mentions']:

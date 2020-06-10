@@ -3,10 +3,12 @@ import collections
 import torch
 
 
+
 class Corpus:
-    def __init__(self, documents, tokenizer, mentions, subtopic=True, predicted_topics=None):
+    def __init__(self, documents, tokenizer, segment_window, mentions, subtopic=True, predicted_topics=None):
         self.documents = documents
         self.mentions = mentions
+        self.segment_window = segment_window
 
         self.topic_list = []
         self.topics_list_of_docs = []
@@ -33,6 +35,7 @@ class Corpus:
         return label_dict
 
 
+
     def get_candidate_labels(self, doc_ids, starts, ends):
         labels = [0] * len(doc_ids)
         starts = starts.tolist()
@@ -56,7 +59,7 @@ class Corpus:
         text_by_subtopics = collections.defaultdict(list)
         for i, doc_list in enumerate(predicted_subtopics):
             for doc in doc_list:
-                doc_key = doc + '.xml'
+                doc_key = doc #+ '.xml'
                 if doc_key in self.documents:
                     text_by_subtopics[i].append(doc_key)
 
@@ -70,19 +73,20 @@ class Corpus:
             topic_key = doc_id.split('_')[0]
             if subtopic:
                 topic_key += '_{}'.format(1 if 'plus' in doc_id else 0)
-
             docs_by_topics[topic_key].append(doc_id)
 
         return docs_by_topics
 
 
-    def split_doc_into_segments(self, bert_tokens, sentence_ids, segment_length=512, with_special_tokens=True):
+
+    def split_doc_into_segments(self, bert_tokens, sentence_ids, with_special_tokens=True):
         segments = [0]
         current_token = 0
+        max_segment_length = self.segment_window
         if with_special_tokens:
-            segment_length -= 2
+            max_segment_length -= 2
         while current_token < len(bert_tokens):
-            end_token = min(len(bert_tokens) - 1, current_token + segment_length - 1)
+            end_token = min(len(bert_tokens) - 1, current_token + max_segment_length - 1)
             sentence_end = sentence_ids[end_token]
             if end_token != len(bert_tokens) - 1 and sentence_ids[end_token + 1] == sentence_end:
                 while end_token >= current_token and sentence_ids[end_token] == sentence_end:
@@ -112,7 +116,6 @@ class Corpus:
             alignment = []
             bert_cursor = -1
 
-
             for i, token in enumerate(tokens):
                 sent_id, token_id, token_text, flag_sentence = token
                 bert_token = tokenizer.encode(token_text, add_special_tokens=True)[1:-1]
@@ -124,7 +127,6 @@ class Corpus:
                     bert_cursor += len(bert_token)
                     bert_end_index = bert_cursor
                     end_bert_idx.append(bert_end_index)
-
                     original_tokens.append([sent_id, token_id, token_text, flag_sentence])
                     bert_sentence_ids.extend([sent_id] * len(bert_token))
                     alignment.extend([token_id] * len(bert_token))

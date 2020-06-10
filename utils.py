@@ -6,6 +6,7 @@ import random
 import numpy as np
 import smtplib
 import torch.optim as optim
+from transformers import AdamW
 import json
 from datetime import datetime
 import pickle
@@ -15,9 +16,9 @@ from corpus import Corpus
 
 
 def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
-    docs_path = os.path.join(config['data_folder'], split_name + '.json')
-    mentions_path = os.path.join(config['data_folder'],
-                                 split_name + '_{}.json'.format(config['mention_type']))
+    docs_path = os.path.join(config.data_folder, split_name + '.json')
+    mentions_path = os.path.join(config.data_folder,
+                                 split_name + '_{}.json'.format(config.mention_type))
     with open(docs_path, 'r') as f:
         documents = json.load(f)
 
@@ -27,12 +28,13 @@ def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
             mentions = json.load(f)
 
     predicted_topics = None
-    if config['use_predicted_subtopics']:
-        predicted_topics_path = '/home/nlp/ariecattan/event_entity_coref_ecb_plus/data/external/document_clustering/predicted_topics'
+    if config.use_predicted_topics:
+        predicted_topics_path = '/home/nlp/ariecattan/coref/data/ecb/predicted_topics'
         with open(predicted_topics_path, 'rb') as f:
             predicted_topics = pickle.load(f)
 
-    corpus = Corpus(documents, tokenizer, mentions, config['subtopic'], predicted_topics)
+    print('Split - {}'.format(split_name))
+    corpus = Corpus(documents, tokenizer, config.segment_window, mentions, config.subtopic, predicted_topics)
 
     return corpus
 
@@ -48,11 +50,11 @@ def create_logger(config, create_file=True):
     logger.addHandler(c_handler)
 
     if create_file:
-        if not os.path.exists(config['log_path']):
-            os.makedirs(config['log_path'])
+        if not os.path.exists(config.log_path):
+            os.makedirs(config.log_path)
 
         f_handler = logging.FileHandler(
-            os.path.join(config['log_path'],'{}.txt'.format(datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))), mode='w')
+            os.path.join(config.log_path,'{}.txt'.format(datetime.now().strftime("%Y_%m_%d_%H_%M_%S"))), mode='w')
         f_handler.setLevel(logging.INFO)
         f_handler.setFormatter(formatter)
         logger.addHandler(f_handler)
@@ -67,16 +69,16 @@ def create_folder(path):
 
 
 def fix_seed(config):
-    torch.manual_seed(config['random_seed'])
-    random.seed(config['random_seed'])
-    np.random.seed(config['random_seed'])
+    torch.manual_seed(config.random_seed)
+    random.seed(config.random_seed)
+    np.random.seed(config.random_seed)
     if torch.cuda.is_available():
-        torch.cuda.manual_seed(config['random_seed'])
-        torch.cuda.manual_seed_all(config['random_seed'])
+        torch.cuda.manual_seed(config.random_seed)
+        torch.cuda.manual_seed_all(config.random_seed)
 
 
 def get_loss_function(config):
-    if config['loss'] == 'hinge':
+    if config.loss == 'hinge':
         return torch.nn.HingeEmbeddingLoss()
     else:
         return torch.nn.BCEWithLogitsLoss()
@@ -87,18 +89,17 @@ def get_optimizer(config, models):
     for model in models:
         parameters += list(model.parameters())
 
-    if config['optimizer'] == "adam":
-        return optim.Adam(parameters, lr=config['learning_rate'], weight_decay=config['weight_decay'])
+    if config.optimizer == "adam":
+        return optim.Adam(parameters, lr=config.learning_rate, weight_decay=config.weight_decay, eps=config.adam_epsilon)
+    elif config.optimizer == "adamw":
+        return AdamW(parameters, lr=config.learning_rate, weight_decay=config.weight_decay, eps=config.adam_epsilon)
     else:
-        return optim.SGD(parameters, lr=config['learning_rate'], weight_decay=config['weight_decay'])
+        return optim.SGD(parameters, lr=config.learning_rate, weight_decay=config.weight_decay)
+
 
 
 def count_parameters(model):
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
-
-
-
-
 
 
 def add_to_dic(dic, key, val):
