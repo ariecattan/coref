@@ -28,7 +28,7 @@ def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
             mentions = json.load(f)
 
     predicted_topics = None
-    if config.use_predicted_topics:
+    if not config.use_predicted_topics:
         predicted_topics_path = '/home/nlp/ariecattan/coref/data/ecb/predicted_topics'
         with open(predicted_topics_path, 'rb') as f:
             predicted_topics = pickle.load(f)

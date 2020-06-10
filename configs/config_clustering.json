@@ -17,9 +17,8 @@
   "subtopic": false,
   "segment_window": 512,
 
-
   "topic_level": true,
-  "use_predicted_topics": false,
+  "predicted_topics_path": "/home/nlp/ariecattan/coref/data/ecb/predicted_topics",
 
   "data_folder": "data/ecb/mentions",
   "save_path": "models/deadline/",

@@ -78,6 +78,10 @@ clustering in order to cluster the candidate spans into coreference clusters.
 
 (`model_path` corresponds to the directory in which you've stored the trained models)
 
+An important configuration in the `config_clustering` is the `topic_level`. 
+If you set `false`, you need to provide the path to the predicted topics in `predicted_topics_path` 
+to produce conll files at the corpus level. 
+
 ## Evaluation
 
 The output of the `predict.py` script is a file in the standard conll format. 
@@ -87,7 +91,7 @@ using the official conll coreference scorer
 that you can find 
 [here](https://github.com/conll/reference-coreference-scorers).
 
-
+Make sure to use the gold files of the same evaluation level (topic or corpus) as the predictions. 
 
 
 ## Notes
