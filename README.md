@@ -2,8 +2,7 @@
 
 This repository contains code and models for cross-document coreference resolution. 
 The models are trained on ECB+, but they can be used for any setting of multiple documents.
-Our model is the current state-of-the-art on ECB+ on gold mentions 
-and the first model which can work on raw texts as well.
+
 
 
 
