@@ -35,8 +35,8 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
         topic = doc_id.split('_')[0]
         subtopic = topic + '_{}'.format(1 if 'plus' in doc_id else 0)
         for sentence_id, token_id, token_text, flag in tokens:
-            if not flag:
-                continue
+            # if not flag:
+            #     continue
             clusters = '-'
             coref_list = list()
             if flag:
@@ -64,7 +64,7 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
 
 def write_output_file(data, predictions, doc_ids, starts, ends, dir_path, doc_name, topic_level=True, corpus_level=True):
     doc_start_map, doc_end_map, doc_word_map = get_dict_map(predictions, doc_ids, starts, ends)
-    corpus_level = output_conll(data, doc_word_map, doc_start_map, doc_end_map)
+    corpus_level_tokens = output_conll(data, doc_word_map, doc_start_map, doc_end_map)
 
     # doc_name = '_'.join(os.path.basename(path).split('_')[:2])
 
@@ -76,14 +76,14 @@ def write_output_file(data, predictions, doc_ids, starts, ends, dir_path, doc_na
         doc_name = '_'.join(doc_name.split('_')[:2])
         with open(corpus_level_path, 'w') as f:
             f.write('#begin document {}\n'.format(doc_name))
-            for token in corpus_level:
+            for token in corpus_level_tokens:
                 f.write('\t'.join([str(x) for x in token]) + '\n')
             f.write('#end document')
 
 
     if topic_level:
         topic_level = collections.defaultdict(list)
-        for token in corpus_level:
+        for token in corpus_level_tokens:
             topic = token[0]
             topic_level[topic].append(token)
 
