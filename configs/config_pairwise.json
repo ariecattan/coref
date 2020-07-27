@@ -1,5 +1,5 @@
 {
-  "gpu_num" : [3],
+  "gpu_num" : [0, 1, 2, 3],
   "roberta_model": "roberta-large",
   "bert_hidden_size": 1024,
   "hidden_layer": 1024,
@@ -9,8 +9,8 @@
   "embedding_dimension": 20,
 
   "max_mention_span": 10,
-  "use_gold_mentions": false,
-  "mention_type": "mixed",
+  "use_gold_mentions": true,
+  "mention_type": "events",
   "top_k": 0.45,
   "training_method": "continue",
   "subtopic": false,
@@ -24,7 +24,7 @@
   "loss": "bce",
   "optimizer": "adam",
   "adam_epsilon": 1e-8,
-  "segment_window": 512,
+  "segment_window": 256,
 
   "log_path": "logs/pairwise_scorer",
   "data_folder": "data/ecb/mentions",
