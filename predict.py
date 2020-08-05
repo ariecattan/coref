@@ -202,7 +202,7 @@ if __name__ == '__main__':
         all_clusters[cluster_id].append(i)
 
 
-    if config['use_gold_mentions']:
+    if not config['use_gold_mentions']:
         all_clusters, doc_ids, starts, ends = remove_nested_mentions(all_clusters, doc_ids, starts, ends)
 
     all_clusters = {cluster_id:mentions for cluster_id, mentions in all_clusters.items() if len(mentions) > 1}
