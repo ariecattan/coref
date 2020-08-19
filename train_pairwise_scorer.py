@@ -238,12 +238,3 @@ if __name__ == '__main__':
         torch.save(span_repr.state_dict(), os.path.join(config['model_path'], 'span_repr_{}'.format(epoch)))
         torch.save(span_scorer.state_dict(), os.path.join(config['model_path'], 'span_scorer_{}'.format(epoch)))
         torch.save(pairwise_model.state_dict(), os.path.join(config['model_path'], 'pairwise_scorer_{}'.format(epoch)))
-
-
-    user = 'gpus.experiment@gmail.com'
-    pwd = 'Gpusexperiments'
-    recipient = 'arie.cattan@gmail.com'
-    subject = 'Training is done ({} - {})'.format(config['mention_type'], config['training_method'])
-    message = 'F1: {} \n\n'.format(f1) + pyhocon.HOCONConverter.convert(config, "hocon")
-
-    send_email(user, pwd, recipient, subject, message)

@@ -1,7 +1,7 @@
 import collections
 import operator
 import os
-import pandas as pd
+
 
 
 def get_dict_map(predictions, doc_ids, starts, ends):
@@ -35,8 +35,8 @@ def output_conll(data, doc_word_map, doc_start_map, doc_end_map):
         topic = doc_id.split('_')[0]
         subtopic = topic + '_{}'.format(1 if 'plus' in doc_id else 0)
         for sentence_id, token_id, token_text, flag in tokens:
-            # if not flag:
-            #     continue
+            if not flag:
+                continue
             clusters = '-'
             coref_list = list()
             if flag:
@@ -71,6 +71,9 @@ def write_output_file(data, predictions, doc_ids, starts, ends, dir_path, doc_na
     corpus_level_path = os.path.join(dir_path, '{}_corpus_level.conll'.format(doc_name))
     topic_level_path = os.path.join(dir_path, '{}_topic_level.conll'.format(doc_name))
 
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+
 
     if corpus_level:
         doc_name = '_'.join(doc_name.split('_')[:2])
@@ -93,4 +96,3 @@ def write_output_file(data, predictions, doc_ids, starts, ends, dir_path, doc_na
                 for token in tokens:
                     f.write('\t'.join([str(x) for x in token]) + '\n')
                 f.write('#end document\n')
-

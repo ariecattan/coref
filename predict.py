@@ -107,6 +107,7 @@ if __name__ == '__main__':
     max_cluster_id = 0
 
     # Go through each topic
+
     for topic_num, topic in enumerate(data.topic_list):
         print('Processing topic {}'.format(topic))
         docs_embeddings, docs_length = pad_and_read_bert(data.topics_bert_tokens[topic_num], bert_model)
@@ -202,7 +203,7 @@ if __name__ == '__main__':
         all_clusters[cluster_id].append(i)
 
 
-    if config['use_gold_mentions']:
+    if not config['use_gold_mentions']:
         all_clusters, doc_ids, starts, ends = remove_nested_mentions(all_clusters, doc_ids, starts, ends)
 
     all_clusters = {cluster_id:mentions for cluster_id, mentions in all_clusters.items() if len(mentions) > 1}

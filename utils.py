@@ -6,7 +6,7 @@ import random
 import numpy as np
 import smtplib
 import torch.optim as optim
-from transformers import AdamW
+from transformers import AdamW, get_linear_schedule_with_warmup
 import json
 from datetime import datetime
 import pickle
@@ -15,7 +15,7 @@ from corpus import Corpus
 
 
 
-def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
+def create_corpus(config, tokenizer, split_name):
     docs_path = os.path.join(config.data_folder, split_name + '.json')
     mentions_path = os.path.join(config.data_folder,
                                  split_name + '_{}.json'.format(config.mention_type))
@@ -23,29 +23,31 @@ def create_corpus(config, tokenizer, split_name, use_gold_mentions=True):
         documents = json.load(f)
 
     mentions = []
-    if use_gold_mentions:
+    if config.use_gold_mentions:
         with open(mentions_path, 'r') as f:
             mentions = json.load(f)
 
     predicted_topics = None
-    if not config.use_predicted_topics:
+    if config.use_predicted_topics:
         predicted_topics_path = '/home/nlp/ariecattan/coref/data/ecb/predicted_topics'
         with open(predicted_topics_path, 'rb') as f:
             predicted_topics = pickle.load(f)
 
-    print('Split - {}'.format(split_name))
-    corpus = Corpus(documents, tokenizer, config.segment_window, mentions, config.subtopic, predicted_topics)
+    logging.info('Split - {}'.format(split_name))
 
-    return corpus
+    return Corpus(documents, tokenizer, config.segment_window, mentions, subtopic=config.subtopic, predicted_topics=predicted_topics)
+
+
+
 
 
 def create_logger(config, create_file=True):
-    logging.basicConfig(datefmt='%Y-%m-%d %H:%M:%S', format='w')
-    logger = logging.getLogger(__name__)
+    logging.basicConfig(datefmt='%Y-%m-%d %H:%M:%S')
+    logger = logging.getLogger('simple_example')
     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 
     c_handler = logging.StreamHandler()
-    c_handler.setLevel(logging.DEBUG)
+    c_handler.setLevel(logging.INFO)
     c_handler.setFormatter(formatter)
     logger.addHandler(c_handler)
 
@@ -58,6 +60,7 @@ def create_logger(config, create_file=True):
         f_handler.setLevel(logging.INFO)
         f_handler.setFormatter(formatter)
         logger.addHandler(f_handler)
+
     logger.propagate = False
 
     return logger
@@ -96,6 +99,9 @@ def get_optimizer(config, models):
     else:
         return optim.SGD(parameters, lr=config.learning_rate, weight_decay=config.weight_decay)
 
+
+def get_scheduler(optimizer, total_steps):
+    return get_linear_schedule_with_warmup(optimizer, num_warmup_steps=0, num_training_steps=total_steps)
 
 
 def count_parameters(model):

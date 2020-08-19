@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
-from transformers import *
+
 
 
 def init_weights(m):
@@ -111,26 +111,3 @@ class SimplePairWiseClassifier(nn.Module):
         return self.pairwise_mlp(torch.cat((first, second, first * second), dim=1))
 
 
-
-
-
-class FullCrossEncoder(nn.Module):
-    def __init__(self, config):
-        super(FullCrossEncoder, self).__init__()
-        self.segment_size = config.segment_window * 2
-
-        self.tokenizer = RobertaTokenizer.from_pretrained(config.roberta_model)
-        self.tokenizer.add_tokens(['[START]', '[END]'])
-
-        self.model = RobertaModel.from_pretrained(config.roberta_model)
-        self.model.resize_token_embeddings(len(self.tokenizer))
-        self.hidden_size = self.model.config.hidden_size
-        self.linear = nn.Linear(self.hidden_size, 1)
-
-
-    def forward(self, input_ids, attention_mask):
-        output, _ = self.model(input_ids, attention_mask)
-        cls_vector = output[:, 0, :]
-        scores = self.linear(cls_vector)
-
-        return scores
