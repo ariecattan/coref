@@ -30,6 +30,7 @@ class SpanEmbedder(nn.Module):
         self.width_feature = nn.Embedding(5, config.embedding_dimension)
 
 
+
     def pad_continous_embeddings(self, continuous_embeddings):
         max_length = max(len(v) for v in continuous_embeddings)
         padded_tokens_embeddings = torch.stack(
@@ -43,6 +44,7 @@ class SpanEmbedder(nn.Module):
              for emb in continuous_embeddings]
         )
         return padded_tokens_embeddings, masks
+
 
 
     def forward(self, start_end, continuous_embeddings, width):

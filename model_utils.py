@@ -20,6 +20,7 @@ def pad_and_read_bert(bert_token_ids, bert_model):
     return embeddings, length
 
 
+
 def get_docs_candidate(original_tokens, bert_start_end, max_span_width):
     num_tokens = len(original_tokens)
     sentences = torch.tensor([x[0] for x in original_tokens])
@@ -113,24 +114,3 @@ def get_all_candidate_from_topic(config, data, topic_num, docs_embeddings, docs_
             torch.tensor(span_origin_end)), \
            (topic_start_end_embeddings, topic_continuous_embeddings, topic_width), \
            num_tokens
-
-
-
-def create_span_segment(topic_spans, topic_num, idx):
-    segment_id = topic_spans.segment_ids[idx]
-    start = topic_spans.origin_start[idx]
-    end = topic_spans.origin_end[idx]
-
-    origin_tokens = [(token[1], token[2]) for token in
-                     topic_spans.data.topics_origin_tokens[topic_num][segment_id]]
-    ids, tokens = zip(*origin_tokens)
-    ids, tokens = list(ids), list(tokens)
-    start_idx = ids.index(start)
-    end_idx = ids.index(end)
-
-    left_context = tokens[:start_idx]
-    span_text = tokens[start_idx:end_idx + 1]
-    right_context = tokens[end_idx+1:]
-    mention_segment = left_context + ["[START]"] + span_text + ["[END]"]  + right_context
-
-    return ' '.join(mention_segment)

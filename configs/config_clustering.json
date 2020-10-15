@@ -10,21 +10,22 @@
 
   "max_mention_span": 10,
   "use_gold_mentions": false,
-  "mention_type": "mixed",
-  "top_k": 0.45,
+  "mention_type": "events",
+  "top_k": 0.25,
   "split": "test",
   "training_method": "continue",
   "subtopic": false,
+  "use_predicted_topics": false,
   "segment_window": 512,
 
   "topic_level": true,
-  "predicted_topics_path": "/home/nlp/ariecattan/coref/data/ecb/predicted_topics",
+  "predicted_topics_path": "",
 
   "data_folder": "data/ecb/mentions",
-  "save_path": "models/deadline/",
-  "model_path" : "models/deadline/predicted/predicted_mentions_mixed_continue_0.45",
-  "model_num": 6,
+  "save_path": "models/camera_ready/events_0.25_",
+  "model_path" : "models/camera_ready/events_0.25_",
+  "model_num": 1,
 
-  "threshold": 0.55,
+  "threshold": 0.65,
   "linkage_type": "average"
 }

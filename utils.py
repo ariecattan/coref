@@ -15,7 +15,7 @@ from corpus import Corpus
 
 
 
-def create_corpus(config, tokenizer, split_name):
+def create_corpus(config, tokenizer, split_name, is_training=True):
     docs_path = os.path.join(config.data_folder, split_name + '.json')
     mentions_path = os.path.join(config.data_folder,
                                  split_name + '_{}.json'.format(config.mention_type))
@@ -23,7 +23,7 @@ def create_corpus(config, tokenizer, split_name):
         documents = json.load(f)
 
     mentions = []
-    if config.use_gold_mentions:
+    if config.use_gold_mentions or is_training:
         with open(mentions_path, 'r') as f:
             mentions = json.load(f)
 

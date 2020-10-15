@@ -1,14 +1,17 @@
+from sklearn.cluster import AgglomerativeClustering
+import argparse
+import pyhocon
+from transformers import RobertaTokenizer, RobertaModel
+from itertools import product
+import collections
+
 from conll import write_output_file
 from models import SpanScorer, SimplePairWiseClassifier, SpanEmbedder
 from utils import *
 from model_utils import *
 
-import argparse
-import pyhocon
-from transformers import RobertaTokenizer, RobertaModel
-from sklearn.cluster import AgglomerativeClustering
-from itertools import product
-import collections
+
+
 
 
 def init_models(config, device):

@@ -1,5 +1,5 @@
 {
-  "gpu_num" : [0],
+  "gpu_num" : [1],
   "roberta_model": "roberta-large",
   "bert_hidden_size": 1024,
   "hidden_layer": 1024,
@@ -9,13 +9,12 @@
   "embedding_dimension": 20,
 
   "max_mention_span": 10,
-  "use_gold_mentions": true,
+  "use_gold_mentions": false,
   "mention_type": "events",
-  "top_k": 0.45,
+  "top_k": 0.25,
   "training_method": "continue",
   "subtopic": false,
   "use_predicted_topics": false,
-
 
   "random_seed": 0,
   "epochs": 10,
@@ -25,11 +24,11 @@
   "loss": "bce",
   "optimizer": "adam",
   "adam_epsilon": 1e-8,
-  "segment_window": 256,
+  "segment_window": 512,
 
-  "log_path": "logs/pairwise_scorer/cross_encoder",
+  "log_path": "logs/pairwise_scorer/camera_ready",
   "data_folder": "data/ecb/mentions",
-  "span_repr_path": "models/mixed_span_repr_0",
-  "span_scorer_path": "models/mixed_span_scorer_0",
-  "model_path": "models/predicted_mentions_mixed_continue_0.45"
+  "span_repr_path": "models/event_span_repr_0",
+  "span_scorer_path": "models/event_span_scorer_0",
+  "model_path": "models/camera_ready/events_0.25_"
 }
