@@ -23,14 +23,13 @@ def create_corpus(config, tokenizer, split_name, is_training=True):
         documents = json.load(f)
 
     mentions = []
-    if config.use_gold_mentions or is_training:
+    if is_training or config.use_gold_mentions:
         with open(mentions_path, 'r') as f:
             mentions = json.load(f)
 
     predicted_topics = None
-    if config.use_predicted_topics:
-        predicted_topics_path = '/home/nlp/ariecattan/coref/data/ecb/predicted_topics'
-        with open(predicted_topics_path, 'rb') as f:
+    if not is_training and config.use_predicted_topics:
+        with open(config.predicted_topics_path, 'rb') as f:
             predicted_topics = pickle.load(f)
 
     logging.info('Split - {}'.format(split_name))

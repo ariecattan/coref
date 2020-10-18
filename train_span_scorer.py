@@ -1,7 +1,7 @@
 import argparse
 import pyhocon
 from sklearn.utils import shuffle
-from transformers import RobertaTokenizer, RobertaModel
+from transformers import AutoTokenizer, AutoModel
 from tqdm import tqdm
 
 from evaluator import Evaluation
@@ -55,6 +55,8 @@ def get_span_data_from_topic(config, bert_model, data, topic_num):
 
 
 
+
+
 if __name__ == '__main__':
     config = pyhocon.ConfigFactory.parse_file(args.config)
     fix_seed(config)
@@ -71,15 +73,15 @@ if __name__ == '__main__':
 
 
     # read and tokenize data
-    roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'], add_special_tokens=True)
-    training_set = create_corpus(config, roberta_tokenizer, 'train')
-    dev_set = create_corpus(config, roberta_tokenizer, 'dev')
+    bert_tokenizer = AutoTokenizer.from_pretrained(config['bert_model'], add_special_tokens=True)
+    training_set = create_corpus(config, bert_tokenizer, 'train')
+    dev_set = create_corpus(config, bert_tokenizer, 'dev')
 
 
 
     # Mention extractor configuration
     logger.info('Init models')
-    bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
+    bert_model = AutoModel.from_pretrained(config['bert_model']).to(device)
     config['bert_hidden_size'] = bert_model.config.hidden_size
     span_repr = SpanEmbedder(config, device).to(device)
     span_scorer = SpanScorer(config).to(device)

@@ -1,7 +1,7 @@
 import argparse
 import pyhocon
 from sklearn.utils import shuffle
-from transformers import RobertaTokenizer, RobertaModel
+from transformers import AutoTokenizer, AutoModel
 from tqdm import tqdm
 from itertools import combinations
 
@@ -121,14 +121,14 @@ if __name__ == '__main__':
     device = torch.device('cuda:{}'.format(config.gpu_num[0]))
 
     # init train and dev set
-    roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
-    training_set = create_corpus(config, roberta_tokenizer, 'train')
-    dev_set = create_corpus(config, roberta_tokenizer, 'dev')
+    bert_tokenizer = AutoTokenizer.from_pretrained(config['bert_model'])
+    training_set = create_corpus(config, bert_tokenizer, 'train')
+    dev_set = create_corpus(config, bert_tokenizer, 'dev')
 
 
     ## Model initiation
     logger.info('Init models')
-    bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
+    bert_model = AutoModel.from_pretrained(config['bert_model']).to(device)
     config['bert_hidden_size'] = bert_model.config.hidden_size
 
     span_repr = SpanEmbedder(config, device).to(device)
@@ -174,7 +174,7 @@ if __name__ == '__main__':
         for topic_num in tqdm(list_of_topics):
             topic = training_set.topic_list[topic_num]
             topic_spans = get_all_candidate_spans(config, bert_model, span_repr, span_scorer, training_set, topic_num)
-            first, second, pairwise_labels = get_pairwise_labels(topic_spans.labels, is_training=True)
+            first, second, pairwise_labels = get_pairwise_labels(topic_spans.labels, is_training=config['neg_samp'])
             span_embeddings = topic_spans.start_end_embeddings, topic_spans.continuous_embeddings, topic_spans.width
             loss = train_pairwise_classifier(config, pairwise_model, span_repr, span_scorer, span_embeddings, first,
                                                    second, pairwise_labels, config['batch_size'], criterion, optimizer)

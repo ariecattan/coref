@@ -1,31 +1,31 @@
 {
-  "gpu_num" : [0],
+  "gpu_num" : [1],
 
-  "roberta_model": "roberta-large",
+  "bert_model": "roberta-large",
   "hidden_layer": 1024,
   "dropout": 0.3,
   "with_mention_width": true,
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "max_mention_span": 10,
+  "max_mention_span": 15,
   "use_gold_mentions": false,
-  "mention_type": "events",
-  "top_k": 0.25,
+  "mention_type": "entities",
+  "top_k": 0.35,
   "split": "test",
   "training_method": "continue",
   "subtopic": false,
-  "use_predicted_topics": false,
+  "use_predicted_topics": true,
   "segment_window": 512,
 
-  "topic_level": true,
-  "predicted_topics_path": "",
+  "topic_level": false,
+  "predicted_topics_path": "/home/nlp/ariecattan/coreference/coref/data/ecb/predicted_topics",
 
   "data_folder": "data/ecb/mentions",
-  "save_path": "models/camera_ready/events_0.25_",
-  "model_path" : "models/camera_ready/events_0.25_",
-  "model_num": 1,
+  "save_path": "models/topic_level_predicted_mentions/entity_0.35",
+  "model_path" : "models/topic_level_predicted_mentions/entity_0.35",
+  "model_num": 9,
 
-  "threshold": 0.65,
+  "threshold": 0.6,
   "linkage_type": "average"
 }

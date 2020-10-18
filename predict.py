@@ -1,9 +1,10 @@
 from sklearn.cluster import AgglomerativeClustering
 import argparse
 import pyhocon
-from transformers import RobertaTokenizer, RobertaModel
+from transformers import AutoTokenizer, AutoModel
 from itertools import product
 import collections
+from tqdm import tqdm
 
 from conll import write_output_file
 from models import SpanScorer, SimplePairWiseClassifier, SpanEmbedder
@@ -94,7 +95,7 @@ if __name__ == '__main__':
 
 
     # Load models and init clustering
-    bert_model = RobertaModel.from_pretrained(config['roberta_model']).to(device)
+    bert_model = AutoModel.from_pretrained(config['bert_model']).to(device)
     config['bert_hidden_size'] = bert_model.config.hidden_size
     span_repr, span_scorer, pairwise_scorer = init_models(config, device)
     clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
@@ -102,8 +103,8 @@ if __name__ == '__main__':
 
 
     # Load data
-    roberta_tokenizer = RobertaTokenizer.from_pretrained(config['roberta_model'])
-    data = create_corpus(config, roberta_tokenizer, config.split)
+    bert_tokenizer = AutoTokenizer.from_pretrained(config['bert_model'])
+    data = create_corpus(config, bert_tokenizer, config.split, is_training=False)
 
     doc_ids, sentence_ids, starts, ends = [], [], [], []
     all_topic_predicted_clusters = []

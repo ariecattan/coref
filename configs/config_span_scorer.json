@@ -1,7 +1,7 @@
 {
   "gpu_num" : 3,
 
-  "roberta_model": "roberta-large",
+  "bert_model": "roberta-large",
   "hidden_layer": 1024,
   "dropout": 0.3,
   "with_mention_width": true,
@@ -9,19 +9,22 @@
   "embedding_dimension": 20,
 
   "max_mention_span": 10,
-  "mention_type": "mixed",
+  "mention_type": "events",
+  "subtopic": false,
+  "segment_window": 512,
 
   "random_seed": 0,
-  "epochs": 20,
+  "epochs": 10,
   "batch_size": 16,
   "learning_rate": 1e-4,
   "weight_decay": 0,
   "loss": "bce",
   "optimizer": "adam",
+  "adam_epsilon": 1e-8,
 
 
   "log_path": "logs/span_scorer",
   "data_folder": "data/ecb/mentions",
-  "model_path": "models",
+  "model_path": "models/bert_span_scorers",
   "exp_num": 0
 }

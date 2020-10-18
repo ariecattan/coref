@@ -38,9 +38,9 @@ def get_mention_doc(root, doc_name, validated_sentences):
                 continue
             tokens = ' '.join(list(map(lambda x: root[x-1].text, tokens_ids)))
             lemmas, tags = [], []
-            for tok in nlp(tokens):
-                lemmas.append(tok.lemma_)
-                tags.append(tok.tag_)
+            # for tok in nlp(tokens):
+            #     lemmas.append(tok.lemma_)
+            #     tags.append(tok.tag_)
 
             mentions_fields[m_id] = {
                 "doc_id": doc_name,
@@ -239,7 +239,7 @@ def save_gold_conll_files(documents, mentions, clusters, dir_path, doc_name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
-    parser.add_argument('--data_path', type=str, default='data/datasets/ECB+_LREC2014',
+    parser.add_argument('--data_path', type=str, default='/home/nlp/ariecattan/coref/data/datasets/ECB+_LREC2014',
                         help=' Path to ECB+ corpus')
     parser.add_argument('--output_dir', type=str, default='data/ecb',
                         help=' The directory of the output files')
