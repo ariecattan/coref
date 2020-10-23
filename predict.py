@@ -161,9 +161,9 @@ if __name__ == '__main__':
             # all_scores.csv.extend(scores.squeeze(1))
             # torch.cuda.empty_cache()
 
-            for i in range(0, len(first), 1000):
+            for i in range(0, len(first), 10000):
                 # end_max = min(i+100000, len(first))
-                end_max = i+1000
+                end_max = i+10000
                 first_idx, second_idx = first[i:end_max], second[i:end_max]
                 g1 = span_repr(start_end_embeddings[first_idx],
                                [continuous_embeddings[k] for k in first_idx],
