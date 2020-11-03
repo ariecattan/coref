@@ -1,9 +1,19 @@
 # Cross-Document Coreference Resolution
 
-This repository contains code and models for cross-document coreference resolution. 
+This repository contains code and models for end-to-end cross-document coreference resolution, as decribed in our paper: [Streamlining Cross-Document Coreference Resolution: Evaluation and Modeling](https://arxiv.org/abs/2009.11032) 
 The models are trained on ECB+, but they can be used for any setting of multiple documents.
 
 
+
+```
+    @article{Cattan2020StreamliningCC,
+      title={Streamlining Cross-Document Coreference Resolution: Evaluation and Modeling},
+      author={Arie Cattan and Alon Eirew and Gabriel Stanovsky and Mandar Joshi and I. Dagan},
+      journal={ArXiv},
+      year={2020},
+      volume={abs/2009.11032}
+    }
+```
 
 
 ## Getting started
@@ -103,3 +113,4 @@ config file.
 the span scorer is not relevant, you should ignore the training
 method.
 
+* If you're interested in a newer model, check out our [cross-encoder model](https://github.com/ariecattan/cross_encoder/)
