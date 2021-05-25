@@ -26,7 +26,7 @@ def main():
     max_conll_f1 = (None, 0)
 
     for key_file in os.listdir(path):
-        if key_file.endswith('conll'):
+        if key_file.endswith('conll') and 'topic' in key_file: # and key_file.startswith('dev'):
             print('Processing file: {}'.format(key_file))
             full_path = os.path.join(path,key_file)
             scores = evaluate(full_path, sys_file, allmetrics, NP_only, remove_nested,

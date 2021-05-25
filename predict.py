@@ -3,16 +3,11 @@ import argparse
 import pyhocon
 from transformers import AutoTokenizer, AutoModel
 from itertools import product
-import collections
-from tqdm import tqdm
 
 from conll import write_output_file
 from models import SpanScorer, SimplePairWiseClassifier, SpanEmbedder
 from utils import *
 from model_utils import *
-
-
-
 
 
 def init_models(config, device):
@@ -28,12 +23,11 @@ def init_models(config, device):
     span_scorer.eval()
     pairwise_scorer = SimplePairWiseClassifier(config).to(device)
     pairwise_scorer.load_state_dict(torch.load(os.path.join(config['model_path'],
-                                                           "pairwise_scorer_{}".format(config['model_num'])),
-                                              map_location=device))
+                                                            "pairwise_scorer_{}".format(config['model_num'])),
+                                               map_location=device))
     pairwise_scorer.eval()
 
     return span_repr, span_scorer, pairwise_scorer
-
 
 
 def is_included(docs, starts, ends, i1, i2):
@@ -61,7 +55,6 @@ def remove_nested_mentions(cluster_ids, doc_ids, starts, ends):
         start = starts[idx]
         end = ends[idx]
 
-
         for i in range(len(idx)):
             indicator = [is_included(docs, start, end, i, j) for j in range(len(idx))]
             if sum(indicator) > 1:
@@ -72,15 +65,11 @@ def remove_nested_mentions(cluster_ids, doc_ids, starts, ends):
             new_starts.append(start[i])
             new_ends.append(end[i])
 
-
     clusters = collections.defaultdict(list)
     for i, cluster_id in enumerate(new_cluster_ids):
         clusters[cluster_id].append(i)
 
     return clusters, new_docs_ids, new_starts, new_ends
-
-
-
 
 
 if __name__ == '__main__':
@@ -93,14 +82,12 @@ if __name__ == '__main__':
     create_folder(config['save_path'])
     device = 'cuda:{}'.format(config['gpu_num'][0]) if torch.cuda.is_available() else 'cpu'
 
-
     # Load models and init clustering
     bert_model = AutoModel.from_pretrained(config['bert_model']).to(device)
     config['bert_hidden_size'] = bert_model.config.hidden_size
     span_repr, span_scorer, pairwise_scorer = init_models(config, device)
     clustering = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
                                          distance_threshold=config['threshold'])
-
 
     # Load data
     bert_tokenizer = AutoTokenizer.from_pretrained(config['bert_model'])
@@ -127,13 +114,17 @@ if __name__ == '__main__':
         if config['use_gold_mentions']:
             span_indices = labels.nonzero().squeeze(1)
         else:
-            k = int(config['top_k'] * num_of_tokens)
             with torch.no_grad():
                 span_emb = span_repr(start_end_embeddings, continuous_embeddings, width)
                 span_scores = span_scorer(span_emb)
-            _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
-            # span_indices, _ = torch.sort(span_indices)
 
+            if config.exact:
+                span_indices = torch.where(span_scores > 0)[0]
+            else:
+                k = int(config['top_k'] * num_of_tokens)
+                _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
+
+            # span_indices, _ = torch.sort(span_indices)
 
         number_of_mentions = len(span_indices)
         start_end_embeddings = start_end_embeddings[span_indices]
@@ -149,21 +140,8 @@ if __name__ == '__main__':
         torch.cuda.empty_cache()
         all_scores = []
         with torch.no_grad():
-            # g1 = span_repr(start_end_embeddings[first],
-            #                [continuous_embeddings[k] for k in first],
-            #                width[first])
-            # g2 = span_repr(start_end_embeddings[second],
-            #                [continuous_embeddings[k] for k in second],
-            #                width[second])
-            #
-            # scores = pairwise_scorer(g1, g2)
-            # scores = torch.sigmoid(scores)
-            # all_scores.csv.extend(scores.squeeze(1))
-            # torch.cuda.empty_cache()
-
             for i in range(0, len(first), 10000):
-                # end_max = min(i+100000, len(first))
-                end_max = i+10000
+                end_max = i + 10000
                 first_idx, second_idx = first[i:end_max], second[i:end_max]
                 g1 = span_repr(start_end_embeddings[first_idx],
                                [continuous_embeddings[k] for k in first_idx],
@@ -199,18 +177,17 @@ if __name__ == '__main__':
         all_topic_predicted_clusters.extend(predicted_clusters)
         torch.cuda.empty_cache()
 
-
     all_clusters = {}
     for i, cluster_id in enumerate(all_topic_predicted_clusters):
         if cluster_id not in all_clusters:
             all_clusters[cluster_id] = []
         all_clusters[cluster_id].append(i)
 
-
     if not config['use_gold_mentions']:
         all_clusters, doc_ids, starts, ends = remove_nested_mentions(all_clusters, doc_ids, starts, ends)
 
-    all_clusters = {cluster_id:mentions for cluster_id, mentions in all_clusters.items() if len(mentions) > 1}
+    if not config['keep_singletons']:
+        all_clusters = {cluster_id: mentions for cluster_id, mentions in all_clusters.items() if len(mentions) > 1}
 
     print('Saving conll file...')
     doc_name = '{}_{}_{}_{}_model_{}'.format(

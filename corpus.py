@@ -59,7 +59,7 @@ class Corpus:
         text_by_subtopics = collections.defaultdict(list)
         for i, doc_list in enumerate(predicted_subtopics):
             for doc in doc_list:
-                doc_key = doc #+ '.xml'
+                doc_key = doc + '.xml'
                 if doc_key in self.documents:
                     text_by_subtopics[i].append(doc_key)
 

@@ -239,14 +239,14 @@ def save_gold_conll_files(documents, mentions, clusters, dir_path, doc_name):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Parsing ECB+ corpus')
-    parser.add_argument('--data_path', type=str, default='/home/nlp/ariecattan/coref/data/datasets/ECB+_LREC2014',
+    parser.add_argument('--data_path', type=str, default='/home/nlp/ariecattan/coreference/datasets/ECB+_LREC2014',
                         help=' Path to ECB+ corpus')
     parser.add_argument('--output_dir', type=str, default='data/ecb',
                         help=' The directory of the output files')
     args = parser.parse_args()
 
     mentions_path = os.path.join(args.output_dir, 'mentions')
-    gold_conll_path = os.path.join(args.output_dir, 'gold')
+    gold_conll_path = os.path.join(args.output_dir, 'gold_singletons')
 
     if not os.path.exists(mentions_path):
         os.makedirs(mentions_path)

@@ -115,15 +115,22 @@ if __name__ == '__main__':
     clustering_7 = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
                                          distance_threshold=0.7)
 
-    clustering = [clustering_5, clustering_55, clustering_6, clustering_65]
+    clustering = []
+
+    for x in [0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]:
+        agglo = AgglomerativeClustering(n_clusters=None, affinity='precomputed', linkage=config['linkage_type'],
+                                         distance_threshold=x)
+
+        clustering.append(agglo)
+
 
     for num in range(10):
         print('Model {}'.format(num))
         span_repr, span_scorer, pairwise_scorer = init_models(config, device, num)
 
-        clusters = [list(), list(), list(), list()]
-        max_ids = [0, 0, 0, 0]
-        threshold = {id: thresh for id, thresh in enumerate([0.5, 0.55, 0.6, 0.65])}
+        clusters = [list(), list(), list(), list(), list(), list(), list()]
+        max_ids = [0, 0, 0, 0, 0, 0, 0]
+        threshold = {id: thresh for id, thresh in enumerate([0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8])}
 
         doc_ids, sentence_ids, starts, ends = [], [], [], []
 
@@ -140,13 +147,17 @@ if __name__ == '__main__':
             labels = data.get_candidate_labels(doc_id, start, end)
 
             if config['use_gold_mentions']:
-                span_indices = labels.nonzero().squeeze(1)
+                span_indices = torch.nonzero(labels).squeeze(1)
             else:
-                k = int(config['top_k'] * num_of_tokens)
                 with torch.no_grad():
                     span_emb = span_repr(start_end_embeddings, continuous_embeddings, width)
                     span_scores = span_scorer(span_emb)
-                _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
+
+                if config.exact:
+                    span_indices = torch.where(span_scores > 0.5)[0]
+                else:
+                    k = int(config['top_k'] * num_of_tokens)
+                    _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
                 # span_indices, _ = torch.sort(span_indices)
 
             number_of_mentions = len(span_indices)
@@ -219,8 +230,8 @@ if __name__ == '__main__':
                                if len(mentions) > 1}
 
             # print('Saving conll file...')
-            doc_name = 'model_{}_{}_{}_{}_{}'.format(
-                num, 'dev', config['mention_type'], config['linkage_type'], threshold[i])
+            doc_name = 'dev_{}_model_{}_{}_{}'.format(
+                config['mention_type'], num, config['linkage_type'], threshold[i])
 
             write_output_file(data.documents, all_clusters, new_doc_ids, new_starts, new_ends, config['save_path'], doc_name,
                               topic_level=config.topic_level, corpus_level=not config.topic_level)

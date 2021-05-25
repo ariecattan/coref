@@ -1,5 +1,5 @@
 {
-  "gpu_num" : 3,
+  "gpu_num" : 0,
 
   "bert_model": "roberta-large",
   "hidden_layer": 1024,
@@ -10,8 +10,9 @@
 
   "max_mention_span": 10,
   "mention_type": "events",
-  "subtopic": false,
+  "subtopic": true,
   "segment_window": 512,
+  "exact": false,
 
   "random_seed": 0,
   "epochs": 10,
@@ -25,6 +26,6 @@
 
   "log_path": "logs/span_scorer",
   "data_folder": "data/ecb/mentions",
-  "model_path": "models/bert_span_scorers",
+  "model_path": "models/span_scorers",
   "exp_num": 0
 }

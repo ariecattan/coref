@@ -8,24 +8,26 @@
   "with_head_attention": true,
   "embedding_dimension": 20,
 
-  "max_mention_span": 15,
+  "max_mention_span": 10,
   "use_gold_mentions": false,
-  "mention_type": "entities",
-  "top_k": 0.35,
+  "mention_type": "events",
+  "top_k": 0.25,
   "split": "test",
   "training_method": "continue",
   "subtopic": false,
   "use_predicted_topics": true,
   "segment_window": 512,
+  "exact": true,
 
   "topic_level": false,
-  "predicted_topics_path": "/home/nlp/ariecattan/coreference/coref/data/ecb/predicted_topics",
+  "predicted_topics_path": "/home/nlp/ariecattan/coreference/event_entity_coref_ecb_plus/data/external/document_clustering/predicted_topics",
 
   "data_folder": "data/ecb/mentions",
-  "save_path": "models/topic_level_predicted_mentions/entity_0.35",
-  "model_path" : "models/topic_level_predicted_mentions/entity_0.35",
-  "model_num": 9,
+  "save_path": "models/pairwise_scorers",
+  "model_path" : "models/pairwise_scorers",
+  "model_num": 6,
+  "keep_singletons": false,
 
-  "threshold": 0.6,
+  "threshold": 0.75,
   "linkage_type": "average"
 }

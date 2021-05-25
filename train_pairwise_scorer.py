@@ -56,15 +56,19 @@ def get_all_candidate_spans(config, bert_model, span_repr, span_scorer, data, to
 
     ## Pruning the spans according to gold mentions or spans with highiest scores
     if config['use_gold_mentions']:
-        span_indices = topic_spans.labels.nonzero().squeeze(1)
+        span_indices = torch.nonzero(topic_spans.labels).squeeze(1)
     else:
-        k = int(config['top_k'] * topic_spans.num_tokens)
         with torch.no_grad():
             span_emb = span_repr(topic_spans.start_end_embeddings,
                                  topic_spans.continuous_embeddings,
                                  topic_spans.width)
             span_scores = span_scorer(span_emb)
-        _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
+
+        if config.exact:
+            span_indices = torch.where(span_scores > 0)[0]
+        else:
+            k = int(config['top_k'] * topic_spans.num_tokens)
+            _, span_indices = torch.topk(span_scores.squeeze(1), k, sorted=False)
 
     span_indices = span_indices.cpu()
     topic_spans.prune_spans(span_indices)
@@ -81,12 +85,12 @@ def get_pairwise_labels(labels, is_training):
                       (labels[first] == labels[second])
 
     if is_training:
-        positives = (pairwise_labels == 1).nonzero().squeeze()
+        positives = torch.nonzero(pairwise_labels == 1).squeeze()
         positive_ratio = len(positives) / len(first)
-        negatives = (pairwise_labels != 1).nonzero().squeeze()
+        negatives = torch.nonzero(pairwise_labels != 1).squeeze()
         rands = torch.rand(len(negatives))
         rands = (rands < positive_ratio * 20).to(torch.long)
-        sampled_negatives = negatives[rands.nonzero().squeeze()]
+        sampled_negatives = negatives[torch.nonzero(rands).squeeze()]
         new_first = torch.cat((first[positives], first[sampled_negatives]))
         new_second = torch.cat((second[positives], second[sampled_negatives]))
         new_labels = torch.cat((pairwise_labels[positives], pairwise_labels[sampled_negatives]))
@@ -118,8 +122,9 @@ if __name__ == '__main__':
     logger.info(pyhocon.HOCONConverter.convert(config, "hocon"))
     create_folder(config['model_path'])
 
-    device = torch.device('cuda:{}'.format(config.gpu_num[0]))
+    device = torch.device('cuda:{}'.format(config.gpu_num[0])) if torch.cuda.is_available() else 'cpu'
 
+    logger.info('Using device {}'.format(device))
     # init train and dev set
     bert_tokenizer = AutoTokenizer.from_pretrained(config['bert_model'])
     training_set = create_corpus(config, bert_tokenizer, 'train')
@@ -196,6 +201,8 @@ if __name__ == '__main__':
 
         for topic_num, topic in enumerate(tqdm(dev_set.topic_list)):
             topic_spans = get_all_candidate_spans(config, bert_model, span_repr, span_scorer, dev_set, topic_num)
+            # logger.info('Topic: {}'.format(topic_num))
+            # logger.info('Num of labels: {}'.format(len(topic_spans.labels)))
             first, second, pairwise_labels = get_pairwise_labels(topic_spans.labels, is_training=False)
 
             span_embeddings = topic_spans.start_end_embeddings, topic_spans.continuous_embeddings, \
@@ -229,7 +236,7 @@ if __name__ == '__main__':
         strict_preds = (all_scores > 0).to(torch.int)
         eval = Evaluation(strict_preds, all_labels.to(device))
         logger.info('Number of predictions: {}/{}'.format(strict_preds.sum(), len(strict_preds)))
-        logger.info('Number of positive pairs: {}/{}'.format(len((all_labels == 1).nonzero()),
+        logger.info('Number of positive pairs: {}/{}'.format(len(torch.nonzero(all_labels == 1)),
                                                              len(all_labels)))
         logger.info('Strict - Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(),
                                                                         eval.get_precision(), eval.get_f1()))

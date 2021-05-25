@@ -155,20 +155,28 @@ if __name__ == '__main__':
         logger.info(
             'Recall: {}, Precision: {}, F1: {}'.format(eval.get_recall(),
                                                        eval.get_precision(), eval.get_f1()))
-        eval_range = [0.2, 0.25, 0.3] if config['mention_type'] == 'events' else [0.2, 0.25, 0.3, 0.4, 0.45]
-        for k in eval_range:
-            s, i = torch.topk(all_scores, int(k * dev_num_of_tokens), sorted=False)
-            rank_preds = torch.zeros(len(all_scores), device=device)
-            rank_preds[i] = 1
-            eval = Evaluation(rank_preds, all_labels)
-            recall = eval.get_recall()
-            if recall > max_dev[0]:
-                max_dev = (recall, epoch)
+
+        if config.exact:
+            if eval.get_f1() > max_dev[0]:
+                max_dev = (eval.get_f1(), epoch)
                 torch.save(span_repr.state_dict(), span_repr_path)
                 torch.save(span_scorer.state_dict(), span_scorer_path)
-            logger.info(
-                'K = {}, Recall: {}, Precision: {}, F1: {}'.format(k, eval.get_recall(), eval.get_precision(),
-                                                                   eval.get_f1()))
+
+        else:
+            eval_range = [0.2, 0.25, 0.3] if config['mention_type'] == 'events' else [0.2, 0.25, 0.3, 0.4, 0.45]
+            for k in eval_range:
+                s, i = torch.topk(all_scores, int(k * dev_num_of_tokens), sorted=False)
+                rank_preds = torch.zeros(len(all_scores), device=device)
+                rank_preds[i] = 1
+                eval = Evaluation(rank_preds, all_labels)
+                recall = eval.get_recall()
+                if recall > max_dev[0]:
+                    max_dev = (recall, epoch)
+                    torch.save(span_repr.state_dict(), span_repr_path)
+                    torch.save(span_scorer.state_dict(), span_scorer_path)
+                logger.info(
+                    'K = {}, Recall: {}, Precision: {}, F1: {}'.format(k, eval.get_recall(), eval.get_precision(),
+                                                                       eval.get_f1()))
 
 
 
