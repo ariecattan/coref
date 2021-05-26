@@ -17,7 +17,7 @@
   "subtopic": false,
   "use_predicted_topics": true,
   "segment_window": 512,
-  "exact": true,
+  "exact": false,
 
   "topic_level": false,
   "predicted_topics_path": "/home/nlp/ariecattan/coreference/event_entity_coref_ecb_plus/data/external/document_clustering/predicted_topics",
