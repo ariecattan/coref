@@ -1,6 +1,11 @@
 # Cross-Document Coreference Resolution
 
-This repository contains code and models for end-to-end cross-document coreference resolution, as decribed in our paper: [Streamlining Cross-Document Coreference Resolution: Evaluation and Modeling](https://arxiv.org/abs/2009.11032) 
+This repository contains code and models for end-to-end cross-document coreference resolution, 
+as decribed in our papers: 
+
+- [Cross-document Coreference Resolution over Predicted Mentions (Findings of ACL 2021)](https://arxiv.org/abs/2106.01210)
+- [Realistic Evaluation Principles for Cross-document Coreference Resolution (*SEM 2021)](https://arxiv.org/pdf/2106.04192.pdf)
+ 
 The models are trained on ECB+, but they can be used for any setting of multiple documents.
 
 
@@ -131,7 +136,7 @@ Make sure to use the gold files of the same evaluation level (topic or corpus) a
 
 * If you use this model with gold mentions, the span scorer is not relevant, you should ignore the training method.
 
-* If you're interested in a newer model, check out our [cross-encoder model](https://github.com/ariecattan/cross_encoder/)
+* If you're interested in a newer but heavier model, check out our [cross-encoder model](https://github.com/ariecattan/cross_encoder/)
 
 
 
@@ -143,13 +148,4 @@ Make sure to use the gold files of the same evaluation level (topic or corpus) a
 * [Mandar Joshi](https://homes.cs.washington.edu/~mandar90/)
 * [Ido Dagan](https://u.cs.biu.ac.il/~dagan/) 
 
-
-```
-@article{Cattan2020StreamliningCC,
-  title={Streamlining Cross-Document Coreference Resolution: Evaluation and Modeling},
-  author={Arie Cattan and Alon Eirew and Gabriel Stanovsky and Mandar Joshi and I. Dagan},
-  journal={ArXiv},
-  year={2020},
-  volume={abs/2009.11032}
-}
-``` 
+ 

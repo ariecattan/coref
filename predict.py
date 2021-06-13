@@ -166,8 +166,13 @@ if __name__ == '__main__':
         # Affinity score to distance score
         pairwise_distances = 1 - all_scores.view(number_of_mentions, number_of_mentions).numpy()
 
-        predicted = clustering.fit(pairwise_distances)
-        predicted_clusters = predicted.labels_ + max_cluster_id
+
+        if len(pairwise_distances) > 1:
+            predicted = clustering.fit(pairwise_distances)
+            predicted_clusters = predicted.labels_ + max_cluster_id
+        else:
+            predicted_clusters = np.array([0] * len(pairwise_distances)) + max_cluster_id
+
         max_cluster_id = max(predicted_clusters) + 1
 
         doc_ids.extend(doc_id[span_indices.cpu()])
