@@ -20,20 +20,20 @@ def main():
 
     path = sys.argv[1]
     mention_type = sys.argv[2]
-    sys_file = 'data/ecb/gold/dev_{}_topic_level.conll'.format(mention_type)
+    key_file = 'data/ecb/gold/dev_{}_topic_level.conll'.format(mention_type)
 
     all_scores = {}
     max_conll_f1 = (None, 0)
 
-    for key_file in os.listdir(path):
-        if key_file.endswith('conll') and 'topic' in key_file: # and key_file.startswith('dev'):
-            print('Processing file: {}'.format(key_file))
-            full_path = os.path.join(path,key_file)
-            scores = evaluate(full_path, sys_file, allmetrics, NP_only, remove_nested,
+    for sys_file in os.listdir(path):
+        if sys_file.endswith('conll') and 'topic' in sys_file: # and sys_file.startswith('dev'):
+            print('Processing file: {}'.format(sys_file))
+            sys_file_full_path = os.path.join(path, sys_file)
+            scores = evaluate(key_file, sys_file_full_path, allmetrics, NP_only, remove_nested,
                     keep_singletons, min_span)
-            all_scores[key_file] = scores
+            all_scores[sys_file] = scores
             if scores['conll'] > max_conll_f1[1]:
-                max_conll_f1 = (key_file, scores['conll'])
+                max_conll_f1 = (sys_file, scores['conll'])
 
     df = pd.DataFrame.from_dict(all_scores)
     df.to_csv(os.path.join(path, 'all_scores.csv'))
